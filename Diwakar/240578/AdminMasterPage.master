@@ -1,0 +1,216 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="SuperAdmin_AdminMasterPage" Codebehind="AdminMasterPage.master.cs" %>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Administration Panel</title>
+    <link href="stylemenu.css" rel="stylesheet" type="text/css" />
+     <script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript">
+    var timeout = 500;
+    var closetimer = 0;
+    var ddmenuitem = 0;
+
+    function jsddm_open() {
+        jsddm_canceltimer();
+        jsddm_close();
+        ddmenuitem = $(this).find('ul').eq(0).css('visibility', 'visible');
+    }
+
+    function jsddm_close() { if (ddmenuitem) ddmenuitem.css('visibility', 'hidden'); }
+
+    function jsddm_timer() { closetimer = window.setTimeout(jsddm_close, timeout); }
+
+    function jsddm_canceltimer() {
+        if (closetimer) {
+            window.clearTimeout(closetimer);
+            closetimer = null;
+        }
+    }
+
+    $(document).ready(function () {
+        $('#jsddm > li').bind('mouseover', jsddm_open);
+        $('#jsddm > li').bind('mouseout', jsddm_timer);
+    });
+
+    //document.onclick = jsddm_close;
+</script>
+
+ 
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+   
+    <style type="text/css">
+        body {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            background-color: #353535;
+        }
+    </style>
+   <script language="JavaScript">
+<!--
+    javascript: window.history.forward(1);
+    //-->
+   </script>
+</head>
+<body>
+<center>
+    <form id="form1" runat="server">
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+       <center>
+        <table align="center" style="width:970px;"center" cellpadding="0" cellspacing="0" >
+            <tr><td class="style1" style="color:white; font-size:25px;"><%=ConfigurationManager.AppSettings["CoName"].ToString()%> Admin Panel</td>
+      </tr>
+            <tr>
+            </td> 
+            <tr>
+               <td bgcolor="#CCCCCC" height="1"></td>
+               </tr>
+      &nbsp;</tr>
+      <td>
+      <table align="center" cellpadding="0" cellspacing="0" width="1100px">
+       <tr>
+                                       <td #353535" align="center">
+                                      <ul id="jsddm">
+                                        <li><a  href="Adminhome.aspx">Home</a></li>
+
+
+                                        <li>
+                                            <a  href="#">Change Password</a>
+                                            <ul>
+                                       <%-- <li><a href="changeadminPassword.aspx">Change Admin Password</a></li>--%>
+                                                <li><a href="changeuserpassword.aspx">Change User Password</a></li>
+                                            </ul>
+                                        </li>
+                                            <li><a href="#">Operator</a>
+                                              <ul>
+                                                  <%--<li><a href="Oparator.aspx">Add Roles</a></li>--%>
+                                                  <li><a href="CreateNewUser.aspx">Create Operator</a></li>
+                                                  <li><a href="EditUserProfile.aspx">Manage User</a></li>
+                                                  <li><a href="DeleteUserProfile.aspx">Delete User</a></li>
+                                              </ul>
+                                          </li>
+
+                                    <li>
+                                        <a  href="#">Associates</a>
+                                        <ul>
+                                            <li><a href="UpdateMember.aspx">Update Profile</a></li>
+                                            <li><a href="TotalMembers.aspx">Total Associates</a></li>
+                                         <%--   <li><a href="RenewSubscription.aspx">Upgrade  Member Package </a></li>--%>
+                                                <%-- <li><a href="QueryRequestReport.aspx">Query Report</a></li>--%>
+                                                <li><a href="BlockMembers.aspx">Block Member</a></li>
+                                            <li><a href="UserActivation.aspx">Change Member Status</a></li>
+      
+                                             <%-- <li><a href="Redirectuser.aspx" target="_blank">Go to User Panel</a></li>--%>
+                                           <%-- <li><a href="Tree.aspx">Genealogy</a></li> --%>   
+                          <%--                  <li><a href="MatrixView.aspx">Sponsor Matrix</a></li>--%>
+                                              <li><a href="Kycuploaduser.aspx">KYC</a></li>
+                                              <li><a href="AchieverStatus.aspx">Reward Achiever List</a></li>
+                                             <%--<li><a href="RenewSubscription.aspx">Upgrade Member</a></li>--%>
+        
+                                        </ul>
+                                    </li>
+                                    
+                  
+                                <li><a href="#">Product Panel</a>
+                                        <ul>
+                                               
+                                            <li><a href="Add Repurchase Product1.aspx">Add Product</a></li>
+                                            <li><a href="EditRepurchaseProduct1.aspx">Edit Product</a></li>
+                                           <%--   <li><a href="EditRepurchaseProduct.aspx">Update Product</a></li>--%>
+                                            <li><a href="Productlist1.aspx">List Product</a></li>
+                                            <li><a href="DeleteProductRepurchase1.aspx">Delete Product</a></li>
+                                            <li><a href="AddParentCategory.aspx">Add Parent Category</a></li>
+                                            <li><a href="EditandDeleteCategory.aspx">Manage Sub Category</a></li>
+                                           <%-- <li><a href="RepurchaseCategories1.aspx">Categories</a></li>--%>
+                       
+                                    </ul>
+                                         </li>
+                                            <li><a href="#">Order Panel</a>
+                                                <ul>
+                                                    <li><a href="ViewReceipt1.aspx">Search Order</a></li> 
+                                                        <li><a href="OrderPayment.aspx">Order Payment Details</a></li>
+                                                    <li><a href="RepurchaseDetails.aspx">Repurchase Payment Details</a></li>
+                                                    <li><a href="ViewDispatchDetails.aspx">View Dispatch Details</a></li>
+                                                    <li><a href="EditDispatchDetails.aspx">Edit Dispatch Details</a></li>
+                                                <li><a href="AddE-Wallet.aspx">Add E-Wallet</a></li>
+                                              
+                                                <li><a href="RepurchaseWalletReport.aspx">Repurchase Wallet Report</a></li>
+                                         <%--       <li><a href="RepurchaseLeft_Admin.aspx">Repurchase Left Report</a></li>
+                                                <li><a href="RepurchaseRight_Admin.aspx">Repurchase Right Report</a></li>--%>
+                                                 
+                                            </ul>
+                                            </li>
+                                                <li>
+                                                      <a href="#">Manage</a>
+                                                      <ul>
+                                                          <li><a href="SMSnEmail.aspx">SMS & Email</a></li>
+                                                         <%-- <li><a href="NewsUpdate.aspx">News Update</a></li>--%>
+                                                          <li><a href="showkyc.aspx">Show Kyc</a></li>
+                                                          <li><a href="updatekyc.aspx">Update Kyc</a></li>
+                                                 <%--            <li><a href="PDF_Upload.aspx">Upload PDF</a></li>--%>
+                          
+                                                      </ul>
+                                                  </li>
+                 
+                                                       <li><a href="#">Payouts</a>
+                                                            <ul>
+                                                                <li><a href="ExcutePayout.aspx">Refresh Payouts</a></li>
+                                                                <li><a href="ViewPayouts.aspx">View Payouts</a></li>
+                                                              <%--  <li><a href="TotalBinary.aspx">Binary Report</a></li>--%>
+                                                                <li><a href="TDSReport.aspx">TDS Report</a></li> 
+                                                              <%--  <li><a href="TDSReport_MemberiD.aspx">Total TDS (Member ID)</a></li> --%>
+                                                                 <li><a href="PaymentsReports.aspx">Payments Reports</a></li>
+                                                                <li><a href="All_SalesReport.aspx">Total Sales Report</a></li>
+                                                            <%--      <li><a href="CashBack_Libilites.aspx">Cash Back Libilites Report</a></li>
+                                                                 <li><a href="SelfCashBackLibilites.aspx">Self Cash Back Libilites Report</a></li>--%>
+                                                            </ul>
+                                                       </li>
+
+
+<li><asp:LinkButton runat="server" Text="Log Out" onclick="Unnamed1_Click" ValidationGroup="logout"></asp:LinkButton></li>
+</ul>
+             
+               </td>
+               </tr>      
+
+      </table>
+      </td>
+      <tr>
+      <td>
+      <table border="0" runat="server" width="1100px" style="background-color: #FFFFFF" 
+              align="center">
+      <tr>
+     
+      <td style="width:970px; background-color: #FFFFFF; height: 250px;">
+       <div>
+    <center>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </center>
+    </div>
+      </td>
+     
+      </tr>
+      </table>
+      
+      </td>
+      </tr>
+      
+      </table>
+  
+    <br />
+    
+   
+   
+     </center>
+    </form>
+    </center>
+</body>
+</html>

@@ -1,0 +1,227 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Data.SqlClient;
+
+/// <summary>
+/// Summary description for DALPlan
+/// </summary>
+public class DALPlan
+{
+	public DALPlan()
+	{
+		//
+		// TODO: Add constructor logic here
+		//
+	}
+
+    DatabaseHelper objDatabaseHelper = new DatabaseHelper();
+    SqlCommand dCmd = null;
+    int returnValue = 0;
+
+    public int InsertPlan(BOPlan objPlan)
+    {
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_InsertPlan";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@PlanName", objPlan.PlanName, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PlanAmount", objPlan.PlanAmount, SqlDbType.Decimal);
+            objDatabaseHelper.AddParameter("@PlanDescription", objPlan.PlanDescription, SqlDbType.VarChar, 512);
+
+
+            returnValue = Convert.ToInt32(objDatabaseHelper.ExecuteNonQuery(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen));
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+            {
+                objDatabaseHelper.Connection.Close();
+            }
+        }
+        return returnValue;
+    }
+
+    //public int UpdatePlan(BOPlan objPlan)
+    //{
+    //    dCmd = objDatabaseHelper.Command;
+    //    dCmd.CommandText = "SP_UpdatePlan";
+    //    dCmd.CommandType = CommandType.StoredProcedure;
+    //    try
+    //    {
+    //        objDatabaseHelper.BeginTransaction();
+
+    //        objDatabaseHelper.AddParameter("@PlanID", objPlan.PlanID, SqlDbType.Int);
+    //        objDatabaseHelper.AddParameter("@PlanName", objPlan.PlanName, SqlDbType.VarChar, 50);
+    //        objDatabaseHelper.AddParameter("@PlanAmount", objPlan.PlanAmount, SqlDbType.Decimal);
+    //        objDatabaseHelper.AddParameter("@PlanDescription", objPlan.PlanDescription, SqlDbType.VarChar, 512);
+
+    //        returnValue = Convert.ToInt32(objDatabaseHelper.ExecuteScalar(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen));
+    //        objDatabaseHelper.CommitTransaction();
+    //    }
+
+    //    catch
+    //    {
+    //        objDatabaseHelper.RollbackTransaction();
+    //    }
+
+    //    finally
+    //    {
+    //        if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+    //        {
+    //            objDatabaseHelper.Connection.Close();
+    //        }
+    //    }
+    //    return returnValue;
+    //}
+
+
+    public int UpdatePlan(BOPlan objPlan)
+    {
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_UpdatePlan";
+        dCmd.CommandType = CommandType.StoredProcedure;
+
+        try
+        {
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@PlanID", objPlan.PlanID, SqlDbType.Int);
+            objDatabaseHelper.AddParameter("@PlanName", objPlan.PlanName, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PlanAmount", objPlan.PlanAmount, SqlDbType.Decimal);
+            objDatabaseHelper.AddParameter("@PlanDescription", objPlan.PlanDescription, SqlDbType.VarChar, 512);
+
+            returnValue = Convert.ToInt32(objDatabaseHelper.ExecuteNonQuery(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen));
+
+            objDatabaseHelper.CommitTransaction();
+
+
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+            {
+                objDatabaseHelper.Connection.Close();
+            }
+        }
+        return returnValue;
+
+    }
+
+
+    public void DeletePlan(BOPlan objPlan)
+    {
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_DeletePlan";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@PlanID", objPlan.PlanID, SqlDbType.Int);
+
+            objDatabaseHelper.ExecuteNonQuery(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen);
+
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+            {
+                objDatabaseHelper.Connection.Close();
+            }
+        }
+    }
+
+    public DataSet GetPlan()
+    {
+
+        DataSet dsGetAllPlan = new DataSet();
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_GetAllPlan";
+        dCmd.CommandType = CommandType.StoredProcedure;
+
+        try
+        {
+            objDatabaseHelper.BeginTransaction();
+
+            dsGetAllPlan = objDatabaseHelper.ExecuteDataSet(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen);
+
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+                objDatabaseHelper.Connection.Close();
+        }
+
+        return dsGetAllPlan;
+    }
+
+
+    public BOPlan FatchIndividualPlan(BOPlan objPlan)
+    {
+        SqlDataReader rdPlan = null;
+
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_FatchIndividualPlan";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@PlanID", objPlan.PlanID, SqlDbType.Int);
+
+            rdPlan = objDatabaseHelper.ExecuteReader(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen);
+            if (rdPlan.HasRows)
+            {
+                while (rdPlan.Read())
+                {
+                    objPlan.PlanName = rdPlan["PlanName"].ToString();
+                    objPlan.PlanAmount = Convert.ToDecimal(rdPlan["PlanAmount"].ToString());
+                    objPlan.PlanDescription = rdPlan["PlanDescription"].ToString();
+                }
+                rdPlan.Close();
+            }
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+                objDatabaseHelper.Connection.Close();
+        }
+        return objPlan;
+    }
+
+}

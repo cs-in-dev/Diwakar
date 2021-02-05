@@ -1,0 +1,271 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+
+/// <summary>
+/// Summary description for BALUserInformation
+/// </summary>
+public class BALUserInformation
+{
+	public BALUserInformation()
+	{
+		//
+		// TODO: Add constructor logic here
+		//
+	}
+
+    public int insertUserInformation(BOUserInformation objUserInformation)
+    {
+
+        DALUserInformation objDALUserInformation = new DALUserInformation();
+        try
+        {
+            return objDALUserInformation.InsertUser(objUserInformation);
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            objDALUserInformation = null;
+        }
+    }
+
+    public int updateUser(BOUserInformation objUserInformation)
+    {
+
+        DALUserInformation objDALUserInformation = new DALUserInformation();
+        try
+        {
+            return objDALUserInformation.UpdateUser(objUserInformation);
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            objDALUserInformation = null;
+        }
+    }
+
+
+
+    public DataSet getAllMember()
+    {
+
+        DALUserInformation objDALUserInformation = new DALUserInformation();
+        try
+        {
+            return objDALUserInformation.GetAllMember();
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            objDALUserInformation = null;
+        }
+    }
+
+
+    public DataSet fetchPersonDetail(BOUserInformation objUserInformation)
+    {
+
+        DALUserInformation objDALUserInformation = new DALUserInformation();
+        try
+        {
+            return objDALUserInformation.FetchPersonDetail(objUserInformation);
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            objDALUserInformation = null;
+        }
+    }
+
+    public BOUserInformation checkSponsorAndPin(BOUserInformation objUser)
+    {
+        DALUserInformation objDALUserInformation = new DALUserInformation();
+        try
+        {
+
+            return objDALUserInformation.CheckSponsorAndPin(objUser);
+        }
+        catch
+        {
+
+            throw;
+
+        }
+        finally
+        {
+
+            objDALUserInformation = null;
+
+        }
+    }
+
+
+    public BOUserInformation userAuthentication(BOUserInformation objUser)
+    {
+        DALUserInformation objDALUserInformation = new DALUserInformation();
+        try
+        {
+
+            return objDALUserInformation.UserAuthentication(objUser);
+        }
+        catch
+        {
+
+            throw;
+
+        }
+        finally
+        {
+
+            objDALUserInformation = null;
+
+        }
+    }
+
+
+    public BOUserInformation newUserInformation(BOUserInformation objUser)
+    {
+        DALUserInformation objDALUserInformation = new DALUserInformation();
+        try
+        {
+
+            return objDALUserInformation.NewUserInformation(objUser);
+        }
+        catch
+        {
+
+            throw;
+
+        }
+        finally
+        {
+
+            objDALUserInformation = null;
+
+        }
+    }
+
+    public BOUserInformation fetchUserInfoByUserCode(BOUserInformation objUser)
+    {
+        DALUserInformation objDALUserInformation = new DALUserInformation();
+        try
+        {
+
+            return objDALUserInformation.FetchUserInfoByUserCode(objUser);
+        }
+        catch
+        {
+
+            throw;
+
+        }
+        finally
+        {
+
+            objDALUserInformation = null;
+
+        }
+    }
+
+
+    public BOUserInformation getUserPassword(BOUserInformation objUser)
+    {
+        DALUserInformation objDALUserInformation = new DALUserInformation();
+        try
+        {
+
+            return objDALUserInformation.GetUserPassword(objUser);
+        }
+        catch
+        {
+
+            throw;
+
+        }
+        finally
+        {
+
+            objDALUserInformation = null;
+
+        }
+    }
+
+
+    public int changePassword(BOUserInformation objUserInformation)
+    {
+
+        DALUserInformation objDALUserInformation = new DALUserInformation();
+        try
+        {
+            return objDALUserInformation.ChangePassword(objUserInformation);
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            objDALUserInformation = null;
+        }
+    }
+
+
+    public BOUserInformation getLoginAccess(BOUserInformation objUser)
+    {
+        DALUserInformation objDALUserInformation = new DALUserInformation();
+        try
+        {
+
+            return objDALUserInformation.GetLoginAccess(objUser);
+        }
+        catch
+        {
+
+            throw;
+
+        }
+        finally
+        {
+
+            objDALUserInformation = null;
+
+        }
+    }
+
+
+     public int userUpdateInformation(BOUserInformation objUserInformation)
+    {
+
+        DALUserInformation objDALUserInformation = new DALUserInformation();
+        try
+        {
+            return objDALUserInformation.UserUpdateInformation(objUserInformation);
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            objDALUserInformation = null;
+        }
+    }
+}

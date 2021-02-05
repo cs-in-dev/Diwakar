@@ -1,0 +1,113 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+
+/// <summary>
+/// Summary description for BALPlan
+/// </summary>
+public class BALPlan
+{
+	public BALPlan()
+	{
+		//
+		// TODO: Add constructor logic here
+		//
+	}
+
+    public int insertPlan(BOPlan objPlan)
+    {
+
+        DALPlan objDALPlan = new DALPlan();
+        try
+        {
+            return objDALPlan.InsertPlan(objPlan);
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            objDALPlan = null;
+        }
+    }
+
+
+    public int updatePlan(BOPlan objPlan)
+    {
+
+        DALPlan objDALPlan = new DALPlan();
+        try
+        {
+            return objDALPlan.UpdatePlan(objPlan);
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            objDALPlan = null;
+        }
+    }
+
+
+    public void deletePlan(BOPlan objPlan)
+    {
+        DALPlan objDALPlan = new DALPlan();
+        try
+        {
+             objDALPlan.DeletePlan(objPlan);
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            objDALPlan = null;
+        }
+    }
+
+
+    public DataSet getPlan()
+    {
+        DALPlan objDALPlan = new DALPlan();
+        try
+        {
+            return objDALPlan.GetPlan();
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            objDALPlan = null;
+        }
+    }
+
+
+    public BOPlan fatchIndividualPlan(BOPlan objPlan)
+    {
+        DALPlan objDALPlan = new DALPlan();
+        try
+        {
+            return objDALPlan.FatchIndividualPlan(objPlan);
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            objDALPlan = null;
+        }
+    }
+}

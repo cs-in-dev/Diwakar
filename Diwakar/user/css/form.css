@@ -1,0 +1,223 @@
+
+/* simple css-based tooltip */
+
+.middlelogin{
+	width:960px; 
+	float:left; 
+	height:auto;
+}
+.menubglogin{
+	width:740px;
+	height:46px;
+	text-align:center;
+	float:right;
+	background:#ffffff;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border:solid 1px #dddddd;
+}
+.literaladdress
+{
+	border:none;
+	width:650px;
+}
+.literal
+{
+	border:none;
+}
+.error
+{
+	color:#ff0000; 
+	
+}
+.display{
+	width:960px;
+	height:auto;
+	float:left;
+	padding:0;
+	margin:0 0 10px 0;
+	border-bottom:solid 1px #dddddd;
+}
+.displaybox
+{	float:right; 
+	width:219px; 
+	color:#000; 
+	line-height:18px; 
+	padding:8px 8px 8px 12px; 
+	height:110px; 
+	font-weight:bold; 
+	font-size:12px; 
+	margin:16px 6px 0 0; 
+	display:block;
+	background-image: url(bg_usr.png); 
+	background-repeat: no-repeat;
+}
+.displayboxmsg
+{	float:left; 
+	width:619px; 
+	color:#a8ce47; 
+	line-height:10px; 
+	padding:0px 8px 8px 12px; 
+	height:87px; 
+	font-weight:bold; 
+	font-size:12px; 
+	margin:16px 6px 0 0;
+	background-repeat: no-repeat;
+}
+
+
+.inputform{
+	font-weight:normal; 
+	background:url(forminput.gif) left no-repeat;
+	padding:0 0 0 10px; 
+	width:256px;
+	height:31px;
+	border:none; 
+}
+.inputform:hover{
+	background:url(forminputhover.gif) left no-repeat;
+}
+
+.logininput{
+	font-weight:normal; 
+	-webkit-border-radius:5px; 
+	border:solid 1px #dddddd; 
+	-moz-border-radius:5px; 
+	padding:4px; 
+	width:140px; 
+	background:#f2f2f2;
+}
+.logininput:hover{
+	background:#5fc0ed;
+}
+
+fieldset{
+	border:solid 1px #a9cf46;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+legend{
+    font-weight: bold;
+    color:#eb268f;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:16px;	
+}
+.redstar{
+    font-weight: normal;
+    color:#F00;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    vertical-align:text-top;
+    padding-left:5px;
+}
+
+
+
+
+.tooltip {
+	background-color:#0099dc;
+	border:1px solid #fff;
+	padding:10px 15px;
+	width:200px;
+	display:none;
+	color:#fff;
+	text-align:left;
+	font-size:12px;
+
+	/* outline radius for mozilla/firefox only */
+	-moz-box-shadow:0 0 10px #000;
+	-webkit-box-shadow:0 0 10px #000;
+}
+
+
+	#myform {
+		padding:0 0 0 20px;
+		margin:0;
+		width:930px;
+		float:left;
+		font-size:12px;
+	}
+	
+	#myform h3 {
+		text-align:center;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:18px;
+		margin:0 0 10px 0;
+	}
+	
+	/* http://www.quirksmode.org/forms.html */
+	label{
+		width:200px;
+	
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:12px;
+		resize:none;
+		color:#000000;
+		font-weight:bold;
+		padding:6px;
+		margin:0 20px 7px 0px;
+	}
+		
+	
+			Literal{
+		width:300px;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:12px;
+		resize:none;
+		color:#000000;
+		font-weight:bold;
+		padding:6px;
+		margin:0 20px 7px 0px;
+	}
+	
+
+#ver-zebra{
+	font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size:12px;
+	width:98%;
+	text-align:left;
+	float:left;
+	border-collapse:collapse;
+	margin:0 20px 20px 10px;}
+	#ver-zebra th{
+		font-size:14px;
+		font-weight:normal;
+		border-right:1px solid #5fc0ed;
+		border-left:1px solid #5fc0ed;
+		color:#039;font-weight:bold;
+		padding:12px 15px;}
+		#ver-zebra td{border-right:1px solid #5fc0ed;
+		border-left:1px solid #5fc0ed;
+		border-bottom:solid 1px #5fc0ed;
+		color:#669;
+		padding:8px 15px;}
+		.vzebra-odd{background:#eff2ff;}
+		.vzebra-even{background:#e8edff;}
+		#ver-zebra #vzebra-adventure,#ver-zebra #vzebra-children{
+			background:#5fc0ed;border-bottom:1px solid #5fc0ed; color:#FFF; font-weight:bold;}
+			#ver-zebra #vzebra-comedy,#ver-zebra #vzebra-action{background:#dce4ff;border-bottom:1px solid #5fc0ed; border-top:solid 1px #5fc0ed;}
+			#one-column-emphasis{font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif;font-size:12px;
+			width:98%;text-align:left;border-collapse:collapse;margin:20px;}
+			
+			.input{
+	background:#ffffff;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border:solid 1px #cccccc;
+	color:#212121;
+	height:20px;
+}
+.button{
+	background:#00aedb;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	color:#ffffff;
+	border:none;
+	padding:4px;
+	width:auto;
+	height:auto;
+	cursor:pointer;
+}
+.button:hover{
+	color:#212121;
+}

@@ -1,0 +1,147 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Data.SqlClient;
+
+/// <summary>
+/// Summary description for DALTest
+/// </summary>
+public class DALTest
+{
+	public DALTest()
+	{
+		//
+		// TODO: Add constructor logic here
+		//
+	}
+
+    DatabaseHelper objDatabaseHelper = new DatabaseHelper();
+    SqlCommand dCmd = null;
+    int returnValue = 0;
+
+    public int InsertTest(BOTest objTest)
+    {
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_InsertTest";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@TestName", objTest.TestName, SqlDbType.VarChar, 50);
+            returnValue = Convert.ToInt32(objDatabaseHelper.ExecuteNonQuery(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen));
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+            {
+                objDatabaseHelper.Connection.Close();
+            }
+        }
+        return returnValue;
+    }
+
+
+    public void UpdateTest(BOTest objTest)
+    {
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_UpdateTest";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@TestID", objTest.TestID, SqlDbType.Int);
+            objDatabaseHelper.AddParameter("@UpdatedTestName", objTest.TestName, SqlDbType.VarChar, 50);
+            objDatabaseHelper.ExecuteNonQuery(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen);
+            objDatabaseHelper.CommitTransaction();
+        }
+
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+            {
+                objDatabaseHelper.Connection.Close();
+            }
+        }
+    }
+
+
+    public void DeleteTest(BOTest objTest)
+    {
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_DeleteTest";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@TestID", objTest.TestID, SqlDbType.Int);
+
+            objDatabaseHelper.ExecuteNonQuery(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen);
+
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+            {
+                objDatabaseHelper.Connection.Close();
+            }
+        }
+    }
+
+    public DataSet GetTest()
+    {
+        DataSet dsTest = new DataSet();
+        try
+        {
+            objDatabaseHelper.BeginTransaction();
+
+            dCmd = objDatabaseHelper.Command;
+
+            dCmd.CommandText = "SP_GetTest";
+            dCmd.CommandType = CommandType.StoredProcedure;
+
+            dsTest = objDatabaseHelper.ExecuteDataSet(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen);
+
+            objDatabaseHelper.CommitTransaction();
+        }
+
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+            {
+                objDatabaseHelper.Connection.Close();
+            }
+        }
+        return dsTest;
+    }
+}
+

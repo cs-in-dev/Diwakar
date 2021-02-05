@@ -1,0 +1,566 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Data.SqlClient;
+
+
+/// <summary>
+/// Summary description for DALUserInformation
+/// </summary>
+public class DALUserInformation
+{
+	public DALUserInformation()
+	{
+		//
+		// TODO: Add constructor logic here
+		//
+	}
+
+
+    DatabaseHelper objDatabaseHelper = new DatabaseHelper();
+    SqlCommand dCmd = null;
+    int returnValue = 0;
+
+    public int InsertUser(BOUserInformation objUser)
+    {
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_InsertUserInformation";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@UserName", objUser.UserName, SqlDbType.VarChar, 100);
+            objDatabaseHelper.AddParameter("@FatherHasbandName", objUser.FatherHasbandName, SqlDbType.VarChar, 100);
+            objDatabaseHelper.AddParameter("@DBO", objUser.DOB, SqlDbType.DateTime);
+            objDatabaseHelper.AddParameter("@Address", objUser.Address, SqlDbType.VarChar, 100);
+            objDatabaseHelper.AddParameter("@City", objUser.city, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@State", objUser.State, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PinCode", objUser.PinCode, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@Country", objUser.Country, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@ContectNumber", objUser.ContectNumber, SqlDbType.VarChar, 10);
+            objDatabaseHelper.AddParameter("@EMailID", objUser.EMailID, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PanNo", objUser.PanNo, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PhoneNo", objUser.PhoneNo, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PaymentMode", objUser.PaymentMode, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PaymentAmount", objUser.PaymentAmount, SqlDbType.Decimal);
+            objDatabaseHelper.AddParameter("@PaymentDate", objUser.PaymentDate, SqlDbType.DateTime);
+            objDatabaseHelper.AddParameter("@NomineeName", objUser.NomineeName, SqlDbType.VarChar, 100);
+            objDatabaseHelper.AddParameter("@RelationShip", objUser.RelationShip, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@NomineeAddress", objUser.NomineeAddress, SqlDbType.VarChar, 512);
+            objDatabaseHelper.AddParameter("@AdminGeneratedPinCode", objUser.AdminGeneratedPinCode, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@SponsorCode", objUser.SponsorCode, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@LoginName", objUser.LoginName, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@Password", objUser.Password, SqlDbType.VarChar, 50);
+
+            returnValue = Convert.ToInt32(objDatabaseHelper.ExecuteNonQuery(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen));
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+            {
+                objDatabaseHelper.Connection.Close();
+            }
+        }
+        return returnValue;
+    }
+
+    public DataSet FetchPersonDetail(BOUserInformation objUser)
+    {
+        DataSet dsperson = new DataSet();
+        try
+        {
+            objDatabaseHelper.BeginTransaction();
+
+            dCmd = objDatabaseHelper.Command;
+
+            dCmd.CommandText = "SP_FetchPersonDetail";
+            dCmd.CommandType = CommandType.StoredProcedure;
+
+            objDatabaseHelper.AddParameter("@UserCode", objUser.UserCode, SqlDbType.VarChar, 50);
+           
+            dsperson = objDatabaseHelper.ExecuteDataSet(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen);
+
+            objDatabaseHelper.CommitTransaction();
+        }
+
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+            {
+                objDatabaseHelper.Connection.Close();
+            }
+        }
+        return dsperson;
+    }
+
+    public DataSet GetAllMember()
+    {
+        DataSet dsperson = new DataSet();
+        try
+        {
+            objDatabaseHelper.BeginTransaction();
+
+            dCmd = objDatabaseHelper.Command;
+
+            dCmd.CommandText = "SP_GetAllMembers";
+            dCmd.CommandType = CommandType.StoredProcedure;
+
+            
+
+            dsperson = objDatabaseHelper.ExecuteDataSet(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen);
+
+            objDatabaseHelper.CommitTransaction();
+        }
+
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+            {
+                objDatabaseHelper.Connection.Close();
+            }
+        }
+        return dsperson;
+    }
+
+    public BOUserInformation CheckSponsorAndPin(BOUserInformation objUser)
+    {
+        SqlDataReader rdrCheck = null;
+
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_CheckSponsorAndPin";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+
+
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@SponsorCode", objUser.SponsorCode, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PinCode", objUser.AdminGeneratedPinCode, SqlDbType.VarChar, 50);
+
+            rdrCheck = objDatabaseHelper.ExecuteReader(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen);
+            if (rdrCheck.HasRows)
+            {
+                while (rdrCheck.Read())
+                {
+
+                    objUser.CheckSponsorAndPin = rdrCheck["CHECKSP"].ToString();
+                    objUser.NextUserID = Convert.ToInt32(rdrCheck["NEXTPERSON"].ToString());
+
+
+                }
+                rdrCheck.Close();
+            }
+
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+                objDatabaseHelper.Connection.Close();
+        }
+
+        return objUser;
+
+    }
+
+    public BOUserInformation UserAuthentication(BOUserInformation objUser)
+    {
+        SqlDataReader rdrUserAuthentication = null;
+
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_UserAuthentication";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+
+
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@UserLoginName", objUser.LoginName, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@Password", objUser.Password, SqlDbType.VarChar, 50);
+
+            rdrUserAuthentication = objDatabaseHelper.ExecuteReader(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen);
+            if (rdrUserAuthentication.HasRows)
+            {
+                while (rdrUserAuthentication.Read())
+                {
+
+                    objUser.UserCode = rdrUserAuthentication["UserCode"].ToString();
+                    objUser.LoginID = Convert.ToInt32(rdrUserAuthentication["ID"].ToString());
+                    
+
+
+                }
+                rdrUserAuthentication.Close();
+            }
+
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+                objDatabaseHelper.Connection.Close();
+        }
+
+        return objUser;
+
+    }
+
+    public BOUserInformation NewUserInformation(BOUserInformation objUser)
+    {
+        SqlDataReader rdrNewUser= null;
+
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_GetNewUserInformation";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+
+
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@UserID", objUser.UserID, SqlDbType.Int);
+
+            rdrNewUser = objDatabaseHelper.ExecuteReader(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen);
+            if (rdrNewUser.HasRows)
+            {
+                while (rdrNewUser.Read())
+                {
+
+                    objUser.UserCode = rdrNewUser["UserCode"].ToString();
+                    objUser.UserName = rdrNewUser["UserName"].ToString();
+                    objUser.LoginName = rdrNewUser["LoginName"].ToString();
+                    objUser.Password = rdrNewUser["Password"].ToString();
+                }
+                rdrNewUser.Close();
+            }
+
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+                objDatabaseHelper.Connection.Close();
+        }
+
+        return objUser;
+
+    }
+
+    public int UpdateUser(BOUserInformation objUser)
+    {
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_UpdateUserInforMation";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@UserCode", objUser.UserCode, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@UserName", objUser.UserName, SqlDbType.VarChar, 100);
+            objDatabaseHelper.AddParameter("@RegistrationDate", objUser.RegistrationDate, SqlDbType.DateTime);
+            objDatabaseHelper.AddParameter("@FatherHasbandName", objUser.FatherHasbandName, SqlDbType.VarChar, 100);
+            objDatabaseHelper.AddParameter("@DBO", objUser.DOB, SqlDbType.DateTime);
+            objDatabaseHelper.AddParameter("@Address", objUser.Address, SqlDbType.VarChar, 100);
+            objDatabaseHelper.AddParameter("@City", objUser.city, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@State", objUser.State, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PinCode", objUser.PinCode, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@Country", objUser.Country, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@ContectNumber", objUser.ContectNumber, SqlDbType.VarChar, 10);
+            objDatabaseHelper.AddParameter("@EMailID", objUser.EMailID, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PanNo", objUser.PanNo, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PhoneNo", objUser.PhoneNo, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PaymentMode", objUser.PaymentMode, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PaymentAmount", objUser.PaymentAmount, SqlDbType.Decimal);
+            objDatabaseHelper.AddParameter("@PaymentDate", objUser.PaymentDate, SqlDbType.DateTime);
+            objDatabaseHelper.AddParameter("@NomineeName", objUser.NomineeName, SqlDbType.VarChar, 100);
+            objDatabaseHelper.AddParameter("@RelationShip", objUser.RelationShip, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@NomineeAddress", objUser.NomineeAddress, SqlDbType.VarChar, 512);
+
+
+            returnValue = Convert.ToInt32(objDatabaseHelper.ExecuteNonQuery(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen));
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+            {
+                objDatabaseHelper.Connection.Close();
+            }
+        }
+        return returnValue;
+    }
+
+    public BOUserInformation FetchUserInfoByUserCode(BOUserInformation objUser)
+    {
+        SqlDataReader rdrUserInfo = null;
+
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_FetchPersonDetail";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+
+
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@UserCode", objUser.UserCode, SqlDbType.VarChar , 50);
+
+            rdrUserInfo = objDatabaseHelper.ExecuteReader(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen);
+            if (rdrUserInfo.HasRows)
+            {
+                while (rdrUserInfo.Read())
+                {
+
+                    
+                    objUser.UserName = rdrUserInfo["UserName"].ToString();
+                    objUser.FatherHasbandName = rdrUserInfo["FatherHasbandName"].ToString();
+                    objUser.DOB = Convert.ToDateTime(rdrUserInfo["DBO"].ToString());
+                    objUser.RegistrationDate = Convert.ToDateTime(rdrUserInfo["RegistrationDate"].ToString());
+                    objUser.Address = rdrUserInfo["Address"].ToString();
+                    objUser.city = rdrUserInfo["City"].ToString();
+                    objUser.State = rdrUserInfo["State"].ToString();
+                    objUser.PinCode = rdrUserInfo["PinCode"].ToString();
+                    objUser.Country = rdrUserInfo["Country"].ToString();
+                    objUser.ContectNumber = rdrUserInfo["ContectNumber"].ToString();
+                    objUser.EMailID = rdrUserInfo["EMailID"].ToString();
+                    objUser.PanNo = rdrUserInfo["PanNo"].ToString();
+                    objUser.PhoneNo = rdrUserInfo["PhoneNo"].ToString();
+                    objUser.PaymentMode = rdrUserInfo["PaymentMode"].ToString();
+                    objUser.PaymentAmount = Convert.ToDecimal(rdrUserInfo["PaymentAmount"].ToString());
+                    objUser.PaymentDate = Convert.ToDateTime(rdrUserInfo["PaymentDate"].ToString());
+                    objUser.NomineeName = rdrUserInfo["NomineeName"].ToString();
+                    objUser.NomineeAddress = rdrUserInfo["NomineeAddress"].ToString();
+                    objUser.RelationShip = rdrUserInfo["RelationShip"].ToString();
+
+                }
+                rdrUserInfo.Close();
+            }
+
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+                objDatabaseHelper.Connection.Close();
+        }
+
+        return objUser;
+
+    }
+
+
+    public BOUserInformation GetUserPassword(BOUserInformation objUser)
+    {
+        SqlDataReader rdrLoginPassword = null;
+
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_GetLoginInfo";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+
+
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@UserCode", objUser.UserCode, SqlDbType.VarChar , 50);
+
+            rdrLoginPassword = objDatabaseHelper.ExecuteReader(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen);
+            if (rdrLoginPassword.HasRows)
+            {
+                while (rdrLoginPassword.Read())
+                {
+                    objUser.Password = rdrLoginPassword["Password"].ToString();
+                }
+                rdrLoginPassword.Close();
+            }
+
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+                objDatabaseHelper.Connection.Close();
+        }
+
+        return objUser;
+
+    }
+
+
+    public int ChangePassword(BOUserInformation objUser)
+    {
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_ChangePassword";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@UserCode", objUser.UserCode, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@NewPassword", objUser.Password, SqlDbType.VarChar, 50);
+
+
+            returnValue = Convert.ToInt32(objDatabaseHelper.ExecuteNonQuery(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen));
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+            {
+                objDatabaseHelper.Connection.Close();
+            }
+        }
+        return returnValue;
+    }
+
+
+    public BOUserInformation GetLoginAccess(BOUserInformation objUser)
+    {
+        SqlDataReader rdrCheck = null;
+
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_GetLoginAccess";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+
+
+            objDatabaseHelper.BeginTransaction();
+
+            //objDatabaseHelper.AddParameter("@UserCode", objUser.UserCode, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@LoginName", objUser.LoginName, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@Password", objUser.Password, SqlDbType.VarChar, 50);
+
+            rdrCheck = objDatabaseHelper.ExecuteReader(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen);
+            if (rdrCheck.HasRows)
+            {
+                while (rdrCheck.Read())
+                {
+                    objUser.LoginID = Convert.ToInt32(rdrCheck["ID"].ToString());
+                    objUser.UserCode = rdrCheck["UserCode"].ToString();
+                }
+                rdrCheck.Close();
+            }
+            else
+            {
+                objUser.LoginID = 0;
+                rdrCheck.Close();
+            }
+
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+                objDatabaseHelper.Connection.Close();
+        }
+
+        return objUser;
+
+    }
+
+
+    public int UserUpdateInformation(BOUserInformation objUser)
+    {
+        dCmd = objDatabaseHelper.Command;
+        dCmd.CommandText = "SP_UserUpdateInformation";
+        dCmd.CommandType = CommandType.StoredProcedure;
+        try
+        {
+            objDatabaseHelper.BeginTransaction();
+
+            objDatabaseHelper.AddParameter("@UserCode", objUser.UserCode, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@UserName", objUser.UserName, SqlDbType.VarChar, 100);
+            objDatabaseHelper.AddParameter("@FatherHasbandName", objUser.FatherHasbandName, SqlDbType.VarChar, 100);
+            objDatabaseHelper.AddParameter("@DBO", objUser.DOB, SqlDbType.DateTime);
+            objDatabaseHelper.AddParameter("@Address", objUser.Address, SqlDbType.VarChar, 100);
+            objDatabaseHelper.AddParameter("@City", objUser.city, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@State", objUser.State, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PinCode", objUser.PinCode, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@Country", objUser.Country, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@ContectNumber", objUser.ContectNumber, SqlDbType.VarChar, 10);
+            objDatabaseHelper.AddParameter("@EMailID", objUser.EMailID, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PanNo", objUser.PanNo, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@PhoneNo", objUser.PhoneNo, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@NomineeName", objUser.NomineeName, SqlDbType.VarChar, 100);
+            objDatabaseHelper.AddParameter("@RelationShip", objUser.RelationShip, SqlDbType.VarChar, 50);
+            objDatabaseHelper.AddParameter("@NomineeAddress", objUser.NomineeAddress, SqlDbType.VarChar, 512);
+
+
+            returnValue = Convert.ToInt32(objDatabaseHelper.ExecuteNonQuery(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen));
+            objDatabaseHelper.CommitTransaction();
+        }
+        catch
+        {
+            objDatabaseHelper.RollbackTransaction();
+        }
+
+        finally
+        {
+            if (objDatabaseHelper.Connection.State == System.Data.ConnectionState.Open)
+            {
+                objDatabaseHelper.Connection.Close();
+            }
+        }
+        return returnValue;
+    }
+}

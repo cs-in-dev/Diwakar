@@ -1,0 +1,17 @@
+ New API Responce
+ 
+ return StatusCode(StatusCodes.Status200OK, new SuccessResponse { Success = new Success { code = APIResponseCode.Success, message = APIResponseCode.Success.ToString(), data = jWTTokenDetail } });
+            else
+                return StatusCode(StatusCodes.Status401Unauthorized, new ErrorResponse { Error = new Error { code = APIResponseCode.Header_Authorization_Unknown_Error, message = APIResponseCode.Header_Authorization_Unknown_Error.ToString(), discription = "'Authorization' header's value is invalid. You are not authorized to access the endpoint." } });
+
+end here 
+
+old  API RESOPNCE
+
+ return StatusCode(StatusCodes.Status400BadRequest, new ApiResponse(success: false, responseCode: Helper.APIResponseCode.Payload_Invalid, data: null, message: "Invalid request"));
+
+ return StatusCode(StatusCodes.Status500InternalServerError, new ApiResponse(success: false, responseCode: Helper.APIResponseCode.InternalServerError, data: null, message: ex.Message));
+
+END HERE
+
+

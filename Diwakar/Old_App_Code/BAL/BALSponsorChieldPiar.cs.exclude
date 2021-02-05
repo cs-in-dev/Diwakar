@@ -1,0 +1,58 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+/// <summary>
+/// Summary description for BALSponsorChieldPiar
+/// </summary>
+public class BALSponsorChieldPiar
+{
+	public BALSponsorChieldPiar()
+	{
+		//
+		// TODO: Add constructor logic here
+		//
+	}
+
+    public int insertSponsorChieldPair(BOSponsorChieldPair objSponsorChieldPair)
+    {
+
+        DALSponsorChieldPair objDALSponsorChieldPair = new DALSponsorChieldPair();
+        try
+        {
+            return objDALSponsorChieldPair.InsertSponsorChieldPair(objSponsorChieldPair);
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            objDALSponsorChieldPair = null;
+        }
+    }
+
+
+    public DataSet fetchPersonUnderMe(BOSponsorChieldPair objSponsorChieldPair)
+    {
+
+        DALSponsorChieldPair objDALSponsorChieldPair = new DALSponsorChieldPair();
+        try
+        {
+            return objDALSponsorChieldPair.FetchPersonUnderMe(objSponsorChieldPair);
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            objDALSponsorChieldPair = null;
+        }
+    }
+}

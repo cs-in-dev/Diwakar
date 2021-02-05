@@ -1,0 +1,307 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="User_UserMasterPage" CodeBehind="UserMasterPage.master.cs" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat='server'>
+    <title>
+       <%-- <%=ConfigurationManager.AppSettings["CoName"].ToString()%>--%>
+       Diwakar Retail Ltd.
+     </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="css/panel.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/tooltip-generic.css" />
+    <link href="css/form.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="css/menu.js"></script>
+    <script type="text/javascript" src="css/sliderscript.js"></script>
+    <script type="text/javascript" src="css/curvycorners.js"></script>
+    <script type="text/javascript">        var curvyCornersVerbose = false;</script>
+    <link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="css/form.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="css/jquery.min.js"></script>
+    <script src="css/jquery.tools.min.js" ></script>
+    <link rel="shortcut icon" href="../img/favicon.png" />
+    <style>
+#treeMenu ul li {
+    background: #00b050 /*background:#ffffff url(treeTabBg.gif)*/ repeat-x 0 0;
+}
+#rounded-corner th {
+    background: #00b050;
+}
+#rounded-corner thead th.rounded-q4 {
+    background: #00b050 /*url(right.png)*/ right -1px no-repeat;
+}
+#rounded-corner thead th.rounded-company {
+    background: #00b050 /* url(left.png) **/ left -1px no-repeat;
+}
+Style Attribute {
+    color: White;
+    background-color: #00b050;
+    font-weight: bold;
+}
+th{
+    background-color: #00b050;
+}
+    </style>
+    <script>
+        $(function () {
+            $("#myform :input").tooltip({
+                position: "center right",
+                offset: [-2, 10],
+                effect: "fade",
+                opacity: 0.7
+            });
+        });
+
+    </script>
+    <script type="text/javascript" src="css/menu.js"></script>
+    <script type="text/javascript" src="css/sliderscript.js"></script>
+    <script type="text/javascript" src="css/curvycorners.js"></script>
+    <script type="text/javascript">        var curvyCornersVerbose = false;</script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+  <script type="text/javascript" language="JavaScript1.2">
+
+      if (document.all) {
+          document.onkeydown = function () {
+              var key_f5 = 116; // 116 = F5 
+
+              if (key_f5 == event.keyCode) {
+                  event.keyCode = 27;
+
+                  return false;
+              }
+          }
+      }
+
+    </script>
+    <script type="text/javascript">
+        function validate() {
+            if (document.getElementById("txtMobileNo").value.length != 10) {
+                alert("Mobile No Should have 10 digits");
+                document.getElementById("txtMobileNo").select();
+                document.getElementById("txtMobileNo").focus();
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        function DisableButtons() {
+            var inputs = document.getElementsByTagName("INPUT");
+            for (var i in inputs) {
+                if (inputs[i].type == "button" || inputs[i].type == "submit") {
+                    inputs[i].disabled = true;
+                    inputs[i].value = "processing..";
+                }
+            }
+        }
+        window.onbeforeunload = DisableButtons; //uncomment to use this script.
+    </script>
+
+     
+<script type="text/javascript" language="JavaScript1.2">
+
+    if (document.all) {
+        document.onkeydown = function () {
+            var key_f5 = 116; // 116 = F5 
+
+            if (key_f5 == event.keyCode) {
+                event.keyCode = 27;
+
+                return false;
+            }
+        }
+    }
+
+</script>
+<style>
+#div1 li
+{
+    text-transform: uppercase;
+    }
+</style>
+
+<script type = "text/javascript">
+    function DisableButtons() {
+        var inputs = document.getElementsByTagName("INPUT");
+        for (var i in inputs) {
+            if (inputs[i].type == "button" || inputs[i].type == "submit") {
+                inputs[i].disabled = true;
+                inputs[i].value = "processing..";
+            }
+        }
+    }
+    window.onbeforeunload = DisableButtons; //uncomment to use this script.
+</script>
+</head>
+<body style="background-color:#acb4b0;background-size:cover;"> 
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+
+    <div id="container">
+        <div id="containercontent">
+            <!-- wrapper -->
+            <!-- Header -->
+            <div class="header">
+              
+                
+                <div class="display">
+                    <!-- display -->
+                    <div class="displayboxmsg" style="width:31%!important;">
+                        &nbsp;
+                        <p>
+                           <%-- <img src="css/member.jpg" alt="" border="0">--%>
+                            <br/>
+                              <marquee direction="up"  scrollamount="2" height="60px" bgcolor="" width="230px" style="padding-top: 5px;" onmouseover="this.stop()" onmouseout="this.start()"> <asp:PlaceHolder ID="newsPlaceHolder" runat="server"></asp:PlaceHolder></marquee>
+                        </p>
+                    </div>
+
+                    <div class="logo" style="width:31%!important; margin-left:10px;">
+                    <center><img src="../img/logo.png" border="0" style="height:75px"/></center>
+
+                </div>
+    
+                    <!-- display box -->
+                    <div class="displaybox" style="width:22%!important; float:right; font-weight:bold; padding:10px; text-align:center;">
+                        <!-- display box -->
+                        <span id="lblmorning">WELCOME</span>, <span id="lblname"><%= Session["UserName"].ToString()%></span><br/>
+                        
+                        <span style="color: #65ac42;"></span><span style="color: #e9268e;"><span>ID : <a href="UpdateMember.aspx"><%= Session["UserCode"].ToString()%></a> <%--(<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>)--%></span></span><br />
+                        <span id="Span1"></span><%--Total Pairs (<asp:Label ID="TotalPairs" runat="server" ForeColor="#e9268e" Text=""></asp:Label>)--%>
+                        <a href="UserHome.aspx" style="color: #666666">DASHBOARD</a>
+                        | <asp:LinkButton ID="LinkButton2" runat="server" Text="LOG OUT" ValidationGroup="login"
+                        OnClick="LinkButton1_Click"></asp:LinkButton>
+                      <br />
+                           <span style="font-size:10pt;color:#E82828;">
+                            <asp:Label ID="Label2" runat="server" Text="Repurchase Wallet"></asp:Label></span>
+                        <br />
+                        <span style="font-size:9pt;color:#E82828;">
+                            <asp:Label ID="lblMyWellet" runat="server" Text=""></asp:Label></span>
+                        <br />
+                       
+                        <!-- display box -->
+                        <br /></div>
+                    <!-- display box -->
+                    <!-- display end -->
+                </div>
+                <!-- Header -->
+            </div>
+            <!-- Header -->
+            <div style="float: left; width: 100%;">
+                <!-- middle -->
+                <div class="middlelogin">
+                    <!-- middle -->
+                   
+                    <div id="treeMenu">
+                     <div id="Div1">
+                    <ul><li><span></span><a href="UserHome.aspx" class"parent">
+                                            HOME</a></li>
+                    </ul>
+                    </div>
+                        <ul>
+                            
+                            <li><a href="#" class="parent">MY PROFILE
+                            </a><span></span>
+                                <div>
+                                    <ul>
+                                       <%-- <li><span></span><a href="Welcomeletter.aspx">WELCOME
+                                            LETTER</a></li>--%>
+                                        <li><span></span><a href="UpdateMember.aspx">
+                                            EDIT PROFILE</a></li>
+                                        <li><span></span><a href="ChangePassword.aspx">
+                                            CHANGE LOGIN PASSWORD</a></li>
+                                          <li><span></span><a href="GrowIcard.aspx">
+                                            I CARD</a></li>
+                                         <li><span></span><a href="Kyc.aspx">
+                                            KYC</a></li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                           <%-- <li><a href="#" class="parent">GENEALOGY</a><span></span>
+                                <div>
+                                    <ul>
+                                         <li><span></span><a href="Tree.aspx">
+                                            MY TREE</a></li>
+                                       
+                                        <li><span></span><a href="MyDirects.aspx">MY
+                                            DIRECTS</a></li>
+                                     
+                                        <li><span></span><a href="ListView.aspx?side=Left">MY LEFT</a></li>
+                                        <li><span></span><a href="ListView.aspx?side=Right">MY RIGHT</a></li>
+                                           <li><span></span><a href="CashBackIncomeLeft.aspx">CASH BACK INCOME Left</a></li>
+                                        <li><span></span><a href="CashBackIncomeRight.aspx">CASH BACK INCOME Right</a></li>
+                                    
+                                    </ul>
+                                </div>
+                            </li>--%>
+
+                             <li><a href="#" class="parent">PURCHASE & ORDER
+                                </a>
+                                    <div>
+                                        <ul>
+                                            <li><span></span><a href="AddStoreInvoiceOLD.aspx">NEW ORDER</a></li>
+                                            <li><span></span><a href="ViewOrders1.aspx">VIEW INVOICE</a></li>
+                                              <%-- <li><span></span><a href="RepurchaseLeft.aspx">REPURCHASE LEFT</a></li>
+                                              <li><span></span><a href="RepurchaseRight.aspx">REPURCHASE RIGHT</a></li>--%>
+                                             <li><span></span><a href="Repurhase_Right.aspx">REPURCHASE SUMMARY</a></li>
+                                              <%-- <li><span></span><a href="RePurchaseBonanza.aspx">CAPING REPORT</a></li>--%>
+
+                                        </ul>
+                                    </div>
+                                </li>
+
+                            <li><span></span><a href="#" class="parent">
+                                REPORTS</a>
+                                <div>
+                                    <ul>
+                                      <%--  <li><span></span><a href="BinayIncome.aspx">BINARY INCOME</a></li>--%>
+                                        <li><span></span><a href="CashBackIncome.aspx">CASH BACK INCOME</a></li>
+                                           <li><span></span><a href="SelfCashBack.aspx">SELF CASH BACK INCOME</a></li>
+                                           <li><span></span><a href="performancebonus.aspx">PERFORMANCE BONUS</a></li>
+                                        <li><span></span><a href="RepurchaseIncome.aspx">REPURCHASE INCOME</a></li>
+                                          <li><span></span><a href="DirectIncome.aspx">DIRECT INCOME</a></li>
+                                        <li><span></span><a href="MyPayouts.aspx">PAYOUT SUMMARY</a></li>
+                                         <li><span></span><a href="mypayments.aspx">MY PAYMENTS</a></li>
+                                          <li><span></span><a href="RepurchaseWalletSummary.aspx">REPURCHASE WALLET SUMMARY</a></li>
+                                          <li><span></span><a href="RewardStatus.aspx">REWARD SUMMARY</a></li>
+                                          <li><span></span><a href="RewardList.aspx">REWARD LIST</a></li>
+                                         
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="width: 675px; float: left; height: auto; margin: 0 0 0 10px;">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                            </asp:ContentPlaceHolder>
+                    </div>
+                    <!-- middle -->
+                </div>
+                <!-- middle -->
+            </div>
+            <div class="footer">
+                <div class="footerlogo">
+                </div>
+                <div class="footermenu">
+                   
+                    <br>
+                    <br>
+                    Copyright © 2021 <%=ConfigurationManager.AppSettings["CoName"].ToString()%>. All Rights Reserved.
+                </div>
+            </div>
+            <!-- wrapper -->
+        </div>
+    </div>
+
+
+    </form>
+</body>
+</html>

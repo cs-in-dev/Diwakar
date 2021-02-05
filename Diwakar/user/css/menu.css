@@ -1,0 +1,30 @@
+#mainnav{width:99%;height:28px;margin:10px 0 0 10px; padding:0;  float:left;}
+#mainnav li{display:inline;padding:0;margin:0;list-style:none;background:none;}
+#mainnav a{height:28px;color:#6E7577;font-size:14px;display:block;float:left;text-align:center;line-height:26px;font-family:Arial,Helvetica,sans-serif;margin:0 1px 0 0;position:relative;cursor:pointer;}
+#mainnav a:hover{text-decoration:none;opacity:0.85;}
+#mainnav .active a:hover{opacity:1;}
+#mainnav span{display:block;height:100%;padding:0 10px 0 4px;margin-left:4px;}
+#mainnav a:hover,#mainnav a.active{background:transparent url(bg-elements.jpg) no-repeat 0 0;color:#fff;}
+#mainnav a:hover span,#mainnav .active span{background:transparent url(bg-elements.jpg) no-repeat 100% -40px;}
+#mainnav ul{height:28px;padding:0 0 0 0; float:left; background:url(bg-h.gif) repeat-x left top;line-height:28px;}
+#mainnav ul span{padding:0;margin-left:0;width:4px;height:4px;}#mainnav .home ul{left:0;}
+#mainnav .what ul{left:0;}#mainnav .who ul{left:15px;}#mainnav .start ul{left:125px;}
+#mainnav .start ul{left:140px;}#mainnav .support ul{left:225px;}
+#mainnav .addons ul{left:285px;}#mainnav .developers ul{left:325px;}
+#mainnav .downloads ul{right:20px;}#mainnav li li{display:block;float:left;}
+#mainnav li li.first{height:100%;padding:0 0 0 10px;}#mainnav li li a,#mainnav li.active li a{display:inline;height:auto;background:none;color:#6E7577;font-size:12px;float:none;margin:0 10px 0 0;line-height:normal;}#mainnav li li.active a{font-weight:bold;}#mainnav li li a:hover,#mainnav li.active li a:hover,#mainnav li li.active a,#mainnav li.active li.active a{color:#000;}
+.space{
+	width:10px; 
+	float:left;
+}
+
+.menubg{
+	height:50px;
+	padding:0;
+	margin:0px 0 5px 0;
+	float:left;
+	padding:0;
+	width:960px;
+	background:url(mpbg.jpg) left no-repeat;
+	text-align:center;
+}
