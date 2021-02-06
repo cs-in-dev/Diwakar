@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace totalfuturcare.User {
-    
-    
-    public partial class AddStoreInvoiceOLD {
-        
+namespace totalfuturcare.User
+{
+
+
+    public partial class AddStoreInvoiceOLD
+    {
+
         /// <summary>
         /// RequiredFieldValidator9 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator9;
-        
+
         /// <summary>
         /// TextBox1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
-        
+
         /// <summary>
         /// RequiredFieldValidator10 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator10;
-        
+
         /// <summary>
         /// TextBox2 control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox2;
-        
+
         /// <summary>
         /// RequiredFieldValidator11 control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator11;
-        
+
         /// <summary>
         /// TextBox4 control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox4;
-        
+
         /// <summary>
         /// RequiredFieldValidator12 control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator12;
-        
+
         /// <summary>
         /// TextBox5 control.
         /// </summary>
@@ -83,16 +85,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox5;
-        
-        /// <summary>
-        /// ddlType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlType;
-        
+
         /// <summary>
         /// UpdatePanel2 control.
         /// </summary>
@@ -101,7 +94,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel2;
-        
+
         /// <summary>
         /// ProductName control.
         /// </summary>
@@ -110,7 +103,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ProductName;
-        
+
         /// <summary>
         /// RequiredFieldValidator2 control.
         /// </summary>
@@ -119,7 +112,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-        
+
         /// <summary>
         /// autoCompleteExtender2 control.
         /// </summary>
@@ -128,7 +121,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender autoCompleteExtender2;
-        
+
         /// <summary>
         /// UpdatePanel10 control.
         /// </summary>
@@ -137,7 +130,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel10;
-        
+
         /// <summary>
         /// imageload control.
         /// </summary>
@@ -146,7 +139,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor imageload;
-        
+
         /// <summary>
         /// Image1 control.
         /// </summary>
@@ -155,7 +148,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Image1;
-        
+
         /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
@@ -164,7 +157,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
+
         /// <summary>
         /// ProductCode control.
         /// </summary>
@@ -173,7 +166,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ProductCode;
-        
+
         /// <summary>
         /// RequiredFieldValidator3 control.
         /// </summary>
@@ -182,7 +175,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
-        
+
         /// <summary>
         /// PID control.
         /// </summary>
@@ -191,7 +184,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField PID;
-        
+
         /// <summary>
         /// autoCompleteExtender1 control.
         /// </summary>
@@ -200,7 +193,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender autoCompleteExtender1;
-        
+
         /// <summary>
         /// UpdatePanel3 control.
         /// </summary>
@@ -209,7 +202,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel3;
-        
+
         /// <summary>
         /// MRP control.
         /// </summary>
@@ -218,7 +211,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox MRP;
-        
+
         /// <summary>
         /// UpdatePanel7 control.
         /// </summary>
@@ -227,7 +220,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel7;
-        
+
         /// <summary>
         /// DP control.
         /// </summary>
@@ -236,7 +229,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox DP;
-        
+
         /// <summary>
         /// UpdatePanel4 control.
         /// </summary>
@@ -245,7 +238,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel4;
-        
+
         /// <summary>
         /// BV control.
         /// </summary>
@@ -254,7 +247,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox BV;
-        
+
         /// <summary>
         /// UpdatePanel9 control.
         /// </summary>
@@ -263,7 +256,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel9;
-        
+
         /// <summary>
         /// CGST control.
         /// </summary>
@@ -272,7 +265,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CGST;
-        
+
         /// <summary>
         /// UpdatePanel11 control.
         /// </summary>
@@ -281,7 +274,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel11;
-        
+
         /// <summary>
         /// SGST control.
         /// </summary>
@@ -290,7 +283,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox SGST;
-        
+
         /// <summary>
         /// UpdatePanel12 control.
         /// </summary>
@@ -299,7 +292,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel12;
-        
+
         /// <summary>
         /// IGST control.
         /// </summary>
@@ -308,7 +301,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox IGST;
-        
+
         /// <summary>
         /// UpdatePanel8 control.
         /// </summary>
@@ -317,7 +310,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel8;
-        
+
         /// <summary>
         /// Tax control.
         /// </summary>
@@ -326,7 +319,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Tax;
-        
+
         /// <summary>
         /// UpdatePanel5 control.
         /// </summary>
@@ -335,7 +328,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel5;
-        
+
         /// <summary>
         /// Qty control.
         /// </summary>
@@ -344,7 +337,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Qty;
-        
+
         /// <summary>
         /// Qty_FilteredTextBoxExtender control.
         /// </summary>
@@ -353,7 +346,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender Qty_FilteredTextBoxExtender;
-        
+
         /// <summary>
         /// revQty control.
         /// </summary>
@@ -362,7 +355,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revQty;
-        
+
         /// <summary>
         /// UpdatePanel14 control.
         /// </summary>
@@ -371,7 +364,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel14;
-        
+
         /// <summary>
         /// SPDiscount control.
         /// </summary>
@@ -380,7 +373,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox SPDiscount;
-        
+
         /// <summary>
         /// UpdatePanel6 control.
         /// </summary>
@@ -389,7 +382,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel6;
-        
+
         /// <summary>
         /// Amount control.
         /// </summary>
@@ -398,7 +391,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Amount;
-        
+
         /// <summary>
         /// Button1 control.
         /// </summary>
@@ -407,7 +400,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
+
         /// <summary>
         /// UpdatePanel13 control.
         /// </summary>
@@ -416,7 +409,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel13;
-        
+
         /// <summary>
         /// CashBack control.
         /// </summary>
@@ -425,7 +418,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CashBack;
-        
+
         /// <summary>
         /// UpdatePanel15 control.
         /// </summary>
@@ -434,7 +427,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel15;
-        
+
         /// <summary>
         /// txtselcashback control.
         /// </summary>
@@ -443,7 +436,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtselcashback;
-        
+
         /// <summary>
         /// Panel1 control.
         /// </summary>
@@ -452,7 +445,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
-        
+
         /// <summary>
         /// GridView1 control.
         /// </summary>
@@ -461,7 +454,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-        
+
         /// <summary>
         /// TotalDP control.
         /// </summary>
@@ -470,7 +463,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TotalDP;
-        
+
         /// <summary>
         /// TotalBV control.
         /// </summary>
@@ -479,7 +472,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TotalBV;
-        
+
         /// <summary>
         /// CourierCharges control.
         /// </summary>
@@ -488,7 +481,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label CourierCharges;
-        
+
         /// <summary>
         /// TotalAmount control.
         /// </summary>
@@ -497,7 +490,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TotalAmount;
-        
+
         /// <summary>
         /// TotalQty control.
         /// </summary>
@@ -506,7 +499,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TotalQty;
-        
+
         /// <summary>
         /// txtpaymentdate control.
         /// </summary>
@@ -515,7 +508,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtpaymentdate;
-        
+
         /// <summary>
         /// CalendarExtender2 control.
         /// </summary>
@@ -524,7 +517,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender2;
-        
+
         /// <summary>
         /// RequiredFieldValidator8 control.
         /// </summary>
@@ -533,7 +526,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
-        
+
         /// <summary>
         /// DropDownList1 control.
         /// </summary>
@@ -542,7 +535,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-        
+
         /// <summary>
         /// RequiredFieldValidator1 control.
         /// </summary>
@@ -551,7 +544,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
+
         /// <summary>
         /// Label4 control.
         /// </summary>
@@ -560,7 +553,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-        
+
         /// <summary>
         /// Button4 control.
         /// </summary>
@@ -569,7 +562,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button4;
-        
+
         /// <summary>
         /// panelcheque control.
         /// </summary>
@@ -578,7 +571,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panelcheque;
-        
+
         /// <summary>
         /// lblChecqueNo control.
         /// </summary>
@@ -587,7 +580,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblChecqueNo;
-        
+
         /// <summary>
         /// txtChecqueNo control.
         /// </summary>
@@ -596,7 +589,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtChecqueNo;
-        
+
         /// <summary>
         /// rf1 control.
         /// </summary>
@@ -605,7 +598,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rf1;
-        
+
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -614,7 +607,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
+
         /// <summary>
         /// ChecqueDate control.
         /// </summary>
@@ -623,7 +616,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ChecqueDate;
-        
+
         /// <summary>
         /// CE1 control.
         /// </summary>
@@ -632,7 +625,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CE1;
-        
+
         /// <summary>
         /// RequiredFieldValidator4 control.
         /// </summary>
@@ -641,7 +634,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
-        
+
         /// <summary>
         /// Label2 control.
         /// </summary>
@@ -650,7 +643,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-        
+
         /// <summary>
         /// txtBankName control.
         /// </summary>
@@ -659,7 +652,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBankName;
-        
+
         /// <summary>
         /// RequiredFieldValidator5 control.
         /// </summary>
@@ -668,7 +661,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
-        
+
         /// <summary>
         /// Label3 control.
         /// </summary>
@@ -677,7 +670,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
+
         /// <summary>
         /// panel5 control.
         /// </summary>
@@ -686,7 +679,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panel5;
-        
+
         /// <summary>
         /// lblDDNO control.
         /// </summary>
@@ -695,7 +688,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDDNO;
-        
+
         /// <summary>
         /// txtddno control.
         /// </summary>
@@ -704,7 +697,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtddno;
-        
+
         /// <summary>
         /// RequiredFieldValidator15 control.
         /// </summary>
@@ -713,7 +706,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator15;
-        
+
         /// <summary>
         /// Label13 control.
         /// </summary>
@@ -722,7 +715,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label13;
-        
+
         /// <summary>
         /// txtdddate control.
         /// </summary>
@@ -731,7 +724,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtdddate;
-        
+
         /// <summary>
         /// CalendarExtender4 control.
         /// </summary>
@@ -740,7 +733,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender4;
-        
+
         /// <summary>
         /// RequiredFieldValidator16 control.
         /// </summary>
@@ -749,7 +742,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator16;
-        
+
         /// <summary>
         /// Label14 control.
         /// </summary>
@@ -758,7 +751,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label14;
-        
+
         /// <summary>
         /// txtddbankname control.
         /// </summary>
@@ -767,7 +760,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtddbankname;
-        
+
         /// <summary>
         /// RequiredFieldValidator17 control.
         /// </summary>
@@ -776,7 +769,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator17;
-        
+
         /// <summary>
         /// Label15 control.
         /// </summary>
@@ -785,7 +778,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label15;
-        
+
         /// <summary>
         /// panel2 control.
         /// </summary>
@@ -794,7 +787,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panel2;
-        
+
         /// <summary>
         /// Label6 control.
         /// </summary>
@@ -803,7 +796,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label6;
-        
+
         /// <summary>
         /// txtrefno control.
         /// </summary>
@@ -812,7 +805,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtrefno;
-        
+
         /// <summary>
         /// RequiredFieldValidator6 control.
         /// </summary>
@@ -821,7 +814,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
-        
+
         /// <summary>
         /// Label9 control.
         /// </summary>
@@ -830,7 +823,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label9;
-        
+
         /// <summary>
         /// txtdate control.
         /// </summary>
@@ -839,7 +832,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtdate;
-        
+
         /// <summary>
         /// CalendarExtender1 control.
         /// </summary>
@@ -848,7 +841,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
-        
+
         /// <summary>
         /// RequiredFieldValidator7 control.
         /// </summary>
@@ -857,7 +850,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
-        
+
         /// <summary>
         /// Label12 control.
         /// </summary>
@@ -866,7 +859,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label12;
-        
+
         /// <summary>
         /// panel4 control.
         /// </summary>
@@ -875,7 +868,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panel4;
-        
+
         /// <summary>
         /// Label5 control.
         /// </summary>
@@ -884,7 +877,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label5;
-        
+
         /// <summary>
         /// txtneftrefNo control.
         /// </summary>
@@ -893,7 +886,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtneftrefNo;
-        
+
         /// <summary>
         /// RequiredFieldValidator13 control.
         /// </summary>
@@ -902,7 +895,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator13;
-        
+
         /// <summary>
         /// Label8 control.
         /// </summary>
@@ -911,7 +904,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label8;
-        
+
         /// <summary>
         /// txtnNeftdate control.
         /// </summary>
@@ -920,7 +913,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtnNeftdate;
-        
+
         /// <summary>
         /// CalendarExtender3 control.
         /// </summary>
@@ -929,7 +922,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender3;
-        
+
         /// <summary>
         /// RequiredFieldValidator14 control.
         /// </summary>
@@ -938,7 +931,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator14;
-        
+
         /// <summary>
         /// Label10 control.
         /// </summary>
@@ -947,7 +940,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label10;
-        
+
         /// <summary>
         /// panel6 control.
         /// </summary>
@@ -956,7 +949,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panel6;
-        
+
         /// <summary>
         /// Label11 control.
         /// </summary>
@@ -965,7 +958,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label11;
-        
+
         /// <summary>
         /// txtreffno control.
         /// </summary>
@@ -974,7 +967,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtreffno;
-        
+
         /// <summary>
         /// RequiredFieldValidator18 control.
         /// </summary>
@@ -983,7 +976,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator18;
-        
+
         /// <summary>
         /// Label16 control.
         /// </summary>
@@ -992,7 +985,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label16;
-        
+
         /// <summary>
         /// txttransationsdate control.
         /// </summary>
@@ -1001,7 +994,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txttransationsdate;
-        
+
         /// <summary>
         /// CalendarExtender5 control.
         /// </summary>
@@ -1010,7 +1003,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender5;
-        
+
         /// <summary>
         /// RequiredFieldValidator19 control.
         /// </summary>
@@ -1019,7 +1012,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator19;
-        
+
         /// <summary>
         /// Label17 control.
         /// </summary>
@@ -1028,7 +1021,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label17;
-        
+
         /// <summary>
         /// Button2 control.
         /// </summary>
@@ -1037,7 +1030,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
-        
+
         /// <summary>
         /// Label7 control.
         /// </summary>
@@ -1046,7 +1039,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label7;
-        
+
         /// <summary>
         /// Panel3 control.
         /// </summary>
@@ -1055,7 +1048,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel3;
-        
+
         /// <summary>
         /// TextBox6 control.
         /// </summary>
@@ -1064,7 +1057,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox6;
-        
+
         /// <summary>
         /// Button3 control.
         /// </summary>
@@ -1073,7 +1066,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button3;
-        
+
         /// <summary>
         /// HiddenField1 control.
         /// </summary>
@@ -1082,7 +1075,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HiddenField1;
-        
+
         /// <summary>
         /// HiddenField3 control.
         /// </summary>
@@ -1091,7 +1084,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HiddenField3;
-        
+
         /// <summary>
         /// HiddenField4 control.
         /// </summary>
@@ -1100,7 +1093,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HiddenField4;
-        
+
         /// <summary>
         /// HiddenField5 control.
         /// </summary>
@@ -1109,7 +1102,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HiddenField5;
-        
+
         /// <summary>
         /// HiddenField6 control.
         /// </summary>
@@ -1118,7 +1111,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HiddenField6;
-        
+
         /// <summary>
         /// HiddenField7 control.
         /// </summary>
@@ -1127,7 +1120,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HiddenField7;
-        
+
         /// <summary>
         /// HiddenField8 control.
         /// </summary>
@@ -1136,7 +1129,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HiddenField8;
-        
+
         /// <summary>
         /// HiddenField9 control.
         /// </summary>
@@ -1145,7 +1138,7 @@ namespace totalfuturcare.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField HiddenField9;
-        
+
         /// <summary>
         /// HiddenField10 control.
         /// </summary>

@@ -183,16 +183,9 @@ namespace totalfuturcare.User
         {
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ToString());
             SqlCommand cmd = new SqlCommand("", con);
-            if (ddlType.SelectedValue == "NONECB")
-            {
-                cmd.CommandText = "select *,dbo.GETAVLQTY(productId,@FrenchiseID)as AQTY from ProductRepurchase where ProductName = @ProductName and Status != 1 and CashBack=0";
-            }
-            else
-            {
-                cmd.CommandText = "select *,dbo.GETAVLQTY(productId,@FrenchiseID)as AQTY from ProductRepurchase where ProductName = @ProductName and Status != 1 and CashBack>0";
-            }
-
-
+            
+                cmd.CommandText = "select *,dbo.GETAVLQTY(productId,@FrenchiseID)as AQTY from ProductRepurchase where ProductName = @ProductName and Status != 1 ";
+            
             cmd.Parameters.AddWithValue("@productName", ProductName.Text);
             cmd.Parameters.AddWithValue("@FrenchiseID", ConfigurationManager.AppSettings["FrenchiseID"].ToString());
             con.Open();
@@ -233,15 +226,9 @@ namespace totalfuturcare.User
         {
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ToString());
             SqlCommand cmd = new SqlCommand("", con);
-            if (ddlType.SelectedValue == "NONECB")
-            {
-                cmd.CommandText = "select *,dbo.GETAVLQTY(productId,@FrenchiseID)as AQTY from ProductRepurchase where ProductCode =@Pid and Status != 1 and CashBack=0";
-            }
-            else
-            {
-                cmd.CommandText = "select *,dbo.GETAVLQTY(productId,@FrenchiseID)as AQTY from ProductRepurchase where ProductCode =@Pid and Status != 1 and CashBack>0";
-            }
-
+            
+                cmd.CommandText = "select *,dbo.GETAVLQTY(productId,@FrenchiseID)as AQTY from ProductRepurchase where ProductCode =@Pid and Status != 1";
+           
             cmd.Parameters.AddWithValue("@Pid", ProductCode.Text);
             cmd.Parameters.AddWithValue("@FrenchiseID", ConfigurationManager.AppSettings["FrenchiseID"].ToString());
             con.Open();
@@ -384,169 +371,6 @@ namespace totalfuturcare.User
             ProductName.Focus();
         }
 
-        //protected void btnSubmit_Click(object sender, EventArgs e)
-        //{
-        //    //foreach (DataRow item in dt.Rows)
-        //    //{
-        //    //    string Pid = item[0].ToString();
-        //    //    string pname = item[1].ToString();
-        //    //    string mrp = item[2].ToString();
-        //    //    string Dp = item[3].ToString();
-        //    //    string BV = item[4].ToString();
-        //    //    string tax = item[5].ToString();
-        //    //    string qty = item[6].ToString();
-        //    //    string Amt = item[7].ToString();
-
-        //    //    //if (insertquery.Length == 0)
-
-        //    //    //    insertquery = "EXEC [dbo].[sp_InsertMasterDetInv] " + sOrderId + ",'" + Pid + "'," + qty + ",'DP'";
-        //    //    //else
-        //    //    //    insertquery += ";EXEC [dbo].[sp_InsertMasterDetInv] " + sOrderId + ",'" + Pid + "'," + qty + ",'DP'";
-
-        //    //}
-
-        //   // string insertquery = "";
-
-        //    //DataTable dt = (DataTable)ViewState["DT"];
-        //   // string sOrderId = "";
-        //   // string bnchinvcid = "";
-        //   // con.Open();
-
-        //    //int PayStatus;
-
-        //    //string z1 = "insert into OrderMaster([Date],MemberID,FrenchiseID,Status,PayStatus,PaymentDate,InvoiceType,Paymentmode,CourierCharges,Amount) values(getdate(),'" + Session["UserCode"].ToString() + "' ,'" + ConfigurationManager.AppSettings["FrenchiseID"].ToString() + "',0,0,'" + txtpaymentdate.Text + "','DP','" + DropDownList1.SelectedValue + "',0.00,'" + TotalAmount.Text + "')";
-        //    //SqlCommand cmd1 = new SqlCommand(z1, con);
-        //    //cmd1.ExecuteNonQuery();
-        //    //cmd1.Dispose();
-        //    //cmd1.Parameters.Clear();
-        //    //cmd1.CommandText = "select  SCOPE_IDENTITY()";
-        //    //sOrderId = cmd1.ExecuteScalar().ToString();
-        //    //cmd1.CommandText = "select dbo.GetNextBranchInvoiceNo('" + ConfigurationManager.AppSettings["FrenchiseID"].ToString() + "')";
-        //    //bnchinvcid = cmd1.ExecuteScalar().ToString();
-        //    //cmd1.CommandText = "Update OrderMaster Set BranchInvoiceNo = " + bnchinvcid + " Where OrderID = " + sOrderId + " And FrenchiseID = '" + ConfigurationManager.AppSettings["FrenchiseID"].ToString() + "'";
-        //    //cmd1.ExecuteNonQuery();
-
-
-        //    //cmd1 = new SqlCommand("EXEC [dbo].[SyncLeftRightBussiness] " + Session["UserCode"] + ",'" + TotalBV.Text + "' ", con);
-        //    //  cmd1.ExecuteNonQuery();
-        //    //con.Close();
-
-        //    //foreach (DataRow item in dt.Rows)
-        //    //{
-        //    //    string Pid = item[0].ToString();
-        //    //    string pname = item[1].ToString();
-        //    //    string mrp = item[2].ToString();
-        //    //    string Dp = item[3].ToString();
-        //    //    string BV = item[4].ToString();
-        //    //    string tax = item[5].ToString();
-        //    //    string qty = item[6].ToString();
-        //    //    string Amt = item[7].ToString();
-
-        //    //    //if (insertquery.Length == 0)
-
-        //    //    //    insertquery = "EXEC [dbo].[sp_InsertMasterDetInv] " + sOrderId + ",'" + Pid + "'," + qty + ",'DP'";
-        //    //    //else
-        //    //    //    insertquery += ";EXEC [dbo].[sp_InsertMasterDetInv] " + sOrderId + ",'" + Pid + "'," + qty + ",'DP'";
-
-        //    //}
-        //    //if (DropDownList1.SelectedValue == "Cheque")
-        //    //{
-        //    //    SqlCommand cmd = new SqlCommand("update OrderMaster set ChequeDate=@ChequeDate, BankName=@BankName, ChequeNo=@ChequeNo where orderid=@orderid", con);
-        //    //    cmd.Parameters.AddWithValue("@orderid", sOrderId);
-        //    //    cmd.Parameters.AddWithValue("@ChequeDate", ChecqueDate.Text);
-        //    //    cmd.Parameters.AddWithValue("@BankName", txtBankName.Text);
-        //    //    cmd.Parameters.AddWithValue("@ChequeNo", txtChecqueNo.Text);
-        //    //    con.Open();
-        //    //    cmd.ExecuteNonQuery().ToString();
-        //    //    con.Close();
-        //    //}
-
-        //    //else if (DropDownList1.SelectedValue == "IMPS")
-        //    //{
-        //    //    //SqlCommand cmd = new SqlCommand("update OrderMaster set Referencenumber=@Referencenumber,Impsdate=@Impsdate,Impsamount=@Impsamount where orderid=@orderid ", con);
-
-        //    //    SqlCommand cmd = new SqlCommand("update OrderMaster set Referencenumber=@Referencenumber,Impsdate=@Impsdate where orderid=@orderid ", con);
-        //    //    cmd.Parameters.AddWithValue("@orderid", sOrderId);
-        //    //    cmd.Parameters.AddWithValue("@Referencenumber", txtrefno.Text);
-        //    //    cmd.Parameters.AddWithValue("@Impsdate", txtdate.Text);
-        //    //    // cmd.Parameters.AddWithValue("@Impsamount", txtAmount.Text);
-        //    //    con.Open();
-        //    //    cmd.ExecuteNonQuery().ToString();
-        //    //    con.Close();
-        //    //}
-
-        //    //SqlCommand cmd2 = new SqlCommand(insertquery, con);
-        //    //con.Open();
-        //    //cmd2.ExecuteNonQuery();
-        //    //con.Close();
-        //    //SqlCommand cmdid = new SqlCommand("dbo.Distribute_Level_Repurchase", con);
-        //    //cmdid.CommandType = CommandType.StoredProcedure;
-        //    //cmdid.Parameters.AddWithValue("@OrderID", sOrderId);
-        //    //con.Open();
-        //    //cmdid.ExecuteNonQuery();
-        //    //con.Close();
-        //   // TextBox txt = new TextBox();
-        //   // txt.Text = "";
-        //    //Label7.Text = "Product Saved Successfully";
-
-        //    /// end 
-        //    /// 
-
-        //    //string name = "";
-        //    //string email = "";
-        //    //SqlConnection con1 = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ToString());
-        //    //SqlCommand cmd3 = new SqlCommand("select * from tblmembermaster where usercode='"+Session["UserCode"]+"'", con1);
-
-        //    //con1.Open();
-        //    //SqlDataReader dr = cmd3.ExecuteReader();
-        //    //while (dr.Read())
-        //    //{
-        //    //    name = dr["UserName"].ToString();
-        //    //    email = dr["Email"].ToString();
-
-        //    //}
-        //    //dr.Close();
-        //    //con1.Close();
-
-
-        //    //string date1="";
-        //    //string amount="";
-        //    //string paymentmode = "";
-        //    //SqlConnection con2 = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ToString());
-        //    //SqlCommand cmd4 = new SqlCommand("select * from ordermaster where orderid='" + sOrderId + "'", con2);
-
-        //    //con2.Open();
-        //    //SqlDataReader dr1 = cmd4.ExecuteReader();
-        //    //while (dr1.Read())
-        //    //{
-        //    //    date1 = DateTime.Parse(dr1["Date"].ToString()).Date.ToString("dd MMM yyyy");
-        //    //    amount = dr1["Amount"].ToString();
-        //    //    paymentmode = dr1["PaymentMode"].ToString();
-        //    //}
-        //    //dr1.Close();
-        //    //con2.Close();
-        //    //string Msg = "";
-        //    ////Msg = "Congratulation your Member ID is: " + Mid + " Password is: " + txtLoginPass.Text + " Please logon to " + System.Configuration.ConfigurationManager.AppSettings["URL"].ToString() + "";
-
-        //    //Msg = "Order details are as follow :<br /><br />OrderID :" + sOrderId + "<br />Date :" + date1 + "<br />Payment Mode :" + paymentmode + "<br />Amount :" + amount+ "<br /><br />You can login to view the invoice.<br /><br />Thanks,<br />With regards!<br /><br />RainSan Global Limited.";
-
-        //    //string msgadmin = "";
-
-        //    //msgadmin = "Order details are as follow :<br /><br />MemberID : "+ Session["UserCode"]+"<br/>Name : "+name+"<br />OrderID :"+sOrderId + "<br />Date :" +date1+ "<br />Payment Mode :" + paymentmode + "<br />Amount :" + amount ;
-
-        //    //Gen obj1 = new Gen();
-        //    //obj1.SendEmail("syedraiyan@gmail.com", msgadmin, Session["UserCode"]+"/"+name+ " Ordered Products with Order Id "+sOrderId, ConfigurationManager.AppSettings["Email"]);
-
-
-
-        //    //if (email != "")
-        //    //{
-        //    //    obj1.SendEmail(email, Msg, Session["UserCode"] + "/" + name + " Ordered Products with Order Id " + sOrderId, ConfigurationManager.AppSettings["Email"]);
-
-        //    //}
-
-        //}
-
         protected void CalcTotals()
         {
             Decimal TV = 0, TM = 0, TA = 0, TQ = 0, CB = 0;
@@ -676,8 +500,6 @@ namespace totalfuturcare.User
 
             try
             {
-
-
                 if (!CheckValidProduct())
                 {
                     MsgBox("Please Select All Cash Back Product or Non-Cash Back Product");
@@ -768,7 +590,7 @@ namespace totalfuturcare.User
                 con2.Close();
                 string Msg = "";
 
-                Msg = "Order details are as follow :<br /><br />OrderID :" + sOrderId + "<br />Date :" + date1 + "<br />Payment Mode :" + paymentmode + "<br />Amount :" + amount + "<br /><br />You can login to view the invoice.<br /><br />Thanks,<br />With regards!<br /><br /> Diwakar Retail Ltd.";
+                Msg = "Order details are as follow :<br /><br />OrderID :" + sOrderId + "<br />Date :" + date1 + "<br />Payment Mode :" + paymentmode + "<br />Amount :" + amount + "<br /><br />You can login to view the invoice.<br /><br />Thanks,<br />With regards!<br /><br /> Cyrashine Private Limited";
 
                 string msgadmin = "";
                 msgadmin = "Order details are as follow :<br /><br />MemberID : " + TextBox1.Text + "<br/>Name : " + name + "<br />OrderID :" + sOrderId + "<br />Date :" + date1 + "<br />Payment Mode :" + paymentmode + "<br />Amount :" + amount;
@@ -785,8 +607,6 @@ namespace totalfuturcare.User
 
             }
             Response.Redirect("GSTInvoice.aspx?ID=" + sOrderId + "&BVpointsTotal=" + Bvtotal);
-
-
         }
 
         private bool CheckValidProduct()
@@ -841,7 +661,6 @@ namespace totalfuturcare.User
 
             try
             {
-
                 DataTable dt = new DataTable();
                 dt.Columns.Add("ProductCode", typeof(string));
                 dt.Columns.Add("QTY", typeof(string));
@@ -849,8 +668,6 @@ namespace totalfuturcare.User
 
                 foreach (GridViewRow row in GridView1.Rows)
                 {
-
-
                     string ProductCode = row.Cells[0].Text;
                     string DP = "DP";
                     string uqty = row.Cells[9].Text;
@@ -922,7 +739,7 @@ namespace totalfuturcare.User
                 {
                     string Msg1 = "";
                     Gen obj = new Gen();
-                    Msg1 = "Thanks for ordering Diwakar Retail Ltd. products.Your Invoice number is '" + sOrderId + "' of Rs '" + TotalAmount.Text + "'";
+                    Msg1 = "Thanks for ordering cyrashine products.Your Invoice number is '" + sOrderId + "' of Rs '" + TotalAmount.Text + "'";
 
 
                     //SqlCommand cmdss = new SqlCommand("", con);
@@ -1009,7 +826,7 @@ namespace totalfuturcare.User
             int otp = rnd.Next(1000, 9999);
             Gen obj = new Gen();
 
-            //string msg = "Your OTP '" + otp + "' for redemption of Rs'" + TotalAmount.Text + "' at Diwakar Retail Ltd.FRANCHISE '" + ConfigurationManager.AppSettings["FrenchiseID"].ToString() + "'('" + name + "') for Order of RS '" + TotalAmount.Text + "'. Please share this code with operator for order payment.";
+            //string msg = "Your OTP '" + otp + "' for redemption of Rs'" + TotalAmount.Text + "' at cyrashine FRANCHISE '" + ConfigurationManager.AppSettings["FrenchiseID"].ToString() + "'('" + name + "') for Order of RS '" + TotalAmount.Text + "'. Please share this code with operator for order payment.";
             string msg = "Your OTP '" + otp + "' for redemption of Rs'" + TotalAmount.Text + "' at  franchise '" + ConfigurationManager.AppSettings["FrenchiseID"].ToString() + "' for Order of RS '" + TotalAmount.Text + "' and is valid for 10 minutes only";
 
             if (mobile != "")

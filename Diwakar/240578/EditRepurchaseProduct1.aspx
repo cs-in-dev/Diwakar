@@ -23,31 +23,6 @@
     </script>
     <table class="style2" style="margin-top: 50px;">
 
-        <%-- <tr>  <td style="text-align: right">
-            CategoryID</td>
-        <td style="text-align: left">
-            <asp:DropDownList ID="catidlist" runat="server" 
-                 DataTextField="CategoryName" 
-                DataValueField="CategoryID" Width="155px" AutoPostBack="True" 
-                onselectedindexchanged="catidlist_SelectedIndexChanged">
-                         </asp:DropDownList>
-                        </td>
-    </tr>--%>
-
-        <%--<tr>
-            <td style="text-align: right">
-                Product&nbsp; Name</td>
-            <td style="text-align: left">            
-               
-                <asp:DropDownList ID="DropDownList1" runat="server" Width="155px" 
-                    DataTextField="ProductName" 
-                    DataValueField="ProductID" 
-                    onselectedindexchanged="DropDownList1_SelectedIndexChanged1" 
-                    AutoPostBack="True">
-                </asp:DropDownList>
-               
-                </td>
-        </tr>--%>
         <tr>
             <td style="text-align: right">
                 <b>Main Category</b></td>
@@ -104,22 +79,22 @@
             <td style="text-align: right">MRP:</td>
             <td style="text-align: left">
                 <asp:TextBox ID="pricetxt" runat="server"></asp:TextBox>
-                <asp:FilteredTextBoxExtender ID="flrt1" runat="server" TargetControlID="pricetxt" FilterType="Numbers"></asp:FilteredTextBoxExtender>
+               <%-- <asp:FilteredTextBoxExtender ID="flrt1" runat="server" TargetControlID="pricetxt" FilterType="Numbers"></asp:FilteredTextBoxExtender>--%>
             </td>
         </tr>
 
         <tr>
             <td style="text-align: right">DP</td>
             <td style="text-align: left">
-                <asp:TextBox ID="txtbv0" runat="server"></asp:TextBox>
-                <asp:FilteredTextBoxExtender ID="txtbv0_FilteredTextBoxExtender" runat="server" TargetControlID="txtbv0" FilterType="Numbers"></asp:FilteredTextBoxExtender>
+                <asp:TextBox ID="txtDP" runat="server"></asp:TextBox>
+               <%-- <asp:FilteredTextBoxExtender ID="txtbv0_FilteredTextBoxExtender" runat="server" TargetControlID="txtbv0" FilterType="Numbers"></asp:FilteredTextBoxExtender>--%>
             </td>
         </tr>
         <tr>
             <td style="text-align: right">BV</td>
             <td style="text-align: left">
                 <asp:TextBox ID="txtbv" runat="server"></asp:TextBox>
-                <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" TargetControlID="txtbv" FilterType="Numbers"></asp:FilteredTextBoxExtender>
+              <%--  <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" TargetControlID="txtbv" FilterType="Numbers"></asp:FilteredTextBoxExtender>--%>
             </td>
         </tr>
         <tr>
@@ -141,80 +116,6 @@
                     ValidationGroup="v2" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
-
-        <tr>
-            <td style="text-align: right">IGST</td>
-            <td style="text-align: left">
-                <asp:TextBox ID="txtIGST" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server"
-                    ControlToValidate="txtIGST" ErrorMessage="Add IGST"
-                    ValidationGroup="v2" ForeColor="Red"></asp:RequiredFieldValidator>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right">Vat</td>
-            <td style="text-align: left">
-                <asp:TextBox ID="pricetxt0" runat="server"></asp:TextBox>
-                <asp:FilteredTextBoxExtender ID="pricetxt0_FilteredTextBoxExtender" runat="server" TargetControlID="pricetxt0" FilterType="Numbers"></asp:FilteredTextBoxExtender>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right">CashBack</td>
-            <td style="text-align: left">
-                <asp:TextBox ID="txtcashback" runat="server"></asp:TextBox>
-                <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender2" runat="server" TargetControlID="pricetxt0" FilterType="Numbers"></asp:FilteredTextBoxExtender>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right">CashBackMonth</td>
-            <td style="text-align: left">
-                <asp:TextBox ID="txtmonth" runat="server"></asp:TextBox>
-                <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender3" runat="server" TargetControlID="pricetxt0" FilterType="Numbers"></asp:FilteredTextBoxExtender>
-            </td>
-        </tr>
-
-        <tr>
-            <td style="text-align: right">Self CashBack</td>
-            <td style="text-align: left">
-                <asp:TextBox ID="txtselfcashback" runat="server" ValidationGroup="v2"></asp:TextBox>
-
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server"
-                    ControlToValidate="txtselfcashback" ErrorMessage="Enter CashBack."
-                    Style="color: #FF0000" ValidationGroup="v2"></asp:RequiredFieldValidator>
-
-            </td>
-        </tr>
-
-        <tr>
-            <td style="text-align: right">Self CashBackMonth</td>
-            <td style="text-align: left">
-                <asp:TextBox ID="txtselefcashbackmonth" runat="server" ValidationGroup="v2"></asp:TextBox>
-
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server"
-                    ControlToValidate="txtselefcashbackmonth" ErrorMessage="Enter Month."
-                    Style="color: #FF0000" ValidationGroup="v2"></asp:RequiredFieldValidator>
-
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right">Redemption Points</td>
-            <td style="text-align: left">
-                <asp:TextBox ID="txtredemption" runat="server"></asp:TextBox>
-                <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" TargetControlID="pricetxt0" FilterType="Numbers"></asp:FilteredTextBoxExtender>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right">Special Discount</td>
-            <td style="text-align: left">
-                <asp:TextBox ID="txtdiscount" runat="server" ValidationGroup="v2"></asp:TextBox>
-
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server"
-                    ControlToValidate="txtdiscount" ErrorMessage="Enter Redemtion Points."
-                    Style="color: #FF0000" ValidationGroup="v2"></asp:RequiredFieldValidator>
-
-            </td>
-        </tr>
-
 
         <tr>
             <td style="text-align: right">Image

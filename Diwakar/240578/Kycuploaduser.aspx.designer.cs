@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sabaic._19111973 {
-    
-    
-    public partial class Kycuploaduser {
-        
+namespace Sabaic._19111973
+{
+
+
+    public partial class Kycuploaduser
+    {
+
         /// <summary>
         /// pnlContents control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Sabaic._19111973 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlContents;
-        
+
         /// <summary>
         /// DropDownList1 control.
         /// </summary>
@@ -29,16 +31,7 @@ namespace Sabaic._19111973 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
+
         /// <summary>
         /// txtmemberid control.
         /// </summary>
@@ -47,7 +40,7 @@ namespace Sabaic._19111973 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtmemberid;
-        
+
         /// <summary>
         /// Button2 control.
         /// </summary>
@@ -56,7 +49,7 @@ namespace Sabaic._19111973 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
-        
+
         /// <summary>
         /// txtdatefrom control.
         /// </summary>
@@ -65,7 +58,7 @@ namespace Sabaic._19111973 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtdatefrom;
-        
+
         /// <summary>
         /// calender1 control.
         /// </summary>
@@ -74,7 +67,7 @@ namespace Sabaic._19111973 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender calender1;
-        
+
         /// <summary>
         /// txtdateto control.
         /// </summary>
@@ -83,7 +76,7 @@ namespace Sabaic._19111973 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtdateto;
-        
+
         /// <summary>
         /// CalendarExtender2 control.
         /// </summary>
@@ -92,7 +85,7 @@ namespace Sabaic._19111973 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender2;
-        
+
         /// <summary>
         /// Button3 control.
         /// </summary>
@@ -101,7 +94,7 @@ namespace Sabaic._19111973 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button3;
-        
+
         /// <summary>
         /// GridView1 control.
         /// </summary>
@@ -110,7 +103,7 @@ namespace Sabaic._19111973 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-        
+
         /// <summary>
         /// ImageButton1 control.
         /// </summary>

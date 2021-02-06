@@ -25,23 +25,6 @@
             &nbsp;</td>
     </tr>
      
-  
-    <%--<tr>
-     <td style="text-align: right">
-            CategoryID</td>
-        <td style="text-align: left;" >
-            <asp:DropDownList ID="DropDownList1" runat="server"  Width="150px"
-                DataSourceID="SqlDataSource1" DataTextField="CategoryName"  AppendDataBoundItems="true"
-                DataValueField="CategoryID" 
-                onselectedindexchanged="DropDownList1_SelectedIndexChanged" AutoPostBack="true" >
-                <asp:ListItem Text="Select" Value="-1"></asp:ListItem>
-            </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:conn %>" 
-                SelectCommand="SELECT [CategoryID], [CategoryName] FROM [CategoryMaster]" >
-            </asp:SqlDataSource>
-        </td>
-    </tr>--%>
         <tr>
             <td style="text-align: right">
                 <b>Main Category</b></td>
@@ -109,12 +92,12 @@
         <td style="text-align: right">
             DP</td>
         <td style="text-align: left">
-            <asp:TextBox ID="TextBox4" runat="server"  ValidationGroup="v2"
+            <asp:TextBox ID="txtDP" runat="server"  ValidationGroup="v2"
                  ></asp:TextBox>
            
   
              <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
-             ControlToValidate="TextBox4" ErrorMessage="Enter DP." 
+             ControlToValidate="txtDP" ErrorMessage="Enter DP." 
              style="color: #FF0000" ValidationGroup="v2"></asp:RequiredFieldValidator>
    
         </td>
@@ -150,100 +133,6 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server"
                     ControlToValidate="txtSGST" ErrorMessage="Add SGST"
                     ValidationGroup="v2" ForeColor="Red"></asp:RequiredFieldValidator>
-            </td>
-        </tr>
-
-        <tr>
-            <td style="text-align: right">IGST</td>
-            <td style="text-align: left">
-                <asp:TextBox ID="txtIGST" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server"
-                    ControlToValidate="txtIGST" ErrorMessage="Add IGST"
-                    ValidationGroup="v2" ForeColor="Red"></asp:RequiredFieldValidator>
-            </td>
-        </tr>
-    <tr>
-        <td style="text-align: right">
-            Vat</td>
-        <td style="text-align: left">
-            <asp:TextBox ID="TextBox5" runat="server"  ValidationGroup="v2"
-                 ></asp:TextBox>
-           
-  
-             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
-             ControlToValidate="TextBox5" ErrorMessage="Enter Vat." 
-             style="color: #FF0000" ValidationGroup="v2"></asp:RequiredFieldValidator>
-   
-  
-        </td>
-    </tr>
-        <tr>
-            <td style="text-align: right">CashBack</td>
-            <td style="text-align: left">
-                <asp:TextBox ID="txtcashback" runat="server" ValidationGroup="v2"></asp:TextBox>
-
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
-                    ControlToValidate="txtcashback" ErrorMessage="Enter CashBack."
-                    Style="color: #FF0000" ValidationGroup="v2"></asp:RequiredFieldValidator>
-
-            </td>
-        </tr>
-
-        <tr>
-            <td style="text-align: right">CashBackMonth</td>
-            <td style="text-align: left">
-                <asp:TextBox ID="txtmonth" runat="server" ValidationGroup="v2"></asp:TextBox>
-
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
-                    ControlToValidate="txtmonth" ErrorMessage="Enter Month."
-                    Style="color: #FF0000" ValidationGroup="v2"></asp:RequiredFieldValidator>
-
-            </td>
-        </tr>
-
-         <tr>
-            <td style="text-align: right">Self CashBack</td>
-            <td style="text-align: left">
-                <asp:TextBox ID="txtselfcashback" runat="server" ValidationGroup="v2"></asp:TextBox>
-
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server"
-                    ControlToValidate="txtselfcashback" ErrorMessage="Enter CashBack."
-                    Style="color: #FF0000" ValidationGroup="v2"></asp:RequiredFieldValidator>
-
-            </td>
-        </tr>
-
-        <tr>
-            <td style="text-align: right">Self CashBackMonth</td>
-            <td style="text-align: left">
-                <asp:TextBox ID="txtselefcashbackmonth" runat="server" ValidationGroup="v2"></asp:TextBox>
-
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server"
-                    ControlToValidate="txtselefcashbackmonth" ErrorMessage="Enter Month."
-                    Style="color: #FF0000" ValidationGroup="v2"></asp:RequiredFieldValidator>
-
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right">Redemtion Points</td>
-            <td style="text-align: left">
-                <asp:TextBox ID="txtredemption" runat="server" ValidationGroup="v2"></asp:TextBox>
-
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
-                    ControlToValidate="txtredemption" ErrorMessage="Enter Redemtion Points."
-                    Style="color: #FF0000" ValidationGroup="v2"></asp:RequiredFieldValidator>
-
-            </td>
-        </tr>
-         <tr>
-            <td style="text-align: right">Special Discount</td>
-            <td style="text-align: left">
-                <asp:TextBox ID="txtdiscount" runat="server" ValidationGroup="v2"></asp:TextBox>
-
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server"
-                    ControlToValidate="txtdiscount" ErrorMessage="Enter Redemtion Points."
-                    Style="color: #FF0000" ValidationGroup="v2"></asp:RequiredFieldValidator>
-
             </td>
         </tr>
         

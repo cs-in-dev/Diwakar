@@ -49,10 +49,10 @@ namespace GrowTogether._240578
                 return;
             }
 
-            Double amount = Double.Parse(TextBox4.Text);
-            float gst = float.Parse(txtIGST.Text);
-            Double total = (amount * 100) / (gst + 100);
-            Double total2 = total;
+            Double amount = Double.Parse(txtDP.Text);
+            //float gst = float.Parse(txtIGST.Text);
+            //Double total = (amount * 100) / (gst + 100);
+            Double total2 = amount;
 
             Double CGST = total2;
             Double CGST1 = Double.Parse(txtCGST.Text);
@@ -65,10 +65,10 @@ namespace GrowTogether._240578
             Double SubSGST = (SGST * SGST1) / 100;
             Double totalSGST = SubSGST;
 
-            Double IGST = total2;
-            Double IGST1 = Double.Parse(txtIGST.Text);
-            Double SubIGST = (IGST * IGST1) / 100;
-            Double totalIGST = SubIGST;
+            //Double IGST = total2;
+            //Double IGST1 = Double.Parse(txtIGST.Text);
+            //Double SubIGST = (IGST * IGST1) / 100;
+            //Double totalIGST = SubIGST;
 
 
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ToString());
@@ -81,21 +81,21 @@ namespace GrowTogether._240578
             cmd.Parameters.AddWithValue("@ImageUrl", Image1.ImageUrl);
             cmd.Parameters.AddWithValue("@CategoryID ", ddlCategoryID.SelectedValue);
             cmd.Parameters.AddWithValue("@Detail", ProductEditor.Content);
-            cmd.Parameters.AddWithValue("@salesamount", TextBox4.Text);
-            cmd.Parameters.AddWithValue("@vat", TextBox5.Text);
-            cmd.Parameters.AddWithValue("@TaxRate", TextBox5.Text);
-            cmd.Parameters.AddWithValue("@CashBack", txtcashback.Text);
-            cmd.Parameters.AddWithValue("@CashBackMonth", txtmonth.Text);
-            cmd.Parameters.AddWithValue("@RedemptionPoints", txtredemption.Text);
-            cmd.Parameters.AddWithValue("@SelfCashBack", txtselfcashback.Text);
-            cmd.Parameters.AddWithValue("@SelfCashBackMonth", txtselefcashbackmonth.Text);
-            cmd.Parameters.AddWithValue("@Discount", txtdiscount.Text); 
+            cmd.Parameters.AddWithValue("@salesamount", txtDP.Text);
+            //cmd.Parameters.AddWithValue("@vat", TextBox5.Text);
+            //cmd.Parameters.AddWithValue("@TaxRate", TextBox5.Text);
+            //cmd.Parameters.AddWithValue("@CashBack", txtcashback.Text);
+            //cmd.Parameters.AddWithValue("@CashBackMonth", txtmonth.Text);
+            //cmd.Parameters.AddWithValue("@RedemptionPoints", txtredemption.Text);
+            //cmd.Parameters.AddWithValue("@SelfCashBack", txtselfcashback.Text);
+            //cmd.Parameters.AddWithValue("@SelfCashBackMonth", txtselefcashbackmonth.Text);
+            //cmd.Parameters.AddWithValue("@Discount", txtdiscount.Text); 
             cmd.Parameters.AddWithValue("@CGST", txtCGST.Text);
             cmd.Parameters.AddWithValue("@SGST", txtSGST.Text);
-            cmd.Parameters.AddWithValue("@IGST", txtIGST.Text);
+            //cmd.Parameters.AddWithValue("@IGST", txtIGST.Text);
             cmd.Parameters.AddWithValue("@CGSTAmount", totalCGST);
             cmd.Parameters.AddWithValue("@SGSTAmount", totalSGST);
-            cmd.Parameters.AddWithValue("@IGSTAmount", totalIGST);
+            //cmd.Parameters.AddWithValue("@IGSTAmount", totalIGST);
             con.Open();
             try
             {

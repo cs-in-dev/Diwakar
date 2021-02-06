@@ -17,6 +17,18 @@
          {
             display:none;
         }
+          #ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(9), th:nth-child(9)
+         {
+            display:none;
+        }
+          #ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(10), th:nth-child(10)
+         {
+            display:none;
+        }
+           #ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(14), th:nth-child(14)
+         {
+            display:none;
+        }
          /*#ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(4), th:nth-child(13)
          {
             display:none;
@@ -28,11 +40,6 @@ min-width:200px;
 max-height: 300px;
 overflow:auto;
 }
-     
- .style3 {
-             width: 168px;
-    height: 23px;
-        }
     </style>
 
   <%--  <script type="text/javascript">
@@ -123,17 +130,7 @@ overflow:auto;
     <br />
     <br />
     <table>
-        <tr>
-            <td>
-                Product Type:
-            </td>
-            <td colspan="2">
-                <asp:DropDownList ID="ddlType" runat="server" OnSelectedIndexChanged="ddlType_SelectedIndexChanged" AutoPostBack="true">
-                    <asp:ListItem Value="NONECB">Non Cash Back</asp:ListItem>
-                    <asp:ListItem Value="CB">Cash Back</asp:ListItem>
-                </asp:DropDownList>
-            </td>
-        </tr>
+        
         <tr>
             <td>Product Name
             </td>
@@ -174,7 +171,7 @@ overflow:auto;
             <td class="style20">BV</td>
             <td class="style20">CGST</td>
             <td class="style20">SGST</td>
-            <td class="style20">IGST</td>
+          <%--  <td class="style20">IGST</td>--%>
 
 
         </tr>
@@ -262,7 +259,7 @@ overflow:auto;
             <td class="style17">
                 <asp:UpdatePanel ID="UpdatePanel12" runat="server">
                     <ContentTemplate>
-                        <asp:TextBox ID="IGST" runat="server" Width="60px" ReadOnly="True"></asp:TextBox>
+                        <asp:TextBox ID="IGST" runat="server" Width="60px" ReadOnly="True" style="display:none"></asp:TextBox>
                     </ContentTemplate>
                     <Triggers>
                         <asp:AsyncPostBackTrigger ControlID="ProductName" EventName="TextChanged" />
@@ -288,9 +285,9 @@ overflow:auto;
         </tr>
 
         <tr>
-            <td class="style20">Tax</td>
+           <%-- <td class="style20">Tax</td>--%>
             <td class="style20">Qty</td>
-            <td class="style20">Special Discount</td>
+            <%--<td class="style20">Special Discount</td>--%>
             <td class="style20">Amount</td>
            <%-- <td class="style20">CashBack</td>--%>
             <td class="style17" style="text-align: left">&nbsp;</td>
@@ -302,10 +299,10 @@ overflow:auto;
 
         </tr>
         <tr>
-            <td class="style17">
-                <asp:UpdatePanel ID="UpdatePanel8" runat="server">
+            <td class="style17" style="display:none">
+                <asp:UpdatePanel ID="UpdatePanel8" runat="server" style="display:none">
                     <ContentTemplate>
-                        <asp:TextBox ID="Tax" runat="server" Width="45px" ReadOnly="True"></asp:TextBox>
+                        <asp:TextBox ID="Tax" runat="server" Width="45px" ReadOnly="True" style="display:none"></asp:TextBox>
                     </ContentTemplate>
                     <Triggers>
                         <asp:AsyncPostBackTrigger ControlID="ProductName" EventName="TextChanged" />
@@ -332,10 +329,10 @@ overflow:auto;
                     </Triggers>
                 </asp:UpdatePanel>
             </td>
-            <td class="style18">
-                <asp:UpdatePanel ID="UpdatePanel14" runat="server">
+            <td class="style18" style="display:none">
+                <asp:UpdatePanel ID="UpdatePanel14" runat="server" style="display:none">
                     <ContentTemplate>
-                        <asp:TextBox ID="SPDiscount" runat="server" Width="80px" ReadOnly="True"></asp:TextBox>
+                        <asp:TextBox ID="SPDiscount" runat="server" Width="80px" ReadOnly="True" style="display:none"></asp:TextBox>
                     </ContentTemplate>
                     <Triggers>
                         <asp:AsyncPostBackTrigger ControlID="ProductName" EventName="TextChanged" />
@@ -435,7 +432,7 @@ overflow:auto;
                 <tr>
                     <td align="center">Total DP</td>
                     <td align="center">TOTAL BV</td>
-                    <td align="center">COURIER CHARGES</td>
+                   <%-- <td align="center">COURIER CHARGES</td>--%>
                     <td align="center">TOTAL AMOUNT</td>
                     <td align="center">TOTAL QTY</td>
                    <%-- <td align="center">TOTAL CASH BACK</td>--%>
@@ -447,8 +444,8 @@ overflow:auto;
                     <td align="center">
                         <asp:Label ID="TotalBV" runat="server" Style="font-size: 14px; font-weight: bold;"></asp:Label>
                     </td>
-                    <td align="center">
-                        <asp:Label ID="CourierCharges" runat="server" Style="font-size: 14px; font-weight: bold;"></asp:Label>
+                    <td align="center" style="display:none">
+                        <asp:Label ID="CourierCharges" runat="server" Style="font-size: 14px; font-weight: bold; display:none"></asp:Label>
                     </td>
                     <td align="center">
                         <asp:Label ID="TotalAmount" runat="server" Style="font-size: 14px; font-weight: bold;"></asp:Label>
@@ -474,7 +471,7 @@ overflow:auto;
     </table>
     <table>
         <tr>
-            <td><strong>Your Final Order Details are above and Products will be delivered subject to selection of Payment Mode and after payment is securely credited to Diwakar Retail Ltd. Account.
+            <td><strong>Your Final Order Details are above and Products will be delivered subject to selection of Payment Mode and after payment is securely credited to  cyrashine Private Limited Account.
             </strong></td>
         </tr>
     </table>
@@ -493,7 +490,7 @@ overflow:auto;
             <td>Payment Mode:</td>
             <td>
 
-                <asp:DropDownList ID="DropDownList1" class="style3" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" runat="server">
+                <asp:DropDownList ID="DropDownList1" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" runat="server">
                     <asp:ListItem Value="Select Payment Mode">Select Payment Mode</asp:ListItem>
                     <asp:ListItem Value="DD">DD</asp:ListItem>
                     <asp:ListItem Value="Cheque">Cheque</asp:ListItem>
@@ -518,7 +515,7 @@ overflow:auto;
         </tr>
     </table>
     <asp:Panel ID="panelcheque" runat="server">
-        <table class="style31">
+        <table class="style31" style="margin-left:27%">
             <tr>
                 <td>
                     <asp:Label ID="lblChecqueNo" runat="server" Text="Checque No :"></asp:Label></td>
@@ -558,7 +555,7 @@ overflow:auto;
     </asp:Panel>
 
     <asp:Panel ID="panel5" runat="server">
-        <table class="style31">
+        <table class="style31" style="margin-left:27%">
             <tr>
                 <td>
                     <asp:Label ID="lblDDNO" runat="server" Text="DD No :"></asp:Label></td>
@@ -599,7 +596,7 @@ overflow:auto;
 
 
     <asp:Panel ID="panel2" runat="server">
-        <table class="style31">
+        <table class="style31" style="margin-left:27%">
 
             <tr>
                 <td>
@@ -632,7 +629,7 @@ overflow:auto;
         </table>
     </asp:Panel>
     <asp:Panel ID="panel4" runat="server">
-        <table class="style31">
+        <table class="style31" style="margin-left:27%">
 
             <tr>
                 <td>
@@ -666,7 +663,7 @@ overflow:auto;
     </asp:Panel>
 
     <asp:Panel ID="panel6" runat="server">
-        <table class="style31">
+        <table class="style31" style="margin-left:27%">
 
             <tr>
                 <td>
@@ -698,13 +695,13 @@ overflow:auto;
             </tr>
         </table>
     </asp:Panel>
-    <table class="style31">
+    <table class="style31" style="margin-left:27%">
         <tr>
             <td></td>
 
             <td>
-                <asp:Button ID="Button2" CssClass="btn btn-success" runat="server" OnClick="Button2_Click"
-                    Style="font-size: small; font-family: Verdana; margin-left:385px;"
+                <asp:Button ID="Button2" CssClass="btn btn-primary" runat="server" OnClick="Button2_Click"
+                    Style="font-size: small; font-family: Verdana;"
                     Text="Submit" ValidationGroup="vg1" />
                 <asp:Label ID="Label7" runat="server" Text=""></asp:Label></td>
             <td></td>

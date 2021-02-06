@@ -18,6 +18,13 @@
             return false;
         }
     </script>--%>
+    <style type="text/css">
+        .drop{
+            width: 169px;
+            margin-left: 28px;
+            height: 22px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Panel ID="pnlContents" runat="server">
@@ -28,19 +35,19 @@
             <tr>
                 <td>Status</td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="true" runat="server">
+                    <asp:DropDownList ID="DropDownList1" class="drop" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="true" runat="server">
 
                         <asp:ListItem Value="0">Pending</asp:ListItem>
                         <asp:ListItem Value="1">Approved</asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
-            <tr>
+            <%--<tr>
                 <td>&nbsp;</td>
                 <td>
                     <asp:Button ID="Button1" runat="server" Text="Search" OnClick="Button1_Click" />
                 </td>
-            </tr>
+            </tr>--%>
         </table>
         <table>
             <tr>

@@ -17,17 +17,18 @@ namespace Sabaic._19111973
                 Response.Redirect("~/240578/Default.aspx");
             if (User.IsInRole("Admin") == false && User.IsInRole("KYC") == false)
                 Response.Redirect("~/240578/AdminHome.aspx");
-            if (!Page.IsPostBack)
+            if (!IsPostBack)
             {
-                SqlCommand cmd = new SqlCommand("", con);
-                cmd.CommandText = "select *,[dbo].[MySponsorName](UserCode) as SpName from tblmembermaster where VoterCard !='' and UploadPhoto !='' and CheckBook !='' and PanCardProof !=''";
-                SqlDataAdapter dts = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                dts.Fill(dt);
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
-
+                //SqlCommand cmd = new SqlCommand("", con);
+                //cmd.CommandText = "select *,[dbo].[MySponsorName](UserCode) as SpName from tblmembermaster where VoterCard !='' and UploadPhoto !='' and CheckBook !='' and PanCardProof !=''";
+                //SqlDataAdapter dts = new SqlDataAdapter(cmd);
+                //DataTable dt = new DataTable();
+                //dts.Fill(dt);
+                //GridView1.DataSource = dt;
+                //GridView1.DataBind();
+                getkycstatus();
             }
+           // getkycstatus();
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -43,10 +44,33 @@ namespace Sabaic._19111973
             GridViewExportUtil.Export("KycAprovedList.xls", this.GridView1);
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        public void getkycstatus()
         {
             SqlCommand cmd = new SqlCommand("", con);
-            cmd.CommandText = "select *,[dbo].[MySponsorName](UserCode) as SpName from tblmembermaster where VoterCard !='' and UploadPhoto !='' and CheckBook !='' and PanCardProof !='' and kycApprovedStatus=@kycApprovedStatus";
+            cmd.Parameters.Clear();
+            cmd.CommandText = "select *,[dbo].[MySponsorName](UserCode) as SpName from tblmembermaster where  kycApprovedStatus=@kycApprovedStatus";
+            cmd.Parameters.AddWithValue("@kycApprovedStatus", DropDownList1.SelectedValue);
+            SqlDataAdapter dts = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            dts.Fill(dt);
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
+        }
+           
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            //SqlCommand cmd = new SqlCommand("", con);
+            //cmd.CommandText = "select *,[dbo].[MySponsorName](UserCode) as SpName from tblmembermaster where VoterCard !='' and UploadPhoto !='' and CheckBook !='' and PanCardProof !='' and kycApprovedStatus=@kycApprovedStatus";
+            //cmd.Parameters.AddWithValue("@kycApprovedStatus", DropDownList1.SelectedValue);
+            //SqlDataAdapter dts = new SqlDataAdapter(cmd);
+            //DataTable dt = new DataTable();
+            //dts.Fill(dt);
+            //GridView1.DataSource = dt;
+            //GridView1.DataBind();
+
+            SqlCommand cmd = new SqlCommand("", con);
+            cmd.Parameters.Clear();
+            cmd.CommandText = "select *,[dbo].[MySponsorName](UserCode) as SpName from tblmembermaster where  kycApprovedStatus=@kycApprovedStatus";
             cmd.Parameters.AddWithValue("@kycApprovedStatus", DropDownList1.SelectedValue);
             SqlDataAdapter dts = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

@@ -419,6 +419,48 @@ Murthal Road, Sonipat-131001
                                             </p>
                                             <p>
                                             </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>
+                                            </p>
                                         </p>
                                     </td>
                                 </tr>
@@ -532,19 +574,19 @@ Murthal Road, Sonipat-131001
                                                             <asp:BoundField DataField="MRP" HeaderText="MRP" SortExpression="MRP" DataFormatString="{0:f2}" />
                                                             <asp:BoundField DataField="Unit Price" HeaderText="DP" SortExpression="Unit Price" DataFormatString="{0:f2}" />
                                                             <asp:BoundField DataField="BV" HeaderText="BV" SortExpression="BV" DataFormatString="{0:f2}" />
-                                                            <asp:BoundField DataField="CGS" HeaderText="CGST%" SortExpression="CGST" DataFormatString="{0:f2}" />
-                                                            <asp:BoundField DataField="SGS" HeaderText="SGST%" SortExpression="SGST" DataFormatString="{0:f2}" />
-                                                            <asp:BoundField DataField="IGS" HeaderText="IGST%" SortExpression="IGST" DataFormatString="{0:f2}" />
-                                                            <asp:BoundField DataField="RP" HeaderText="RP" SortExpression="RP" DataFormatString="{0:f2}" />
+                                                            <%--<asp:BoundField DataField="CGS" HeaderText="CGST" SortExpression="CGST" DataFormatString="{0:f2}" />
+                                                            <asp:BoundField DataField="SGS" HeaderText="SGST" SortExpression="SGST" DataFormatString="{0:f2}" />--%>
+                                                           <%-- <asp:BoundField DataField="IGS" HeaderText="IGST"  SortExpression="IGST" DataFormatString="{0:f2}" />--%>
+                                                           <%-- <asp:BoundField DataField="RP" HeaderText="RP" SortExpression="RP" DataFormatString="{0:f2}" />--%>
                                                             <asp:BoundField DataField="Qty" HeaderText="Qty" SortExpression="Qty" HeaderStyle-Width="10px" />
                                                             <asp:BoundField DataField="TotalMRP" HeaderText="Total MRP" SortExpression="TotalMRP" DataFormatString="{0:f2}" />
-                                                            <asp:BoundField DataField="Total Price" HeaderText="Total DP" SortExpression="Total Price" DataFormatString="{0:f2}" />
-                                                            <asp:BoundField DataField="TotalIGST" HeaderText="TotalIGST" SortExpression="TotalIGST" DataFormatString="{0:f2}" />
+                                                           <%-- <asp:BoundField DataField="Total Price" Visible="false" HeaderText="Total DP" SortExpression="Total Price" DataFormatString="{0:f2}" />--%>
+                                                            <asp:BoundField DataField="TotalIGST" Visible="false" HeaderText="TotalIGST" SortExpression="TotalIGST" DataFormatString="{0:f2}" />
                                                             <asp:BoundField DataField="TotalSGST" HeaderText="TotalSGST" SortExpression="TotalSGST" DataFormatString="{0:f2}" />
-                                                            <asp:BoundField DataField="TotalCGST" HeaderText="TotalCGST" SortExpression="TotalCGST" DataFormatString="{0:f2}" />
-                                                             <asp:BoundField DataField="Total RP" HeaderText="Total RP" SortExpression="Total RP" DataFormatString="{0:f2}" />
+                                                          <asp:BoundField DataField="TotalCGST" HeaderText="TotalCGST" SortExpression="TotalCGST" DataFormatString="{0:f2}" />
+                                                          <%-- <asp:BoundField DataField="Total RP" HeaderText="Total RP" Visible="false" SortExpression="Total RP" DataFormatString="{0:f2}" />--%>
                                                             <%--<asp:BoundField DataField="CashBack" HeaderText="CashBack" SortExpression="CashBack" DataFormatString="{0:f2}" />--%>
-                                                            <asp:BoundField DataField="TotalDiscount" HeaderText="Discount" SortExpression="TotalDiscount"  DataFormatString="{0:f2}" />
+                                                            <asp:BoundField DataField="TotalDiscount" Visible="false" HeaderText="Discount" SortExpression="TotalDiscount" DataFormatString="{0:f2}" />
 
 
                                                         </Columns>
@@ -587,9 +629,9 @@ Murthal Road, Sonipat-131001
                                     <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total SGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Label ID="lblTotalSGST" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                 </tr>
-                                <tr>
+                                <tr style="display:none">
                                     <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total IGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Label ID="lblTotalIGST" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                        <asp:Label ID="lblTotalIGST" Visible="false" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Grand Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

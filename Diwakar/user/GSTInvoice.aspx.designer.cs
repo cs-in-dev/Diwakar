@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sabaic.user {
-    
-    
-    public partial class GSTInvoice {
-        
+namespace Sabaic.user
+{
+
+
+    public partial class GSTInvoice
+    {
+
         /// <summary>
         /// Panel1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
-        
+
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
+
         /// <summary>
         /// Label2 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-        
+
         /// <summary>
         /// Label5 control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label5;
-        
+
         /// <summary>
         /// Label3 control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
+
         /// <summary>
         /// Label4 control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-        
+
         /// <summary>
         /// lblsate control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblsate;
-        
+
         /// <summary>
         /// Label6 control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label6;
-        
+
         /// <summary>
         /// Label7 control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label7;
-        
+
         /// <summary>
         /// Label8 control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label8;
-        
+
         /// <summary>
         /// Label9 control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label9;
-        
+
         /// <summary>
         /// Label11 control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label11;
-        
+
         /// <summary>
         /// lblpaymentmode control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblpaymentmode;
-        
+
         /// <summary>
         /// GridView1 control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-        
+
         /// <summary>
         /// Label10 control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label10;
-        
+
         /// <summary>
         /// lblamount control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblamount;
-        
+
         /// <summary>
         /// lblTotalCGST control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotalCGST;
-        
+
         /// <summary>
         /// lblTotalSGST control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotalSGST;
-        
+
         /// <summary>
         /// lblTotalIGST control.
         /// </summary>
@@ -182,7 +184,7 @@ namespace Sabaic.user {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotalIGST;
-        
+
         /// <summary>
         /// lblGrandTotal control.
         /// </summary>

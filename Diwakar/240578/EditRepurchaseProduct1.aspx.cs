@@ -23,18 +23,6 @@ namespace GrowTogether._240578
             if (User.IsInRole("Admin") == false && User.IsInRole("Edit Product") == false)
                 Response.Redirect("~/240578/AdminHome.aspx");
 
-            //if (!IsPostBack)
-            //{
-            //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
-            //    SqlDataAdapter ad = new SqlDataAdapter("select * from categorymaster", con);
-            //    DataSet ds1 = new DataSet();
-            //    ad.Fill(ds1);
-            //    catidlist.DataSource = ds1.Tables[0];
-            //    catidlist.DataTextField = "CategoryName";
-            //    catidlist.DataValueField = "CategoryId";
-            //    catidlist.DataBind();
-            //    catidlist.Items.Insert(0, new ListItem("--Select--", "0"));
-            //}
          
             if (!IsPostBack)
             {
@@ -86,10 +74,12 @@ namespace GrowTogether._240578
             }
             else
                 ImageUrl = Image1.ImageUrl;
-            Double amount = Double.Parse(txtbv0.Text);
-            float gst = float.Parse(txtIGST.Text);
-            Double total = (amount * 100) / (gst + 100);
-            Double total2 = total;
+            Double amount = Double.Parse(txtDP.Text);
+            //float gst = float.Parse(txtIGST.Text);
+           // Double total = (amount * 100) / (gst + 100);
+           //Double total2 = total;
+
+            Double total2 = amount;
 
             Double CGST = total2;
             Double CGST1 = Double.Parse(txtCGST.Text);
@@ -102,38 +92,25 @@ namespace GrowTogether._240578
             Double SubSGST = (SGST * SGST1) / 100;
             Double totalSGST = SubSGST;
 
-            Double IGST = total2;
-            Double IGST1 = Double.Parse(txtIGST.Text);
-            Double SubIGST = (IGST * IGST1) / 100;
-            Double totalIGST = SubIGST;
+            //Double IGST = total2;
+            //Double IGST1 = Double.Parse(txtIGST.Text);
+            //Double SubIGST = (IGST * IGST1) / 100;
+            //Double totalIGST = SubIGST;
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ToString());
-            SqlCommand cmd = new SqlCommand("Update ProductRepurchase set ProductName=@Productnametxt,ProductCode=@ProductCode,salesamount=@salesamount, MRP=@pricetxt,ImageUrl=@imageedit,CategoryID=@catid,BV=@BV, Detail=@detail,vat=@vat,Taxrate=@Taxrate,CashBack=@CashBack,CashBackMonth=@CashBackMonth,SelfCashBack=@SelfCashBack,SelfCashBackMonth=@SelfCashBackMonth,RedemptionPoints=@RedemptionPoints,CGST=@CGST, SGST=@SGST, IGST=@IGST,CGSTAmount=@CGSTAmount,SGSTAmount=@SGSTAmount,IGSTAmount=@IGSTAmount,DiscountAmount=@DiscountAmount WHERE ProductID=@Pid", con);
+            SqlCommand cmd = new SqlCommand("Update ProductRepurchase set ProductName=@Productnametxt,ProductCode=@ProductCode,salesamount=@salesamount, MRP=@pricetxt,ImageUrl=@imageedit,CategoryID=@catid,BV=@BV, Detail=@detail,CGST=@CGST, SGST=@SGST,CGSTAmount=@CGSTAmount,SGSTAmount=@SGSTAmount WHERE ProductID=@Pid", con);
             cmd.Parameters.AddWithValue("@Productnametxt", productnametxt.Text);
             cmd.Parameters.AddWithValue("@pricetxt", pricetxt.Text);
-            //cmd.Parameters.AddWithValue("@pvtxt", pvtxt.Text);
             cmd.Parameters.AddWithValue("@imageedit", ImageUrl);
             cmd.Parameters.AddWithValue("@pid", ddlProductID.SelectedValue);
             cmd.Parameters.AddWithValue("@catid", ddlCategoryID.SelectedValue);
             cmd.Parameters.AddWithValue("@ProductCode", txtProductCode.Text);
-            // cmd.Parameters.AddWithValue("@DP",txtdp.Text);
             cmd.Parameters.AddWithValue("@BV", txtbv.Text);
             cmd.Parameters.AddWithValue("@detail", ProductEditor.Content);
-            cmd.Parameters.AddWithValue("@salesamount", txtbv0.Text);
-            cmd.Parameters.AddWithValue("@vat", pricetxt0.Text);
-            cmd.Parameters.AddWithValue("@Taxrate", pricetxt0.Text);
-            cmd.Parameters.AddWithValue("@CashBack", txtcashback.Text);
-            cmd.Parameters.AddWithValue("@CashBackMonth", txtmonth.Text);
-            cmd.Parameters.AddWithValue("@SelfCashBack", txtselfcashback.Text);
-            cmd.Parameters.AddWithValue("@SelfCashBackMonth", txtselefcashbackmonth.Text);
-            cmd.Parameters.AddWithValue("@RedemptionPoints", txtredemption.Text);
+            cmd.Parameters.AddWithValue("@salesamount", txtDP.Text);
             cmd.Parameters.AddWithValue("@CGST", txtCGST.Text);
             cmd.Parameters.AddWithValue("@SGST", txtSGST.Text);
-            cmd.Parameters.AddWithValue("@IGST", txtIGST.Text);
             cmd.Parameters.AddWithValue("@CGSTAmount", totalCGST);
             cmd.Parameters.AddWithValue("@SGSTAmount", totalSGST);
-            cmd.Parameters.AddWithValue("@IGSTAmount", totalIGST);
-            cmd.Parameters.AddWithValue("@DiscountAmount", txtdiscount.Text);
-
 
             con.Open();
             try
@@ -141,7 +118,7 @@ namespace GrowTogether._240578
                 cmd.ExecuteNonQuery();
                 MsgBox("Product Updated"); 
             }
-            catch
+            catch(Exception ex)
             { MsgBox("Sorry! Something went Wrong."); }
 
             con.Close();
@@ -152,19 +129,7 @@ namespace GrowTogether._240578
         {
             this.Page.Controls.Add(new LiteralControl("<script>alert('" + Message + "');</Script>"));
         }
-        //protected void getlastusedproductcode()
-        //{
-        //    SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ToString());
-        //    SqlCommand cmd = new SqlCommand("Select productcode from productrepurchase where ProductID in (Select max(productID) from productrepurchase where categoryId in(Select categoryId from categorymaster where PID = '" + ddlmaincategory.SelectedValue + "'))", con);
-        //    con.Open();
-        //    var checker = cmd.ExecuteScalar();
-        //    if (checker == null)
-        //        txtlastproductcode.Text = "Not Used";
-        //    else
-        //        txtlastproductcode.Text = checker.ToString();
-        //    con.Close();
-
-        //}
+       
         protected void ddlmaincategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlmaincategory.SelectedValue == "0")
@@ -202,46 +167,16 @@ namespace GrowTogether._240578
                 productnametxt.Text = dr["ProductName"].ToString();
                 pricetxt.Text = dr["MRP"].ToString().Replace(".0000", " ");
                 Image1.ImageUrl = dr["ImageURl"].ToString();
-               // ddlProductID.SelectedValue = dr["CategoryID"].ToString();
-                //dropdowncategory.SelectedValue = dr["categoryID"].ToString();
                 txtbv.Text = dr["BV"].ToString();
                 ProductEditor.Content = dr["Detail"].ToString();
-                txtbv0.Text = dr["salesamount"].ToString().Replace(".0000", " ");
-                pricetxt0.Text = dr["Vat"].ToString().Replace(".0000", " ");
-                txtIGST.Text = dr["IGST"].ToString();
+                txtDP.Text = dr["salesamount"].ToString();
                 txtSGST.Text = dr["SGST"].ToString();
                 txtCGST.Text = dr["CGST"].ToString();
-                txtcashback.Text = dr["CashBack"].ToString();
-                txtmonth.Text= dr["CashBackMonth"].ToString();
-                txtredemption.Text = dr["RedemptionPoints"].ToString();
-                txtdiscount.Text = dr["DiscountAmount"].ToString();
-                txtselfcashback.Text = dr["SelfCashBack"].ToString();
-                txtselefcashbackmonth.Text = dr["SelfCashBackMonth"].ToString();
-               
             }
             dr.Close();
             con.Close();
             
         }
-
-        //protected void catidlist_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    productnametxt.Text = "";
-        //    txtProductCode.Text = "";
-        //    pricetxt.Text = "";
-        //    txtbv.Text = "";
-        //    Image1.ImageUrl = "";
-        //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
-        //    SqlDataAdapter adt = new SqlDataAdapter("select * from productrepurchase where status = 0 and categoryid='" + catidlist.SelectedValue.ToString() + "'", con);
-        //    DataSet ds = new DataSet();
-        //    adt.Fill(ds);
-        //    DropDownList1.DataSource = ds.Tables[0];
-        //    DropDownList1.DataTextField = "ProductName";
-        //    DropDownList1.DataValueField = "ProductId";
-        //    DropDownList1.DataBind();
-        //    DropDownList1.Items.Insert(0, new ListItem("--Select--", "0"));
-        //}
-
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
 
@@ -260,26 +195,16 @@ namespace GrowTogether._240578
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                //txtProductCode.Text = dr["ProductCode"].ToString();
+              
                 productnametxt.Text = dr["ProductName"].ToString();
                 pricetxt.Text = dr["MRP"].ToString().Replace(".0000", " ");
                 Image1.ImageUrl = dr["ImageURl"].ToString();
-                // ddlProductID.SelectedValue = dr["CategoryID"].ToString();
-                //dropdowncategory.SelectedValue = dr["categoryID"].ToString();
                 txtbv.Text = dr["BV"].ToString();
                 ProductEditor.Content = dr["Detail"].ToString();
-                txtbv0.Text = dr["salesamount"].ToString().Replace(".0000", " ");
-                pricetxt0.Text = dr["Vat"].ToString().Replace(".0000", " ");
-                txtIGST.Text = dr["IGST"].ToString();
+                txtDP.Text = dr["salesamount"].ToString();
                 txtSGST.Text = dr["SGST"].ToString();
                 txtCGST.Text = dr["CGST"].ToString();
-                txtcashback.Text = dr["CashBack"].ToString();
-                txtmonth.Text = dr["CashBackMonth"].ToString();
-                txtredemption.Text = dr["RedemptionPoints"].ToString();
-                txtdiscount.Text = dr["DiscountAmount"].ToString();
-                txtselfcashback.Text = dr["SelfCashBack"].ToString();
-                txtselefcashbackmonth.Text = dr["SelfCashBackMonth"].ToString();
-
+               
             }
             dr.Close();
             con.Close();
