@@ -9,8 +9,9 @@
 
 
 
-public partial class SuperAdminUpdateMember {
-    
+public partial class SuperAdminUpdateMember
+{
+
     /// <summary>
     /// lblUserCode control.
     /// </summary>
@@ -19,7 +20,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblUserCode;
-    
+
     /// <summary>
     /// txtMemberCode control.
     /// </summary>
@@ -28,7 +29,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtMemberCode;
-    
+
     /// <summary>
     /// RequiredFieldValidator4 control.
     /// </summary>
@@ -37,7 +38,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
-    
+
     /// <summary>
     /// btnGetInfo control.
     /// </summary>
@@ -46,7 +47,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Button btnGetInfo;
-    
+
     /// <summary>
     /// Label1 control.
     /// </summary>
@@ -55,7 +56,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label Label1;
-    
+
     /// <summary>
     /// InformationPanel control.
     /// </summary>
@@ -64,7 +65,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Panel InformationPanel;
-    
+
     /// <summary>
     /// lblJoinUs control.
     /// </summary>
@@ -73,7 +74,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblJoinUs;
-    
+
     /// <summary>
     /// lblPersonalDetails0 control.
     /// </summary>
@@ -82,7 +83,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblPersonalDetails0;
-    
+
     /// <summary>
     /// txtLoginPassword control.
     /// </summary>
@@ -91,7 +92,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtLoginPassword;
-    
+
     /// <summary>
     /// RequiredFieldValidator8 control.
     /// </summary>
@@ -100,7 +101,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
-    
+
     /// <summary>
     /// txtTransactionPassword control.
     /// </summary>
@@ -109,7 +110,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtTransactionPassword;
-    
+
     /// <summary>
     /// lblPersonalDetails control.
     /// </summary>
@@ -118,7 +119,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblPersonalDetails;
-    
+
     /// <summary>
     /// lblname control.
     /// </summary>
@@ -127,7 +128,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblname;
-    
+
     /// <summary>
     /// txtname control.
     /// </summary>
@@ -136,7 +137,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtname;
-    
+
     /// <summary>
     /// RequiredFieldValidator6 control.
     /// </summary>
@@ -145,7 +146,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
-    
+
     /// <summary>
     /// lblcountry control.
     /// </summary>
@@ -154,7 +155,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblcountry;
-    
+
     /// <summary>
     /// txtcountry control.
     /// </summary>
@@ -163,7 +164,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtcountry;
-    
+
     /// <summary>
     /// lblDateOfBirth control.
     /// </summary>
@@ -172,7 +173,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblDateOfBirth;
-    
+
     /// <summary>
     /// txtDateOfBirth control.
     /// </summary>
@@ -181,7 +182,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtDateOfBirth;
-    
+
     /// <summary>
     /// MaskedEditExtender2 control.
     /// </summary>
@@ -190,7 +191,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtender2;
-    
+
     /// <summary>
     /// MaskedEditValidator2 control.
     /// </summary>
@@ -199,7 +200,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::AjaxControlToolkit.MaskedEditValidator MaskedEditValidator2;
-    
+
     /// <summary>
     /// lblPinCode control.
     /// </summary>
@@ -208,7 +209,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblPinCode;
-    
+
     /// <summary>
     /// txtPinCode control.
     /// </summary>
@@ -217,7 +218,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtPinCode;
-    
+
     /// <summary>
     /// lblAddress control.
     /// </summary>
@@ -226,7 +227,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblAddress;
-    
+
     /// <summary>
     /// txtAddress control.
     /// </summary>
@@ -235,7 +236,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtAddress;
-    
+
     /// <summary>
     /// lblMobileNo control.
     /// </summary>
@@ -244,7 +245,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblMobileNo;
-    
+
     /// <summary>
     /// txtMobileNo control.
     /// </summary>
@@ -253,7 +254,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtMobileNo;
-    
+
     /// <summary>
     /// RequiredFieldValidator7 control.
     /// </summary>
@@ -262,7 +263,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
-    
+
     /// <summary>
     /// lblCity control.
     /// </summary>
@@ -271,7 +272,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblCity;
-    
+
     /// <summary>
     /// txtcity control.
     /// </summary>
@@ -280,7 +281,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtcity;
-    
+
     /// <summary>
     /// lblTelephoneNo control.
     /// </summary>
@@ -289,7 +290,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblTelephoneNo;
-    
+
     /// <summary>
     /// txtTelephoneNo control.
     /// </summary>
@@ -298,7 +299,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtTelephoneNo;
-    
+
     /// <summary>
     /// lblState control.
     /// </summary>
@@ -307,7 +308,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblState;
-    
+
     /// <summary>
     /// txtstate control.
     /// </summary>
@@ -316,7 +317,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtstate;
-    
+
     /// <summary>
     /// lblEmailID0 control.
     /// </summary>
@@ -325,7 +326,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblEmailID0;
-    
+
     /// <summary>
     /// txtEmailID control.
     /// </summary>
@@ -334,7 +335,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtEmailID;
-    
+
     /// <summary>
     /// Label6 control.
     /// </summary>
@@ -343,7 +344,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label Label6;
-    
+
     /// <summary>
     /// txtDistrict control.
     /// </summary>
@@ -352,7 +353,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtDistrict;
-    
+
     /// <summary>
     /// Label7 control.
     /// </summary>
@@ -361,7 +362,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label Label7;
-    
+
     /// <summary>
     /// txtLandmark control.
     /// </summary>
@@ -370,7 +371,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtLandmark;
-    
+
     /// <summary>
     /// Label8 control.
     /// </summary>
@@ -379,7 +380,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label Label8;
-    
+
     /// <summary>
     /// Fname control.
     /// </summary>
@@ -388,7 +389,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox Fname;
-    
+
     /// <summary>
     /// lblBankDetail control.
     /// </summary>
@@ -397,7 +398,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblBankDetail;
-    
+
     /// <summary>
     /// lblAmount control.
     /// </summary>
@@ -406,7 +407,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblAmount;
-    
+
     /// <summary>
     /// txtAmount control.
     /// </summary>
@@ -415,7 +416,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtAmount;
-    
+
     /// <summary>
     /// Label2 control.
     /// </summary>
@@ -424,7 +425,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label Label2;
-    
+
     /// <summary>
     /// txtbankname control.
     /// </summary>
@@ -433,7 +434,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtbankname;
-    
+
     /// <summary>
     /// Label3 control.
     /// </summary>
@@ -442,7 +443,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label Label3;
-    
+
     /// <summary>
     /// txtbranch control.
     /// </summary>
@@ -451,7 +452,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtbranch;
-    
+
     /// <summary>
     /// Label5 control.
     /// </summary>
@@ -460,7 +461,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label Label5;
-    
+
     /// <summary>
     /// txtifsc control.
     /// </summary>
@@ -469,7 +470,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtifsc;
-    
+
     /// <summary>
     /// Label4 control.
     /// </summary>
@@ -478,7 +479,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label Label4;
-    
+
     /// <summary>
     /// txtpanno control.
     /// </summary>
@@ -487,70 +488,25 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtpanno;
-    
+
     /// <summary>
-    /// lblNomineeDetails control.
+    /// Label16 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblNomineeDetails;
-    
+    protected global::System.Web.UI.WebControls.Label Label16;
+
     /// <summary>
-    /// lblNomineeName control.
+    /// txtAadharnumber control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblNomineeName;
-    
-    /// <summary>
-    /// txtNomineeName control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtNomineeName;
-    
-    /// <summary>
-    /// lblNomineeRelation control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblNomineeRelation;
-    
-    /// <summary>
-    /// txtNomineeRelation control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtNomineeRelation;
-    
-    /// <summary>
-    /// lblNomineeContact control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblNomineeContact;
-    
-    /// <summary>
-    /// txtNomineeContact control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtNomineeContact;
-    
+    protected global::System.Web.UI.WebControls.TextBox txtAadharnumber;
+
     /// <summary>
     /// hiddenpassword control.
     /// </summary>
@@ -559,7 +515,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.HiddenField hiddenpassword;
-    
+
     /// <summary>
     /// KYCUpload control.
     /// </summary>
@@ -568,7 +524,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label KYCUpload;
-    
+
     /// <summary>
     /// FileUploadPANCard control.
     /// </summary>
@@ -577,7 +533,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.FileUpload FileUploadPANCard;
-    
+
     /// <summary>
     /// ImagePANCard control.
     /// </summary>
@@ -586,7 +542,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Image ImagePANCard;
-    
+
     /// <summary>
     /// PanCard control.
     /// </summary>
@@ -595,7 +551,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.HtmlControls.HtmlAnchor PanCard;
-    
+
     /// <summary>
     /// FileUploadAddressProof control.
     /// </summary>
@@ -604,7 +560,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.FileUpload FileUploadAddressProof;
-    
+
     /// <summary>
     /// ImageAddressProof control.
     /// </summary>
@@ -613,7 +569,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Image ImageAddressProof;
-    
+
     /// <summary>
     /// AddressP control.
     /// </summary>
@@ -622,7 +578,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.HtmlControls.HtmlAnchor AddressP;
-    
+
     /// <summary>
     /// lblMessage control.
     /// </summary>
@@ -631,7 +587,7 @@ public partial class SuperAdminUpdateMember {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lblMessage;
-    
+
     /// <summary>
     /// btnUpdate control.
     /// </summary>

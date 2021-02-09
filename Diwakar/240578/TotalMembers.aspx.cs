@@ -66,7 +66,7 @@ namespace MoneyMagnet
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
             SqlCommand cmd = new SqlCommand("", con);
             cmd.CommandTimeout = 0;
-            cmd.CommandText = "SELECT *,[usercode],[dbo].[MySponsor](usercode )as SponserId, [dbo].[MySponsorName](UserCode) as SpName   FROM [tblMemberMaster]    WHERE ((cast(DOJ as date) >= cast(@DOJ as date)) and (cast(DOJ as date) <= cast(@DOJ2 as date))) ORDER BY [DOJ] desc";
+            cmd.CommandText = "SELECT *, [dbo].[MySponsorName](UserCode) as SpName   FROM [tblMemberMaster]    WHERE ((cast(DOJ as date) >= cast(@DOJ as date)) and (cast(DOJ as date) <= cast(@DOJ2 as date))) ORDER BY [DOJ] desc";
             cmd.Parameters.AddWithValue("@DOJ", TextBox2.Text);
             cmd.Parameters.AddWithValue("@DOJ2", TextBox3.Text);
             SqlDataAdapter dts1 = new SqlDataAdapter(cmd);

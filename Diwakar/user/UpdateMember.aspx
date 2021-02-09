@@ -130,7 +130,7 @@
                                 <asp:Label ID="lblEmailID0" runat="server" CssClass="text" Text="EMAIL ID:"></asp:Label>                                
                             </td>
                             <td>
-                                <asp:TextBox ID="txtEmailID" runat="server" Width="150px"></asp:TextBox>                               
+                                <asp:TextBox ID="txtEmailID" runat="server" Width="150px" ReadOnly="true"></asp:TextBox>                               
                             </td>
 
                             <td>
@@ -257,14 +257,19 @@
                                     Text="BRANCH NAME"></asp:Label>
                             </td>
                             <td class="style26">
-                                <asp:TextBox ID="txtBranchName" runat="server"  MaxLength="30" CssClass="UpperCase"  
+                                <asp:TextBox ID="txtBranchName" runat="server"  MaxLength="30" ReadOnly="true" CssClass="UpperCase"  
                                     
                                     ></asp:TextBox>
                             </td>
-                            <td class="style40">
-                                &nbsp;</td>
+                            <td >
+                                <asp:Label ID="Label3" runat="server" CssClass="text" 
+                                    Text="AADHAR"></asp:Label>
+                            </td>
                             <td class="style26">
-                                &nbsp;</td>
+                                <asp:TextBox ID="txtAadharnumber" runat="server"  MaxLength="16" ReadOnly="true" CssClass="UpperCase"  
+                                    
+                                    ></asp:TextBox>
+                            </td>
                         </tr>
                         <tr>
                             <td class="style40">
@@ -283,7 +288,7 @@
                             <td style="font-size: 11px" >
                                 PAN No.</td>
                             <td class="style26">
-                                <asp:TextBox ID="txtPanNo" runat="server" MaxLength ="10" CssClass="UpperCase" 
+                                <asp:TextBox ID="txtPanNo" runat="server" MaxLength ="10" ReadOnly="true" CssClass="UpperCase" 
                                     ></asp:TextBox>
                                <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                                     ControlToValidate="txtPanNo" ErrorMessage="Enter PAN No." 
@@ -294,45 +299,8 @@
                                     ValidationGroup="vg2"></asp:RegularExpressionValidator>
                             </td>
                         </tr>
+                        
                         <tr>
-                            <td align="left" colspan="4">
-                                <asp:Label ID="lblNomineeDetails" runat="server" Style="font-weight: 700; color: #006600"
-                                    Text="NOMINEE DETAILS"></asp:Label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:Label ID="lblNomineeName" runat="server" CssClass="text" Text=" NOMINEE NAME :"></asp:Label>
-                            </td>
-                            <td>
-                                <asp:TextBox ID="txtNomineeName" runat="server" MaxLength="50"  CssClass="UpperCase"></asp:TextBox>
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
-                                    ControlToValidate="txtNomineeName" ErrorMessage="*" 
-                                    style="color: red" ValidationGroup="v2"></asp:RequiredFieldValidator>
-                            </td>
-                             
-                            <td>
-                                <asp:Label ID="lblNomineeRelation" runat="server" CssClass="text" Text=" NOMINEE RELATION:"></asp:Label>
-                            </td>
-                            <td class="style26">
-                                <asp:TextBox ID="txtNomineeRelation" runat="server" MaxLength="30"  CssClass="UpperCase">
-                                    </asp:TextBox>
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                                    ControlToValidate="txtNomineeRelation" ErrorMessage="*" 
-                                    style="color: red" ValidationGroup="v2"></asp:RequiredFieldValidator>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:Label ID="lblNomineeContact" runat="server" CssClass="text" Text=" NOMINEE CONTACT:"></asp:Label>
-                            </td>
-                            <td class="style26">
-                                <asp:TextBox ID="txtNomineeContact" runat="server" MaxLength="10" CssClass="UpperCase" 
-                                    ></asp:TextBox>
-                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
-                                    ControlToValidate="txtNomineeContact" ErrorMessage="*" 
-                                    style="color: red" ValidationGroup="v2"></asp:RequiredFieldValidator>
-                            </td>
                             <td align="right">
                                 &nbsp;
                             </td>
@@ -367,31 +335,7 @@
                              
                             <td class="style27"><a id="AddressP"  runat="server" target="_blank">Click to View</a></td>
                         </tr>
-                       <%-- <tr>
-                            <td align="left" colspan="4" class="auto-style1">
-                                <asp:Label ID="Label7" runat="server" Style="font-weight: 700; color: #006600"
-                                    Text="User Type"></asp:Label>
-                            </td>
-                        </tr>--%>
-                        <%--<tr>
-                            <td>
-                                <asp:Label ID="Label8" runat="server" CssClass="text" Text="SELECT TYPE :"></asp:Label>
-                            </td>
-                            <td>
-                                <asp:DropDownList ID="ddlStockistType" runat="server" Width="180" ValidationGroup="vg3">
-                                    <asp:ListItem>--Select--</asp:ListItem>
-                                    <asp:ListItem>Associate</asp:ListItem>
-                                    <asp:ListItem>Stockist</asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator ID="rfvStk" runat="server" ErrorMessage="*" ForeColor="Red" Display="Dynamic" ControlToValidate="ddlStockistType" InitialValue="--Select--" ValidationGroup="vg3"></asp:RequiredFieldValidator>
-                            </td>
-                            <td>
-                               
-                            </td>
-                            <td class="style26">
-                               
-                            </td>
-                        </tr>--%>
+                       
                         <tr>
                             <td align="center" colspan="4">
                                 <asp:Label ID="lblMessage" runat="server" Style="color: #FF0000"></asp:Label>

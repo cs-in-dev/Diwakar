@@ -81,14 +81,12 @@ protected void btnGetInfo_Click(object sender, EventArgs e)
         txtbranch.Text = objMemberMaster.BranchName;
         txtbankname.Text = objMemberMaster.BankName;
         txtpanno.Text = objMemberMaster.PanNo;
-        txtNomineeContact.Text = objMemberMaster.NomineeContact;
-        txtNomineeName.Text = objMemberMaster.NomineeName;
-        txtNomineeRelation.Text = objMemberMaster.NomineeRelation;
         Fname.Text = objMemberMaster.FatherName;
         PanCard.HRef = objMemberMaster.Pancard;
         AddressP.HRef = objMemberMaster.AddressProof;
         txtLandmark.Text = objMemberMaster.Landmark;
         txtDistrict.Text = objMemberMaster.District;
+        txtAadharnumber.Text = objMemberMaster.AadharCard;
         InformationPanel.Visible = true;
        
     }
@@ -106,10 +104,10 @@ protected void btnUpdate_Click(object sender, EventArgs e)
         con.Open();
         int i = int.Parse(cmdd.ExecuteScalar().ToString());
         con.Close();
-        if (i >= 3 || txtMobileNo.Text.Length < 10)
+        if (i >= 1 || txtMobileNo.Text.Length < 10)
         {
 
-            MsgBox("This Mobile No. already used 3 times !");
+            MsgBox("This Mobile No. already used !");
             return;
         }
         else
@@ -155,15 +153,14 @@ protected void btnUpdate_Click(object sender, EventArgs e)
             objMemberMaster.BankName = txtbankname.Text;
             objMemberMaster.AccountNo = txtAmount.Text;
             objMemberMaster.IFSCCode = txtifsc.Text;
-            objMemberMaster.NomineeName = txtNomineeName.Text;
-            objMemberMaster.NomineeContact = txtNomineeContact.Text;
-            objMemberMaster.NomineeRelation = txtNomineeRelation.Text;
+      
             objMemberMaster.Landmark = txtLandmark.Text;
             objMemberMaster.District = txtDistrict.Text;
             objMemberMaster.BranchName = txtbranch.Text;
             objMemberMaster.AddressProof = AddressProof;
             objMemberMaster.FatherName = Fname.Text;
             objMemberMaster.Pancard = Pancard;
+            objMemberMaster.AadharCard = txtAadharnumber.Text;
 
 
 
@@ -180,20 +177,13 @@ protected void btnUpdate_Click(object sender, EventArgs e)
                 txtEmailID.Text = "";
                 txtLandmark.Text = "";
                 txtDistrict.Text = "";
-                txtNomineeContact.Text = "";
-                txtNomineeName.Text = "";
-                txtNomineeRelation.Text = "";
                 Fname.Text = "";
                 //txtOwnerName.Text ="";
                 txtDateOfBirth.Text = "";
-                txtNomineeName.Text = "";
-                txtNomineeContact.Text = "";
-                txtNomineeRelation.Text = "";
-                txtLandmark.Text = ""; ;
-                txtDistrict.Text = "";
+              
                 txtbranch.Text = "";
                 AddressProof = "";
-                Fname.Text = "";
+              
                 Pancard = "";
                 txtLoginPassword.Text = "";
                 txtMemberCode.Text = "";

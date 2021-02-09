@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Rainsonglobal._240578 {
-    
-    
-    public partial class EditDispatchDetails2 {
-        
+namespace Rainsonglobal._240578
+{
+
+
+    public partial class EditDispatchDetails2
+    {
+
         /// <summary>
         /// txtOrderId control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtOrderId;
-        
+
         /// <summary>
         /// Button1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
+
         /// <summary>
         /// Panel1 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
-        
+
         /// <summary>
         /// txtcalender control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtcalender;
-        
+
         /// <summary>
         /// CalendarExtender1 control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
-        
+
         /// <summary>
         /// RequiredFieldValidator1 control.
         /// </summary>
@@ -65,43 +67,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
-        /// <summary>
-        /// txtcouriercomanyName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcouriercomanyName;
-        
-        /// <summary>
-        /// RequiredFieldValidator2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-        
-        /// <summary>
-        /// txttrackingcode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txttrackingcode;
-        
-        /// <summary>
-        /// RequiredFieldValidator3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
-        
+
         /// <summary>
         /// ddlpaymentmode control.
         /// </summary>
@@ -110,7 +76,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlpaymentmode;
-        
+
         /// <summary>
         /// RequiredFieldValidator4 control.
         /// </summary>
@@ -119,7 +85,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
-        
+
         /// <summary>
         /// panelcash control.
         /// </summary>
@@ -128,7 +94,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panelcash;
-        
+
         /// <summary>
         /// txtcashPaymentdate control.
         /// </summary>
@@ -137,7 +103,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtcashPaymentdate;
-        
+
         /// <summary>
         /// CalendarExtender2 control.
         /// </summary>
@@ -146,7 +112,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender2;
-        
+
         /// <summary>
         /// RequiredFieldValidator5 control.
         /// </summary>
@@ -155,7 +121,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
-        
+
         /// <summary>
         /// txtcashAmount control.
         /// </summary>
@@ -164,7 +130,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtcashAmount;
-        
+
         /// <summary>
         /// RequiredFieldValidator6 control.
         /// </summary>
@@ -173,7 +139,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
-        
+
         /// <summary>
         /// FilteredTextBoxExtender7 control.
         /// </summary>
@@ -182,7 +148,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender7;
-        
+
         /// <summary>
         /// panelcheque control.
         /// </summary>
@@ -191,7 +157,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panelcheque;
-        
+
         /// <summary>
         /// lblChecqueNo control.
         /// </summary>
@@ -200,7 +166,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblChecqueNo;
-        
+
         /// <summary>
         /// txtChecqueNo control.
         /// </summary>
@@ -209,7 +175,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtChecqueNo;
-        
+
         /// <summary>
         /// rf1 control.
         /// </summary>
@@ -218,7 +184,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rf1;
-        
+
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -227,7 +193,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
+
         /// <summary>
         /// txtChecqueDate control.
         /// </summary>
@@ -236,7 +202,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtChecqueDate;
-        
+
         /// <summary>
         /// CE1 control.
         /// </summary>
@@ -245,7 +211,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CE1;
-        
+
         /// <summary>
         /// RequiredFieldValidator7 control.
         /// </summary>
@@ -254,7 +220,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
-        
+
         /// <summary>
         /// Label9 control.
         /// </summary>
@@ -263,7 +229,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label9;
-        
+
         /// <summary>
         /// txtchequeamount control.
         /// </summary>
@@ -272,7 +238,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtchequeamount;
-        
+
         /// <summary>
         /// CalendarExtender5 control.
         /// </summary>
@@ -281,7 +247,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender5;
-        
+
         /// <summary>
         /// RequiredFieldValidator15 control.
         /// </summary>
@@ -290,7 +256,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator15;
-        
+
         /// <summary>
         /// Label2 control.
         /// </summary>
@@ -299,7 +265,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-        
+
         /// <summary>
         /// txtBankName control.
         /// </summary>
@@ -308,7 +274,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBankName;
-        
+
         /// <summary>
         /// RequiredFieldValidator8 control.
         /// </summary>
@@ -317,7 +283,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
-        
+
         /// <summary>
         /// panelNeft control.
         /// </summary>
@@ -326,7 +292,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panelNeft;
-        
+
         /// <summary>
         /// Label6 control.
         /// </summary>
@@ -335,7 +301,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label6;
-        
+
         /// <summary>
         /// txtneftpaymnetdate control.
         /// </summary>
@@ -344,7 +310,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtneftpaymnetdate;
-        
+
         /// <summary>
         /// CalendarExtender4 control.
         /// </summary>
@@ -353,7 +319,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender4;
-        
+
         /// <summary>
         /// RequiredFieldValidator12 control.
         /// </summary>
@@ -362,7 +328,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator12;
-        
+
         /// <summary>
         /// Label7 control.
         /// </summary>
@@ -371,7 +337,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label7;
-        
+
         /// <summary>
         /// txtneftamount control.
         /// </summary>
@@ -380,7 +346,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtneftamount;
-        
+
         /// <summary>
         /// RequiredFieldValidator13 control.
         /// </summary>
@@ -389,7 +355,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator13;
-        
+
         /// <summary>
         /// Label8 control.
         /// </summary>
@@ -398,7 +364,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label8;
-        
+
         /// <summary>
         /// txtnefRefrencennum control.
         /// </summary>
@@ -407,7 +373,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtnefRefrencennum;
-        
+
         /// <summary>
         /// RequiredFieldValidator14 control.
         /// </summary>
@@ -416,7 +382,7 @@ namespace Rainsonglobal._240578 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator14;
-        
+
         /// <summary>
         /// btnsave control.
         /// </summary>

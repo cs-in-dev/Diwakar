@@ -524,100 +524,93 @@ Murthal Road, Sonipat-131001
                 </tr>
 
 
-                <tr>
+               <tr>
 
-                    <td style="width: 55%; border: 0px; border-bottom: 0px; padding: 0px;" colspan="2">
-                        <table cellpadding="0" style="border: 0px" cellspacing="0" width="100%" class="noborder">
-                            <tr>
-                                <td style="padding: 0px; border: 0px; border-bottom: 0px;">
+                                    <td style="width: 55%; border: 0px; border-bottom: 0px; padding: 0px;" colspan="2">
+                                        <table cellpadding="0" style="border: 0px" cellspacing="0" width="100%" class="noborder">
+                                            <tr>
+                                                <td style="padding: 0px; border: 0px; border-bottom: 0px;">
 
-                                    <asp:GridView ID="GridView1" CssClass="Grid" runat="server" AutoGenerateColumns="False" Width="100%" Style="float: left; margin-top: 0px;" ShowFooter="True"
-                                        ShowHeaderWhenEmpty="True" EmptyDataText="No Payouts released."
-                                        OnRowDataBound="GridView1_RowDataBound" Font-Size="13px">
-                                        <Columns>
+                                                    <asp:GridView ID="GridView1" CssClass="Grid" runat="server" AutoGenerateColumns="False" Width="100%" Style="float: left; margin-top: 0px;" ShowFooter="True"
+                                                        ShowHeaderWhenEmpty="True" EmptyDataText="No Payouts released."
+                                                        OnRowDataBound="GridView1_RowDataBound" Font-Size="13px">
+                                                        <Columns>
 
-                                            <asp:TemplateField HeaderText="SNo" HeaderStyle-Width="5px">
-                                                <ItemTemplate>
-                                                    <%#((GridViewRow)Container).RowIndex+1 %>
-                                                </ItemTemplate>
-                                                <HeaderStyle Width="5px" />
-                                            </asp:TemplateField>
-                                            <asp:BoundField DataField="Code" HeaderText="Code" SortExpression="Code" />
-                                            <asp:BoundField DataField="ProductName" HeaderText="Product Name" SortExpression="ProductName" />
-                                            <asp:BoundField DataField="MRP" HeaderText="MRP" SortExpression="MRP" DataFormatString="{0:f2}" />
-                                            <asp:BoundField DataField="Unit Price" HeaderText="DP" SortExpression="Unit Price" DataFormatString="{0:f2}" />
-                                            <asp:BoundField DataField="BV" HeaderText="BV" SortExpression="BV" DataFormatString="{0:f2}" />
-                                            <asp:BoundField DataField="RP" HeaderText="RP" SortExpression="RP" DataFormatString="{0:f2}" />
-                                            <asp:BoundField DataField="CGS" HeaderText="CGST%" SortExpression="CGST" DataFormatString="{0:f2}" />
-                                            <asp:BoundField DataField="SGS" HeaderText="SGST%" SortExpression="SGST" DataFormatString="{0:f2}" />
-                                            <asp:BoundField DataField="IGS" HeaderText="IGST%" SortExpression="IGST" DataFormatString="{0:f2}" />
-                                            <asp:BoundField DataField="Qty" HeaderText="Qty" SortExpression="Qty" HeaderStyle-Width="10px" />
-                                            <asp:BoundField DataField="TotalMRP" HeaderText="Total MRP" SortExpression="TotalMRP" DataFormatString="{0:f2}" />
-                                            <asp:BoundField DataField="Total Price" HeaderText="Total DP" SortExpression="Total Price" DataFormatString="{0:f2}" />
-                                            <asp:BoundField DataField="TotalIGST" HeaderText="TotalIGST" SortExpression="TotalIGST" DataFormatString="{0:f2}" />
-                                            <asp:BoundField DataField="TotalSGST" HeaderText="TotalSGST" SortExpression="TotalSGST" DataFormatString="{0:f2}" />
-                                            <asp:BoundField DataField="TotalCGST" HeaderText="TotalCGST" SortExpression="TotalCGST" DataFormatString="{0:f2}" />
-                                            <asp:BoundField DataField="CashBack" HeaderText="CashBack" SortExpression="CashBack" DataFormatString="{0:f2}" />
-                                            <asp:BoundField DataField="CashBackMonth" HeaderText="Month" SortExpression="CashBackMonth" DataFormatString="{0:f2}" />
-                                           <%-- <asp:BoundField DataField="RedemptionPoints" HeaderText="RP" SortExpression="RedemptionPoints" DataFormatString="{0:f2}" />--%>
-                                            <asp:BoundField DataField="TotalCashBack" HeaderText="TotalCashBack" SortExpression="TotalCashBack" DataFormatString="{0:f2}" />
-                                            <asp:BoundField DataField="Total RP" HeaderText="Total RP" SortExpression="Total RP" DataFormatString="{0:f2}" />
-                                        </Columns>
-                                        <EmptyDataTemplate>
-                                            No Rows Found!
-                                        </EmptyDataTemplate>
-                                        <FooterStyle
-                                            HorizontalAlign="Center" />
-                                        <RowStyle
-                                            HorizontalAlign="Center" />
-
-                                    </asp:GridView>
-                                </td>
-
-                            </tr>
-                        </table>
-
-                    </td>
-
-                </tr>
-
-                <tr>
-                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Summary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Label ID="Label10" runat="server" Text="Amount"></asp:Label></td>
-                </tr>
+                                                            <asp:TemplateField HeaderText="SNo" HeaderStyle-Width="5px">
+                                                                <ItemTemplate>
+                                                                    <%#((GridViewRow)Container).RowIndex+1 %>
+                                                                </ItemTemplate>
+                                                                <HeaderStyle Width="5px" />
+                                                            </asp:TemplateField>
+                                                            <asp:BoundField DataField="Code" HeaderText="Code" SortExpression="Code" />
+                                                            <asp:BoundField DataField="ProductName" HeaderText="Product Name" SortExpression="ProductName" />
+                                                            <asp:BoundField DataField="MRP" HeaderText="MRP" SortExpression="MRP" DataFormatString="{0:f2}" />
+                                                            <asp:BoundField DataField="Unit Price" HeaderText="DP" SortExpression="Unit Price" DataFormatString="{0:f2}" Visible="false" />
+                                                            <asp:BoundField DataField="BV" HeaderText="BV" SortExpression="BV" DataFormatString="{0:f2}" />
+                                                            <%--<asp:BoundField DataField="CGS" HeaderText="CGST" SortExpression="CGST" DataFormatString="{0:f2}" />
+                                                            <asp:BoundField DataField="SGS" HeaderText="SGST" SortExpression="SGST" DataFormatString="{0:f2}" />--%>
+                                                           <%-- <asp:BoundField DataField="IGS" HeaderText="IGST"  SortExpression="IGST" DataFormatString="{0:f2}" />--%>
+                                                           <%-- <asp:BoundField DataField="RP" HeaderText="RP" SortExpression="RP" DataFormatString="{0:f2}" />--%>
+                                                            <asp:BoundField DataField="Qty" HeaderText="Qty" SortExpression="Qty" HeaderStyle-Width="10px" />
+                                                            <asp:BoundField DataField="TotalMRP" HeaderText="Total MRP" SortExpression="TotalMRP" DataFormatString="{0:f2}" />
+                                                           <%-- <asp:BoundField DataField="Total Price" Visible="false" HeaderText="Total DP" SortExpression="Total Price" DataFormatString="{0:f2}" />--%>
+                                                            <asp:BoundField DataField="TotalIGST" Visible="false" HeaderText="TotalIGST" SortExpression="TotalIGST" DataFormatString="{0:f2}" />
+                                                             <asp:BoundField DataField="TotalCGST" HeaderText="TotalCGST" SortExpression="TotalCGST" DataFormatString="{0:f2}" />
+                                                            <asp:BoundField DataField="TotalSGST" HeaderText="TotalSGST" SortExpression="TotalSGST" DataFormatString="{0:f2}" />
+                                                         
+                                                          <%-- <asp:BoundField DataField="Total RP" HeaderText="Total RP" Visible="false" SortExpression="Total RP" DataFormatString="{0:f2}" />--%>
+                                                            <%--<asp:BoundField DataField="CashBack" HeaderText="CashBack" SortExpression="CashBack" DataFormatString="{0:f2}" />--%>
+                                                            <asp:BoundField DataField="TotalDiscount" Visible="false" HeaderText="Discount" SortExpression="TotalDiscount" DataFormatString="{0:f2}" />
 
 
-                <tr>
-                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total Invoice Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Label ID="lblamount" runat="server" Text="Label"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total CGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Label ID="lblTotalCGST" runat="server" Text="Label"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total SGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Label ID="lblTotalSGST" runat="server" Text="Label"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total IGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Label ID="lblTotalIGST" runat="server" Text="Label"></asp:Label>
-                    </td>
-                </tr>
+                                                        </Columns>
+                                                        <EmptyDataTemplate>
+                                                            No Rows Found!
+                                                        </EmptyDataTemplate>
+                                                        <FooterStyle
+                                                            HorizontalAlign="Center" />
+                                                        <RowStyle
+                                                            HorizontalAlign="Center" />
 
-              <%--  <tr>
-                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total CashBack&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Label ID="lbltotalcashback" runat="server" Text="Label"></asp:Label>
-                    </td>
-                </tr>--%>
-                <tr>
-                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Grand Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Label ID="lblGrandTotal" runat="server" Text="Label"></asp:Label>
-                    </td>
-                </tr>
+                                                    </asp:GridView>
+                                                </td>
+
+                                            </tr>
+                                        </table>
+
+                                    </td>
+
+                                </tr>
+
+
+
+
+                                <tr>
+                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Summary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <asp:Label ID="Label10" runat="server" Text="Amount"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total Invoice Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <asp:Label ID="lblamount" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total CGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <asp:Label ID="lblTotalCGST" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total SGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <asp:Label ID="lblTotalSGST" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                </tr>
+                                <tr style="display:none">
+                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total IGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <asp:Label ID="lblTotalIGST" Visible="false" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Grand Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <asp:Label ID="lblGrandTotal" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                </tr>
                 <tr>
                     <td style="text-align: center; border-bottom: 1px solid #666; line-height: 14px; padding-left: 5px;" class="style1" colspan="2">“I/We certify that my/our registration certificate is in force on the date on which the sale of the goods specified in this Tax Invoice is made by me/us and that the transaction of sale covered by this tax invoice has been effected by me/us and shall be accounted for in the turnover of sales while filling of return and the due tax, if any payable on the sales has been paid or shall be paid”</td>
 

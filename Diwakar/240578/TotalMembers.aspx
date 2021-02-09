@@ -135,8 +135,8 @@
                     <Columns>
                         <asp:BoundField DataField="UserCode" HeaderText="User ID"
                             SortExpression="UserCode" />
-                        <asp:BoundField DataField="SponserId" HeaderText="Sponsor ID"
-                            SortExpression="SponserId" />
+                        <asp:BoundField DataField="SponsorId" HeaderText="Sponsor ID"
+                            SortExpression="SponsorId" />
                         <asp:BoundField DataField="SpName" HeaderText="SponserName"
                             SortExpression="SpName" />
                         <asp:BoundField DataField="UserName" HeaderText="Name"
@@ -145,8 +145,7 @@
                             SortExpression="LoginName" />
                         <asp:BoundField DataField="LoginPassword" HeaderText="Password"
                             SortExpression="LoginPassword" />
-                        <asp:BoundField DataField="TransectionPassword" HeaderText="Trans Password"
-                            SortExpression="TransectionPassword" />
+                     
                         <asp:BoundField DataField="MobileNo" HeaderText="Mobile No"
                             SortExpression="MobileNo" />
                         <asp:BoundField DataField="EMail" HeaderText="EMail" SortExpression="EMail" />
@@ -156,8 +155,10 @@
                         <asp:BoundField DataField="BankName" HeaderText="Bank Name" SortExpression="BankName" />
                         <asp:BoundField DataField="DOJ" DataFormatString="{0:dd MMM yyyy}"
                             HeaderText="DOJ" SortExpression="DOJ" />
-                        <asp:BoundField DataField="PinAmount" HeaderText="Joining Amount"
-                            SortExpression="PinAmount" />
+                        <asp:BoundField DataField="AadharCard" HeaderText="AadharCard"
+                            SortExpression="AadharCard" />
+                         <asp:BoundField DataField="PanNo" HeaderText="PanNo"
+                            SortExpression="PanNo" />
                     </Columns>
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

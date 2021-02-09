@@ -58,15 +58,6 @@ public partial class User_UserHome
     protected global::System.Web.UI.WebControls.Label lblStatus;
 
     /// <summary>
-    /// WalletPoint control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label WalletPoint;
-
-    /// <summary>
     /// Spid control.
     /// </summary>
     /// <remarks>

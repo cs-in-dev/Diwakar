@@ -29,6 +29,10 @@
          {
             display:none;
         }
+             #ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(5), th:nth-child(5)
+         {
+            display:none;
+        }
          /*#ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(4), th:nth-child(13)
          {
             display:none;
@@ -70,35 +74,7 @@ overflow:auto;
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <script src="css/Extension.min.js" type="text/javascript"></script>
-    <%-- <table id="table1">
-            <tr>
-                <td style="text-align: right; font-size: small; font-family: Verdana;">
-                    <asp:Label ID="Label1" runat="server" style="font-size: 12px" 
-                        Text="User Code :"></asp:Label>
-                </td>
-                <td style="text-align: left; font-size: small; font-family: Verdana;">
-                    <asp:TextBox ID="txtUserCode" runat="server" AutoPostBack="True" 
-                        ontextchanged="txtUserCode_TextChanged"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" Font-Size="12px" ForeColor="Red" ControlToValidate="txtUserCode" ValidationGroup="vg1"></asp:RequiredFieldValidator>
-                    <asp:Label ID="Label2" runat="server" style="font-size: 12px" Text="Name :"></asp:Label>
-                </td>
-                <td class="style35">
-                    <asp:TextBox ID="txtUserName" runat="server" Width="200px" Enabled="False"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" Font-Size="15px" ForeColor="Red" ControlToValidate="txtUserName" ValidationGroup="vg1"></asp:RequiredFieldValidator>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align: right; font-family: Verdana;" class="style39">
-                    Remaining BV Points :</td>
-                <td style="text-align: left; font-size: small; font-family: Verdana;">
-                    
-                    <asp:TextBox ID="txtRemBvpoints" runat="server" Enabled="false" ></asp:TextBox>
-                </td>
-            </tr>
-
-        </table>--%>
-
-
+   
     <table>
         <tr>
             <td>Usercode 
@@ -138,7 +114,7 @@ overflow:auto;
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
                         <asp:TextBox ID="ProductName" runat="server"
-                            Width="450px" AutoPostBack="True" OnTextChanged="ProductName_TextChanged" Font-Size="12px"></asp:TextBox>
+                            Width="384px" Height="24px" AutoPostBack="True" OnTextChanged="ProductName_TextChanged" Font-Size="12px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="ProductName" runat="server" ErrorMessage="*" ForeColor="Red" Font-Size="16px" ValidationGroup="vg2"></asp:RequiredFieldValidator>
                         <cc1:AutoCompleteExtender ServiceMethod="GetProductNameList"
                             MinimumPrefixLength="1"
@@ -167,10 +143,10 @@ overflow:auto;
         <tr>
             <td>Product Code</td>
             <td class="style20">MRP</td>
-            <td class="style20">DP</td>
+            <%--<td class="style20">DP</td>--%>
             <td class="style20">BV</td>
-            <td class="style20">CGST</td>
-            <td class="style20">SGST</td>
+            <td class="style20">CGST %</td>
+            <td class="style20">SGST %</td>
           <%--  <td class="style20">IGST</td>--%>
 
 
@@ -180,7 +156,7 @@ overflow:auto;
             <td class="style17" style="text-align: left">
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
-                        <asp:TextBox ID="ProductCode" runat="server" Style="margin-top: 20px; width: 60px;"
+                        <asp:TextBox ID="ProductCode" runat="server" Style="margin-top: 20px; width: 115px;"
                             AutoPostBack="True" OnTextChanged="ProductCode_TextChanged"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="ProductCode" runat="server" ErrorMessage="*" ForeColor="Red" Font-Size="16px" ValidationGroup="vg2"></asp:RequiredFieldValidator>
                        
@@ -211,10 +187,10 @@ overflow:auto;
                 </asp:UpdatePanel>
             </td>
 
-            <td class="style17" style="text-align: center">
-                <asp:UpdatePanel ID="UpdatePanel7" runat="server">
+            <td class="style17" style="text-align: center;display:none">
+                <asp:UpdatePanel ID="UpdatePanel7" runat="server" style="display:none">
                     <ContentTemplate>
-                        <asp:TextBox ID="DP" runat="server" Width="80px" ReadOnly="True"></asp:TextBox>
+                        <asp:TextBox ID="DP" runat="server" Width="80px" ReadOnly="True" style="display:none"></asp:TextBox>
                     </ContentTemplate>
                     <Triggers>
                         <asp:AsyncPostBackTrigger ControlID="ProductName" EventName="TextChanged" />
@@ -358,10 +334,10 @@ overflow:auto;
                 <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" OnClick="Button1_Click"
                     Text="Add To Cart" ValidationGroup="vg2" Style="width: 100px" />
             </td>
-            <td class="style18">
-                <asp:UpdatePanel ID="UpdatePanel13" runat="server">
+            <td class="style18" style="display:none">
+                <asp:UpdatePanel ID="UpdatePanel13" runat="server" style="display:none">
                     <ContentTemplate>
-                        <asp:TextBox ID="CashBack" runat="server" Width="80px" ReadOnly="True"></asp:TextBox>
+                        <asp:TextBox ID="CashBack" runat="server" Width="80px" ReadOnly="True" style="display:none"></asp:TextBox>
                     </ContentTemplate>
                     <Triggers>
                         <asp:AsyncPostBackTrigger ControlID="ProductName" EventName="TextChanged" />
@@ -372,10 +348,10 @@ overflow:auto;
             </td>
 
 
-             <td class="style18">
-                <asp:UpdatePanel ID="UpdatePanel15" runat="server">
+             <td class="style18" style="display:none">
+                <asp:UpdatePanel ID="UpdatePanel15" runat="server" style="display:none" >
                     <ContentTemplate>
-                        <asp:TextBox ID="txtselcashback" runat="server" Width="80px" ReadOnly="True"></asp:TextBox>
+                        <asp:TextBox ID="txtselcashback" runat="server" Width="80px" ReadOnly="True" style="display:none"></asp:TextBox>
                     </ContentTemplate>
                     <Triggers>
                         <asp:AsyncPostBackTrigger ControlID="ProductName" EventName="TextChanged" />
@@ -430,7 +406,7 @@ overflow:auto;
             </tr>
             <table style="width: 95%; font-size: 14px; font-weight: bold;">
                 <tr>
-                    <td align="center">Total DP</td>
+                    <%--<td align="center">Total DP</td>--%>
                     <td align="center">TOTAL BV</td>
                    <%-- <td align="center">COURIER CHARGES</td>--%>
                     <td align="center">TOTAL AMOUNT</td>
@@ -438,8 +414,8 @@ overflow:auto;
                    <%-- <td align="center">TOTAL CASH BACK</td>--%>
                 </tr>
                 <tr>
-                    <td align="center">
-                        <asp:Label ID="TotalDP" runat="server" Style="font-size: 14px; font-weight: bold;"></asp:Label>
+                    <td align="center" style="display:none">
+                        <asp:Label ID="TotalDP" runat="server" Style="font-size: 14px; font-weight: bold;display:none"  ></asp:Label>
                     </td>
                     <td align="center">
                         <asp:Label ID="TotalBV" runat="server" Style="font-size: 14px; font-weight: bold;"></asp:Label>
@@ -471,12 +447,12 @@ overflow:auto;
     </table>
     <table>
         <tr>
-            <td><strong>Your Final Order Details are above and Products will be delivered subject to selection of Payment Mode and after payment is securely credited to  cyrashine Private Limited Account.
+            <td><strong>Your Final Order Details are above and Products will be delivered subject to selection of Payment Mode and after payment is securely credited to  Diwakar Retail Ltd Account.
             </strong></td>
         </tr>
     </table>
     <table class="style31">
-        <tr>
+        <%--<tr>
             <td>Payment Date:
             </td>
             <td>
@@ -484,7 +460,7 @@ overflow:auto;
                 <cc1:CalendarExtender runat="server" ID="CalendarExtender2" TargetControlID="txtpaymentdate"></cc1:CalendarExtender>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*" ValidationGroup="vg1" ForeColor="red" ControlToValidate="txtpaymentdate"></asp:RequiredFieldValidator>
             </td>
-        </tr>
+        </tr>--%>
         <tr>
 
             <td>Payment Mode:</td>
@@ -492,12 +468,7 @@ overflow:auto;
 
                 <asp:DropDownList ID="DropDownList1" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" runat="server">
                     <asp:ListItem Value="Select Payment Mode">Select Payment Mode</asp:ListItem>
-                    <asp:ListItem Value="DD">DD</asp:ListItem>
-                    <asp:ListItem Value="Cheque">Cheque</asp:ListItem>
-                    <asp:ListItem Value="Debit/Credit Card">Debit/Credit Card</asp:ListItem>
-                    <asp:ListItem Value="IMPS">IMPS</asp:ListItem>
-                    <asp:ListItem Value="NEFT">NEFT</asp:ListItem>
-                    <asp:ListItem Value="Repurchase Wallet">Repurchase Wallet</asp:ListItem>
+                      <asp:ListItem Value="Cash">Cash</asp:ListItem>
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="DropDownList1" InitialValue="Select Payment Mode" runat="server" ErrorMessage="*" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator>
 
@@ -514,187 +485,7 @@ overflow:auto;
             </td>
         </tr>
     </table>
-    <asp:Panel ID="panelcheque" runat="server">
-        <table class="style31" style="margin-left:27%">
-            <tr>
-                <td>
-                    <asp:Label ID="lblChecqueNo" runat="server" Text="Checque No :"></asp:Label></td>
-                <td>
-                    <asp:TextBox runat="server" ID="txtChecqueNo" />
-                    <asp:RequiredFieldValidator ID="rf1" runat="server" ErrorMessage="*" ControlToValidate="txtChecqueNo" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="Label1" runat="server" Text="Checque Date :"></asp:Label></td>
-                <td>
-                    <asp:TextBox runat="server" ID="ChecqueDate" autocomplete="off"/></td>
-                <cc1:CalendarExtender runat="server" ID="CE1" TargetControlID="ChecqueDate"></cc1:CalendarExtender>
 
-                <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ControlToValidate="ChecqueDate" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator></td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="Label2" runat="server" Text="Bank Name :"></asp:Label></td>
-                <td>
-                    <asp:TextBox runat="server" ID="txtBankName" />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*" ControlToValidate="txtBankName" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>
-                    <asp:Label ID="Label3" ForeColor="Red" runat="server"></asp:Label>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
-    </asp:Panel>
-
-    <asp:Panel ID="panel5" runat="server">
-        <table class="style31" style="margin-left:27%">
-            <tr>
-                <td>
-                    <asp:Label ID="lblDDNO" runat="server" Text="DD No :"></asp:Label></td>
-                <td>
-                    <asp:TextBox runat="server" ID="txtddno" />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ErrorMessage="*" ControlToValidate="txtddno" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="Label13" runat="server" Text="DD Date :"></asp:Label></td>
-                <td>
-                    <asp:TextBox runat="server" ID="txtdddate" autocomplete="off" /></td>
-                <cc1:CalendarExtender runat="server" ID="CalendarExtender4" TargetControlID="txtdddate"></cc1:CalendarExtender>
-
-                <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ErrorMessage="*" ControlToValidate="txtdddate" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator></td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="Label14" runat="server" Text="DD Bank Name :"></asp:Label></td>
-                <td>
-                    <asp:TextBox runat="server" ID="txtddbankname" />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ErrorMessage="*" ControlToValidate="txtddbankname" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>
-                    <asp:Label ID="Label15" ForeColor="Red" runat="server"></asp:Label>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
-    </asp:Panel>
-
-
-    <asp:Panel ID="panel2" runat="server">
-        <table class="style31" style="margin-left:27%">
-
-            <tr>
-                <td>
-                    <asp:Label ID="Label6" runat="server" Text="Reference No. :"></asp:Label></td>
-                <td>
-                    <asp:TextBox runat="server" ID="txtrefno" /></td>
-                <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="*" ControlToValidate="txtBankName" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator></td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="Label9" runat="server" Text="IMPS Date :"></asp:Label></td>
-                <td>
-                    <asp:TextBox runat="server" ID="txtdate" autocomplete="off"/></td>
-                <cc1:CalendarExtender runat="server" ID="CalendarExtender1" TargetControlID="txtdate"></cc1:CalendarExtender>
-                <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="*" ControlToValidate="txtdate" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator></td>
-            </tr>
-            <%-- <tr><td><asp:Label ID="Label11" runat="server" Text="IMPS Amount"></asp:Label></td>
-                        <td><asp:TextBox runat="server" ID="txtAmount" inputype="Number" /></td>
-                          <td> <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*" ControlToValidate="txtAmount" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator></td>
-                        </tr>--%>
-            <tr>
-                <td>&nbsp;</td>
-                <td>
-                    <asp:Label ID="Label12" runat="server" ForeColor="Red"></asp:Label>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
-    </asp:Panel>
-    <asp:Panel ID="panel4" runat="server">
-        <table class="style31" style="margin-left:27%">
-
-            <tr>
-                <td>
-                    <asp:Label ID="Label5" runat="server" Text="Reference No. :"></asp:Label></td>
-                <td>
-                    <asp:TextBox runat="server" ID="txtneftrefNo" /></td>
-                <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ErrorMessage="*" ControlToValidate="txtneftrefNo" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator></td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="Label8" runat="server" Text="NEFT Date :"></asp:Label></td>
-                <td>
-                    <asp:TextBox runat="server" ID="txtnNeftdate" autocomplete="off"/></td>
-                <cc1:CalendarExtender runat="server" ID="CalendarExtender3" TargetControlID="txtnNeftdate"></cc1:CalendarExtender>
-                <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ErrorMessage="*" ControlToValidate="txtnNeftdate" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator></td>
-            </tr>
-            <%-- <tr><td><asp:Label ID="Label11" runat="server" Text="IMPS Amount"></asp:Label></td>
-                        <td><asp:TextBox runat="server" ID="txtAmount" inputype="Number" /></td>
-                          <td> <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*" ControlToValidate="txtAmount" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator></td>
-                        </tr>--%>
-            <tr>
-                <td>&nbsp;</td>
-                <td>
-                    <asp:Label ID="Label10" runat="server" ForeColor="Red"></asp:Label>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
-    </asp:Panel>
-
-    <asp:Panel ID="panel6" runat="server">
-        <table class="style31" style="margin-left:27%">
-
-            <tr>
-                <td>
-                    <asp:Label ID="Label11" runat="server" Text="Reference No. :"></asp:Label></td>
-                <td>
-                    <asp:TextBox runat="server" ID="txtreffno" /></td>
-                <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ErrorMessage="*" ControlToValidate="txtreffno" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator></td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="Label16" runat="server" Text="Transation Date :"></asp:Label></td>
-                <td>
-                    <asp:TextBox runat="server" ID="txttransationsdate" autocomplete="off"/></td>
-                <cc1:CalendarExtender runat="server" ID="CalendarExtender5" TargetControlID="txttransationsdate"></cc1:CalendarExtender>
-                <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ErrorMessage="*" ControlToValidate="txttransationsdate" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator></td>
-            </tr>
-            <%-- <tr><td><asp:Label ID="Label11" runat="server" Text="IMPS Amount"></asp:Label></td>
-                        <td><asp:TextBox runat="server" ID="txtAmount" inputype="Number" /></td>
-                          <td> <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*" ControlToValidate="txtAmount" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator></td>
-                        </tr>--%>
-            <tr>
-                <td>&nbsp;</td>
-                <td>
-                    <asp:Label ID="Label17" runat="server" ForeColor="Red"></asp:Label>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
-    </asp:Panel>
     <table class="style31" style="margin-left:27%">
         <tr>
             <td></td>
@@ -707,19 +498,7 @@ overflow:auto;
             <td></td>
         </tr>
     </table>
-    <asp:Panel ID="Panel3" runat="server">
-        <table style="margin-left: 27%;">
-            <tr>
-                <td>Enter OTP Number</td>
-                <td>
-                    <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
-                </td>
-                <td>
-                    <asp:Button ID="Button3" OnClick="Button3_Click" runat="server" Text="Submit" />
-                </td>
-            </tr>
-        </table>
-    </asp:Panel>
+    
     <br />
     <br />
 

@@ -15,7 +15,7 @@ namespace Sabaic._19111973
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
         SqlCommand cmd;
-        Double Qty = 0, CGST = 0, SGST = 0, IGST = 0, TotalTaxAmount = 0, TotalDP = 0, Total = 0, UnitPrice = 0, TotalPrice = 0, Bv = 0, TotalAddtax = 0, Tottax = 0, Qty2 = 0, tax2 = 0, tax3 = 0, Totalweight = 0, CashBack = 0, TCB = 0, TotalRP=0;
+        Double Qty = 0, CGST = 0, SGST = 0, IGST = 0, TotalCGST = 0, TotalSGST = 0, TotalTaxAmount = 0, TotalDP = 0, Total = 0, UnitPrice = 0, TotalPrice = 0, Bv = 0, TotalAddtax = 0, Tottax = 0, Qty2 = 0, tax2 = 0, tax3 = 0, Totalweight = 0, CashBack = 0, TCB = 0, TotalRP=0;
 
 
         Double GrossAmt = 0;
@@ -23,8 +23,6 @@ namespace Sabaic._19111973
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
-            GridView1.Columns[12].Visible = false;
             string FrenchiseId = "";
             string msg = Request.QueryString["ID"].ToString();
             string franchise = "Company";
@@ -103,9 +101,6 @@ namespace Sabaic._19111973
             {
 
             }
-
-
-
             SqlCommand cmd1 = new SqlCommand("select * from [dbo].[tblFrenchiseMaster] where FrenchiseID='" + FrenchiseId + "'", con);
 
             SqlDataReader dr1 = cmd1.ExecuteReader();
@@ -125,30 +120,15 @@ namespace Sabaic._19111973
             string State = cmd12.ExecuteScalar().ToString();
             con.Close();
 
-            if (lblsate.Text == "UTTAR PRADESH" || lblsate.Text == "UP" || lblsate.Text == "Uttar Pradesh")
-            {
-                SqlCommand cmd2 = new SqlCommand("SELECT ProductRepurchase.ProductCode Code,OrderDetails.CGST as CGS,OrderDetails.SGST as SGS,OrderDetails.IGST as IGS,ProductRepurchase.RedemptionPoints as RP,(CAST(ProductRepurchase.RedemptionPoints as decimal(18,2))*OrderDetails.Qty) as [Total RP], ProductRepurchase.productid,ProductRepurchase.ProductName,ProductRepurchase.MRP, OrderDetails.DP 'Unit Price', OrderDetails.Qty, OrderDetails.BV,OrderDetails.TotalBV, OrderDetails.TotalMRP Value, (OrderDetails.IGST*OrderDetails.Qty)TotalIGST, (OrderDetails.SGST*OrderDetails.Qty) TotalSGST,(OrderDetails.CGST*OrderDetails.Qty)TotalCGST,(ProductRepurchase.MRP*OrderDetails.Qty)TotalMRP, (OrderDetails.TotalDP ) 'Total Price', ProductRepurchase.CashBack,ProductRepurchase.CashBackMonth,(ProductRepurchase.CashBack)*(ProductRepurchase.CashBackMonth*OrderDetails.Qty) AS TotalCashBack FROM OrderDetails INNER JOIN ProductRepurchase ON OrderDetails.ProductID = ProductRepurchase.ProductID INNER JOIN OrderMaster ON OrderMaster.OrderID = OrderDetails.OrderID where OrderMaster.OrderId='" + msg + "' and FrenchiseID = '" + FrenchiseId + "'", con);
+            
+                SqlCommand cmd2 = new SqlCommand("SELECT ProductRepurchase.ProductCode Code,OrderDetails.CGST as CGS,OrderDetails.SGST as SGS,OrderDetails.TotalDiscount as TotalDiscount,ProductRepurchase.productid,ProductRepurchase.ProductName, ProductRepurchase.MRP, OrderDetails.DP 'Unit Price', OrderDetails.Qty,OrderDetails.BV,OrderDetails.TotalBV, OrderDetails.TotalMRP Value, (OrderDetails.IGST*OrderDetails.Qty)TotalIGST,(OrderDetails.SGST*OrderDetails.Qty)TotalSGST ,(OrderDetails.CGST*OrderDetails.Qty)TotalCGST, (ProductRepurchase.SalesAmount*OrderDetails.Qty-ProductRepurchase.DiscountAmount)TotalMRP, (OrderMaster.Amount ) 'Total Price',ProductRepurchase.CashBack FROM OrderDetails INNER JOIN ProductRepurchase ON OrderDetails.ProductID = ProductRepurchase.ProductID INNER JOIN OrderMaster ON OrderMaster.OrderID = OrderDetails.OrderID where OrderMaster.OrderId='" + msg + "' and FrenchiseID = '" + FrenchiseId + "'", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd2);
                 DataSet dt = new DataSet();
                 da.Fill(dt);
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
-            }
-
-            else
-            {
-                SqlCommand cmd2 = new SqlCommand("SELECT ProductRepurchase.ProductCode Code,OrderDetails.CGST as CGS,OrderDetails.SGST as SGS,OrderDetails.IGST as IGS,ProductRepurchase.RedemptionPoints as RP,(CAST(ProductRepurchase.RedemptionPoints as decimal(18,2))*OrderDetails.Qty) as [Total RP], ProductRepurchase.productid,ProductRepurchase.ProductName,ProductRepurchase.MRP, OrderDetails.DP 'Unit Price', OrderDetails.Qty,OrderDetails.BV, OrderDetails.TotalBV, OrderDetails.TotalMRP Value,(OrderDetails.IGST*OrderDetails.Qty)TotalIGST,(OrderDetails.SGST*OrderDetails.Qty)TotalSGST, (OrderDetails.CGST*OrderDetails.Qty)TotalCGST, (ProductRepurchase.MRP*OrderDetails.Qty)TotalMRP, (OrderDetails.TotalDP ) 'Total Price', ProductRepurchase.CashBack,ProductRepurchase.CashBackMonth,(ProductRepurchase.CashBack)*(ProductRepurchase.CashBackMonth*OrderDetails.Qty) AS TotalCashBack FROM OrderDetails INNER JOIN ProductRepurchase ON OrderDetails.ProductID = ProductRepurchase.ProductID INNER JOIN OrderMaster ON OrderMaster.OrderID = OrderDetails.OrderID where OrderMaster.OrderId='" + msg + "' and FrenchiseID = '" + FrenchiseId + "'", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd2);
-                DataSet dt = new DataSet();
-                da.Fill(dt);
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
-            }
-
-            GridView1.Columns[13].Visible = false;
-            GridView1.Columns[14].Visible = false;
-            GridView1.Columns[15].Visible = false;
-
+            
+          
         }
 
 
@@ -162,53 +142,39 @@ namespace Sabaic._19111973
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+            try
+            {
+                if (e.Row.RowType == DataControlRowType.DataRow)
+                {
+                    Qty = Qty + Double.Parse(e.Row.Cells[6].Text);
+                    Qty2 = Qty2 + Double.Parse(e.Row.Cells[6].Text);
+                    UnitPrice = UnitPrice + Double.Parse(e.Row.Cells[3].Text);
+                    TotalPrice = TotalPrice + Double.Parse(e.Row.Cells[7].Text);
 
-            GridView1.Columns[13].Visible = true;
-            GridView1.Columns[14].Visible = true;
-            GridView1.Columns[15].Visible = true;
-            if (e.Row.RowType == DataControlRowType.DataRow)
+                    Bv = Bv + Double.Parse(e.Row.Cells[9].Text);
+
+                    TotalSGST = TotalSGST + Double.Parse(e.Row.Cells[9].Text);
+                    TotalCGST = TotalCGST + Double.Parse(e.Row.Cells[10].Text);
+
+                }
+
+                if (e.Row.RowType == DataControlRowType.Footer)
+                {
+                    e.Row.Cells[7].Text = string.Format("{0:f2}", TotalPrice);
+                    lblamount.Text = string.Format("{0:f2}", TotalPrice);
+                    lblTotalSGST.Text = string.Format("{0:f2}", TotalSGST);
+                    lblTotalCGST.Text = string.Format("{0:f2}", TotalCGST);
+
+                    decimal totalsgst = Convert.ToDecimal(lblTotalSGST.Text);
+                    decimal totalcgst = Convert.ToDecimal(lblTotalCGST.Text);
+                    decimal totaltax = (Convert.ToDecimal(lblamount.Text) + totalsgst + totalcgst);
+                    lblGrandTotal.Text = string.Format("{0:f2}", (totaltax));
+                }
+            }
+            catch (Exception ex)
             {
 
-                Qty = Qty + Double.Parse(e.Row.Cells[10].Text);
-                Qty2 = Qty2 + Double.Parse(e.Row.Cells[10].Text);
-                UnitPrice = UnitPrice + Double.Parse(e.Row.Cells[11].Text);
-                TotalTaxAmount = TotalTaxAmount + Double.Parse(e.Row.Cells[9].Text);
-                TotalPrice = TotalPrice + Double.Parse(e.Row.Cells[11].Text);
-                GrossAmt = GrossAmt + Double.Parse(e.Row.Cells[11].Text);
-                tax2 = tax2 + Double.Parse(e.Row.Cells[13].Text);
-                Bv = Bv + Double.Parse(e.Row.Cells[10].Text);
-                CashBack = CashBack + Double.Parse(e.Row.Cells[16].Text);
-
-                IGST = IGST + Double.Parse(e.Row.Cells[13].Text);
-                SGST = SGST + Double.Parse(e.Row.Cells[14].Text);
-                CGST = CGST + Double.Parse(e.Row.Cells[15].Text);
-                TCB = TCB + Double.Parse(e.Row.Cells[18].Text);
-                TotalRP = TotalRP + Double.Parse(e.Row.Cells[19].Text);
-
-
             }
-
-            if (e.Row.RowType == DataControlRowType.Footer)
-            {
-                e.Row.Cells[11].Text = string.Format("{0:f2}", TotalPrice);
-                //e.Row.Cells[9].Text = string.Format("{0:f2}", Bv);
-                e.Row.Cells[19].Text = string.Format("{0:f2}", TotalRP);
-
-                lblamount.Text = string.Format("{0:f2}", TotalPrice);
-                lblTotalCGST.Text = string.Format("{0:f2}", CGST);
-                lblTotalSGST.Text = string.Format("{0:f2}", SGST);
-                lblTotalIGST.Text = string.Format("{0:f2}", IGST);
-                //lbltotalcashback.Text = string.Format("{0:f2}",TCB);
-                //Double NetPay = CGST + SGST + IGST + TotalPrice;
-                lblGrandTotal.Text = string.Format("{0:f2}", GrossAmt);
-
-
-
-
-            }
-
-
-
         }
     }
 }

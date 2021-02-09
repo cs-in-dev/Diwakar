@@ -122,6 +122,7 @@ public class DALMemberMaster
             objDatabaseHelper.AddParameter("@District", objMemberMaster.District, SqlDbType.NVarChar, 50);
             objDatabaseHelper.AddParameter("@PanCardProof", objMemberMaster.Pancard, SqlDbType.NVarChar, 500);
             objDatabaseHelper.AddParameter("@AddressProof", objMemberMaster.AddressProof, SqlDbType.NVarChar, 500);
+            objDatabaseHelper.AddParameter("@AadharCard", objMemberMaster.AadharCard, SqlDbType.NVarChar, 20);
 
             returnValue = Convert.ToString(objDatabaseHelper.ExecuteNonQuery(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen));
 
@@ -179,6 +180,7 @@ public class DALMemberMaster
             objDatabaseHelper.AddParameter("@District", objMemberMaster.District, SqlDbType.NVarChar, 50);
             objDatabaseHelper.AddParameter("@PanCardProof", objMemberMaster.Pancard, SqlDbType.NVarChar, 500);
             objDatabaseHelper.AddParameter("@AddressProof", objMemberMaster.AddressProof, SqlDbType.NVarChar, 500);
+            objDatabaseHelper.AddParameter("@AadharCard", objMemberMaster.AadharCard, SqlDbType.NVarChar, 20);
 
             returnValue = Convert.ToString(objDatabaseHelper.ExecuteNonQuery(dCmd.CommandText, dCmd.CommandType, DatabaseHelper.ConnectionState.KeepOpen));
 
@@ -312,6 +314,7 @@ public class DALMemberMaster
                     objMemberMaster.Cadre = rdMember["Cadre"].ToString();
                     objMemberMaster.Pancard = rdMember["PanCardProof"].ToString();
                     objMemberMaster.AddressProof = rdMember["AddressProof"].ToString();
+                    objMemberMaster.AadharCard = rdMember["AadharCard"].ToString();
                 }
                 rdMember.Close();
             }

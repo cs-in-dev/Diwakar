@@ -67,11 +67,7 @@
             $('#<% = txtBankName.ClientID%>').removeAttr('style');
             $('#<% = txtAccountNo.ClientID%>').removeAttr('style');
             $('#<% = txtIFSCode.ClientID%>').removeAttr('style');
-            $('#<% = txtNomineeFirst.ClientID%>').removeAttr('style');
-            $('#<% = txtNomineeLastName.ClientID%>').removeAttr('style');
-            $('#<% = txtRelation.ClientID%>').removeAttr('style');
-            $('#<% = txtNomineeFatherHusband.ClientID%>').removeAttr('style');
-
+           
 
             var Register = {};
 
@@ -96,21 +92,10 @@
             Register.BankName = $('#<% = txtBankName.ClientID%>').val();
             Register.AccountNo = $('#<% = txtAccountNo.ClientID%>').val();
             Register.IFSCode = $('#<% = txtIFSCode.ClientID%>').val();
-            Register.NomineeFirst = $('#<% = txtNomineeFirst.ClientID%>').val();
-            Register.NomineeLastName = $('#<% = txtNomineeLastName.ClientID%>').val();
-            Register.Relation = $('#<% = txtRelation.ClientID%>').val();
-            Register.NomineeFatherHusband = $('#<% = txtNomineeFatherHusband.ClientID%>').val();
-
+           
             Register.city = $('#<% =txtcity.ClientID%>').val();
             Register.PANNo = $('#<% = txtPANNo.ClientID%>').val();
-
-
-
-           <%-- if (Register.EnterPin == '' || Register.EnterPin == undefined || Register.EnterPin == null) {
-                $('#<% = txtpin.ClientID%>').attr('style', 'border:2px solid red;');
-                $('#<% = txtpin.ClientID%>').focus();
-                return;
-            }--%>
+            Register.AadharCard = $('#<% = txtAadhar.ClientID%>').val();
 
 
             if (Register.sponserid == '' || Register.sponserid == undefined || Register.sponserid == null) {
@@ -123,14 +108,6 @@
                 $('#<% = TextBox1.ClientID%>').focus();
                 return;
             }
-
-           <%-- if (Register.Position == "Please Select" || Register.Position == undefined || Register.Position == null || Register.Position == '' || Register.Position == 'Both Side Filled') {
-                $('#<%=Position.ClientID%>').empty();
-                $('#<%=Position.ClientID%>').append('<option selected="selected" value="Both Side Filled">Both Side Filled</option>');
-                $('#<% = Position.ClientID%>').attr('style', 'border:2px solid red;');
-                $('#<% = Position.ClientID%>').focus();
-                return;
-            }--%>
 
             if (Register.LoginPassword == '' || Register.LoginPassword == undefined || Register.LoginPassword == null) {
                 $('#<% = txtLoginPassword.ClientID%>').attr('style', 'border:2px solid red;');
@@ -164,6 +141,11 @@
                 $('#<% = txtMobileNo.ClientID%>').focus();
                 return;
             }
+            if (Register.AadharCard == '' || Register.AadharCard == undefined || Register.AadharCard == null) {
+                $('#<% = txtAadhar.ClientID%>').attr('style', 'border:2px solid red;');
+                 $('#<% = txtAadhar.ClientID%>').focus();
+                 return;
+             }
 
             $.ajax({
                 type: "POST",
@@ -247,7 +229,7 @@
                 success: function (data) {
                     if (data.d == 'error') {
                         if (Register.MobileNo < 10) {
-                           // alert('Valid Mobile Number');
+                            // alert('Valid Mobile Number');
                         }
                         else {
                             alert('Invalid Mobile Number');
@@ -300,7 +282,7 @@
                     }
 
                     else {
-                      //  alert('PanNo is Valid');
+                        //  alert('PanNo is Valid');
                     }
 
                 },
@@ -309,6 +291,35 @@
                 }
             });
         }
+
+        function AadharNumberCheck() {
+
+            var Register = {};
+
+            Register.AadharCard = $('#<% = txtAadhar.ClientID%>').val();
+
+            $.ajax({
+                type: "POST",
+                url: "Registration.aspx/CheckAadharNumber",
+                data: "{AadharCard:'" + Register.AadharCard + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    if (data.d == 'error') {
+                        alert('This Aadhar Number Already Used Please Try With Different AadharNo');
+                        $('#<% = txtAadhar.ClientID%>').val('');
+                    }
+
+                    else {
+                        //  alert('PanNo is Valid');
+                    }
+
+                },
+                error: function (data) {
+
+                }
+            });
+           }
 
         function SponserID() {
 
@@ -360,49 +371,17 @@
     <center>
         <div class="container">
     <asp:Panel ID="Panel1" runat="server" >
-  <%--      <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div style="padding: 25px 20px; box-shadow: 0px 0px 10px 0px #f1f1f1; border: 1px solid #e8e8e8;">
-         <div class="form-group">
-            <label for="usrname"><span class="glyphicon glyphicon-user"></span>&nbsp Enter Pin</label>
-            <asp:TextBox ID="txtpin" CssClass="form-control" onchange="EnterPin();" Style="width: 100%;" runat="server" placeholder="Enter Pin"></asp:TextBox>
-        </div>
-        <div class="form-group">
-
-            <label for="usrname"><span class="glyphicon glyphicon-user"></span>&nbsp Sponser ID</label>
-            <asp:TextBox ID="txtsponserid" CssClass="form-control" onchange="SponserID();" Style="width: 100%;" runat="server" placeholder="Sponser ID"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <label for="usrname"><span class="glyphicon glyphicon-user"></span>&nbsp Sponsor Name</label>
-            <asp:TextBox ID="TextBox1" CssClass="form-control" ReadOnly="true" Style="width: 100%;" runat="server" placeholder="Sponsor Name"></asp:TextBox>
-        </div>
+  <div class="section-title" style="text-align: center;">
+                            <a href="Default.aspx">
+                                <img src="img/logo.png" style="height: 58px" /></a>
+                            <h3>Registration</h3>
+                            <br />
+                        </div>
      
-        <div class="form-group">
-            <label for="psw"><span class="glyphicon glyphicon-eye-open"></span>&nbsp Position </label>
-            <asp:DropDownList ID="Position" CssClass="form-control" Style="width: 100%;" runat="server">
-                <asp:ListItem>Please Select</asp:ListItem>
-                 <asp:ListItem>Left</asp:ListItem>
-                 <asp:ListItem>Right</asp:ListItem>
-            </asp:DropDownList>
-            
-        </div>
-
-         <div>
-              <asp:Label ID="lblright" runat="server" Style="color: red;display:none; width: 100%;padding:10px"></asp:Label><br />
-            <asp:Label ID="lblleft" runat="server" Style="color: red; display:none; width: 100%;padding:10px"></asp:Label>
-        </div>
-                    </div>
-</div>
-            </div>--%>
-
-        <div>
-            <h1>
-                <b>Registration</b> 
-            </h1>
-           
-        </div>
         <br />
-
+        <div>
+            <asp:Button ID="redirecttologin" runat="server" OnClick="redirecttologin_Click" Text="Go To Login Page" style="margin-right:100%" />
+        </div>
 <div class="form-horizontal" style="padding: 25px 20px; box-shadow: 0px 0px 10px 0px #f1f1f1; border: 1px solid #e8e8e8;">
 
      <div class="row">
@@ -598,42 +577,19 @@
             </div>
         </div>
     </div>
+
+
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
-                <label for="psw" class="control-label col-sm-6 col-xs-12 text-left"><span class="glyphicon glyphicon-eye-open"></span>&nbsp Nominee First </label>
+                <label for="psw" class="control-label col-sm-6 col-xs-12 text-left"><span class="glyphicon glyphicon-eye-open"></span>&nbsp Aadhar Card No</label>
                 <div class="col-sm-6 col-xs-12">
-                <asp:TextBox ID="txtNomineeFirst" CssClass="form-control" runat="server" placeholder="Nominee First"></asp:TextBox>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="psw" class="control-label col-sm-6 col-xs-12 text-left"><span class="glyphicon glyphicon-eye-open"></span>&nbsp Nominee Last Name</label>
-                <div class="col-sm-6 col-xs-12">
-                <asp:TextBox ID="txtNomineeLastName" CssClass="form-control" runat="server" placeholder="Nominee Last Name"></asp:TextBox>
+                 <asp:TextBox ID="txtAadhar" CssClass="form-control" runat="server" placeholder="Aadhar Card No." onchange="AadharNumberChecktxt();"></asp:TextBox>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="psw" class="control-label col-sm-6 col-xs-12 text-left"><span class="glyphicon glyphicon-eye-open"></span>&nbsp Nominee Relation</label>
-                <div class="col-sm-6 col-xs-12">
-                <asp:TextBox ID="txtRelation" CssClass="form-control" runat="server" placeholder="Nominee Relation"></asp:TextBox>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="psw" class="control-label col-sm-6 col-xs-12 text-left"><span class="glyphicon glyphicon-eye-open"></span>&nbsp Nominee Father/Husband</label>
-                <div class="col-sm-6 col-xs-12">
-                <asp:TextBox ID="txtNomineeFatherHusband" CssClass="form-control" runat="server" placeholder="Nominee Father/Husband"></asp:TextBox>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 
         <div class="checkbox">
@@ -655,7 +611,7 @@
         </div>
 
         <div class="form-group">
-            <label for="psw"><span class="glyphicon glyphicon-user"></span>&nbsp Your MemberId is:</label>
+            <label for="psw"><span class="glyphicon glyphicon-user"></span>&nbsp Your UserId is:</label>
             <asp:Label ID="Label1" runat="server"></asp:Label>
         </div>
         <div class="form-group">

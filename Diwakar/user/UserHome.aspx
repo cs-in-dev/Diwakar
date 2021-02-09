@@ -63,17 +63,17 @@
                     <asp:Label ID="lblStatus" runat="server"></asp:Label>
                 </td>
             </tr>
-            <tr>
+            <%--<tr>
                 <td>
                     <strong>My Package</strong>
                 </td>
                 <td>
                     <asp:Label ID="WalletPoint" runat="server"></asp:Label>
                 </td>
-            </tr>
+            </tr>--%>
             <tr>
                 <td>
-                    <strong>Introducer ID</strong>
+                    <strong>Sponsor ID</strong>
                 </td>
                 <td>
                     <asp:Label ID="Spid" runat="server"></asp:Label>

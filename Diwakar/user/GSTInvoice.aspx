@@ -461,6 +461,8 @@ Murthal Road, Sonipat-131001
                                             </p>
                                             <p>
                                             </p>
+                                            <p>
+                                            </p>
                                         </p>
                                     </td>
                                 </tr>
@@ -572,7 +574,7 @@ Murthal Road, Sonipat-131001
                                                             <asp:BoundField DataField="Code" HeaderText="Code" SortExpression="Code" />
                                                             <asp:BoundField DataField="ProductName" HeaderText="Product Name" SortExpression="ProductName" />
                                                             <asp:BoundField DataField="MRP" HeaderText="MRP" SortExpression="MRP" DataFormatString="{0:f2}" />
-                                                            <asp:BoundField DataField="Unit Price" HeaderText="DP" SortExpression="Unit Price" DataFormatString="{0:f2}" />
+                                                            <asp:BoundField DataField="Unit Price" HeaderText="DP" SortExpression="Unit Price" DataFormatString="{0:f2}" Visible="false" />
                                                             <asp:BoundField DataField="BV" HeaderText="BV" SortExpression="BV" DataFormatString="{0:f2}" />
                                                             <%--<asp:BoundField DataField="CGS" HeaderText="CGST" SortExpression="CGST" DataFormatString="{0:f2}" />
                                                             <asp:BoundField DataField="SGS" HeaderText="SGST" SortExpression="SGST" DataFormatString="{0:f2}" />--%>
@@ -582,8 +584,9 @@ Murthal Road, Sonipat-131001
                                                             <asp:BoundField DataField="TotalMRP" HeaderText="Total MRP" SortExpression="TotalMRP" DataFormatString="{0:f2}" />
                                                            <%-- <asp:BoundField DataField="Total Price" Visible="false" HeaderText="Total DP" SortExpression="Total Price" DataFormatString="{0:f2}" />--%>
                                                             <asp:BoundField DataField="TotalIGST" Visible="false" HeaderText="TotalIGST" SortExpression="TotalIGST" DataFormatString="{0:f2}" />
+                                                             <asp:BoundField DataField="TotalCGST" HeaderText="TotalCGST" SortExpression="TotalCGST" DataFormatString="{0:f2}" />
                                                             <asp:BoundField DataField="TotalSGST" HeaderText="TotalSGST" SortExpression="TotalSGST" DataFormatString="{0:f2}" />
-                                                          <asp:BoundField DataField="TotalCGST" HeaderText="TotalCGST" SortExpression="TotalCGST" DataFormatString="{0:f2}" />
+                                                         
                                                           <%-- <asp:BoundField DataField="Total RP" HeaderText="Total RP" Visible="false" SortExpression="Total RP" DataFormatString="{0:f2}" />--%>
                                                             <%--<asp:BoundField DataField="CashBack" HeaderText="CashBack" SortExpression="CashBack" DataFormatString="{0:f2}" />--%>
                                                             <asp:BoundField DataField="TotalDiscount" Visible="false" HeaderText="Discount" SortExpression="TotalDiscount" DataFormatString="{0:f2}" />

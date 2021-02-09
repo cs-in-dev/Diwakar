@@ -47,7 +47,7 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="txtcalender" runat="server" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
-            <tr>
+            <%--<tr>
                 <td>Courier Company Name
                 </td>
                 <td>
@@ -62,7 +62,7 @@
                     <asp:TextBox ID="txttrackingcode" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txttrackingcode" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
-            </tr>
+            </tr>--%>
             <tr>
                 <td>Payment Mode
                 </td>

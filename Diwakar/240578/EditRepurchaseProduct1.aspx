@@ -83,11 +83,11 @@
             </td>
         </tr>
 
-        <tr>
+        <tr style="display:none">
             <td style="text-align: right">DP</td>
             <td style="text-align: left">
-                <asp:TextBox ID="txtDP" runat="server"></asp:TextBox>
-               <%-- <asp:FilteredTextBoxExtender ID="txtbv0_FilteredTextBoxExtender" runat="server" TargetControlID="txtbv0" FilterType="Numbers"></asp:FilteredTextBoxExtender>--%>
+                <asp:TextBox ID="txtDP" runat="server" style="display:none"></asp:TextBox>
+               
             </td>
         </tr>
         <tr>

@@ -263,9 +263,9 @@ th{
                                 <div>
                                     <ul>
                                       <%--  <li><span></span><a href="BinayIncome.aspx">BINARY INCOME</a></li>--%>
-                                        <li><span></span><a href="CashBackIncome.aspx">CASH BACK INCOME</a></li>
+                                     <%--   <li><span></span><a href="CashBackIncome.aspx">CASH BACK INCOME</a></li>
                                            <li><span></span><a href="SelfCashBack.aspx">SELF CASH BACK INCOME</a></li>
-                                           <li><span></span><a href="performancebonus.aspx">PERFORMANCE BONUS</a></li>
+                                           <li><span></span><a href="performancebonus.aspx">PERFORMANCE BONUS</a></li>--%>
                                         <li><span></span><a href="RepurchaseIncome.aspx">REPURCHASE INCOME</a></li>
                                           <li><span></span><a href="DirectIncome.aspx">DIRECT INCOME</a></li>
                                         <li><span></span><a href="MyPayouts.aspx">PAYOUT SUMMARY</a></li>

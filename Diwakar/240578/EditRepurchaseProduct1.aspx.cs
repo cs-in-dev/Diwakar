@@ -74,7 +74,7 @@ namespace GrowTogether._240578
             }
             else
                 ImageUrl = Image1.ImageUrl;
-            Double amount = Double.Parse(txtDP.Text);
+            Double amount = Double.Parse(txtbv.Text);
             //float gst = float.Parse(txtIGST.Text);
            // Double total = (amount * 100) / (gst + 100);
            //Double total2 = total;
@@ -106,7 +106,7 @@ namespace GrowTogether._240578
             cmd.Parameters.AddWithValue("@ProductCode", txtProductCode.Text);
             cmd.Parameters.AddWithValue("@BV", txtbv.Text);
             cmd.Parameters.AddWithValue("@detail", ProductEditor.Content);
-            cmd.Parameters.AddWithValue("@salesamount", txtDP.Text);
+            cmd.Parameters.AddWithValue("@salesamount", txtbv.Text);
             cmd.Parameters.AddWithValue("@CGST", txtCGST.Text);
             cmd.Parameters.AddWithValue("@SGST", txtSGST.Text);
             cmd.Parameters.AddWithValue("@CGSTAmount", totalCGST);

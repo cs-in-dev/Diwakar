@@ -88,7 +88,7 @@
         </td>
 
     </tr>
-        <tr>
+        <%--<tr>
         <td style="text-align: right">
             DP</td>
         <td style="text-align: left">
@@ -101,17 +101,17 @@
              style="color: #FF0000" ValidationGroup="v2"></asp:RequiredFieldValidator>
    
         </td>
-        </tr>
+        </tr>--%>
          <tr>
         <td style="text-align: right">
             BV</td>
         <td style="text-align: left">
-            <asp:TextBox ID="TextBox1" runat="server"  ValidationGroup="v2"
+            <asp:TextBox ID="txtBV" runat="server"  ValidationGroup="v2"
                  ></asp:TextBox>
            
   
              <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-             ControlToValidate="TextBox1" ErrorMessage="Enter PV." 
+             ControlToValidate="txtBV" ErrorMessage="Enter BV." 
              style="color: #FF0000" ValidationGroup="v2"></asp:RequiredFieldValidator>
    
         </td>

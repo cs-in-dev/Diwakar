@@ -52,6 +52,7 @@ public class BOMemberMaster
     String _Status = "";
     String _OwnerName = "";
     String _RegistrationFrom = "";
+    String _AadharCard = "";
     public string Landmark;
     public string District;
     public string UserType;
@@ -59,6 +60,7 @@ public class BOMemberMaster
     public string Rank;
     public string AddressProof;
     public string Pancard;
+
 
     public String OwnerName
     {
@@ -482,4 +484,17 @@ public class BOMemberMaster
             _RegistrationFrom = value;
         }
     }
+    public String AadharCard
+    {
+        get
+        {
+            return _AadharCard;
+        }
+        set
+        {
+            _AadharCard = value;
+        }
+
+    }
+
 }

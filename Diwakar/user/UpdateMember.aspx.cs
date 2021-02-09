@@ -69,24 +69,19 @@ public partial class admin_UpdateMember : System.Web.UI.Page
         txtLandmark.Text = objMemberMaster.Landmark;
         txtDistrict.Text = objMemberMaster.District;
         usertype.Value = objMemberMaster.UserType;
-        txtNomineeContact.Text = objMemberMaster.NomineeContact;
-        txtNomineeName.Text = objMemberMaster.NomineeName;
-        txtNomineeRelation.Text = objMemberMaster.NomineeRelation;
+       
         Hiddenpassword.Value = objMemberMaster.LoginPassword;
         status.Value = objMemberMaster.Status;
         Fname.Text = objMemberMaster.FatherName;
         PanCard.HRef = objMemberMaster.Pancard;
         AddressP.HRef = objMemberMaster.AddressProof;
+        txtAadharnumber.Text = objMemberMaster.AadharCard;
         //txtOwnerName.Text =objMemberMaster.OwnerName;
         InformationPanel.Visible = true;
 
-
         txtAccountNo.Enabled = txtAccountNo.Text == null || txtAccountNo.Text.Trim() == "";
         txtIFSCCode.Enabled = txtIFSCCode.Text == null || txtIFSCCode.Text.Trim() == "";
-        txtNomineeRelation.Enabled = txtNomineeRelation.Text == null || txtNomineeRelation.Text.Trim() == "";
-        txtNomineeName.Enabled = txtNomineeName.Text == null || txtNomineeName.Text.Trim() == "";
-        txtNomineeContact.Enabled = txtNomineeContact.Text == null || txtNomineeContact.Text.Trim() == "";
-
+  
     }
 
 
@@ -135,9 +130,6 @@ public partial class admin_UpdateMember : System.Web.UI.Page
         objMemberMaster.BranchName = txtBranchName.Text;
         objMemberMaster.AccountNo = txtAccountNo.Text;
         objMemberMaster.IFSCCode = txtIFSCCode.Text;
-        objMemberMaster.NomineeName = txtNomineeName.Text;
-        objMemberMaster.NomineeContact = txtNomineeContact.Text;
-        objMemberMaster.NomineeRelation = txtNomineeRelation.Text;
         objMemberMaster.LoginPassword = Hiddenpassword.Value;
         objMemberMaster.Status = status.Value;
         objMemberMaster.FatherName = Fname.Text;
@@ -149,6 +141,7 @@ public partial class admin_UpdateMember : System.Web.UI.Page
         objMemberMaster.MobileNo = txtMobileNo.Text;
         objMemberMaster.AddressProof = AddressProof;
         objMemberMaster.Pancard = Pancard;
+        objMemberMaster.AadharCard = txtAadharnumber.Text;
         String result = objBALMemberMaster.updateMember(objMemberMaster);
         if (int.Parse(result) == 1)
         {
@@ -172,14 +165,13 @@ public partial class admin_UpdateMember : System.Web.UI.Page
             txtLandmark.Text = "";
             txtDistrict.Text = "";
             usertype.Value = "";
-            txtNomineeContact.Text = "";
-            txtNomineeName.Text = "";
-            txtNomineeRelation.Text = "";
+           
             Hiddenpassword.Value = "";
             status.Value = "";
             Fname.Text = "";
             //txtOwnerName.Text ="";
             txtDateOfBirth.Text = "";
+            txtAadharnumber.Text = "";
         }
         else
             lblMessage.Text = "Updation Failed";

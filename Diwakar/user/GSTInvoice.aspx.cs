@@ -112,26 +112,14 @@ namespace Sabaic.user
             //string State = cmd12.ExecuteScalar().ToString();
             //con.Close();
 
-            if (lblsate.Text == "UTTAR PRADESH" || lblsate.Text == "UP" || lblsate.Text == "Uttar Pradesh")
-            {
-                SqlCommand cmd2 = new SqlCommand("SELECT ProductRepurchase.ProductCode Code,OrderDetails.CGST as CGS,OrderDetails.SGST as SGS,OrderDetails.TotalDiscount as TotalDiscount,ProductRepurchase.productid,ProductRepurchase.ProductName, ProductRepurchase.MRP, OrderDetails.DP 'Unit Price', OrderDetails.Qty,OrderDetails.BV,OrderDetails.TotalBV, OrderDetails.TotalMRP Value, (OrderDetails.IGST*OrderDetails.Qty)TotalIGST,(OrderDetails.SGST*OrderDetails.Qty)TotalSGST,(OrderDetails.CGST*OrderDetails.Qty)TotalCGST, (ProductRepurchase.SalesAmount*OrderDetails.Qty-ProductRepurchase.DiscountAmount)TotalMRP, (OrderMaster.Amount ) 'Total Price',ProductRepurchase.CashBack FROM OrderDetails INNER JOIN ProductRepurchase ON OrderDetails.ProductID = ProductRepurchase.ProductID INNER JOIN OrderMaster ON OrderMaster.OrderID = OrderDetails.OrderID where OrderMaster.OrderId='" + msg + "' and FrenchiseID = '" + FrenchiseId + "'", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd2);
-                DataSet dt = new DataSet();
-                da.Fill(dt);
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
-            }
-
-            else
-            {
+           
                 SqlCommand cmd2 = new SqlCommand("SELECT ProductRepurchase.ProductCode Code,OrderDetails.CGST as CGS,OrderDetails.SGST as SGS,OrderDetails.TotalDiscount as TotalDiscount,ProductRepurchase.productid,ProductRepurchase.ProductName, ProductRepurchase.MRP, OrderDetails.DP 'Unit Price', OrderDetails.Qty,OrderDetails.BV,OrderDetails.TotalBV, OrderDetails.TotalMRP Value, (OrderDetails.IGST*OrderDetails.Qty)TotalIGST,(OrderDetails.SGST*OrderDetails.Qty)TotalSGST ,(OrderDetails.CGST*OrderDetails.Qty)TotalCGST, (ProductRepurchase.SalesAmount*OrderDetails.Qty-ProductRepurchase.DiscountAmount)TotalMRP, (OrderMaster.Amount ) 'Total Price',ProductRepurchase.CashBack FROM OrderDetails INNER JOIN ProductRepurchase ON OrderDetails.ProductID = ProductRepurchase.ProductID INNER JOIN OrderMaster ON OrderMaster.OrderID = OrderDetails.OrderID where OrderMaster.OrderId='" + msg + "' and FrenchiseID = '" + FrenchiseId + "'", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd2);
                 DataSet dt = new DataSet();
                 da.Fill(dt);
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
-            }
-
+           
             //  GridView1.Columns[12].Visible = false;
             //  GridView1.Columns[13].Visible = false;
             //GridView1.Columns[14].Visible = false;

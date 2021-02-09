@@ -25,7 +25,7 @@ namespace GrowTogether._240578
             //  SqlDataSource2.DataBind();
             // GridView1.DataBind();
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
-            SqlCommand cmd = new SqlCommand("SELECT [ProductCode],salesamount, [ProductName],CategoryId, [MRP], [BV],CashBack,CashBackMonth,SelfCashBack,SelfCashBackMonth,RedemptionPoints FROM [ProductRepurchase] WHERE  (([status] =0) AND ([CategoryID] = @CategoryID))", con);
+            SqlCommand cmd = new SqlCommand("SELECT [ProductCode],SalesAmount, [ProductName],CategoryId, [MRP], [BV] FROM [ProductRepurchase] WHERE  (([status] =0) AND ([CategoryID] = @CategoryID))", con);
             cmd.Parameters.AddWithValue("@CategoryID", DropDownList1.SelectedValue);
 
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -46,7 +46,7 @@ namespace GrowTogether._240578
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
-            SqlCommand cmd = new SqlCommand("SELECT [ProductCode],salesamount, [ProductName],CategoryId, [MRP], [BV],CashBack,CashBackMonth,SelfCashBack,SelfCashBackMonth,RedemptionPoints FROM [ProductRepurchase] WHERE  (([status] =0) AND ([ProductCode] = @ProductCode))", con);
+            SqlCommand cmd = new SqlCommand("SELECT [ProductCode],SalesAmount, [ProductName],CategoryId, [MRP], [BV]  FROM [ProductRepurchase] WHERE  (([status] =0) AND ([ProductCode] = @ProductCode))", con);
             cmd.Parameters.AddWithValue("@ProductCode", txtproductcode.Text);
 
             SqlDataAdapter sda = new SqlDataAdapter(cmd);

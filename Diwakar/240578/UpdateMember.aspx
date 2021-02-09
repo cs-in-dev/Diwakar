@@ -270,39 +270,12 @@
                             <td align="right"><asp:Label ID="Label4" runat="server" CssClass="text" 
                                     Text="PanNo"></asp:Label></td>
                             <td class="style27"><asp:TextBox ID="txtpanno" runat="server"></asp:TextBox></td>
-                          <%--  <td align="right"><asp:Label ID="Label6" runat="server" CssClass="text" 
-                                    Text="IFSCCode"></asp:Label></td>
-                            <td class="style26"><asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></td>--%>
+                            <td align="right"><asp:Label ID="Label16" runat="server" CssClass="text" 
+                                    Text="Aadhar No"></asp:Label></td>
+                            <td class="style26"><asp:TextBox ID="txtAadharnumber" runat="server"></asp:TextBox></td>
                         </tr>
-                         <tr>
-                            <td align="left" colspan="4">
-                                <asp:Label ID="lblNomineeDetails" runat="server" Style="font-weight: 700; color: #006600"
-                                    Text="NOMINEE DETAILS"></asp:Label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:Label ID="lblNomineeName" runat="server" CssClass="text" Text=" NOMINEE NAME :"></asp:Label>
-                            </td>
-                            <td class="style26">
-                                <asp:TextBox ID="txtNomineeName" runat="server" MaxLength="50"  CssClass="UpperCase"></asp:TextBox>
-                            </td>
-                            <td>
-                                <asp:Label ID="lblNomineeRelation" runat="server" CssClass="text" Text="  NOMINEE RELATION:"></asp:Label>
-                            </td>
-                            <td class="style26">
-                                <asp:TextBox ID="txtNomineeRelation" runat="server" MaxLength="30"  CssClass="UpperCase">
-                                    </asp:TextBox>
-                            </td>
-                            </tr>
+                         
                              <tr>
-                            <td>
-                                <asp:Label ID="lblNomineeContact" runat="server" CssClass="text" Text=" NOMINEE CONTACT:"></asp:Label>
-                            </td>
-                            <td class="style26">
-                                <asp:TextBox ID="txtNomineeContact" runat="server" MaxLength="10" CssClass="UpperCase" 
-                                    ></asp:TextBox>
-                            </td>
                             <td align="right">
                                 &nbsp;
                             </td>

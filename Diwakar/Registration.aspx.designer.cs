@@ -33,6 +33,15 @@ namespace GyanTechnologies._240578
         protected global::System.Web.UI.WebControls.Panel Panel1;
 
         /// <summary>
+        /// redirecttologin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button redirecttologin;
+
+        /// <summary>
         /// txtsponserid control.
         /// </summary>
         /// <remarks>
@@ -258,40 +267,13 @@ namespace GyanTechnologies._240578
         protected global::System.Web.UI.WebControls.TextBox txtPANNo;
 
         /// <summary>
-        /// txtNomineeFirst control.
+        /// txtAadhar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomineeFirst;
-
-        /// <summary>
-        /// txtNomineeLastName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomineeLastName;
-
-        /// <summary>
-        /// txtRelation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRelation;
-
-        /// <summary>
-        /// txtNomineeFatherHusband control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomineeFatherHusband;
+        protected global::System.Web.UI.WebControls.TextBox txtAadhar;
 
         /// <summary>
         /// Panel2 control.

@@ -114,31 +114,13 @@ namespace GrowTogether._240578
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
 
         /// <summary>
-        /// txtDP control.
+        /// txtBV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDP;
-
-        /// <summary>
-        /// RequiredFieldValidator7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
-
-        /// <summary>
-        /// TextBox1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtBV;
 
         /// <summary>
         /// RequiredFieldValidator5 control.

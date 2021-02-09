@@ -68,8 +68,8 @@ namespace Rainsonglobal._240578
                         impsdate = dr["date4"].ToString();
                         refrencenum = dr["Referencenumber"].ToString();
                         DispatchDate = dr["date5"].ToString();
-                        CourierCompanyName = dr["CourierCompanyName"].ToString();
-                        TrackingCode = dr["TrackingCode"].ToString();
+                      //  CourierCompanyName = dr["CourierCompanyName"].ToString();
+                       // TrackingCode = dr["TrackingCode"].ToString();
                         chequenumber = dr["ChequeNo"].ToString();
                     }
                
@@ -84,8 +84,8 @@ namespace Rainsonglobal._240578
                     txtcashPaymentdate.Text = cashpaymentdate;
                     panelcash.Visible = true;
                     txtcalender.Text = DispatchDate;
-                    txtcouriercomanyName.Text = CourierCompanyName;
-                    txttrackingcode.Text = TrackingCode;
+                  //  txtcouriercomanyName.Text = CourierCompanyName;
+                   // txttrackingcode.Text = TrackingCode;
 
 
 
@@ -103,8 +103,8 @@ namespace Rainsonglobal._240578
                     txtBankName.Text = bankname;
                     panelcheque.Visible = true;
                     txtcalender.Text = DispatchDate;
-                    txtcouriercomanyName.Text = CourierCompanyName;
-                    txttrackingcode.Text = TrackingCode;
+                 //   txtcouriercomanyName.Text = CourierCompanyName;
+                  //  txttrackingcode.Text = TrackingCode;
 
                     //ddlpaymentmode.SelectedValue = paymentmode;
                     //txtchequeamount.Text = Amount;
@@ -121,8 +121,8 @@ namespace Rainsonglobal._240578
                     txtnefRefrencennum.Text = refrencenum;
                     panelNeft.Visible = true;
                     txtcalender.Text = DispatchDate;
-                    txtcouriercomanyName.Text = CourierCompanyName;
-                    txttrackingcode.Text = TrackingCode;
+                 //   txtcouriercomanyName.Text = CourierCompanyName;
+                  //  txttrackingcode.Text = TrackingCode;
 
                     //ddlpaymentmode.SelectedValue = paymentmode;
                     //txtneftamount.Text = Amount;
@@ -142,8 +142,8 @@ namespace Rainsonglobal._240578
                 SqlCommand cmd = new SqlCommand("update  ordermaster set DispatchDate = @DispatchDate ,CourierCompanyName = @CourierCompanyName , TrackingCode = @TrackingCode,status=1,Date=@cashPaymentdate,Amount= @cashAmount,Paymentmode=@Paymentmode where orderid=@orderid", con);
                 cmd.Parameters.AddWithValue("@orderid", oId);
                 cmd.Parameters.AddWithValue("@DispatchDate", txtcalender.Text);
-                cmd.Parameters.AddWithValue("@CourierCompanyName", txtcouriercomanyName.Text);
-                cmd.Parameters.AddWithValue("@TrackingCode", txttrackingcode.Text);
+                cmd.Parameters.AddWithValue("@CourierCompanyName", "");
+                cmd.Parameters.AddWithValue("@TrackingCode", "");
                 cmd.Parameters.AddWithValue("@cashPaymentdate", txtcashPaymentdate.Text);
                 cmd.Parameters.AddWithValue("@cashAmount", txtcashAmount.Text);
                 cmd.Parameters.AddWithValue("@Paymentmode", ddlpaymentmode.SelectedValue);
@@ -168,8 +168,8 @@ namespace Rainsonglobal._240578
                 SqlCommand cmd = new SqlCommand("update  ordermaster set DispatchDate = @DispatchDate ,CourierCompanyName = @CourierCompanyName , TrackingCode = @TrackingCode,status=1,ChequeNo=@ChecqueNo,ChequeDate=@ChecqueDate,Amount=@chequeamount,BankName=@BankName,Paymentmode=@Paymentmode where orderid=@orderid", con);
                 cmd.Parameters.AddWithValue("@orderid", oId);
                 cmd.Parameters.AddWithValue("@DispatchDate", txtcalender.Text);
-                cmd.Parameters.AddWithValue("@CourierCompanyName", txtcouriercomanyName.Text);
-                cmd.Parameters.AddWithValue("@TrackingCode", txttrackingcode.Text);
+                cmd.Parameters.AddWithValue("@CourierCompanyName", "");
+                cmd.Parameters.AddWithValue("@TrackingCode", "");
                 cmd.Parameters.AddWithValue("@ChecqueNo", txtChecqueNo.Text);
                 cmd.Parameters.AddWithValue("@ChecqueDate", txtChecqueDate.Text);
                 cmd.Parameters.AddWithValue("@chequeamount", txtchequeamount.Text);
@@ -196,8 +196,8 @@ namespace Rainsonglobal._240578
                 SqlCommand cmd = new SqlCommand("update  ordermaster set DispatchDate = @DispatchDate ,CourierCompanyName = @CourierCompanyName , TrackingCode = @TrackingCode,status=1,Impsdate=@neftpaymnetdate ,Amount=@neftamount,Referencenumber= @nefRefrencennum,Paymentmode=@Paymentmode where orderid=@orderid", con);
                 cmd.Parameters.AddWithValue("@orderid", oId);
                 cmd.Parameters.AddWithValue("@DispatchDate", txtcalender.Text);
-                cmd.Parameters.AddWithValue("@CourierCompanyName", txtcouriercomanyName.Text);
-                cmd.Parameters.AddWithValue("@TrackingCode", txttrackingcode.Text);
+                cmd.Parameters.AddWithValue("@CourierCompanyName", "");
+                cmd.Parameters.AddWithValue("@TrackingCode", "");
                 cmd.Parameters.AddWithValue("@neftpaymnetdate", txtneftpaymnetdate.Text);
                 cmd.Parameters.AddWithValue("@neftamount", txtneftamount.Text);
                 cmd.Parameters.AddWithValue("@nefRefrencennum", txtnefRefrencennum.Text);
@@ -227,8 +227,6 @@ namespace Rainsonglobal._240578
         {
             txtOrderId.Text = "";
             txtcalender.Text = "";
-            txtcouriercomanyName.Text = "";
-            txttrackingcode.Text = "";
             ddlpaymentmode.SelectedValue = "Select";
             txtcashPaymentdate.Text = "";
             txtcashAmount.Text = "";

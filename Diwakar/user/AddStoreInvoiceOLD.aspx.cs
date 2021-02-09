@@ -36,14 +36,14 @@ namespace totalfuturcare.User
         {
 
             con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
-            panelcheque.Visible = false;
-            panel2.Visible = false;
+            //panelcheque.Visible = false;
+          //  panel2.Visible = false;
             Button2.Visible = false;
 
-            Panel3.Visible = false;
-            panel5.Visible = false;
-            panel4.Visible = false;
-            panel6.Visible = false;
+            //Panel3.Visible = false;
+          //  panel5.Visible = false;
+         // panel4.Visible = false;
+           // panel6.Visible = false;
             if (!IsPostBack)
             {
                 // ProductName.Focus();
@@ -83,45 +83,6 @@ namespace totalfuturcare.User
             return result;
         }
 
-        //protected void txtUserCode_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (Session["UserCode"].ToString().Trim() == "")
-        //    {
-        //        return;
-        //    }
-        //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
-        //    con.Open();
-        //    string str = "select UserName from tblMemberMaster where UserCode ='" + Session["UserCode"].ToString().Trim() + "'";
-        //    SqlDataAdapter da = new SqlDataAdapter(str, con);
-        //    DataSet ds = new DataSet();
-        //    da.Fill(ds);
-        //    if (ds.Tables[0].Rows.Count > 0)
-        //    {
-        //        txtUserName.Text = ds.Tables[0].Rows[0]["UserName"].ToString();
-        //        //if (GivMon.Rows.Count > 0)
-        //        //    btnSubmit.Visible = true;
-        //        RemainingBVpoints();
-        //    }
-        //    else
-        //    {
-        //        // btnSubmit.Visible = false;
-        //    }
-        //    con.Dispose();
-        //}
-
-        //protected void RemainingBVpoints()
-        //{
-        //    try
-        //    {
-        //        con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
-        //        SqlCommand cmd = new SqlCommand("select isnull(sum(credit)-sum(Debit),0) from accountmaster where txntype = 101 and memberid='" +  + "'", con);
-        //        con.Open();
-        //        txtRemBvpoints.Text = cmd.ExecuteScalar().ToString().Replace(".0000", ".00");
-        //        con.Close();
-
-        //    }
-        //    catch { }
-        //}
 
         [System.Web.Script.Services.ScriptMethod()]
         [System.Web.Services.WebMethod]
@@ -273,33 +234,7 @@ namespace totalfuturcare.User
         protected void Button1_Click(object sender, EventArgs e)
         {
             con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
-            SqlCommand cmd = new SqlCommand("select AccountNo,IFSCCode,NomineeName,NomineeRelation,NomineeContact, VoterCard,AdharCardBack,PanCardProof,UploadPhoto,Checkbook from tblmembermaster where usercode=@usercode or usercode=@sessionusercode", con);
-            con.Open();
-            cmd.Parameters.AddWithValue("@usercode", TextBox1.Text);
-            cmd.Parameters.AddWithValue("@sessionusercode", Session["UserCode"].ToString());
 
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                var Account = (dr["AccountNo"] ?? "").ToString();
-                var IFSC = (dr["IFSCCode"] ?? "").ToString();
-                var Nominee = (dr["NomineeName"] ?? "").ToString();
-                var NomineeR = (dr["NomineeRelation"] ?? "").ToString();
-                var NomineeC = (dr["NomineeContact"] ?? "").ToString();
-                var Voter = (dr["VoterCard"] ?? "").ToString();
-                var Adhaar = (dr["AdharCardBack"] ?? "").ToString();
-                var PanCard = (dr["PanCardProof"] ?? "").ToString();
-                var Photo = (dr["UploadPhoto"] ?? "").ToString();
-                var CheckB = (dr["Checkbook"] ?? "").ToString();
-
-                if (string.IsNullOrWhiteSpace(Account) || string.IsNullOrWhiteSpace(IFSC) || string.IsNullOrWhiteSpace(Nominee) || string.IsNullOrWhiteSpace(NomineeR) || string.IsNullOrWhiteSpace(NomineeC) || string.IsNullOrWhiteSpace(Voter) || string.IsNullOrWhiteSpace(Adhaar) || string.IsNullOrWhiteSpace(PanCard) || string.IsNullOrWhiteSpace(Photo) || string.IsNullOrWhiteSpace(CheckB))
-                {
-                    MsgBox("Please complete your KYC and edit profile details");
-                    return;
-                }
-            }
-            dr.Close();
-            con.Close();
 
             DataTable dt = (DataTable)ViewState["DT"];
             decimal Balance;
@@ -364,6 +299,8 @@ namespace totalfuturcare.User
             Tax.Text = "";
             Amount.Text = "";
             PID.Value = "";
+            CGST.Text = "";
+            SGST.Text = "";
             GridView1.DataSource = dt;
             GridView1.DataBind();
             CalcTotals();
@@ -419,78 +356,12 @@ namespace totalfuturcare.User
                 //return;
 
             }
+            if(DropDownList1.SelectedValue=="Cash")
+            {
+                   Button2.Visible = true;
+            }
 
-            else if (DropDownList1.SelectedValue == "Cheque")
-            {
-                panelcheque.Visible = true;
-                Button4.Visible = false;
-                panel2.Visible = false;
-                panel4.Visible = false;
-                panel5.Visible = false;
-                Panel3.Visible = false;
-                panel6.Visible = false;
-                Button2.Visible = true;
-
-            }
-            else if (DropDownList1.SelectedValue == "IMPS")
-            {
-                panel2.Visible = true;
-                Button4.Visible = false;
-                panelcheque.Visible = false;
-                panel5.Visible = false;
-                Panel3.Visible = false;
-                Button2.Visible = true;
-                panel6.Visible = false;
-
-            }
-            else if (DropDownList1.SelectedValue == "Repurchase Wallet")
-            {
-                Panel3.Visible = true;
-                Button4.Visible = true;
-                panel2.Visible = false;
-                panel4.Visible = false;
-                panelcheque.Visible = false;
-                panel5.Visible = false;
-                panel6.Visible = false;
-
-            }
-            else if (DropDownList1.SelectedValue == "Debit/Credit Card")
-            {
-                //panel5.Visible = true;
-                panel4.Visible = false;
-                Button4.Visible = false;
-                panelcheque.Visible = false;
-                //btnSubmit.Visible = true;
-                panel5.Visible = false;
-                Panel3.Visible = false;
-                Button2.Visible = true;
-                panel6.Visible = true;
-
-            }
-            else if (DropDownList1.SelectedValue == "NEFT")
-            {
-                //panel5.Visible = true;
-                panel4.Visible = true;
-                //btnSubmit.Visible = true;
-                panelcheque.Visible = false;
-                panel5.Visible = false;
-                panel2.Visible = false;
-                Panel3.Visible = false;
-                Button2.Visible = true;
-                panel6.Visible = false;
-            }
-            else if (DropDownList1.SelectedValue == "DD")
-            {
-                //panel5.Visible = true;
-                panel4.Visible = false;
-                Button4.Visible = false;
-                //btnSubmit.Visible = true;
-                panelcheque.Visible = false;
-                panel5.Visible = true;
-                Panel3.Visible = false;
-                panel6.Visible = false;
-                Button2.Visible = true;
-            }
+           
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -500,34 +371,28 @@ namespace totalfuturcare.User
 
             try
             {
-                if (!CheckValidProduct())
-                {
-                    MsgBox("Please Select All Cash Back Product or Non-Cash Back Product");
-                    return;
-                }
-
                 SqlCommand cmdProc = new SqlCommand("CreateOrder", con);
                 cmdProc.CommandType = CommandType.StoredProcedure;
                 cmdProc.Parameters.AddWithValue("@Usercode", TextBox1.Text);
                 cmdProc.Parameters.AddWithValue("@Usercode1", Session["usercode"]);
                 cmdProc.Parameters.AddWithValue("@FrenchiseID", ConfigurationManager.AppSettings["FrenchiseID"].ToString());
-                cmdProc.Parameters.AddWithValue("@UserPaymentDate", txtpaymentdate.Text);
+                cmdProc.Parameters.AddWithValue("@UserPaymentDate", DateTime.Now.ToString());
                 cmdProc.Parameters.AddWithValue("@PaymentMode", DropDownList1.SelectedValue);
                 cmdProc.Parameters.AddWithValue("@Amount", TotalAmount.Text);
                 cmdProc.Parameters.AddWithValue("@TotalBv", TotalBV.Text);
-                cmdProc.Parameters.AddWithValue("@ChequeDate", ChecqueDate.Text);
-                cmdProc.Parameters.AddWithValue("@BankName", txtBankName.Text);
-                cmdProc.Parameters.AddWithValue("@DDBankName", txtddbankname.Text);
-                cmdProc.Parameters.AddWithValue("@ChequeNo", txtChecqueNo.Text);
-                cmdProc.Parameters.AddWithValue("@DDDate", txtdddate.Text);
-                cmdProc.Parameters.AddWithValue("@DDNo", txtddno.Text);
-                cmdProc.Parameters.AddWithValue("@Referencenumber", txtrefno.Text);
-                cmdProc.Parameters.AddWithValue("@Impsdate", txtdate.Text);
+                cmdProc.Parameters.AddWithValue("@ChequeDate", "");
+                cmdProc.Parameters.AddWithValue("@BankName", "");
+                cmdProc.Parameters.AddWithValue("@DDBankName", "");
+                cmdProc.Parameters.AddWithValue("@ChequeNo", "");
+                cmdProc.Parameters.AddWithValue("@DDDate", "");
+                cmdProc.Parameters.AddWithValue("@DDNo", "");
+                cmdProc.Parameters.AddWithValue("@Referencenumber", "");
+                cmdProc.Parameters.AddWithValue("@Impsdate", "");
                 cmdProc.Parameters.AddWithValue("@InvoiceType", "DP");
-                cmdProc.Parameters.AddWithValue("@Neftdate", txtnNeftdate.Text);
-                cmdProc.Parameters.AddWithValue("@debitrefno", txtreffno.Text);
-                cmdProc.Parameters.AddWithValue("@NeftRefNo", txtneftrefNo.Text);
-                cmdProc.Parameters.AddWithValue("@debitrefdate", txttransationsdate.Text);
+                cmdProc.Parameters.AddWithValue("@Neftdate", "");
+                cmdProc.Parameters.AddWithValue("@debitrefno", "");
+                cmdProc.Parameters.AddWithValue("@NeftRefNo", "");
+                cmdProc.Parameters.AddWithValue("@debitrefdate", "");
                 cmdProc.Parameters.AddWithValue("@CashBack", CashBack.Text);
                 cmdProc.Parameters.AddWithValue("@SelfCashBack", txtselcashback.Text);
                 cmdProc.Parameters.AddWithValue("@RedemptionPoint", "0");
@@ -590,7 +455,7 @@ namespace totalfuturcare.User
                 con2.Close();
                 string Msg = "";
 
-                Msg = "Order details are as follow :<br /><br />OrderID :" + sOrderId + "<br />Date :" + date1 + "<br />Payment Mode :" + paymentmode + "<br />Amount :" + amount + "<br /><br />You can login to view the invoice.<br /><br />Thanks,<br />With regards!<br /><br /> Cyrashine Private Limited";
+                Msg = "Order details are as follow :<br /><br />OrderID :" + sOrderId + "<br />Date :" + date1 + "<br />Payment Mode :" + paymentmode + "<br />Amount :" + amount + "<br /><br />You can login to view the invoice.<br /><br />Thanks,<br />With regards!<br /><br /> Diwakar Retails Limited";
 
                 string msgadmin = "";
                 msgadmin = "Order details are as follow :<br /><br />MemberID : " + TextBox1.Text + "<br/>Name : " + name + "<br />OrderID :" + sOrderId + "<br />Date :" + date1 + "<br />Payment Mode :" + paymentmode + "<br />Amount :" + amount;
@@ -609,184 +474,7 @@ namespace totalfuturcare.User
             Response.Redirect("GSTInvoice.aspx?ID=" + sOrderId + "&BVpointsTotal=" + Bvtotal);
         }
 
-        private bool CheckValidProduct()
-        {
-            bool Result = true;
-            List<string> product = new List<string>();
-            foreach (GridViewRow row in GridView1.Rows)
-            {
-                string ProductCode = row.Cells[1].Text;
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "select Count(CashBack) from ProductRepurchase Where ProductCode=@pc and CashBack>0";
-                cmd.Parameters.AddWithValue("@pc", ProductCode);
-                con.Open();
-                int i = Convert.ToInt32(cmd.ExecuteScalar());
-                con.Close();
-                if (i > 0)
-                {
-                    product.Add("Cash Back");
-                }
-                else
-                {
-                    product.Add("Non Cash Back");
-                }
-
-            }
-            if (product.Contains("Cash Back") && product.Contains("Non Cash Back"))
-            {
-                Result = false;
-            }
-
-            return Result;
-
-        }
-
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-
-            if (DropDownList1.SelectedValue == "Repurchase Wallet")
-            {
-                if (HiddenField6.Value != TextBox6.Text || HiddenField6.Value == "" || TextBox6.Text == "" || HiddenField6.Value == null || TextBox6.Text == null)
-                {
-                    MsgBox("Invaild OTP");
-                    Button3.Visible = true;
-                    TextBox6.Visible = true;
-                    Panel3.Visible = true;
-                    return;
-                }
-            }
-            string res = "";
-            string sOrderId = "";
-
-            try
-            {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("ProductCode", typeof(string));
-                dt.Columns.Add("QTY", typeof(string));
-                dt.Columns.Add("DP", typeof(string));
-
-                foreach (GridViewRow row in GridView1.Rows)
-                {
-                    string ProductCode = row.Cells[0].Text;
-                    string DP = "DP";
-                    string uqty = row.Cells[9].Text;
-                    dt.Rows.Add(ProductCode, uqty, DP);
-                }
-
-
-                DataTable dt1 = GridView1.DataSource as DataTable;
-                int count = dt.Rows.Count;
-                if (count == 0)
-                {
-                    return;
-                }
-
-                SqlCommand cmdProc = new SqlCommand("CreateOrder", con);
-                cmdProc.CommandType = CommandType.StoredProcedure;
-                cmdProc.Parameters.AddWithValue("@Usercode", TextBox1.Text);
-                cmdProc.Parameters.AddWithValue("@Usercode1", Session["usercode"]);
-                cmdProc.Parameters.AddWithValue("@FrenchiseID", ConfigurationManager.AppSettings["FrenchiseID"].ToString());
-                cmdProc.Parameters.AddWithValue("@UserPaymentDate", txtpaymentdate.Text);
-                cmdProc.Parameters.AddWithValue("@PaymentMode", DropDownList1.SelectedValue);
-                cmdProc.Parameters.AddWithValue("@Amount", TotalAmount.Text);
-                cmdProc.Parameters.AddWithValue("@TotalBv", TotalBV.Text);
-                cmdProc.Parameters.AddWithValue("@ChequeDate", ChecqueDate.Text);
-                cmdProc.Parameters.AddWithValue("@BankName", txtBankName.Text);
-                cmdProc.Parameters.AddWithValue("@DDBankName", txtddbankname.Text);
-                cmdProc.Parameters.AddWithValue("@ChequeNo", txtChecqueNo.Text);
-                cmdProc.Parameters.AddWithValue("@DDDate", txtdddate.Text);
-                cmdProc.Parameters.AddWithValue("@DDNo", txtddno.Text);
-                cmdProc.Parameters.AddWithValue("@Referencenumber", txtrefno.Text);
-                cmdProc.Parameters.AddWithValue("@Impsdate", txtdate.Text);
-                cmdProc.Parameters.AddWithValue("@InvoiceType", "DP");
-                cmdProc.Parameters.AddWithValue("@Neftdate", txtnNeftdate.Text);
-                cmdProc.Parameters.AddWithValue("@debitrefno", txtreffno.Text);
-                cmdProc.Parameters.AddWithValue("@NeftRefNo", txtneftrefNo.Text);
-                cmdProc.Parameters.AddWithValue("@debitrefdate", txttransationsdate.Text);
-                cmdProc.Parameters.AddWithValue("@CashBack", CashBack.Text);
-                cmdProc.Parameters.AddWithValue("@SelfCashBack", txtselcashback.Text);
-                cmdProc.Parameters.AddWithValue("@RedemptionPoint", "0");
-                cmdProc.Parameters.AddWithValue("@Details", (DataTable)ViewState["DT"]);
-                SqlParameter result = new SqlParameter("@Result", SqlDbType.VarChar, 200);
-                result.Direction = ParameterDirection.Output;
-                cmdProc.Parameters.Add(result);
-                SqlParameter orderid = new SqlParameter("@orderID", SqlDbType.VarChar, 200);
-                orderid.Direction = ParameterDirection.Output;
-                cmdProc.Parameters.Add(orderid);
-                con.Open();
-                cmdProc.ExecuteNonQuery();
-                cmdProc.CommandTimeout = 0;
-                res = result.Value.ToString();
-                sOrderId = orderid.Value.ToString();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                Button3.Visible = true;
-                TextBox6.Visible = true;
-            }
-            finally
-            {
-                con.Close();
-            }
-
-            if (res == "Product Saved Successfully")
-            {
-                Label7.Text = "Product Saved Successfully";
-
-                try
-                {
-                    string Msg1 = "";
-                    Gen obj = new Gen();
-                    Msg1 = "Thanks for ordering cyrashine products.Your Invoice number is '" + sOrderId + "' of Rs '" + TotalAmount.Text + "'";
-
-
-                    //SqlCommand cmdss = new SqlCommand("", con);
-                    //cmdss.CommandText = "select MobileNo from  [dbo].[tblmembermaster] where usercode='" + Session["usercode"] + "' ";
-                    //con.Open();
-                    //string mobile = cmdss.ExecuteScalar().ToString();
-                    //con.Close();
-                    if (TextBox1.Text.Length > 9)
-                    {
-                        obj.SendNormalSMS(ConfigurationManager.AppSettings["SMSsenderID"].ToString(), TextBox1.Text, Msg1);
-                    }
-                }
-
-                catch (Exception ex)
-                {
-
-                }
-
-
-                string date1 = "";
-                string amount = "";
-                string paymentmode = "";
-                SqlConnection con2 = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ToString());
-                SqlCommand cmd4 = new SqlCommand("select * from ordermaster where orderid='" + sOrderId + "'", con2);
-
-                con2.Open();
-                SqlDataReader dr1 = cmd4.ExecuteReader();
-                while (dr1.Read())
-                {
-                    date1 = DateTime.Parse(dr1["Date"].ToString()).Date.ToString("dd MMM yyyy");
-                    amount = dr1["Amount"].ToString();
-                    paymentmode = dr1["PaymentMode"].ToString();
-                }
-                dr1.Close();
-                con2.Close();
-                string Msg = "";
-                Response.Redirect("GSTInvoice.aspx?ID=" + sOrderId + "&BVpointsTotal=" + Bvtotal);
-
-            }
-            else if (res == "Insufficient Wallet")
-            {
-                MsgBox("Insufficient Wallet");
-                return;
-            }
-
-        }
-
+       
         protected void Button4_Click(object sender, EventArgs e)
         {
             SqlCommand cmdss = new SqlCommand("", con);
@@ -826,7 +514,7 @@ namespace totalfuturcare.User
             int otp = rnd.Next(1000, 9999);
             Gen obj = new Gen();
 
-            //string msg = "Your OTP '" + otp + "' for redemption of Rs'" + TotalAmount.Text + "' at cyrashine FRANCHISE '" + ConfigurationManager.AppSettings["FrenchiseID"].ToString() + "'('" + name + "') for Order of RS '" + TotalAmount.Text + "'. Please share this code with operator for order payment.";
+            //string msg = "Your OTP '" + otp + "' for redemption of Rs'" + TotalAmount.Text + "' at Diwakar Retails FRANCHISE '" + ConfigurationManager.AppSettings["FrenchiseID"].ToString() + "'('" + name + "') for Order of RS '" + TotalAmount.Text + "'. Please share this code with operator for order payment.";
             string msg = "Your OTP '" + otp + "' for redemption of Rs'" + TotalAmount.Text + "' at  franchise '" + ConfigurationManager.AppSettings["FrenchiseID"].ToString() + "' for Order of RS '" + TotalAmount.Text + "' and is valid for 10 minutes only";
 
             if (mobile != "")
@@ -837,7 +525,7 @@ namespace totalfuturcare.User
             }
 
             HiddenField6.Value = otp.ToString();
-            Panel3.Visible = true;
+           
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
@@ -867,12 +555,12 @@ namespace totalfuturcare.User
 
             DropDownList1.Items.Clear();
             DropDownList1.Items.Insert(0, new ListItem("Select", "Select"));
-            DropDownList1.Items.Insert(1, new ListItem("Cheque", "Cheque"));
-            DropDownList1.Items.Insert(2, new ListItem("IMPS", "IMPS"));
-            DropDownList1.Items.Insert(3, new ListItem("NEFT", "NEFT"));
-            DropDownList1.Items.Insert(4, new ListItem("Repurchase Wallet", "Repurchase Wallet"));
-            DropDownList1.Items.Insert(5, new ListItem("Debit/Credit Card", "Debit/Credit Card"));
-            DropDownList1.Items.Insert(6, new ListItem("DD", "DD"));
+            DropDownList1.Items.Insert(1, new ListItem("Cash", "Cash"));
+            //DropDownList1.Items.Insert(2, new ListItem("IMPS", "IMPS"));
+            //DropDownList1.Items.Insert(3, new ListItem("NEFT", "NEFT"));
+            //DropDownList1.Items.Insert(4, new ListItem("Repurchase Wallet", "Repurchase Wallet"));
+            //DropDownList1.Items.Insert(5, new ListItem("Debit/Credit Card", "Debit/Credit Card"));
+            //DropDownList1.Items.Insert(6, new ListItem("DD", "DD"));
 
             con.Close();
         }

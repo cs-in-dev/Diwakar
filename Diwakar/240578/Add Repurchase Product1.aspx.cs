@@ -49,7 +49,7 @@ namespace GrowTogether._240578
                 return;
             }
 
-            Double amount = Double.Parse(txtDP.Text);
+            Double amount = Double.Parse(txtBV.Text);
             //float gst = float.Parse(txtIGST.Text);
             //Double total = (amount * 100) / (gst + 100);
             Double total2 = amount;
@@ -77,11 +77,11 @@ namespace GrowTogether._240578
             cmd.Parameters.AddWithValue("@ProductCode", productcodetxt.Text);
             cmd.Parameters.AddWithValue("@ProductName", productnametxt.Text);
             cmd.Parameters.AddWithValue("@DistriPrice", TextBox3.Text);
-            cmd.Parameters.AddWithValue("@BV", TextBox1.Text);
+            cmd.Parameters.AddWithValue("@BV", txtBV.Text);
             cmd.Parameters.AddWithValue("@ImageUrl", Image1.ImageUrl);
             cmd.Parameters.AddWithValue("@CategoryID ", ddlCategoryID.SelectedValue);
             cmd.Parameters.AddWithValue("@Detail", ProductEditor.Content);
-            cmd.Parameters.AddWithValue("@salesamount", txtDP.Text);
+            cmd.Parameters.AddWithValue("@salesamount", txtBV.Text);
             //cmd.Parameters.AddWithValue("@vat", TextBox5.Text);
             //cmd.Parameters.AddWithValue("@TaxRate", TextBox5.Text);
             //cmd.Parameters.AddWithValue("@CashBack", txtcashback.Text);
@@ -116,7 +116,7 @@ namespace GrowTogether._240578
             productcodetxt.Text = "";
             productnametxt.Text = "";
             TextBox3.Text = "";
-            TextBox1.Text = "";
+            txtBV.Text = "";
             //Response.Redirect("Add Repurchase Product.aspx");
 
            // DropDownList1.SelectedIndex = 0;

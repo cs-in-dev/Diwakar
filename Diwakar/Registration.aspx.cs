@@ -59,8 +59,7 @@ namespace GyanTechnologies._240578
             public string IMPSAmount { get; set; }
             public string Mode { get; set; }
             public string DateofPayment { get; set; }
-           
-
+            public string AadharCard { get; set; }
 
 
         }
@@ -88,19 +87,14 @@ namespace GyanTechnologies._240578
                 
 
             }
-
-
         }
 
        
         [WebMethod]
-       
-
         public static string insertrecord(Register1 Register)
         {
             try
             {
-
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
 
                 string fullname = Register.FirstName + " " + Register.LastName;
@@ -131,11 +125,12 @@ namespace GyanTechnologies._240578
                 cmd.Parameters.AddWithValue("@BankName", Register.BankName);
                 cmd.Parameters.AddWithValue("@AccountNo", Register.AccountNo);
                 cmd.Parameters.AddWithValue("@IFSCCode", Register.IFSCode);
-                cmd.Parameters.AddWithValue("@NomineeName", NomineeName);
-                cmd.Parameters.AddWithValue("@NomineeRelation", Register.Relation);
-                cmd.Parameters.AddWithValue("@NomineeFatherName", Register.NomineeFatherHusband);
+                cmd.Parameters.AddWithValue("@NomineeName", "");
+                cmd.Parameters.AddWithValue("@NomineeRelation", "");
+                cmd.Parameters.AddWithValue("@NomineeFatherName", "");
                 cmd.Parameters.AddWithValue("@NomineeContact", "");
                 cmd.Parameters.AddWithValue("@PanNo", Register.PANNo);
+                cmd.Parameters.AddWithValue("@AadharCard", Register.AadharCard);
                 //cmd.Parameters.AddWithValue("@PinAmount", pinamonut);
 
                 con.Open();
@@ -204,7 +199,7 @@ namespace GyanTechnologies._240578
             con.Open();
             int i = int.Parse(cmdd.ExecuteScalar().ToString());
             con.Close();
-            if (i >=3|| MobileNo.Length<10)
+            if (i >=1|| MobileNo.Length<10)
             {
                 return "error";
             }
@@ -234,6 +229,27 @@ namespace GyanTechnologies._240578
                 return "Success";
             }
         }
+
+        [WebMethod()]
+        public static string AadharNumberCheck(string AadharCard)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
+            SqlCommand cmdd = new SqlCommand("select isnull(count(*),0) from tblmembermaster where AadharCard=@AadharCard", con);
+            cmdd.Parameters.AddWithValue("@AadharCard", AadharCard);
+            con.Open();
+            int i = int.Parse(cmdd.ExecuteScalar().ToString());
+            con.Close();
+            if (i >= 1)
+
+            {
+                return "error";
+            }
+            else
+            {
+                return "Success";
+            }
+        }
+
 
         [WebMethod()]
         public static string checkUserId(string UserId)
@@ -330,6 +346,11 @@ namespace GyanTechnologies._240578
             //}
             //else
 
+        }
+
+        protected void redirecttologin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
         }
     }
 }
