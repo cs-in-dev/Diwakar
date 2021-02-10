@@ -12,13 +12,13 @@
 public partial class mynewdirect {
     
     /// <summary>
-    /// TextBox2 control.
+    /// TextBox1 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox TextBox2;
+    protected global::System.Web.UI.WebControls.TextBox TextBox1;
     
     /// <summary>
     /// Button1 control.
@@ -28,6 +28,15 @@ public partial class mynewdirect {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Button Button1;
+    
+    /// <summary>
+    /// Label220 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label Label220;
     
     /// <summary>
     /// Label2 control.
@@ -183,60 +192,6 @@ public partial class mynewdirect {
     protected global::System.Web.UI.WebControls.Label name4;
     
     /// <summary>
-    /// img14 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlImage img14;
-    
-    /// <summary>
-    /// lb14 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb14;
-    
-    /// <summary>
-    /// name14 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name14;
-    
-    /// <summary>
-    /// img15 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlImage img15;
-    
-    /// <summary>
-    /// lb15 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb15;
-    
-    /// <summary>
-    /// name15 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name15;
-    
-    /// <summary>
     /// img5 control.
     /// </summary>
     /// <remarks>
@@ -316,60 +271,6 @@ public partial class mynewdirect {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label name7;
-    
-    /// <summary>
-    /// img16 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlImage img16;
-    
-    /// <summary>
-    /// lb16 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb16;
-    
-    /// <summary>
-    /// name16 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name16;
-    
-    /// <summary>
-    /// img17 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlImage img17;
-    
-    /// <summary>
-    /// lb17 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb17;
-    
-    /// <summary>
-    /// name17 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name17;
     
     /// <summary>
     /// img8 control.
@@ -453,60 +354,6 @@ public partial class mynewdirect {
     protected global::System.Web.UI.WebControls.Label name10;
     
     /// <summary>
-    /// img18 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlImage img18;
-    
-    /// <summary>
-    /// lb18 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb18;
-    
-    /// <summary>
-    /// name18 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name18;
-    
-    /// <summary>
-    /// img19 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlImage img19;
-    
-    /// <summary>
-    /// lb19 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb19;
-    
-    /// <summary>
-    /// name19 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name19;
-    
-    /// <summary>
     /// img11 control.
     /// </summary>
     /// <remarks>
@@ -588,6 +435,168 @@ public partial class mynewdirect {
     protected global::System.Web.UI.WebControls.Label name13;
     
     /// <summary>
+    /// img14 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlImage img14;
+    
+    /// <summary>
+    /// lb14 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.LinkButton lb14;
+    
+    /// <summary>
+    /// name14 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label name14;
+    
+    /// <summary>
+    /// img15 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlImage img15;
+    
+    /// <summary>
+    /// lb15 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.LinkButton lb15;
+    
+    /// <summary>
+    /// name15 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label name15;
+    
+    /// <summary>
+    /// img16 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlImage img16;
+    
+    /// <summary>
+    /// lb16 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.LinkButton lb16;
+    
+    /// <summary>
+    /// name16 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label name16;
+    
+    /// <summary>
+    /// img17 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlImage img17;
+    
+    /// <summary>
+    /// lb17 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.LinkButton lb17;
+    
+    /// <summary>
+    /// name17 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label name17;
+    
+    /// <summary>
+    /// img18 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlImage img18;
+    
+    /// <summary>
+    /// lb18 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.LinkButton lb18;
+    
+    /// <summary>
+    /// name18 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label name18;
+    
+    /// <summary>
+    /// img19 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlImage img19;
+    
+    /// <summary>
+    /// lb19 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.LinkButton lb19;
+    
+    /// <summary>
+    /// name19 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label name19;
+    
+    /// <summary>
     /// img20 control.
     /// </summary>
     /// <remarks>
@@ -651,22 +660,22 @@ public partial class mynewdirect {
     protected global::System.Web.UI.HtmlControls.HtmlImage img22;
     
     /// <summary>
-    /// lb22 control.
+    /// LinkButton3 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb22;
+    protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
     
     /// <summary>
-    /// name22 control.
+    /// Label3 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name22;
+    protected global::System.Web.UI.WebControls.Label Label3;
     
     /// <summary>
     /// img23 control.
@@ -678,22 +687,22 @@ public partial class mynewdirect {
     protected global::System.Web.UI.HtmlControls.HtmlImage img23;
     
     /// <summary>
-    /// lb23 control.
+    /// LinkButton4 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb23;
+    protected global::System.Web.UI.WebControls.LinkButton LinkButton4;
     
     /// <summary>
-    /// name23 control.
+    /// Label4 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name23;
+    protected global::System.Web.UI.WebControls.Label Label4;
     
     /// <summary>
     /// img24 control.
@@ -705,22 +714,22 @@ public partial class mynewdirect {
     protected global::System.Web.UI.HtmlControls.HtmlImage img24;
     
     /// <summary>
-    /// lb24 control.
+    /// LinkButton5 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb24;
+    protected global::System.Web.UI.WebControls.LinkButton LinkButton5;
     
     /// <summary>
-    /// name24 control.
+    /// Label5 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name24;
+    protected global::System.Web.UI.WebControls.Label Label5;
     
     /// <summary>
     /// img25 control.
@@ -732,22 +741,22 @@ public partial class mynewdirect {
     protected global::System.Web.UI.HtmlControls.HtmlImage img25;
     
     /// <summary>
-    /// lb25 control.
+    /// LinkButton6 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb25;
+    protected global::System.Web.UI.WebControls.LinkButton LinkButton6;
     
     /// <summary>
-    /// name25 control.
+    /// Label6 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name25;
+    protected global::System.Web.UI.WebControls.Label Label6;
     
     /// <summary>
     /// img26 control.
@@ -759,22 +768,22 @@ public partial class mynewdirect {
     protected global::System.Web.UI.HtmlControls.HtmlImage img26;
     
     /// <summary>
-    /// lb26 control.
+    /// LinkButton7 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb26;
+    protected global::System.Web.UI.WebControls.LinkButton LinkButton7;
     
     /// <summary>
-    /// name26 control.
+    /// Label7 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name26;
+    protected global::System.Web.UI.WebControls.Label Label7;
     
     /// <summary>
     /// img27 control.
@@ -786,22 +795,22 @@ public partial class mynewdirect {
     protected global::System.Web.UI.HtmlControls.HtmlImage img27;
     
     /// <summary>
-    /// lb27 control.
+    /// LinkButton8 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb27;
+    protected global::System.Web.UI.WebControls.LinkButton LinkButton8;
     
     /// <summary>
-    /// name27 control.
+    /// Label8 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name27;
+    protected global::System.Web.UI.WebControls.Label Label8;
     
     /// <summary>
     /// img28 control.
@@ -813,22 +822,22 @@ public partial class mynewdirect {
     protected global::System.Web.UI.HtmlControls.HtmlImage img28;
     
     /// <summary>
-    /// lb28 control.
+    /// LinkButton9 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb28;
+    protected global::System.Web.UI.WebControls.LinkButton LinkButton9;
     
     /// <summary>
-    /// name28 control.
+    /// Label9 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name28;
+    protected global::System.Web.UI.WebControls.Label Label9;
     
     /// <summary>
     /// img29 control.
@@ -840,22 +849,22 @@ public partial class mynewdirect {
     protected global::System.Web.UI.HtmlControls.HtmlImage img29;
     
     /// <summary>
-    /// lb29 control.
+    /// LinkButton10 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb29;
+    protected global::System.Web.UI.WebControls.LinkButton LinkButton10;
     
     /// <summary>
-    /// name29 control.
+    /// Label10 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name29;
+    protected global::System.Web.UI.WebControls.Label Label10;
     
     /// <summary>
     /// img30 control.
@@ -867,22 +876,22 @@ public partial class mynewdirect {
     protected global::System.Web.UI.HtmlControls.HtmlImage img30;
     
     /// <summary>
-    /// lb30 control.
+    /// LinkButton11 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb30;
+    protected global::System.Web.UI.WebControls.LinkButton LinkButton11;
     
     /// <summary>
-    /// name30 control.
+    /// Label11 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name30;
+    protected global::System.Web.UI.WebControls.Label Label11;
     
     /// <summary>
     /// img31 control.
@@ -894,20 +903,20 @@ public partial class mynewdirect {
     protected global::System.Web.UI.HtmlControls.HtmlImage img31;
     
     /// <summary>
-    /// lb31 control.
+    /// LinkButton12 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.LinkButton lb31;
+    protected global::System.Web.UI.WebControls.LinkButton LinkButton12;
     
     /// <summary>
-    /// name31 control.
+    /// Label12 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label name31;
+    protected global::System.Web.UI.WebControls.Label Label12;
 }

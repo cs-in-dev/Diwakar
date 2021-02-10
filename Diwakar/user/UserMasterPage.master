@@ -225,6 +225,21 @@ th{
                                     </ul>
                                 </div>
                             </li>
+
+
+                              <li><a href="#" class="parent">GENEALOGY</a><span></span>
+                                <div>
+                                    <ul>
+                                         <li><span></span><a href="mynewdirect.aspx">
+                                            MY TREE</a></li>
+                                       
+                                       <%-- <li><span></span><a href="MyDirects.aspx">MY
+                                            DIRECTS</a></li>--%>
+                                    
+                                    </ul>
+                                </div>
+                            </li>
+
                            <%-- <li><a href="#" class="parent">GENEALOGY</a><span></span>
                                 <div>
                                     <ul>

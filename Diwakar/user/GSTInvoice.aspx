@@ -621,7 +621,7 @@ Murthal Road, Sonipat-131001
 
 
                                 <tr>
-                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total Invoice Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Member Invoice Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Label ID="lblamount" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                 </tr>
                                 <tr>
@@ -637,7 +637,7 @@ Murthal Road, Sonipat-131001
                                         <asp:Label ID="lblTotalIGST" Visible="false" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Grand Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total Invoice Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Label ID="lblGrandTotal" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                 </tr>
                                 <tr>

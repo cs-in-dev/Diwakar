@@ -124,6 +124,8 @@
                                 SortExpression="LoginPassword" />
                             <asp:BoundField DataField="MobileNo" HeaderText="Mobile No"
                                 SortExpression="MobileNo" />
+                            <asp:BoundField DataField="SponsorId" HeaderText="Sponsor Id"
+                                SortExpression="SponsorId" />
                             <asp:BoundField DataField="SpName" HeaderText="Sponsor Name"
                                 SortExpression="SpName" />
                             <asp:BoundField DataField="EMail" HeaderText="EMail" SortExpression="EMail" />
@@ -133,8 +135,7 @@
                                 SortExpression="State" />
                             <asp:BoundField DataField="City" HeaderText="City"
                                 SortExpression="City" />
-                            <asp:BoundField DataField="PinAmount" HeaderText="Package"
-                                SortExpression="PinAmount" DataFormatString="{0:f2}" />
+                           
                             <asp:BoundField DataField="Votercardupdatedate"
                                 HeaderText="VoterCardUpdateDate" SortExpression="Votercardupdatedate" />
                             <asp:BoundField DataField="Photoupdatedate"
@@ -143,8 +144,6 @@
                                 HeaderText="PanCardUpdateDate" SortExpression="PanCardUpdateDate" />
                             <asp:BoundField DataField="BankDetailUpdateDate"
                                 HeaderText="ChequeBook" SortExpression="BankDetailUpdateDate" />
-                            <%-- <asp:BoundField DataField="AdharCardBack"
-                                HeaderText="AdharCardBack" SortExpression="AdharCardBack" />--%>
 
                             <asp:TemplateField HeaderText="AdharCardBack" SortExpression="AdharCardBack">
                                 <EditItemTemplate>

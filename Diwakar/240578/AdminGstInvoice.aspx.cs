@@ -37,14 +37,15 @@ namespace Sabaic._19111973
                 Label3.Text = dr["address"].ToString();
                 Label4.Text = dr["city"].ToString();
                 lblsate.Text = dr["State"].ToString();
+                lblsponsorName.Text= dr["SponsorId"].ToString();
 
             }
             dr.Close();
             dr.Dispose();
 
-            cmd.CommandText = "Select  [dbo].[MySponsor](@UserCode)";
-            cmd.Parameters.AddWithValue("@UserCode", Label1.Text);
-            lblsponsorId.Text = cmd.ExecuteScalar().ToString();
+            //cmd.CommandText = "Select  [dbo].[MySponsor](@UserCode)";
+            //cmd.Parameters.AddWithValue("@UserCode", Label1.Text);
+            //lblsponsorId.Text = cmd.ExecuteScalar().ToString();
           
 
             cmd.CommandText = "Select  [dbo].[MySponsorName](@SpName)";
