@@ -233,8 +233,7 @@ th{
                                          <li><span></span><a href="mynewdirect.aspx">
                                             MY TREE</a></li>
                                        
-                                       <%-- <li><span></span><a href="MyDirects.aspx">MY
-                                            DIRECTS</a></li>--%>
+                                        <li><span></span><a href="AllDownlineGenPlan11.aspx">MY DOWNLINE</a></li>
                                     
                                     </ul>
                                 </div>

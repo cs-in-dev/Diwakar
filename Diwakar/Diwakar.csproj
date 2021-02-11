@@ -143,6 +143,7 @@
     <Content Include="240578\PaymentsReports.aspx" />
     <Content Include="240578\PDF_Upload.aspx" />
     <Content Include="240578\SelfCashBackLibilites.aspx" />
+    <Content Include="240578\SponsorSubordinate.aspx" />
     <Content Include="240578\UploadPDF.aspx" />
     <Content Include="240578\Print.aspx" />
     <Content Include="240578\Productlist.aspx" />
@@ -223,6 +224,7 @@
     <Content Include="img\spill.png" />
     <Content Include="Login.aspx" />
     <Content Include="user\AddStoreInvoiceOLD.aspx" />
+    <Content Include="user\AllDownlineGenPlan11.aspx" />
     <Content Include="user\CashBackIncomeRight.aspx" />
     <Content Include="user\CashBackIncomeLeft.aspx" />
     <Content Include="user\CashBackIncome.aspx" />
@@ -861,6 +863,13 @@
     <Compile Include="240578\SelfCashBackLibilites.aspx.designer.cs">
       <DependentUpon>SelfCashBackLibilites.aspx</DependentUpon>
     </Compile>
+    <Compile Include="240578\SponsorSubordinate.aspx.cs">
+      <DependentUpon>SponsorSubordinate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="240578\SponsorSubordinate.aspx.designer.cs">
+      <DependentUpon>SponsorSubordinate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="240578\UploadPDF.aspx.cs">
       <DependentUpon>UploadPDF.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1218,6 +1227,13 @@
     </Compile>
     <Compile Include="user\AddStoreInvoiceOLD.aspx.designer.cs">
       <DependentUpon>AddStoreInvoiceOLD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\AllDownlineGenPlan11.aspx.cs">
+      <DependentUpon>AllDownlineGenPlan11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\AllDownlineGenPlan11.aspx.designer.cs">
+      <DependentUpon>AllDownlineGenPlan11.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\CashBackIncomeRight.aspx.cs">
       <DependentUpon>CashBackIncomeRight.aspx</DependentUpon>

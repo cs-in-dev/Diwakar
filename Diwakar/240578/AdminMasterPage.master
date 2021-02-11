@@ -101,7 +101,8 @@
                                         <ul>
                                             <li><a href="UpdateMember.aspx">Update Profile</a></li>
                                             <li><a href="TotalMembers.aspx">Total Associates</a></li>
-                                         <%--   <li><a href="RenewSubscription.aspx">Upgrade  Member Package </a></li>--%>
+                                            <li><a href="SponsorSubordinate.aspx">DownLine List</a></li>
+                                      <%--      <li><a href="RenewSubscription.aspx">Upgrade  Member Package </a></li>--%>
                                                 <%-- <li><a href="QueryRequestReport.aspx">Query Report</a></li>--%>
                                              
                                             <li><a href="UserActivation.aspx">Change Member Status</a></li>
@@ -125,7 +126,7 @@
                                            <%--   <li><a href="EditRepurchaseProduct.aspx">Update Product</a></li>--%>
                                             <li><a href="Productlist1.aspx">List Product</a></li>
                                             <li><a href="DeleteProductRepurchase1.aspx">Delete Product</a></li>
-                                            <li><a href="AddParentCategory.aspx">Add Parent Category</a></li>
+                                            <li><a href="AddParentCategory.aspx">Manage Parent Category</a></li>
                                             <li><a href="EditandDeleteCategory.aspx">Manage Sub Category</a></li>
                                            <%-- <li><a href="RepurchaseCategories1.aspx">Categories</a></li>--%>
                        

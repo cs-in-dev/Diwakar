@@ -860,8 +860,6 @@ public partial class mynewdirect : System.Web.UI.Page
                     img28.Src = "~/images/Empty.png";
                     Label9.Text = "";
                 }
-
-
             }
 
             if (mytable.Rows.Count > 28)
@@ -885,7 +883,6 @@ public partial class mynewdirect : System.Web.UI.Page
                     Label10.Text = "";
                 }
 
-
             }
 
             if (mytable.Rows.Count > 29)
@@ -908,8 +905,6 @@ public partial class mynewdirect : System.Web.UI.Page
                     img30.Src = "~/images/Empty.png";
                     Label11.Text = "";
                 }
-
-
             }
 
             if (mytable.Rows.Count > 30)
@@ -1200,8 +1195,9 @@ public partial class mynewdirect : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        SqlCommand cmd = new SqlCommand("select isnull(count(*),0) from tblmatrixmaster with (nolock) where memberId='" + TextBox1.Text + "' and SponserID='" + Session["Usercode"].ToString() + "'", conn);
-        //select isnull(count(*),0) from esc.MyDownline('" + TextBox1.Text + "')
+        SqlCommand cmd = new SqlCommand("select isnull(count(*),0) from tblmatrixmaster with (nolock) where memberId=@memberId and SponserID=@spid", conn);
+        cmd.Parameters.AddWithValue("@memberId",TextBox1.Text);
+        cmd.Parameters.AddWithValue("@spid", Session["Usercode"].ToString());
         conn.Open();
         int x = int.Parse(cmd.ExecuteScalar().ToString());
         conn.Close();
