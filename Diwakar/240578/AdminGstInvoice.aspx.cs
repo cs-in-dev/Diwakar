@@ -58,11 +58,8 @@ namespace Sabaic._19111973
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                //Label12.Text = string.Format("{0:f2}", Convert.ToDouble(dr["CourierCharges"].ToString()));
                 Label6.Text = Request.QueryString["ID"].ToString();
-                ////  lblFrenchiseID.Text = "Branch ID : " + dr["FrenchiseId"].ToString();
                 Label7.Text = dr["date2"].ToString();
-
                 FrenchiseId = dr["FrenchiseId"].ToString();
             }
 
@@ -102,24 +99,24 @@ namespace Sabaic._19111973
             {
 
             }
-            SqlCommand cmd1 = new SqlCommand("select * from [dbo].[tblFrenchiseMaster] where FrenchiseID='" + FrenchiseId + "'", con);
+            //SqlCommand cmd1 = new SqlCommand("select * from [dbo].[tblFrenchiseMaster] where FrenchiseID='" + FrenchiseId + "'", con);
 
-            SqlDataReader dr1 = cmd1.ExecuteReader();
-            while (dr1.Read())
-            {
-                Label8.Text = FrenchiseId;
-                Label9.Text = dr1["FranchiseName"].ToString();
-                Label11.Text = dr1["name"].ToString();
+            //SqlDataReader dr1 = cmd1.ExecuteReader();
+            //while (dr1.Read())
+            //{
+            //    Label8.Text = FrenchiseId;
+            //    Label9.Text = dr1["FranchiseName"].ToString();
+            //    Label11.Text = dr1["name"].ToString();
 
-            }
-            dr1.Close();
-            con.Close();
+            //}
+            //dr1.Close();
+            //con.Close();
 
 
-            SqlCommand cmd12 = new SqlCommand("select State from tblmembermaster where usercode='" + Label1.Text + "'", con);
-            con.Open();
-            string State = cmd12.ExecuteScalar().ToString();
-            con.Close();
+            //SqlCommand cmd12 = new SqlCommand("select State from tblmembermaster where usercode='" + Label1.Text + "'", con);
+            //con.Open();
+            //string State = cmd12.ExecuteScalar().ToString();
+            //con.Close();
 
             
                 SqlCommand cmd2 = new SqlCommand("SELECT ProductRepurchase.ProductCode Code,OrderDetails.CGST as CGS,OrderDetails.SGST as SGS,OrderDetails.TotalDiscount as TotalDiscount,ProductRepurchase.productid,ProductRepurchase.ProductName, OrderDetails.MRP, OrderDetails.DP 'Unit Price', OrderDetails.Qty,OrderDetails.BV,OrderDetails.TotalBV, OrderDetails.TotalMRP Value, (OrderDetails.IGST*OrderDetails.Qty)TotalIGST,(OrderDetails.SGST*OrderDetails.Qty)TotalSGST ,(OrderDetails.CGST*OrderDetails.Qty)TotalCGST, (OrderDetails.BV*OrderDetails.Qty)TotalMRP, (OrderDetails.TotalBV) 'Total Price' FROM OrderDetails INNER JOIN ProductRepurchase ON OrderDetails.ProductID = ProductRepurchase.ProductID INNER JOIN OrderMaster ON OrderMaster.OrderID = OrderDetails.OrderID where OrderMaster.OrderId='" + msg + "' and FrenchiseID = '" + FrenchiseId + "'", con);
@@ -129,7 +126,7 @@ namespace Sabaic._19111973
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
             
-          
+
         }
 
 

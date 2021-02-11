@@ -93,18 +93,18 @@ namespace Sabaic.user
 
             }
 
-            SqlCommand cmd1 = new SqlCommand("select * from [dbo].[tblFrenchiseMaster] where FrenchiseID='" + FrenchiseId + "'", con);
+            //SqlCommand cmd1 = new SqlCommand("select * from [dbo].[tblFrenchiseMaster] where FrenchiseID='" + FrenchiseId + "'", con);
 
-            SqlDataReader dr1 = cmd1.ExecuteReader();
-            while (dr1.Read())
-            {
-                Label8.Text = FrenchiseId;
-                Label9.Text = dr1["FranchiseName"].ToString();
-                Label11.Text = dr1["name"].ToString();
+            //SqlDataReader dr1 = cmd1.ExecuteReader();
+            //while (dr1.Read())
+            //{
+            //    Label8.Text = FrenchiseId;
+            //    Label9.Text = dr1["FranchiseName"].ToString();
+            //    Label11.Text = dr1["name"].ToString();
 
-            }
-            dr1.Close();
-            con.Close();
+            //}
+            //dr1.Close();
+            //con.Close();
 
 
             //SqlCommand cmd12 = new SqlCommand("select State from tblmembermaster where usercode='" + Label1.Text + "'", con);

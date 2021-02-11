@@ -517,34 +517,20 @@ Murthal Road, Sonipat-131001
                                             <tr>
                                                 <td style="width: 35%; text-align: left; border-right: 0px solid #333!important; padding: 5px;">Invoice No<br />
                                                     Invoice Date<br />
-                                                    Franchise Code<br />
-                                                    Franchise Name<br />
-
-                                                    Franchise Type
-                                                    <br />
+                                                    
                                                     Paymemnt Mode
                                                     <br />
-                                                       <br />
-
-
+                                                     
                                                 </td>
                                                 <td style="width: 85%; text-align: left; padding: 5px; border-right: 1px solid #333!important;">:&nbsp;<asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
                                                     <br />
                                                     :&nbsp;<asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
-                                                    <br />
-                                                    :&nbsp;<asp:Label ID="Label8" runat="server" Text=""></asp:Label>
-                                                    <br />
-                                                    :&nbsp;<asp:Label ID="Label9" runat="server" Text=""></asp:Label>
-                                                    <br />
-
-                                                    :&nbsp;<asp:Label ID="Label11" runat="server" Text=""></asp:Label>
+                                                   
                                                     <br />
                                                      :&nbsp;<asp:Label ID="lblpaymentmode" runat="server" Text="Label"></asp:Label>
                                                     <br />
 
-
-                                                    <br />
-
+                                                   
                                                 </td>
                                             </tr>
                                         </table>
