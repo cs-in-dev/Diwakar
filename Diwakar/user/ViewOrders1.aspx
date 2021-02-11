@@ -164,11 +164,11 @@
                     DataFormatString="{0:F2}" />
                 <%--   <asp:BoundField DataField="TotalPV" HeaderText="TotalPV" SortExpression="TotalPV" />--%>
                 <asp:BoundField DataField="TotalDP" HeaderText="Total DP" SortExpression="TotalDP"
-                    DataFormatString="{0:F2}" />
+                    DataFormatString="{0:F2}" Visible="false" />
                 <asp:BoundField DataField="TotalBV" HeaderText="Total BV" SortExpression="TotalBV"
                     DataFormatString="{0:F2}" />
                 <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" DataFormatString="{0:dd/MM/yyyy}" />
-                <asp:TemplateField HeaderText="InvoiceType" SortExpression="InvoiceType">
+                <asp:TemplateField HeaderText="InvoiceType" SortExpression="InvoiceType" Visible="false">
                     <EditItemTemplate>
                         <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("InvoiceType") %>'></asp:TextBox>
                     </EditItemTemplate>
@@ -188,10 +188,10 @@
 
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
-            <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="true" />
-            <HeaderStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
+            <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="true" HorizontalAlign="Center" />
+            <HeaderStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" HorizontalAlign="Center" />
             <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#E3EAEB" />
+            <RowStyle BackColor="#E3EAEB" HorizontalAlign="Center" />
             <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
             <SortedAscendingCellStyle BackColor="#F8FAFA" />
             <SortedAscendingHeaderStyle BackColor="#246B61" />
@@ -234,7 +234,7 @@
                 </asp:TemplateField>
                 <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" DataFormatString="{0:dd MMM yyyy}" />
                 <asp:BoundField DataField="TotalDP" HeaderText="TotalDP" SortExpression="TotalDP"
-                    DataFormatString="{0:f0}" />
+                    DataFormatString="{0:f0}" Visible="false" />
                 <asp:BoundField DataField="TotalBV" HeaderText="TotalBV" SortExpression="TotalBV"
                     DataFormatString="{0:f0}" />
                 <asp:BoundField DataField="MemberID" HeaderText="MemberID"
@@ -253,7 +253,7 @@
             <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White"
                 HorizontalAlign="Left" />
             <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#EFF3FB" HorizontalAlign="Left" />
+            <RowStyle BackColor="#EFF3FB" HorizontalAlign="right" />
             <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
             <SortedAscendingCellStyle BackColor="#F5F7FB" />
             <SortedAscendingHeaderStyle BackColor="#6D95E1" />

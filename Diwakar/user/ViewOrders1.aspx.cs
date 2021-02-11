@@ -23,15 +23,15 @@ namespace Rainsonglobal.user
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                totalBV += Double.Parse(e.Row.Cells[3].Text);
-                totalPayout += Double.Parse(e.Row.Cells[4].Text);
+                totalBV += Double.Parse(e.Row.Cells[4].Text);
+               // totalPayout += Double.Parse(e.Row.Cells[4].Text);
 
             }
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 e.Row.Cells[0].Text = "Grand Total:";
-                e.Row.Cells[3].Text = totalBV.ToString().Replace(".0000", ".00");
-                e.Row.Cells[4].Text = totalPayout.ToString().Replace(".0000", ".00");
+                e.Row.Cells[4].Text = totalBV.ToString().Replace(".0000", ".00");
+              //  e.Row.Cells[4].Text = totalPayout.ToString().Replace(".0000", ".00");
 
 
             }
