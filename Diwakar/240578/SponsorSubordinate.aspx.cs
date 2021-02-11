@@ -44,7 +44,7 @@ namespace Bvirodh._240578
             cmd.Parameters.AddWithValue("@Sponsor", SponsorId.Text);
             cmd.Parameters.AddWithValue("@dojfrom", DateFrom.Text);
             cmd.Parameters.AddWithValue("@dojto", DateTo.Text);
-           
+
             con.Open();
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -54,11 +54,11 @@ namespace Bvirodh._240578
             con.Close();
         }
 
-            protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
             GridViewExportUtil.Export("TotalDownline.xls", this.GridView1);
         }
 
-        
+
     }
 }
