@@ -55,7 +55,7 @@
                 <td class="style33" >
                     <strong>&nbsp;Date From : </strong></td>
                 <td class="style31" >
-                    <asp:TextBox ID="FromDate" runat="server" CssClass="style7"></asp:TextBox>
+                    <asp:TextBox ID="FromDate" runat="server" CssClass="style7" AutoComplete="Off"></asp:TextBox>
                     <asp:CalendarExtender runat="server" ID="CE1" TargetControlID="FromDate" Format="yyyy-MM-dd"></asp:CalendarExtender>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ValidationGroup="vg4" ForeColor="red" ControlToValidate="FromDate"></asp:RequiredFieldValidator></td>
             </tr>
@@ -63,7 +63,7 @@
                 <td class="style33" >
                     <strong>Date To : </strong></td>
                 <td class="style31" >
-                    <asp:TextBox ID="DateTo" runat="server" CssClass="style7"></asp:TextBox>
+                    <asp:TextBox ID="DateTo" runat="server" CssClass="style7" AutoComplete="Off"></asp:TextBox>
 
                     <asp:CalendarExtender runat="server" ID="CalendarExtender1" TargetControlID="DateTo" Format="yyyy-MM-dd"></asp:CalendarExtender>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*" ValidationGroup="vg4" ForeColor="red" ControlToValidate="DateTo"></asp:RequiredFieldValidator></td>

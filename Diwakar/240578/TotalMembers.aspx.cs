@@ -38,7 +38,7 @@ namespace MoneyMagnet
 
 
 
-            cmd.CommandText = "SELECT *,[usercode],[dbo].[MySponsor](usercode )as SponserId, [dbo].[MySponsorName](UserCode) as SpName  from tblmembermaster where " + DropDownList1.SelectedValue +" LIKE'%'+'"+TextBox1.Text.Trim()+"'+'%'  ORDER BY [DOJ] desc";
+            cmd.CommandText = "SELECT *,[usercode],[dbo].[MySponsor](usercode )as SponserId, [dbo].[MySponsorName](UserCode) as SpName  from tblmembermaster where " + DropDownList1.SelectedValue + " LIKE'%'+'" + TextBox1.Text.Trim() + "'+'%'  ORDER BY [DOJ] desc";
 
             SqlDataAdapter dts1 = new SqlDataAdapter(cmd);
             cmd.CommandTimeout = 0;
@@ -52,7 +52,7 @@ namespace MoneyMagnet
 
 
         }
-      
+
 
 
 
@@ -80,14 +80,12 @@ namespace MoneyMagnet
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-             
+
 
             if (TextBox1.Text != "")
             {
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
                 SqlCommand cmd = new SqlCommand("", con);
-
-
 
                 cmd.CommandText = "SELECT *,[usercode],[dbo].[MySponsor](usercode )as SponserId, [dbo].[MySponsorName](UserCode) as SpName from tblmembermaster where " + DropDownList1.SelectedValue + " LIKE'%'+'" + TextBox1.Text.Trim() + "'+'%'  ORDER BY [DOJ] desc";
 
@@ -99,7 +97,7 @@ namespace MoneyMagnet
                 GridView1.PageIndex = e.NewPageIndex;
                 GridView1.DataBind();
             }
-            else 
+            else
             {
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
                 SqlCommand cmd = new SqlCommand("", con);
@@ -124,6 +122,4 @@ namespace MoneyMagnet
         }
     }
 
-
-        
-    }
+}

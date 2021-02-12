@@ -55,7 +55,7 @@
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="style32">
         <caption class="style34">
-            <strong>Total Distributors
+            <strong>Total Members
             </strong>
         <tr class="style23">
             <td class="style33">
@@ -67,7 +67,6 @@
                 <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                 <asp:CalendarExtender runat="server" ID="CE1" Format="yyyy-MM-dd" TargetControlID="TextBox2"></asp:CalendarExtender>
 
-
                 &nbsp;(MM/DD/YYYY)</td>
         </tr>
         <tr class="style23">
@@ -76,14 +75,8 @@
             <td class="style31">
                 <%-- <asp:TextBox ID="TextBox3" runat="server" ClientIDMode="Static" ></asp:TextBox>--%> <%--j query calender--%>
 
-
                 <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
                 <asp:CalendarExtender runat="server" ID="CalendarExtender1" Format="yyyy-MM-dd" TargetControlID="TextBox3"></asp:CalendarExtender>
-
-
-
-
-
 
                 &nbsp;(MM/DD/YYYY)</td>
         </tr>

@@ -13,7 +13,7 @@ namespace Rainsonglobal._240578
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
         SqlCommand cmd;
 
-        Double TotalDP = 0, TotalBV = 0;
+        Double TotalDP = 0, TotalBV = 0, TotalMRP=0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,15 +44,20 @@ namespace Rainsonglobal._240578
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
 
-                TotalDP = TotalDP + Double.Parse(e.Row.Cells[3].Text);
+                //TotalDP = TotalDP + Double.Parse(e.Row.Cells[3].Text);
+                TotalMRP = TotalMRP + Double.Parse(e.Row.Cells[3].Text);
                 TotalBV = TotalBV + Double.Parse(e.Row.Cells[4].Text);
             }
 
             if (e.Row.RowType == DataControlRowType.Footer)
             {
                 e.Row.Cells[2].Text = "Total :";
-                e.Row.Cells[3].Text = string.Format("{0:f0}", TotalDP);
-                e.Row.Cells[4].Text = string.Format("{0:f0}", TotalBV);
+                //e.Row.Cells[3].Text = string.Format("{0:f0}", TotalDP);
+                //e.Row.Cells[3].Text = string.Format("{0:f0}", TotalMRP);
+                //e.Row.Cells[4].Text = string.Format("{0:f0}", TotalBV);
+
+                e.Row.Cells[3].Text =Convert.ToDecimal(TotalMRP).ToString();
+                e.Row.Cells[4].Text = Convert.ToDecimal(TotalBV).ToString();
             }
 
         }
@@ -189,7 +194,7 @@ namespace Rainsonglobal._240578
             date1.Text = "";
             date2.Text = "";
             txtOrderID.Text = "";
-            SqlCommand cmd = new SqlCommand("SELECT [OrderID], ('OrderDetails2.aspx?ID='+cast(OrderID as nvarchar)) as ViewDetails,[Date], [MemberID],case [status] when 0 then 'Pending' when 1 then 'Dispatched'  when 2 then 'Delivered' else 'Cancelled' End as sts,case  when [status] = 0 or[status] = 1  then cast(1 as bit)else cast(0 as bit) End as stsvisible,case  when [status] = 0  then cast(1 as bit)  else cast(0 as bit) End as stsdisvisible, (select UserName from tblMemberMaster where UserCode =[MemberID]) [MemberName],'UpdateOrders.aspx?ID='+cast([OrderId] as nvarchar) [UpdateOrder], (select isnull(sum(TotalDP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalDP, (select isnull(sum(TotalBV),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalBV FROM [OrderMaster] where   (MemberID = @MemberID )  ORDER BY OrderId desc", con);
+            SqlCommand cmd = new SqlCommand("SELECT [OrderID], ('OrderDetails2.aspx?ID='+cast(OrderID as nvarchar)) as ViewDetails,[Date], [MemberID],case [status] when 0 then 'Pending' when 1 then 'Dispatched'  when 2 then 'Delivered' else 'Cancelled' End as sts,case  when [status] = 0 or[status] = 1  then cast(1 as bit)else cast(0 as bit) End as stsvisible,case  when [status] = 0  then cast(1 as bit)  else cast(0 as bit) End as stsdisvisible, (select UserName from tblMemberMaster where UserCode =[MemberID]) [MemberName],'UpdateOrders.aspx?ID='+cast([OrderId] as nvarchar) [UpdateOrder], (select isnull(sum(TotalDP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalDP, (select isnull(sum(TotalBV),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalBV ,(select isnull(sum(TotalMRP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalMRP FROM [OrderMaster] where   (MemberID = @MemberID )  ORDER BY OrderId desc", con);
 
             cmd.Parameters.AddWithValue("@MemberID", txtMemberID.Text);
 
@@ -212,7 +217,7 @@ namespace Rainsonglobal._240578
             txtMemberID.Text = "";
             //SqlCommand cmd = new SqlCommand("SELECT [OrderID], [Date], [MemberID], (select UserName from tblMemberMaster where UserCode=[MemberID]) [MemberName] FROM OrderMaster where FrenchiseID = 'RSG201601'  And InvoiceType='DP'  AND OrderId=@OrderId", con);
 
-            SqlCommand cmd = new SqlCommand("SELECT [OrderID], ('OrderDetails2.aspx?ID='+cast(OrderID as nvarchar)) as ViewDetails,[Date], [MemberID],case [status] when 0 then 'Pending' when 1 then 'Dispatched'  when 2 then 'Delivered' else 'Cancelled' End as sts,case  when [status] = 0 or[status] = 1  then cast(1 as bit)else cast(0 as bit) End as stsvisible,case  when [status] = 0  then cast(1 as bit)  else cast(0 as bit) End as stsdisvisible, (select UserName from tblMemberMaster where UserCode =[MemberID]) [MemberName],'UpdateOrders.aspx?ID='+cast([OrderId] as nvarchar) [UpdateOrder], (select isnull(sum(TotalDP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalDP, (select isnull(sum(TotalBV),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalBV FROM [OrderMaster] where  (orderId = @OrderId ) and  MemberID in (select UserCode from tblMemberMaster where UserName!='Trail') ORDER BY OrderId desc", con);
+            SqlCommand cmd = new SqlCommand("SELECT [OrderID], ('OrderDetails2.aspx?ID='+cast(OrderID as nvarchar)) as ViewDetails,[Date], [MemberID],case [status] when 0 then 'Pending' when 1 then 'Dispatched'  when 2 then 'Delivered' else 'Cancelled' End as sts,case  when [status] = 0 or[status] = 1  then cast(1 as bit)else cast(0 as bit) End as stsvisible,case  when [status] = 0  then cast(1 as bit)  else cast(0 as bit) End as stsdisvisible, (select UserName from tblMemberMaster where UserCode =[MemberID]) [MemberName],'UpdateOrders.aspx?ID='+cast([OrderId] as nvarchar) [UpdateOrder], (select isnull(sum(TotalDP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalDP, (select isnull(sum(TotalBV),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalBV,(select isnull(sum(TotalMRP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalMRP FROM [OrderMaster] where  (orderId = @OrderId ) and  MemberID in (select UserCode from tblMemberMaster where UserName!='Trail') ORDER BY OrderId desc", con);
 
             cmd.Parameters.AddWithValue("@OrderId", txtOrderID.Text);
 
@@ -237,11 +242,11 @@ namespace Rainsonglobal._240578
             SqlCommand cmd = new SqlCommand("", con);
             if (DropDownList1.SelectedValue == "10")
             {
-                cmd.CommandText = "SELECT [OrderID], ('OrderDetails2.aspx?ID='+cast(OrderID as nvarchar)) as ViewDetails,[Date], [MemberID],case [status] when 0 then 'Pending' when 1 then 'Dispatched'  when 2 then 'Delivered' else 'Cancelled' End as sts,case  when [status] = 0 or[status] = 1  then cast(1 as bit)else cast(0 as bit) End as stsvisible,case  when [status] = 0  then cast(1 as bit)  else cast(0 as bit) End as stsdisvisible, (select UserName from tblMemberMaster where UserCode =[MemberID]) [MemberName],'UpdateOrders.aspx?ID='+cast([OrderId] as nvarchar) [UpdateOrder], (select isnull(sum(TotalDP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalDP, (select isnull(sum(TotalBV),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalBV FROM [OrderMaster] where MemberID in (select UserCode from tblMemberMaster where UserName!='Trail') ORDER BY OrderId desc";
+                cmd.CommandText = "SELECT [OrderID], ('OrderDetails2.aspx?ID='+cast(OrderID as nvarchar)) as ViewDetails,[Date], [MemberID],case [status] when 0 then 'Pending' when 1 then 'Dispatched'  when 2 then 'Delivered' else 'Cancelled' End as sts,case  when [status] = 0 or[status] = 1  then cast(1 as bit)else cast(0 as bit) End as stsvisible,case  when [status] = 0  then cast(1 as bit)  else cast(0 as bit) End as stsdisvisible, (select UserName from tblMemberMaster where UserCode =[MemberID]) [MemberName],'UpdateOrders.aspx?ID='+cast([OrderId] as nvarchar) [UpdateOrder], (select isnull(sum(TotalDP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalDP, (select isnull(sum(TotalBV),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalBV ,(select isnull(sum(TotalMRP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalMRP FROM [OrderMaster] where MemberID in (select UserCode from tblMemberMaster where UserName!='Trail') ORDER BY OrderId desc";
             }
             else
             {
-                cmd.CommandText = "SELECT [OrderID], ('OrderDetails2.aspx?ID='+cast(OrderID as nvarchar)) as ViewDetails,[Date], [MemberID],case [status] when 0 then 'Pending' when 1 then 'Dispatched'  when 2 then 'Delivered' else 'Cancelled' End as sts,case  when [status] = 0 or[status] = 1  then cast(1 as bit)else cast(0 as bit) End as stsvisible,case  when [status] = 0  then cast(1 as bit)  else cast(0 as bit) End as stsdisvisible, (select UserName from tblMemberMaster where UserCode =[MemberID]) [MemberName],'UpdateOrders.aspx?ID='+cast([OrderId] as nvarchar) [UpdateOrder], (select isnull(sum(TotalDP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalDP, (select isnull(sum(TotalBV),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalBV FROM [OrderMaster] where  (status = @status ) and  MemberID in (select UserCode from tblMemberMaster where UserName!='Trail')  ORDER BY OrderId desc";
+                cmd.CommandText = "SELECT [OrderID], ('OrderDetails2.aspx?ID='+cast(OrderID as nvarchar)) as ViewDetails,[Date], [MemberID],case [status] when 0 then 'Pending' when 1 then 'Dispatched'  when 2 then 'Delivered' else 'Cancelled' End as sts,case  when [status] = 0 or[status] = 1  then cast(1 as bit)else cast(0 as bit) End as stsvisible,case  when [status] = 0  then cast(1 as bit)  else cast(0 as bit) End as stsdisvisible, (select UserName from tblMemberMaster where UserCode =[MemberID]) [MemberName],'UpdateOrders.aspx?ID='+cast([OrderId] as nvarchar) [UpdateOrder], (select isnull(sum(TotalDP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalDP, (select isnull(sum(TotalBV),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalBV, (select isnull(sum(TotalMRP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalMRP FROM [OrderMaster] where  (status = @status ) and  MemberID in (select UserCode from tblMemberMaster where UserName!='Trail')  ORDER BY OrderId desc";
                 cmd.Parameters.AddWithValue("@status", DropDownList1.SelectedValue);
             }
 
@@ -262,7 +267,7 @@ namespace Rainsonglobal._240578
             txtOrderID.Text = "";
             //SqlCommand cmd = new SqlCommand("SELECT [OrderID], [Date], [MemberID], (select UserName from tblMemberMaster where UserCode=[MemberID]) [MemberName] FROM OrderMaster where FrenchiseID = 'RSG201601'  And InvoiceType='DP'  AND OrderId=@OrderId", con);
 
-            SqlCommand cmd = new SqlCommand("SELECT [OrderID], ('OrderDetails2.aspx?ID='+cast(OrderID as nvarchar)) as ViewDetails,[Date], [MemberID],case [status] when 0 then 'Pending' when 1 then 'Dispatched'  when 2 then 'Delivered' else 'Cancelled' End as sts,case  when [status] = 0 or[status] = 1  then cast(1 as bit)else cast(0 as bit) End as stsvisible,case  when [status] = 0  then cast(1 as bit)  else cast(0 as bit) End as stsdisvisible, (select UserName from tblMemberMaster where UserCode =[MemberID]) [MemberName],'UpdateOrders.aspx?ID='+cast([OrderId] as nvarchar) [UpdateOrder], (select isnull(sum(TotalDP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalDP, (select isnull(sum(TotalBV),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalBV FROM [OrderMaster] where  cast(Date as date)>=cast(@date1 as date) and cast(Date as date)<=cast(@date2 as date)  ORDER BY OrderId desc", con);
+            SqlCommand cmd = new SqlCommand("SELECT [OrderID], ('OrderDetails2.aspx?ID='+cast(OrderID as nvarchar)) as ViewDetails,[Date], [MemberID],case [status] when 0 then 'Pending' when 1 then 'Dispatched'  when 2 then 'Delivered' else 'Cancelled' End as sts,case  when [status] = 0 or[status] = 1  then cast(1 as bit)else cast(0 as bit) End as stsvisible,case  when [status] = 0  then cast(1 as bit)  else cast(0 as bit) End as stsdisvisible, (select UserName from tblMemberMaster where UserCode =[MemberID]) [MemberName],'UpdateOrders.aspx?ID='+cast([OrderId] as nvarchar) [UpdateOrder], (select isnull(sum(TotalDP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalDP, (select isnull(sum(TotalBV),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalBV ,(select isnull(sum(TotalMRP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalMRP FROM [OrderMaster] where  cast(Date as date)>=cast(@date1 as date) and cast(Date as date)<=cast(@date2 as date)  ORDER BY OrderId desc", con);
 
             cmd.Parameters.AddWithValue("@date1", date1.Text);
             cmd.Parameters.AddWithValue("@date2", date2.Text);
@@ -327,7 +332,7 @@ namespace Rainsonglobal._240578
         protected void btnproductcode_Click(object sender, EventArgs e)
         {
                      
-            SqlCommand cmd = new SqlCommand("select [OrderID], ('OrderDetails2.aspx?ID='+cast(OrderID as nvarchar)) as ViewDetails, [Date], [MemberID], case [status] when 0 then 'Pending' when 1 then 'Dispatched' when 2 then 'Delivered' else 'Cancelled' End as sts, case when [status] = 0 or[status] = 1 then cast(1 as bit)else cast(0 as bit) End as stsvisible, case when [status] = 0 then cast(1 as bit) else cast(0 as bit) End as stsdisvisible, (select UserName from tblMemberMaster where UserCode =[MemberID]) [MemberName], 'UpdateOrders.aspx?ID='+cast([OrderId] as nvarchar) [UpdateOrder], (select isnull(sum(TotalDP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalDP, (select isnull(sum(TotalBV),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalBV from ordermaster where OrderID in (select OrderID from OrderDetails where ProductID in (select ProductID from ProductRepurchase where ProductCode=@ProductCode))", con);
+            SqlCommand cmd = new SqlCommand("select [OrderID], ('OrderDetails2.aspx?ID='+cast(OrderID as nvarchar)) as ViewDetails, [Date], [MemberID], case [status] when 0 then 'Pending' when 1 then 'Dispatched' when 2 then 'Delivered' else 'Cancelled' End as sts, case when [status] = 0 or[status] = 1 then cast(1 as bit)else cast(0 as bit) End as stsvisible, case when [status] = 0 then cast(1 as bit) else cast(0 as bit) End as stsdisvisible, (select UserName from tblMemberMaster where UserCode =[MemberID]) [MemberName], 'UpdateOrders.aspx?ID='+cast([OrderId] as nvarchar) [UpdateOrder], (select isnull(sum(TotalDP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalDP, (select isnull(sum(TotalBV),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalBV,(select isnull(sum(TotalMRP),0) from orderdetails where orderdetails.orderid = OrderMaster.orderid) as TotalMRP from ordermaster where OrderID in (select OrderID from OrderDetails where ProductID in (select ProductID from ProductRepurchase where ProductCode=@ProductCode))", con);
 
             cmd.Parameters.AddWithValue("@ProductCode", txtproductcode.Text);
 

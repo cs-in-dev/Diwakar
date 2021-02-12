@@ -198,7 +198,8 @@
                 </ItemTemplate>
             </asp:TemplateField>--%>
             <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" DataFormatString="{0:dd MMM yyyy}" />
-             <asp:BoundField DataField="TotalDP" HeaderText="TotalDP" SortExpression="TotalDP"  />
+             <%--<asp:BoundField DataField="TotalDP" HeaderText="TotalDP" SortExpression="TotalDP" Visible="false"/>--%>
+              <asp:BoundField DataField="TotalMRP" HeaderText="TotalMRP" SortExpression="TotalMRP"/>
              <asp:BoundField DataField="TotalBV" HeaderText="TotalBV" SortExpression="TotalBV"  />
             <asp:BoundField DataField="MemberID" HeaderText="MemberID" 
                 SortExpression="MemberID" />
