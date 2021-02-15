@@ -152,7 +152,7 @@
                     <ItemStyle Width="8%" />
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderText="Invoice No" SortExpression="OrderID">
+                <asp:TemplateField HeaderText="Order No" SortExpression="OrderID">
                     <EditItemTemplate>
                         <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("OrderID") %>'></asp:TextBox>
                     </EditItemTemplate>
@@ -179,7 +179,7 @@
                 <asp:BoundField DataField="sts" HeaderText="Status" SortExpression="sts"
                      />
                 <%--<asp:CommandField SelectText="View" ShowSelectButton="True " HeaderText="Invoice" class="btn btn-xs btn-danger"/>--%>
-                <asp:TemplateField HeaderText="Invoice">
+                <asp:TemplateField HeaderText="View Order">
                     <ItemTemplate>
                         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" class="btn btn-xs btn-danger">View</asp:LinkButton>
                     </ItemTemplate>

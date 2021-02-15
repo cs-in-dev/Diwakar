@@ -16,6 +16,7 @@ public partial class User_UserMasterPage : System.Web.UI.MasterPage
         {
             Response.Redirect("~/login.aspx");
         }
+       
         if (!IsPostBack)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());

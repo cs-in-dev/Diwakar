@@ -261,8 +261,8 @@ th{
                                 </a>
                                     <div>
                                         <ul>
-                                            <li><span></span><a href="AddStoreInvoiceOLD.aspx">NEW ORDER</a></li>
-                                            <li><span></span><a href="ViewOrders1.aspx">VIEW INVOICE</a></li>
+                                           <%-- <li><span></span><a href="AddStoreInvoiceOLD.aspx">NEW ORDER</a></li>--%>
+                                            <li><span></span><a href="ViewOrders1.aspx">VIEW ORDER</a></li>
                                               <%-- <li><span></span><a href="RepurchaseLeft.aspx">REPURCHASE LEFT</a></li>
                                               <li><span></span><a href="RepurchaseRight.aspx">REPURCHASE RIGHT</a></li>--%>
                                              <li><span></span><a href="Repurhase_Right.aspx">REPURCHASE SUMMARY</a></li>

@@ -108,8 +108,7 @@
                         <th scope="col" style="width: 17%;" align="left">Member Name</th>
                         <th scope="col" style="width: 2%;" align="left">Level</th>
                         <th scope="col" style="width: 8%;" align="left">Joining Date</th>
-                        <th scope="col" style="width: 12%;" align="left">Activation Date</th>
-                     
+                      
                     </tr>
             </HeaderTemplate>
 
@@ -128,8 +127,7 @@
                     <td align="left" valign="middle" style="color: Black;">
                         <asp:Label ID="DOJ" runat="server" Text='<%# Eval("DOJ")%>' /></td>
 
-                    <td align="left" valign="middle" style="color: Black;">
-                        <asp:Label ID="sponserid2" runat="server" Text='<%# Eval("confirmdate") %>' /></td>
+                 
 
                  <%--   <td align="left" valign="middle" style="color: Black;">
                         <asp:Button ID="btnrank" runat="server" Text="View" OnClick="btnrank_Click" Visible='<%# Eval("sts") %>' />

@@ -436,7 +436,7 @@ Murthal Road, Sonipat-131001
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: center; color: #000; border: 1px solid #666; border-left: 0px; border-right: 0px;">
-                        <h4>RETAIL INVOICE</h4>
+                        <h4>RETAIL ORDER</h4>
                     </td>
                 </tr>
 
@@ -481,8 +481,8 @@ Murthal Road, Sonipat-131001
 
                         <table cellpadding="0" cellspacing="0" class="noborder" width="100%">
                             <tr>
-                                <td style="width: 35%; text-align: left; border-right: 0px solid #333!important; padding: 5px; border-left: 1px solid #000000;">Invoice No<br />
-                                    Invoice Date<br />
+                                <td style="width: 35%; text-align: left; border-right: 0px solid #333!important; padding: 5px; border-left: 1px solid #000000;">Order No<br />
+                                    Order Date<br />
                                    
                                 
                                     SponsorId<br />
@@ -579,7 +579,7 @@ Murthal Road, Sonipat-131001
 
 
                                 <tr>
-                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Member Invoice Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Member Order Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Label ID="lblamount" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                 </tr>
                                 <tr>
@@ -595,11 +595,11 @@ Murthal Road, Sonipat-131001
                                         <asp:Label ID="lblTotalIGST" Visible="false" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total Invoice Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total Order Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Label ID="lblGrandTotal" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                 </tr>
                 <tr>
-                    <td style="text-align: center; border-bottom: 1px solid #666; line-height: 14px; padding-left: 5px;" class="style1" colspan="2">“I/We certify that my/our registration certificate is in force on the date on which the sale of the goods specified in this Tax Invoice is made by me/us and that the transaction of sale covered by this tax invoice has been effected by me/us and shall be accounted for in the turnover of sales while filling of return and the due tax, if any payable on the sales has been paid or shall be paid”</td>
+                    <td style="text-align: center; border-bottom: 1px solid #666; line-height: 14px; padding-left: 5px;" class="style1" colspan="2">“I/We certify that my/our registration certificate is in force on the date on which the sale of the goods specified in this Tax Order is made by me/us and that the transaction of sale covered by this tax Order has been effected by me/us and shall be accounted for in the turnover of sales while filling of return and the due tax, if any payable on the sales has been paid or shall be paid”</td>
 
                 </tr>
 
@@ -631,7 +631,7 @@ Murthal Road, Sonipat-131001
 
                         <br />
 
-                        <p style="float: left; font-size: 8px; margin-left: 55px!important;">(This is a computer genrateted invoice no need of original signatures)</p>
+                        <p style="float: left; font-size: 8px; margin-left: 55px!important;">(This is a computer genrateted Order no need of original signatures)</p>
                     </td>
 
                 </tr>

@@ -34,6 +34,7 @@ namespace totalfuturcare.User
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.Redirect("UserHome.aspx");
 
             con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
             //panelcheque.Visible = false;

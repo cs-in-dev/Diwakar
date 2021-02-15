@@ -237,7 +237,7 @@
                 </ItemTemplate>
                 </asp:TemplateField>--%>
 
-            <asp:TemplateField HeaderText="View Invoice" ItemStyle-HorizontalAlign="Center">
+            <asp:TemplateField HeaderText="View Order" ItemStyle-HorizontalAlign="Center">
                 <ItemTemplate>
                     <asp:LinkButton ID="LinkButton11" runat="server" OnClick="LinkButton11_Click1" class="btn btn-xs btn-danger">View</asp:LinkButton>
                 </ItemTemplate>
