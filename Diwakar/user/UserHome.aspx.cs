@@ -36,7 +36,7 @@ public partial class User_UserHome : System.Web.UI.Page
                 Spid.Text = dr["SponsorID"].ToString();
                 lblStatus.Text = dr["Status"].ToString();
                // WalletPoint.Text = dr["PinAmount"].ToString().Replace(".0000", "");
-                lblactivation.Text = dr["confirmdate"].ToString();
+               
               
                 break;
             }

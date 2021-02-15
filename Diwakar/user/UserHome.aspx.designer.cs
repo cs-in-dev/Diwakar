@@ -67,15 +67,6 @@ public partial class User_UserHome
     protected global::System.Web.UI.WebControls.Label Spid;
 
     /// <summary>
-    /// lblactivation control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblactivation;
-
-    /// <summary>
     /// dvcon control.
     /// </summary>
     /// <remarks>

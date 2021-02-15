@@ -79,14 +79,7 @@
                     <asp:Label ID="Spid" runat="server"></asp:Label>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <strong>Activation Date</strong>
-                </td>
-                <td>
-                    <asp:Label ID="lblactivation" runat="server"></asp:Label>
-                </td>
-            </tr>
+            
            
         </tbody>
     </table>

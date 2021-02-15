@@ -226,9 +226,6 @@
     <Content Include="Login.aspx" />
     <Content Include="user\AddStoreInvoiceOLD.aspx" />
     <Content Include="user\AllDownlineGenPlan11.aspx" />
-    <Content Include="user\CashBackIncomeRight.aspx" />
-    <Content Include="user\CashBackIncomeLeft.aspx" />
-    <Content Include="user\CashBackIncome.aspx" />
     <Content Include="user\GrowIcard.aspx" />
     <Content Include="user\GSTInvoice.aspx" />
     <Content Include="user\images\logo2.png" />
@@ -1242,27 +1239,6 @@
     </Compile>
     <Compile Include="user\AllDownlineGenPlan11.aspx.designer.cs">
       <DependentUpon>AllDownlineGenPlan11.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="user\CashBackIncomeRight.aspx.cs">
-      <DependentUpon>CashBackIncomeRight.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user\CashBackIncomeRight.aspx.designer.cs">
-      <DependentUpon>CashBackIncomeRight.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="user\CashBackIncomeLeft.aspx.cs">
-      <DependentUpon>CashBackIncomeLeft.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user\CashBackIncomeLeft.aspx.designer.cs">
-      <DependentUpon>CashBackIncomeLeft.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="user\CashBackIncome.aspx.cs">
-      <DependentUpon>CashBackIncome.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user\CashBackIncome.aspx.designer.cs">
-      <DependentUpon>CashBackIncome.aspx</DependentUpon>
     </Compile>
     <Compile Include="user\GrowIcard.aspx.cs">
       <DependentUpon>GrowIcard.aspx</DependentUpon>

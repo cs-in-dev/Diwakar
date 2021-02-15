@@ -127,11 +127,6 @@
                     <td align="left" valign="middle" style="color: Black;">
                         <asp:Label ID="DOJ" runat="server" Text='<%# Eval("DOJ")%>' /></td>
 
-                 
-
-                 <%--   <td align="left" valign="middle" style="color: Black;">
-                        <asp:Button ID="btnrank" runat="server" Text="View" OnClick="btnrank_Click" Visible='<%# Eval("sts") %>' />
-                    </td>--%>
                 </tr>
 
             </ItemTemplate>
