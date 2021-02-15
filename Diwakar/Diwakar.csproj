@@ -97,6 +97,7 @@
     <Content Include="240578\DeleteProductRepurchase1.aspx" />
     <Content Include="240578\DeleteUserProfile.aspx" />
     <Content Include="240578\EditAd.aspx" />
+    <Content Include="240578\InsertLevelsData.aspx" />
     <Content Include="240578\EditandDeleteCategory.aspx" />
     <Content Include="240578\EditDispatchDetails.aspx" />
     <Content Include="240578\EditMyOrderDetails.aspx" />
@@ -686,6 +687,13 @@
     </Compile>
     <Compile Include="240578\EditAd.aspx.designer.cs">
       <DependentUpon>EditAd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="240578\InsertLevelsData.aspx.cs">
+      <DependentUpon>InsertLevelsData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="240578\InsertLevelsData.aspx.designer.cs">
+      <DependentUpon>InsertLevelsData.aspx</DependentUpon>
     </Compile>
     <Compile Include="240578\EditandDeleteCategory.aspx.cs">
       <DependentUpon>EditandDeleteCategory.aspx</DependentUpon>

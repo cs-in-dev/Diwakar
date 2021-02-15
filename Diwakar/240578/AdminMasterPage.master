@@ -155,6 +155,7 @@
                                                           <li><a href="showkyc.aspx">Show Kyc</a></li>
                                                           <li><a href="updatekyc.aspx">Update Kyc</a></li>
                                                  <%--            <li><a href="PDF_Upload.aspx">Upload PDF</a></li>--%>
+                                                          <li><a href="InsertLevelsData.aspx">Manage Levels </a></li>
                           
                                                       </ul>
                                                   </li>

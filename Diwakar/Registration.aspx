@@ -141,6 +141,19 @@
                 $('#<% = txtMobileNo.ClientID%>').focus();
                 return;
             }
+
+            if (Register.EmailID == '' || Register.EmailID == undefined || Register.EmailID == null) {
+                $('#<% = txtEmailID.ClientID%>').attr('style', 'border:2px solid red;');
+                 $('#<% = txtEmailID.ClientID%>').focus();
+                 return;
+            }
+
+            if (Register.PANNo == '' || Register.PANNo == undefined || Register.PANNo == null) {
+                $('#<% = txtPANNo.ClientID%>').attr('style', 'border:2px solid red;');
+                 $('#<% = txtPANNo.ClientID%>').focus();
+                 return;
+             }
+
             if (Register.AadharCard == '' || Register.AadharCard == undefined || Register.AadharCard == null) {
                 $('#<% = txtAadhar.ClientID%>').attr('style', 'border:2px solid red;');
                  $('#<% = txtAadhar.ClientID%>').focus();
@@ -181,43 +194,10 @@
 
     <script type="text/javascript">
 
-       <%-- function EnterPin() {
-
-
-            var Register = {};
-
-
-            Register.EnterPin = $('#<% = txtpin.ClientID%>').val();
-
-            $.ajax({
-                type: "POST",
-                url: "Registration.aspx/checkpin",
-                data: "{EnterPin:'" + Register.EnterPin + "'}",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (data) {
-                    if (data.d == 'error') {
-                        alert('Invalid Pin Please Enter Vaild Pin');
-                        $('#<% = txtpin.ClientID%>').val('');
-                    }
-
-                    else {
-                        alert('Pin is vaild Please Enter Sponser ID');
-                    }
-
-                },
-                error: function (data) {
-
-                }
-            });
-        }--%>
 
         function MobileNo() {
 
-
             var Register = {};
-
-
             Register.MobileNo = $('#<% = txtMobileNo.ClientID%>').val();
 
             $.ajax({
@@ -292,7 +272,40 @@
             });
         }
 
-        function AadharNumberCheck() {
+
+
+        function EmailCountCheck() {
+
+            var Register = {};
+
+            Register.EmailID = $('#<% = txtEmailID.ClientID%>').val();
+
+            $.ajax({
+                type: "POST",
+                url: "Registration.aspx/CheckEmailCount",
+                data: "{EmailId:'" + Register.EmailID + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    if (data.d == 'error') {
+                        alert('This Email Already Used Please Try With Different Email');
+                        $('#<% = txtEmailID.ClientID%>').val('');
+                    }
+
+                    else {
+                        //  alert('PanNo is Valid');
+                    }
+
+                },
+                error: function (data) {
+
+                }
+            });
+        }
+
+
+
+        function AadharNumbercountCheck() {
 
             var Register = {};
 
@@ -300,7 +313,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "Registration.aspx/CheckAadharNumber",
+                url: "Registration.aspx/AadharNumberCheck",
                 data: "{AadharCard:'" + Register.AadharCard + "'}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -319,7 +332,38 @@
 
                 }
             });
-           }
+        }
+
+
+      <%--  function CheckSponsorCount() {
+
+            var Register = {};
+
+            Register.sponsorId = $('#<% = txtsponserid.ClientID%>').val();
+
+            $.ajax({
+                type: "POST",
+                url: "Registration.aspx/CheckSponsorIdCount",
+                data: "{SponsorId:'" + Register.sponsorId + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    if (data.d == 'error') {
+                        alert('This Sponsor Id already used for 4 reference please try whith onther Sponsor Id');
+                        $('#<% = txtsponserid.ClientID%>').val('');
+                    }
+
+                    else {
+                        //  alert('PanNo is Valid');
+                    }
+
+                },
+                error: function (data) {
+
+                }
+            });
+         }--%>
+
 
         function SponserID() {
 
@@ -343,6 +387,19 @@
                     if (sponsor == 'Invaild Sponsorid') {
 
                         alert('Invaild Sponser ID');
+                        $('#<% = txtsponserid.ClientID%>').val('');
+                    }
+                    else {
+                        $('#<% = TextBox1.ClientID%>').val(sponsor);
+                       <%--  $('#<%=Position.ClientID%>').append('<option selected="selected" value="Left">Left</option>');
+                         $('#<%=Position.ClientID%>').append('<option selected="selected" value="Right">Right</option>');--%>
+                    }
+
+
+
+                    if (sponsor == 'error') {
+
+                        alert('This Sponsor Id already used for 4 reference please try whith onther Sponsor Id');
                         $('#<% = txtsponserid.ClientID%>').val('');
                     }
                     else {
@@ -536,7 +593,7 @@
             <div class="form-group">
                 <label for="psw" class="control-label col-sm-6 col-xs-12 text-left"><span class="glyphicon glyphicon-eye-open"></span>&nbsp Email ID</label>
                 <div class="col-sm-6 col-xs-12">
-                <asp:TextBox ID="txtEmailID" CssClass="form-control" runat="server" placeholder="Email ID"></asp:TextBox>
+                <asp:TextBox ID="txtEmailID" CssClass="form-control" runat="server" placeholder="Email ID" onchange="EmailCountCheck();"></asp:TextBox>
                 </div>
             </div>
         </div>
@@ -584,7 +641,7 @@
             <div class="form-group">
                 <label for="psw" class="control-label col-sm-6 col-xs-12 text-left"><span class="glyphicon glyphicon-eye-open"></span>&nbsp Aadhar Card No</label>
                 <div class="col-sm-6 col-xs-12">
-                 <asp:TextBox ID="txtAadhar" CssClass="form-control" runat="server" placeholder="Aadhar Card No." onchange="AadharNumberChecktxt();"></asp:TextBox>
+                 <asp:TextBox ID="txtAadhar" CssClass="form-control" runat="server" placeholder="Aadhar Card No." onchange="AadharNumbercountCheck();"></asp:TextBox>
                 </div>
             </div>
         </div>

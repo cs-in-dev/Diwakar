@@ -250,6 +250,26 @@ namespace GyanTechnologies._240578
             }
         }
 
+        [WebMethod()]
+        public static string CheckEmailCount(string EmailId)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
+            SqlCommand cmdd = new SqlCommand("select isnull(count(*),0) from tblmembermaster where Email=@Email", con);
+            cmdd.Parameters.AddWithValue("@Email", EmailId);
+            con.Open();
+            int i = int.Parse(cmdd.ExecuteScalar().ToString());
+            con.Close();
+            if (i >= 1)
+
+            {
+                return "error";
+            }
+            else
+            {
+                return "Success";
+            }
+        }
+
 
         [WebMethod()]
         public static string checkUserId(string UserId)
@@ -273,6 +293,7 @@ namespace GyanTechnologies._240578
 
         }
 
+
         [WebMethod()]
         public static string checktxtsponserid(string sponserid)
         {
@@ -290,10 +311,26 @@ namespace GyanTechnologies._240578
                 con.Open();
                 result = cmd.ExecuteScalar().ToString();
                 con.Close();
+
             }
             else
             {
                 result = "Invaild Sponsorid";
+            }
+
+            SqlCommand cmdd = new SqlCommand("select isnull(count(*),0) from tblmembermaster where sponsorId=@sp_id", con);
+            cmdd.Parameters.AddWithValue("@sp_id", sponserid);
+            con.Open();
+            int i = int.Parse(cmdd.ExecuteScalar().ToString());
+            con.Close();
+            if (i >= 4)
+
+            {
+                return "error";
+            }
+            else
+            {
+                return result;
             }
 
             return result;
