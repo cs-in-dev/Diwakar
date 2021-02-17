@@ -77,6 +77,7 @@
     <Content Include="240578\Add Repurchase Product1.aspx" />
     <Content Include="240578\AddAdminPoint.aspx" />
     <Content Include="240578\AddE-Wallet.aspx" />
+    <Content Include="240578\CreateOrderAdmin.aspx" />
     <Content Include="240578\AddJoiningPackages.aspx" />
     <Content Include="240578\AddParentCategory.aspx" />
     <Content Include="240578\AddStock.aspx" />
@@ -537,6 +538,13 @@
     </Compile>
     <Compile Include="240578\AddE-Wallet.aspx.designer.cs">
       <DependentUpon>AddE-Wallet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="240578\CreateOrderAdmin.aspx.cs">
+      <DependentUpon>CreateOrderAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="240578\CreateOrderAdmin.aspx.designer.cs">
+      <DependentUpon>CreateOrderAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="240578\AddJoiningPackages.aspx.cs">
       <DependentUpon>AddJoiningPackages.aspx</DependentUpon>

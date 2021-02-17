@@ -134,7 +134,7 @@
                                          </li>
                                             <li><a href="#">Order Panel</a>
                                                 <ul>
-                                                     <li><a href="AddStoreInvoiceOLD.aspx">Create Order</a></li> 
+                                                     <li><a href="CreateOrderAdmin.aspx">Create Order</a></li> 
                                                     <li><a href="ViewReceipt1.aspx">Search Order</a></li> 
                                                     <li><a href="OrderPayment.aspx">Order Payment Details</a></li>
                                                     <li><a href="RepurchaseDetails.aspx">Repurchase Payment Details</a></li>

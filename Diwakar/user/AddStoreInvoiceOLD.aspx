@@ -404,7 +404,7 @@ overflow:auto;
             <tr>
                 <td colspan="12"></td>
             </tr>
-            <table style="width: 95%; font-size: 14px; font-weight: bold;">
+            <table style="width: 56%; font-size: 14px; font-weight: bold;">
                 <tr>
                     <%--<td align="center">Total DP</td>--%>
                     <td align="center">TOTAL BV</td>

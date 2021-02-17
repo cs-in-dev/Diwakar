@@ -518,7 +518,7 @@ Murthal Road, Sonipat-131001
                                                 <td style="width: 35%; text-align: left; border-right: 0px solid #333!important; padding: 5px;">Order No<br />
                                                     Order Date<br />
                                                     
-                                                    Paymemnt Mode
+                                                    Payment Mode
                                                     <br />
                                                      
                                                 </td>

@@ -54,11 +54,12 @@ namespace Sabaic._19111973
         
 
 
-            cmd.CommandText = "Select FrenchiseId,Convert(varchar(10),Date,103) as date2,ISNULL(CourierCharges,0)CourierCharges from OrderMaster where FrenchiseId='" + franchise + "' and OrderID=" + Request.QueryString["ID"].ToString();
+            cmd.CommandText = "Select FrenchiseId,Convert(varchar(10),Date,103) as date2,ISNULL(CourierCharges,0)CourierCharges,OrderNo from OrderMaster where FrenchiseId='" + franchise + "' and OrderID=" + Request.QueryString["ID"].ToString();
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                Label6.Text = Request.QueryString["ID"].ToString();
+                //Label6.Text = Request.QueryString["ID"].ToString();
+                Label6.Text = dr["OrderNo"].ToString();
                 Label7.Text = dr["date2"].ToString();
                 FrenchiseId = dr["FrenchiseId"].ToString();
             }

@@ -164,10 +164,10 @@
 
                             <a>www.diwakarretail.com</a><br />
                             E<a>mail: diwakarretail2017@gmail.com</a><br />
-                           <%-- <a>Helpline No: 82-95-0202-02</a><br />--%>
+                            <%-- <a>Helpline No: 82-95-0202-02</a><br />--%>
 
                             <a>GSTIN Number: xxxxxxxxxxx</a><br />
-                           <%-- <a>CIN Number: U52390HR2016PTC063998</a><br />--%>
+                            <%-- <a>CIN Number: U52390HR2016PTC063998</a><br />--%>
 
 
                             <p>
@@ -445,20 +445,19 @@ Murthal Road, Sonipat-131001
                     <td style="width: 45%; border-bottom: none; border-right: none; padding: 0px;">
                         <table cellpadding="0" cellspacing="0" class="noborder" width="100%">
                             <tr>
-                                <td style="width: 24%; text-align: left; border-right: 0px solid #333!important; padding: 5px;">
-                                    ID<br />
+                                <td style="width: 24%; text-align: left; border-right: 0px solid #333!important; padding: 5px;">ID<br />
                                     Name<br />
                                     Mobile No<br />
                                     Address<br />
                                     City<br />
                                     State<br />
-                                    
+
                                     <br />
                                 </td>
                                 <td style="width: 95%; text-align: left; padding: 5px;">
                                     <br />
                                     :&nbsp;<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                                   <br />
+                                    <br />
                                     :&nbsp;<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
                                     <br />
                                     :&nbsp;<asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
@@ -469,7 +468,7 @@ Murthal Road, Sonipat-131001
                                     <br />
                                     :&nbsp;<asp:Label ID="lblsate" runat="server" Text="Label"></asp:Label>
                                     <br />
-                                   
+
                                     <br />
                                     <br />
                                 </td>
@@ -483,26 +482,24 @@ Murthal Road, Sonipat-131001
                             <tr>
                                 <td style="width: 35%; text-align: left; border-right: 0px solid #333!important; padding: 5px; border-left: 1px solid #000000;">Order No<br />
                                     Order Date<br />
-                                   
-                                
-                                    SponsorId<br />
-                                    SponsorName<br />
-                                       Paymemnt Mode
+                                    Sponsor Id<br />
+                                    Sponsor Name<br />
+                                    Payment Mode
                                                     <br />
 
                                 </td>
                                 <td style="width: 85%; text-align: left; padding: 5px;">:&nbsp;<asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
                                     <br />
                                     :&nbsp;<asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
-                                   
-                                
+
+
                                     <br />
 
-                                     :&nbsp;<asp:Label ID="lblsponsorId" runat="server" Text=""></asp:Label>
+                                    :&nbsp;<asp:Label ID="lblsponsorId" runat="server" Text=""></asp:Label>
                                     <br />
                                     :&nbsp;<asp:Label ID="lblsponsorName" runat="server" Text=""></asp:Label><br />
                                     :&nbsp;<asp:Label ID="lblpaymentmode" runat="server" Text="Label"></asp:Label>
-                                                    <br />
+                                    <br />
 
 
                                 </td>
@@ -513,91 +510,91 @@ Murthal Road, Sonipat-131001
                 </tr>
 
 
-               <tr>
+                <tr>
 
-                                    <td style="width: 55%; border: 0px; border-bottom: 0px; padding: 0px;" colspan="2">
-                                        <table cellpadding="0" style="border: 0px" cellspacing="0" width="100%" class="noborder">
-                                            <tr>
-                                                <td style="padding: 0px; border: 0px; border-bottom: 0px;">
+                    <td style="width: 55%; border: 0px; border-bottom: 0px; padding: 0px;" colspan="2">
+                        <table cellpadding="0" style="border: 0px" cellspacing="0" width="100%" class="noborder">
+                            <tr>
+                                <td style="padding: 0px; border: 0px; border-bottom: 0px;">
 
-                                                    <asp:GridView ID="GridView1" CssClass="Grid" runat="server" AutoGenerateColumns="False" Width="100%" Style="float: left; margin-top: 0px;" ShowFooter="True"
-                                                        ShowHeaderWhenEmpty="True" EmptyDataText="No Payouts released."
-                                                        OnRowDataBound="GridView1_RowDataBound" Font-Size="13px">
-                                                        <Columns>
+                                    <asp:GridView ID="GridView1" CssClass="Grid" runat="server" AutoGenerateColumns="False" Width="100%" Style="float: left; margin-top: 0px;" ShowFooter="True"
+                                        ShowHeaderWhenEmpty="True" EmptyDataText="No Payouts released."
+                                        OnRowDataBound="GridView1_RowDataBound" Font-Size="13px">
+                                        <Columns>
 
-                                                            <asp:TemplateField HeaderText="SNo" HeaderStyle-Width="5px">
-                                                                <ItemTemplate>
-                                                                    <%#((GridViewRow)Container).RowIndex+1 %>
-                                                                </ItemTemplate>
-                                                                <HeaderStyle Width="5px" />
-                                                            </asp:TemplateField>
-                                                            <asp:BoundField DataField="Code" HeaderText="Code" SortExpression="Code" />
-                                                            <asp:BoundField DataField="ProductName" HeaderText="Product Name" SortExpression="ProductName" />
-                                                            <asp:BoundField DataField="MRP" HeaderText="MRP" SortExpression="MRP" DataFormatString="{0:f2}" />
-                                                            <asp:BoundField DataField="Unit Price" HeaderText="DP" SortExpression="Unit Price" DataFormatString="{0:f2}" Visible="false" />
-                                                            <asp:BoundField DataField="BV" HeaderText="BV" SortExpression="BV" DataFormatString="{0:f2}" />
-                                                            <%--<asp:BoundField DataField="CGS" HeaderText="CGST" SortExpression="CGST" DataFormatString="{0:f2}" />
+                                            <asp:TemplateField HeaderText="SNo" HeaderStyle-Width="5px">
+                                                <ItemTemplate>
+                                                    <%#((GridViewRow)Container).RowIndex+1 %>
+                                                </ItemTemplate>
+                                                <HeaderStyle Width="5px" />
+                                            </asp:TemplateField>
+                                            <asp:BoundField DataField="Code" HeaderText="Code" SortExpression="Code" />
+                                            <asp:BoundField DataField="ProductName" HeaderText="Product Name" SortExpression="ProductName" />
+                                            <asp:BoundField DataField="MRP" HeaderText="MRP" SortExpression="MRP" DataFormatString="{0:f2}" />
+                                            <asp:BoundField DataField="Unit Price" HeaderText="DP" SortExpression="Unit Price" DataFormatString="{0:f2}" Visible="false" />
+                                            <asp:BoundField DataField="BV" HeaderText="BV" SortExpression="BV" DataFormatString="{0:f2}" />
+                                            <%--<asp:BoundField DataField="CGS" HeaderText="CGST" SortExpression="CGST" DataFormatString="{0:f2}" />
                                                             <asp:BoundField DataField="SGS" HeaderText="SGST" SortExpression="SGST" DataFormatString="{0:f2}" />--%>
-                                                           <%-- <asp:BoundField DataField="IGS" HeaderText="IGST"  SortExpression="IGST" DataFormatString="{0:f2}" />--%>
-                                                           <%-- <asp:BoundField DataField="RP" HeaderText="RP" SortExpression="RP" DataFormatString="{0:f2}" />--%>
-                                                            <asp:BoundField DataField="Qty" HeaderText="Qty" SortExpression="Qty" HeaderStyle-Width="10px" />
-                                                            <asp:BoundField DataField="TotalMRP" HeaderText="Total MRP" SortExpression="TotalMRP" DataFormatString="{0:f2}" />
-                                                           <%-- <asp:BoundField DataField="Total Price" Visible="false" HeaderText="Total DP" SortExpression="Total Price" DataFormatString="{0:f2}" />--%>
-                                                            <asp:BoundField DataField="TotalIGST" Visible="false" HeaderText="TotalIGST" SortExpression="TotalIGST" DataFormatString="{0:f2}" />
-                                                             <asp:BoundField DataField="TotalCGST" HeaderText="TotalCGST" SortExpression="TotalCGST" DataFormatString="{0:f2}" />
-                                                            <asp:BoundField DataField="TotalSGST" HeaderText="TotalSGST" SortExpression="TotalSGST" DataFormatString="{0:f2}" />
-                                                         
-                                                          <%-- <asp:BoundField DataField="Total RP" HeaderText="Total RP" Visible="false" SortExpression="Total RP" DataFormatString="{0:f2}" />--%>
-                                                            <%--<asp:BoundField DataField="CashBack" HeaderText="CashBack" SortExpression="CashBack" DataFormatString="{0:f2}" />--%>
-                                                            <asp:BoundField DataField="TotalDiscount" Visible="false" HeaderText="Discount" SortExpression="TotalDiscount" DataFormatString="{0:f2}" />
+                                            <%-- <asp:BoundField DataField="IGS" HeaderText="IGST"  SortExpression="IGST" DataFormatString="{0:f2}" />--%>
+                                            <%-- <asp:BoundField DataField="RP" HeaderText="RP" SortExpression="RP" DataFormatString="{0:f2}" />--%>
+                                            <asp:BoundField DataField="Qty" HeaderText="Qty" SortExpression="Qty" HeaderStyle-Width="10px" />
+                                            <asp:BoundField DataField="TotalMRP" HeaderText="Total MRP" SortExpression="TotalMRP" DataFormatString="{0:f2}" />
+                                            <%-- <asp:BoundField DataField="Total Price" Visible="false" HeaderText="Total DP" SortExpression="Total Price" DataFormatString="{0:f2}" />--%>
+                                            <asp:BoundField DataField="TotalIGST" Visible="false" HeaderText="TotalIGST" SortExpression="TotalIGST" DataFormatString="{0:f2}" />
+                                            <asp:BoundField DataField="TotalCGST" HeaderText="TotalCGST" SortExpression="TotalCGST" DataFormatString="{0:f2}" />
+                                            <asp:BoundField DataField="TotalSGST" HeaderText="TotalSGST" SortExpression="TotalSGST" DataFormatString="{0:f2}" />
+
+                                            <%-- <asp:BoundField DataField="Total RP" HeaderText="Total RP" Visible="false" SortExpression="Total RP" DataFormatString="{0:f2}" />--%>
+                                            <%--<asp:BoundField DataField="CashBack" HeaderText="CashBack" SortExpression="CashBack" DataFormatString="{0:f2}" />--%>
+                                            <asp:BoundField DataField="TotalDiscount" Visible="false" HeaderText="Discount" SortExpression="TotalDiscount" DataFormatString="{0:f2}" />
 
 
-                                                        </Columns>
-                                                        <EmptyDataTemplate>
-                                                            No Rows Found!
-                                                        </EmptyDataTemplate>
-                                                        <FooterStyle
-                                                            HorizontalAlign="Center" />
-                                                        <RowStyle
-                                                            HorizontalAlign="Center" />
+                                        </Columns>
+                                        <EmptyDataTemplate>
+                                            No Rows Found!
+                                        </EmptyDataTemplate>
+                                        <FooterStyle
+                                            HorizontalAlign="Center" />
+                                        <RowStyle
+                                            HorizontalAlign="Center" />
 
-                                                    </asp:GridView>
-                                                </td>
+                                    </asp:GridView>
+                                </td>
 
-                                            </tr>
-                                        </table>
+                            </tr>
+                        </table>
 
-                                    </td>
+                    </td>
 
-                                </tr>
+                </tr>
 
 
-                                <tr>
-                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Summary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <tr>
+                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Summary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Label ID="Label10" runat="server" Text="Amount"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                </tr>
+                </tr>
 
 
-                                <tr>
-                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Member Order Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <tr>
+                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Member Order Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Label ID="lblamount" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total CGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total CGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Label ID="lblTotalCGST" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total SGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total SGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Label ID="lblTotalSGST" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                </tr>
-                                <tr style="display:none">
-                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total IGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </tr>
+                <tr style="display: none">
+                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total IGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Label ID="lblTotalIGST" Visible="false" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total Order Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total Order Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Label ID="lblGrandTotal" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                </tr>
+                </tr>
                 <tr>
                     <td style="text-align: center; border-bottom: 1px solid #666; line-height: 14px; padding-left: 5px;" class="style1" colspan="2">“I/We certify that my/our registration certificate is in force on the date on which the sale of the goods specified in this Tax Order is made by me/us and that the transaction of sale covered by this tax Order has been effected by me/us and shall be accounted for in the turnover of sales while filling of return and the due tax, if any payable on the sales has been paid or shall be paid”</td>
 
@@ -607,17 +604,16 @@ Murthal Road, Sonipat-131001
 
 
                 <tr>
-                    <td style="width: 50%; text-align: left; border-right: none; line-height: 14px; padding-left: 5px!important;
-                        vertical-align: top!important;"><span style="font-size: 10px;">
-                            <strong>Terms & Conditions:</strong>
-                            <br />
+                    <td style="width: 50%; text-align: left; border-right: none; line-height: 14px; padding-left: 5px!important; vertical-align: top!important;"><span style="font-size: 10px;">
+                        <strong>Terms & Conditions:</strong>
+                        <br />
 
-                            *   GST is included in distributor price.<br />
-                            * Our responsibility ceases as soon as the goods        
+                        *   GST is included in distributor price.<br />
+                        * Our responsibility ceases as soon as the goods        
   Leave our godown.<br />
-                            * All taxes as applicable.<br />
-                            * Subject to Delhi Jurisdiction.
-                        </span></td>
+                        * All taxes as applicable.<br />
+                        * Subject to Delhi Jurisdiction.
+                    </span></td>
                     <td style="width: 55%; border-left: 1px solid #666;">
                         <h5 style="float: right; color: #000;">Diwakar Retail Ltd.</h5>
                         <br />
