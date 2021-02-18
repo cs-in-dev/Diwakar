@@ -248,7 +248,7 @@
                             </td>
                             <td class="style26">
                                 <asp:TextBox ID="txtBankName" runat="server" MaxLength="30"  CssClass="UpperCase" 
-                                   ></asp:TextBox>
+                                   ReadOnly="true" ></asp:TextBox>
                             </td>
                         </tr>
                         <tr>

@@ -137,12 +137,12 @@
                                                      <li><a href="CreateOrderAdmin.aspx">Create Order</a></li> 
                                                     <li><a href="ViewReceipt1.aspx">Search Order</a></li> 
                                                     <li><a href="OrderPayment.aspx">Order Payment Details</a></li>
-                                                    <li><a href="RepurchaseDetails.aspx">Repurchase Payment Details</a></li>
+                                                   <%-- <li><a href="RepurchaseDetails.aspx">Repurchase Payment Details</a></li>--%>
                                                    <%-- <li><a href="ViewDispatchDetails.aspx">View Dispatch Details</a></li>
                                                     <li><a href="EditDispatchDetails.aspx">Edit Dispatch Details</a></li>--%>
                                               <%--  <li><a href="AddE-Wallet.aspx">Add E-Wallet</a></li>--%>
                                               
-                                                <li><a href="RepurchaseWalletReport.aspx">Repurchase Wallet Report</a></li>
+                                               <%-- <li><a href="RepurchaseWalletReport.aspx">Repurchase Wallet Report</a></li>--%>
                                          <%--       <li><a href="RepurchaseLeft_Admin.aspx">Repurchase Left Report</a></li>
                                                 <li><a href="RepurchaseRight_Admin.aspx">Repurchase Right Report</a></li>--%>
                                                  

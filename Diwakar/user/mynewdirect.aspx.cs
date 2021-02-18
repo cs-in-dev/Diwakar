@@ -224,8 +224,8 @@ public partial class mynewdirect : System.Web.UI.Page
             {
                 name1.Text = mytable.Rows[0][1].ToString();
                 //ddlj1 = Convert.ToDateTime(mytable.Rows[0][2].ToString());
-                lblInvestmentdata = mytable.Rows[0][2].ToString();
-                //TopUpAmount = mytable.Rows[0][9].ToString();
+                lblInvestmentdata = mytable.Rows[0][5].ToString();
+               // TopUpAmount = mytable.Rows[0][5].ToString();
                 GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img1);
                 img1.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[0][0].ToString(), mytable.Rows[0][1].ToString(), mytable.Rows[0][2].ToString(), mytable.Rows[0][3].ToString(), mytable.Rows[0][4].ToString(), mytable.Rows[0][5].ToString(), mytable.Rows[0][6].ToString(), mytable.Rows[0][7].ToString(), mytable.Rows[0][8].ToString()) + "')");
                 img1.Attributes.Add("onMouseout", "hideddrivetip()");
@@ -233,7 +233,7 @@ public partial class mynewdirect : System.Web.UI.Page
             }
             else
             {
-                img1.Src = "~/images/Empty.png";
+                img1.Src = "~/user/images/empty.png";
                 name1.Text = "";
             }
 
@@ -250,7 +250,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 name2.Text = mytable.Rows[1][1].ToString();
                 name2.ToolTip = "";
                 //ddlj1 = Convert.ToDateTime(mytable.Rows[1][2].ToString());
-                lblInvestmentdata = mytable.Rows[1][2].ToString();
+                lblInvestmentdata = mytable.Rows[1][5].ToString();
                 //TopUpAmount = mytable.Rows[1][9].ToString();
                 GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img2);
                 img2.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[1][0].ToString(), mytable.Rows[1][1].ToString(), mytable.Rows[1][2].ToString(), mytable.Rows[1][3].ToString(), mytable.Rows[1][4].ToString(), mytable.Rows[1][5].ToString(), mytable.Rows[1][6].ToString(), mytable.Rows[1][7].ToString(), mytable.Rows[1][8].ToString()) + "')");
@@ -259,7 +259,7 @@ public partial class mynewdirect : System.Web.UI.Page
             else
             {
                 img2.Attributes.Add("onMouseover", " ");
-                img2.Src = "~/images/Empty.png";
+                img2.Src = "~/user/images/empty.png";
                 name2.Text = "";
             }
         }
@@ -273,7 +273,7 @@ public partial class mynewdirect : System.Web.UI.Page
             {
                 name3.Text = mytable.Rows[2][1].ToString();
                 //ddlj1 = Convert.ToDateTime(mytable.Rows[2][2].ToString());
-                lblInvestmentdata = mytable.Rows[2][2].ToString();
+                lblInvestmentdata = mytable.Rows[2][5].ToString();
                // TopUpAmount = mytable.Rows[2][9].ToString();
                 GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img3);
                 img3.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[2][0].ToString(), mytable.Rows[2][1].ToString(), mytable.Rows[2][2].ToString(), mytable.Rows[2][3].ToString(), mytable.Rows[2][4].ToString(), mytable.Rows[2][5].ToString(), mytable.Rows[2][6].ToString(), mytable.Rows[2][7].ToString(), mytable.Rows[2][8].ToString()) + "')");
@@ -282,7 +282,7 @@ public partial class mynewdirect : System.Web.UI.Page
             else
             {
                 img3.Attributes.Add("onMouseover", " ");
-                img3.Src = "~/images/Empty.png";
+                img3.Src = "~/user/images/empty.png";
                 name3.Text = "";
             }
         }
@@ -295,7 +295,7 @@ public partial class mynewdirect : System.Web.UI.Page
             {
                 name4.Text = mytable.Rows[3][1].ToString();
                 //ddlj1 = Convert.ToDateTime(mytable.Rows[3][2].ToString());
-                lblInvestmentdata = mytable.Rows[3][2].ToString();
+                lblInvestmentdata = mytable.Rows[3][5].ToString();
                // TopUpAmount = mytable.Rows[3][9].ToString();
                 GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img4);
                 img4.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[3][0].ToString(), mytable.Rows[3][1].ToString(), mytable.Rows[3][2].ToString(), mytable.Rows[3][3].ToString(), mytable.Rows[3][4].ToString(), mytable.Rows[3][5].ToString(), mytable.Rows[3][6].ToString(), mytable.Rows[3][7].ToString(), mytable.Rows[3][8].ToString()) + "')");
@@ -304,7 +304,7 @@ public partial class mynewdirect : System.Web.UI.Page
             else
             {
                 img4.Attributes.Add("onMouseover", " ");
-                img4.Src = "~/images/Empty.png";
+                img4.Src = "~/user/images/empty.png";
                 name4.Text = "";
             }
 
@@ -318,7 +318,7 @@ public partial class mynewdirect : System.Web.UI.Page
             {
                 name5.Text = mytable.Rows[4][1].ToString();
                 //ddlj1 = Convert.ToDateTime(mytable.Rows[4][2].ToString());
-                lblInvestmentdata = mytable.Rows[4][2].ToString();
+                lblInvestmentdata = mytable.Rows[4][5].ToString();
                // TopUpAmount = mytable.Rows[4][9].ToString();
                 GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img5);
                 img5.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[4][0].ToString(), mytable.Rows[4][1].ToString(), mytable.Rows[4][2].ToString(), mytable.Rows[4][3].ToString(), mytable.Rows[4][4].ToString(), mytable.Rows[4][5].ToString(), mytable.Rows[4][6].ToString(), mytable.Rows[4][7].ToString(), mytable.Rows[4][8].ToString()) + "')");
@@ -327,7 +327,7 @@ public partial class mynewdirect : System.Web.UI.Page
             else
             {
                 img5.Attributes.Add("onMouseover", " ");
-                img5.Src = "~/images/Empty.png";
+                img5.Src = "~/user/images/empty.png";
                 name5.Text = "";
             }
 
@@ -340,7 +340,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name6.Text = mytable.Rows[5][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[5][2].ToString());
-                    lblInvestmentdata = mytable.Rows[5][2].ToString();
+                    lblInvestmentdata = mytable.Rows[5][5].ToString();
                    // TopUpAmount = mytable.Rows[5][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img6);
                     img6.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[5][0].ToString(), mytable.Rows[5][1].ToString(), mytable.Rows[5][2].ToString(), mytable.Rows[5][3].ToString(), mytable.Rows[5][4].ToString(), mytable.Rows[5][5].ToString(), mytable.Rows[5][6].ToString(), mytable.Rows[5][7].ToString(), mytable.Rows[5][8].ToString()) + "')");
@@ -349,7 +349,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img6.Attributes.Add("onMouseover", " ");
-                    img6.Src = "~/images/Empty.png";
+                    img6.Src = "~/user/images/empty.png";
                     name6.Text = "";
                 }
 
@@ -364,7 +364,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name7.Text = mytable.Rows[6][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[6][2].ToString());
-                    lblInvestmentdata = mytable.Rows[6][2].ToString();
+                    lblInvestmentdata = mytable.Rows[6][5].ToString();
                    // TopUpAmount = mytable.Rows[6][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img7);
                     img7.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[6][0].ToString(), mytable.Rows[6][1].ToString(), mytable.Rows[6][2].ToString(), mytable.Rows[6][3].ToString(), mytable.Rows[6][4].ToString(), mytable.Rows[6][5].ToString(), mytable.Rows[6][6].ToString(), mytable.Rows[6][7].ToString(), mytable.Rows[6][8].ToString()) + "')");
@@ -373,7 +373,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img7.Attributes.Add("onMouseover", " ");
-                    img7.Src = "~/images/Empty.png";
+                    img7.Src = "~/user/images/empty.png";
                     name7.Text = "";
                 }
 
@@ -389,7 +389,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name8.Text = mytable.Rows[7][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[7][2].ToString());
-                    lblInvestmentdata = mytable.Rows[7][2].ToString();
+                    lblInvestmentdata = mytable.Rows[7][5].ToString();
                    // TopUpAmount = mytable.Rows[7][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img8);
                     img8.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[7][0].ToString(), mytable.Rows[7][1].ToString(), mytable.Rows[7][2].ToString(), mytable.Rows[7][3].ToString(), mytable.Rows[7][4].ToString(), mytable.Rows[7][5].ToString(), mytable.Rows[7][6].ToString(), mytable.Rows[7][7].ToString(), mytable.Rows[7][8].ToString()) + "')");
@@ -398,7 +398,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img8.Attributes.Add("onMouseover", " ");
-                    img8.Src = "~/images/Empty.png";
+                    img8.Src = "~/user/images/empty.png";
                     name8.Text = "";
                 }
 
@@ -412,7 +412,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name9.Text = mytable.Rows[8][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[8][2].ToString());
-                    lblInvestmentdata = mytable.Rows[8][2].ToString();
+                    lblInvestmentdata = mytable.Rows[8][5].ToString();
                   //  TopUpAmount = mytable.Rows[8][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img9);
                     img9.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[8][0].ToString(), mytable.Rows[8][1].ToString(), mytable.Rows[8][2].ToString(), mytable.Rows[8][3].ToString(), mytable.Rows[8][4].ToString(), mytable.Rows[8][5].ToString(), mytable.Rows[8][6].ToString(), mytable.Rows[8][7].ToString(), mytable.Rows[8][8].ToString()) + "')");
@@ -421,7 +421,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img9.Attributes.Add("onMouseover", " ");
-                    img9.Src = "~/images/Empty.png";
+                    img9.Src = "~/user/images/empty.png";
                     name9.Text = "";
                 }
             }
@@ -434,7 +434,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name10.Text = mytable.Rows[9][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[9][2].ToString());
-                    lblInvestmentdata = mytable.Rows[9][2].ToString();
+                    lblInvestmentdata = mytable.Rows[9][5].ToString();
                  //   TopUpAmount = mytable.Rows[9][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img10);
                     img10.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[9][0].ToString(), mytable.Rows[9][1].ToString(), mytable.Rows[9][2].ToString(), mytable.Rows[9][3].ToString(), mytable.Rows[9][4].ToString(), mytable.Rows[9][5].ToString(), mytable.Rows[9][6].ToString(), mytable.Rows[9][7].ToString(), mytable.Rows[9][8].ToString()) + "')");
@@ -443,7 +443,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img10.Attributes.Add("onMouseover", " ");
-                    img10.Src = "~/images/Empty.png";
+                    img10.Src = "~/user/images/empty.png";
                     name10.Text = "";
                 }
 
@@ -457,7 +457,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name11.Text = mytable.Rows[10][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[10][2].ToString());
-                    lblInvestmentdata = mytable.Rows[10][2].ToString();
+                    lblInvestmentdata = mytable.Rows[10][5].ToString();
                    // TopUpAmount = mytable.Rows[10][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img11);
                     img11.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[10][0].ToString(), mytable.Rows[10][1].ToString(), mytable.Rows[10][2].ToString(), mytable.Rows[10][3].ToString(), mytable.Rows[10][4].ToString(), mytable.Rows[10][5].ToString(), mytable.Rows[10][6].ToString(), mytable.Rows[10][7].ToString(), mytable.Rows[10][8].ToString()) + "')");
@@ -466,7 +466,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img11.Attributes.Add("onMouseover", " ");
-                    img11.Src = "~/images/Empty.png";
+                    img11.Src = "~/user/images/empty.png";
                     name11.Text = "";
                 }
 
@@ -481,7 +481,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name12.Text = mytable.Rows[11][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[11][2].ToString());
-                    lblInvestmentdata = mytable.Rows[11][2].ToString();
+                    lblInvestmentdata = mytable.Rows[11][5].ToString();
                    // TopUpAmount = mytable.Rows[11][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img12);
                     img12.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[11][0].ToString(), mytable.Rows[11][1].ToString(), mytable.Rows[11][2].ToString(), mytable.Rows[11][3].ToString(), mytable.Rows[11][4].ToString(), mytable.Rows[11][5].ToString(), mytable.Rows[11][6].ToString(), mytable.Rows[11][7].ToString(), mytable.Rows[11][8].ToString()) + "')");
@@ -490,7 +490,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img12.Attributes.Add("onMouseover", " ");
-                    img12.Src = "~/images/Empty.png";
+                    img12.Src = "~/user/images/empty.png";
                     name12.Text = "";
                 }
 
@@ -504,7 +504,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name13.Text = mytable.Rows[12][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[12][2].ToString();
+                    lblInvestmentdata = mytable.Rows[12][5].ToString();
                    // TopUpAmount = mytable.Rows[12][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img13);
                     img13.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[12][0].ToString(), mytable.Rows[12][1].ToString(), mytable.Rows[12][2].ToString(), mytable.Rows[12][3].ToString(), mytable.Rows[12][4].ToString(), mytable.Rows[12][5].ToString(), mytable.Rows[12][6].ToString(), mytable.Rows[12][7].ToString(), mytable.Rows[12][8].ToString()) + "')");
@@ -513,7 +513,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img13.Attributes.Add("onMouseover", " ");
-                    img13.Src = "~/images/Empty.png";
+                    img13.Src = "~/user/images/empty.png";
                     name13.Text = "";
                 }
 
@@ -529,7 +529,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name14.Text = mytable.Rows[13][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[13][2].ToString();
+                    lblInvestmentdata = mytable.Rows[13][5].ToString();
                   //  TopUpAmount = mytable.Rows[13][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img14);
                     img14.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[13][0].ToString(), mytable.Rows[13][1].ToString(), mytable.Rows[13][2].ToString(), mytable.Rows[13][3].ToString(), mytable.Rows[13][4].ToString(), mytable.Rows[13][5].ToString(), mytable.Rows[13][6].ToString(), mytable.Rows[13][7].ToString(), mytable.Rows[13][8].ToString()) + "')");
@@ -538,7 +538,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img14.Attributes.Add("onMouseover", " ");
-                    img14.Src = "~/images/Empty.png";
+                    img14.Src = "~/user/images/empty.png";
                     name14.Text = "";
                 }
             }
@@ -552,7 +552,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name15.Text = mytable.Rows[14][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[14][2].ToString();
+                    lblInvestmentdata = mytable.Rows[14][5].ToString();
                   //  TopUpAmount = mytable.Rows[14][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img15);
                     img15.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[14][0].ToString(), mytable.Rows[14][1].ToString(), mytable.Rows[14][2].ToString(), mytable.Rows[14][3].ToString(), mytable.Rows[14][4].ToString(), mytable.Rows[14][5].ToString(), mytable.Rows[14][6].ToString(), mytable.Rows[14][7].ToString(), mytable.Rows[14][8].ToString()) + "')");
@@ -562,7 +562,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
 
                     img15.Attributes.Add("onMouseover", " ");
-                    img15.Src = "~/images/Empty.png";
+                    img15.Src = "~/user/images/empty.png";
                     name15.Text = "";
                 }
 
@@ -577,7 +577,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name16.Text = mytable.Rows[15][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[15][2].ToString();
+                    lblInvestmentdata = mytable.Rows[15][5].ToString();
                   //  TopUpAmount = mytable.Rows[15][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img16);
                     img16.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[15][0].ToString(), mytable.Rows[15][1].ToString(), mytable.Rows[15][2].ToString(), mytable.Rows[15][3].ToString(), mytable.Rows[15][4].ToString(), mytable.Rows[15][5].ToString(), mytable.Rows[15][6].ToString(), mytable.Rows[15][7].ToString(), mytable.Rows[15][8].ToString()) + "')");
@@ -586,7 +586,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img16.Attributes.Add("onMouseover", " ");
-                    img16.Src = "~/images/Empty.png";
+                    img16.Src = "~/user/images/empty.png";
                     name16.Text = "";
                 }
 
@@ -602,7 +602,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name17.Text = mytable.Rows[16][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[16][2].ToString();
+                    lblInvestmentdata = mytable.Rows[16][5].ToString();
                   //  TopUpAmount = mytable.Rows[16][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img17);
                     img17.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[16][0].ToString(), mytable.Rows[16][1].ToString(), mytable.Rows[16][2].ToString(), mytable.Rows[16][3].ToString(), mytable.Rows[16][4].ToString(), mytable.Rows[16][5].ToString(), mytable.Rows[16][6].ToString(), mytable.Rows[16][7].ToString(), mytable.Rows[16][8].ToString()) + "')");
@@ -611,7 +611,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img17.Attributes.Add("onMouseover", " ");
-                    img17.Src = "~/images/Empty.png";
+                    img17.Src = "~/user/images/empty.png";
                     name17.Text = "";
                 }
 
@@ -627,7 +627,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name18.Text = mytable.Rows[17][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[17][2].ToString();
+                    lblInvestmentdata = mytable.Rows[17][5].ToString();
                    // TopUpAmount = mytable.Rows[17][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img18);
                     img18.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[17][0].ToString(), mytable.Rows[17][1].ToString(), mytable.Rows[17][2].ToString(), mytable.Rows[17][3].ToString(), mytable.Rows[17][4].ToString(), mytable.Rows[17][5].ToString(), mytable.Rows[17][6].ToString(), mytable.Rows[17][7].ToString(), mytable.Rows[17][8].ToString()) + "')");
@@ -636,7 +636,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img18.Attributes.Add("onMouseover", " ");
-                    img18.Src = "~/images/Empty.png";
+                    img18.Src = "~/user/images/empty.png";
                     name18.Text = "";
                 }
 
@@ -651,7 +651,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name19.Text = mytable.Rows[18][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[18][2].ToString();
+                    lblInvestmentdata = mytable.Rows[18][5].ToString();
                   //  TopUpAmount = mytable.Rows[18][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img19);
                     img19.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[18][0].ToString(), mytable.Rows[18][1].ToString(), mytable.Rows[18][2].ToString(), mytable.Rows[18][3].ToString(), mytable.Rows[18][4].ToString(), mytable.Rows[18][5].ToString(), mytable.Rows[18][6].ToString(), mytable.Rows[18][7].ToString(), mytable.Rows[18][8].ToString()) + "')");
@@ -660,7 +660,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img19.Attributes.Add("onMouseover", " ");
-                    img19.Src = "~/images/Empty.png";
+                    img19.Src = "~/user/images/empty.png";
                     name19.Text = "";
                 }
 
@@ -676,7 +676,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name20.Text = mytable.Rows[19][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[19][2].ToString();
+                    lblInvestmentdata = mytable.Rows[19][5].ToString();
                    // TopUpAmount = mytable.Rows[19][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img20);
                     img20.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[19][0].ToString(), mytable.Rows[19][1].ToString(), mytable.Rows[19][2].ToString(), mytable.Rows[19][3].ToString(), mytable.Rows[19][4].ToString(), mytable.Rows[19][5].ToString(), mytable.Rows[19][6].ToString(), mytable.Rows[19][7].ToString(), mytable.Rows[19][8].ToString()) + "')");
@@ -685,7 +685,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img20.Attributes.Add("onMouseover", " ");
-                    img20.Src = "~/images/Empty.png";
+                    img20.Src = "~/user/images/empty.png";
                     name20.Text = "";
                 }
 
@@ -701,7 +701,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     name21.Text = mytable.Rows[20][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[20][2].ToString();
+                    lblInvestmentdata = mytable.Rows[20][5].ToString();
                  //   TopUpAmount = mytable.Rows[20][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img21);
                     img21.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[20][0].ToString(), mytable.Rows[20][1].ToString(), mytable.Rows[20][2].ToString(), mytable.Rows[20][3].ToString(), mytable.Rows[20][4].ToString(), mytable.Rows[20][5].ToString(), mytable.Rows[20][6].ToString(), mytable.Rows[20][7].ToString(), mytable.Rows[20][8].ToString()) + "')");
@@ -710,7 +710,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img21.Attributes.Add("onMouseover", " ");
-                    img21.Src = "~/images/Empty.png";
+                    img21.Src = "~/user/images/empty.png";
                     name21.Text = "";
                 }
 
@@ -725,7 +725,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     Label3.Text = mytable.Rows[21][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[21][2].ToString();
+                    lblInvestmentdata = mytable.Rows[21][5].ToString();
                   //  TopUpAmount = mytable.Rows[21][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img22);
                     img22.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[21][0].ToString(), mytable.Rows[21][1].ToString(), mytable.Rows[21][2].ToString(), mytable.Rows[21][3].ToString(), mytable.Rows[21][4].ToString(), mytable.Rows[21][5].ToString(), mytable.Rows[21][6].ToString(), mytable.Rows[21][7].ToString(), mytable.Rows[21][8].ToString()) + "')");
@@ -734,7 +734,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img22.Attributes.Add("onMouseover", " ");
-                    img22.Src = "~/images/Empty.png";
+                    img22.Src = "~/user/images/empty.png";
                     Label3.Text = "";
                 }
 
@@ -749,7 +749,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     Label4.Text = mytable.Rows[22][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[22][2].ToString();
+                    lblInvestmentdata = mytable.Rows[22][5].ToString();
                   //  TopUpAmount = mytable.Rows[22][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img23);
                     img23.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[22][0].ToString(), mytable.Rows[22][1].ToString(), mytable.Rows[22][2].ToString(), mytable.Rows[22][3].ToString(), mytable.Rows[22][4].ToString(), mytable.Rows[22][5].ToString(), mytable.Rows[22][6].ToString(), mytable.Rows[22][7].ToString(), mytable.Rows[22][8].ToString()) + "')");
@@ -758,7 +758,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img23.Attributes.Add("onMouseover", " ");
-                    img23.Src = "~/images/Empty.png";
+                    img23.Src = "~/user/images/empty.png";
                     Label4.Text = "";
                 }
 
@@ -773,7 +773,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     Label5.Text = mytable.Rows[23][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[23][2].ToString();
+                    lblInvestmentdata = mytable.Rows[23][5].ToString();
                    // TopUpAmount = mytable.Rows[23][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img24);
                     img24.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[23][0].ToString(), mytable.Rows[23][1].ToString(), mytable.Rows[23][2].ToString(), mytable.Rows[23][3].ToString(), mytable.Rows[23][4].ToString(), mytable.Rows[23][5].ToString(), mytable.Rows[23][6].ToString(), mytable.Rows[23][7].ToString(), mytable.Rows[23][8].ToString()) + "')");
@@ -782,7 +782,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img24.Attributes.Add("onMouseover", " ");
-                    img24.Src = "~/images/Empty.png";
+                    img24.Src = "~/user/images/empty.png";
                     Label5.Text = "";
                 }
 
@@ -797,7 +797,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     Label6.Text = mytable.Rows[24][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[24][2].ToString();
+                    lblInvestmentdata = mytable.Rows[24][5].ToString();
                    // TopUpAmount = mytable.Rows[24][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img25);
                     img25.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[24][0].ToString(), mytable.Rows[24][1].ToString(), mytable.Rows[24][2].ToString(), mytable.Rows[24][3].ToString(), mytable.Rows[24][4].ToString(), mytable.Rows[24][5].ToString(), mytable.Rows[24][6].ToString(), mytable.Rows[24][7].ToString(), mytable.Rows[24][8].ToString()) + "')");
@@ -806,7 +806,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img25.Attributes.Add("onMouseover", " ");
-                    img25.Src = "~/images/Empty.png";
+                    img25.Src = "~/user/images/empty.png";
                     Label6.Text = "";
                 }
 
@@ -820,7 +820,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     Label7.Text = mytable.Rows[25][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[25][2].ToString();
+                    lblInvestmentdata = mytable.Rows[25][5].ToString();
                   //  TopUpAmount = mytable.Rows[25][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img26);
                     img26.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[25][0].ToString(), mytable.Rows[25][1].ToString(), mytable.Rows[25][2].ToString(), mytable.Rows[25][3].ToString(), mytable.Rows[25][4].ToString(), mytable.Rows[25][5].ToString(), mytable.Rows[25][6].ToString(), mytable.Rows[25][7].ToString(), mytable.Rows[25][8].ToString()) + "')");
@@ -829,7 +829,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img26.Attributes.Add("onMouseover", " ");
-                    img26.Src = "~/images/Empty.png";
+                    img26.Src = "~/user/images/empty.png";
                     Label7.Text = "";
                 }
 
@@ -844,7 +844,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     Label8.Text = mytable.Rows[26][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[26][2].ToString();
+                    lblInvestmentdata = mytable.Rows[26][5].ToString();
                    // TopUpAmount = mytable.Rows[26][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img27);
                     img27.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[26][0].ToString(), mytable.Rows[26][1].ToString(), mytable.Rows[26][2].ToString(), mytable.Rows[26][3].ToString(), mytable.Rows[26][4].ToString(), mytable.Rows[26][5].ToString(), mytable.Rows[26][6].ToString(), mytable.Rows[26][7].ToString(), mytable.Rows[26][8].ToString()) + "')");
@@ -853,7 +853,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img27.Attributes.Add("onMouseover", " ");
-                    img27.Src = "~/images/Empty.png";
+                    img27.Src = "~/user/images/empty.png";
                     Label8.Text = "";
                 }
 
@@ -868,7 +868,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     Label9.Text = mytable.Rows[27][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[27][2].ToString();
+                    lblInvestmentdata = mytable.Rows[27][5].ToString();
                   //  TopUpAmount = mytable.Rows[27][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img28);
                     img28.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[27][0].ToString(), mytable.Rows[27][1].ToString(), mytable.Rows[27][2].ToString(), mytable.Rows[27][3].ToString(), mytable.Rows[27][4].ToString(), mytable.Rows[27][5].ToString(), mytable.Rows[27][6].ToString(), mytable.Rows[27][7].ToString(), mytable.Rows[27][8].ToString()) + "')");
@@ -877,7 +877,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img28.Attributes.Add("onMouseover", " ");
-                    img28.Src = "~/images/Empty.png";
+                    img28.Src = "~/user/images/empty.png";
                     Label9.Text = "";
                 }
             }
@@ -890,7 +890,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     Label10.Text = mytable.Rows[28][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[28][2].ToString();
+                    lblInvestmentdata = mytable.Rows[28][5].ToString();
                 //    TopUpAmount = mytable.Rows[28][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img29);
                     img29.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[28][0].ToString(), mytable.Rows[28][1].ToString(), mytable.Rows[28][2].ToString(), mytable.Rows[28][3].ToString(), mytable.Rows[28][4].ToString(), mytable.Rows[28][5].ToString(), mytable.Rows[28][6].ToString(), mytable.Rows[28][7].ToString(), mytable.Rows[28][8].ToString()) + "')");
@@ -899,7 +899,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img29.Attributes.Add("onMouseover", " ");
-                    img29.Src = "~/images/Empty.png";
+                    img29.Src = "~/user/images/empty.png";
                     Label10.Text = "";
                 }
 
@@ -913,7 +913,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     Label11.Text = mytable.Rows[29][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[29][2].ToString();
+                    lblInvestmentdata = mytable.Rows[29][5].ToString();
                     TopUpAmount = mytable.Rows[29][9].ToString();
                   //  GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img30);
                     img30.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[29][0].ToString(), mytable.Rows[29][1].ToString(), mytable.Rows[29][2].ToString(), mytable.Rows[29][3].ToString(), mytable.Rows[29][4].ToString(), mytable.Rows[29][5].ToString(), mytable.Rows[29][6].ToString(), mytable.Rows[29][7].ToString(), mytable.Rows[29][8].ToString()) + "')");
@@ -922,7 +922,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img30.Attributes.Add("onMouseover", " ");
-                    img30.Src = "~/images/Empty.png";
+                    img30.Src = "~/user/images/empty.png";
                     Label11.Text = "";
                 }
             }
@@ -935,7 +935,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 {
                     Label12.Text = mytable.Rows[30][1].ToString();
                     //ddlj1 = Convert.ToDateTime(mytable.Rows[12][2].ToString());
-                    lblInvestmentdata = mytable.Rows[30][2].ToString();
+                    lblInvestmentdata = mytable.Rows[30][5].ToString();
                    // TopUpAmount = mytable.Rows[30][9].ToString();
                     GetStatuspay(lblInvestmentdata, lbljuicyclub, MemberID, ref img31);
                     img31.Attributes.Add("onMouseover", "ddrivetip('" + getString(mytable.Rows[30][0].ToString(), mytable.Rows[30][1].ToString(), mytable.Rows[30][2].ToString(), mytable.Rows[30][3].ToString(), mytable.Rows[30][4].ToString(), mytable.Rows[30][5].ToString(), mytable.Rows[30][6].ToString(), mytable.Rows[30][7].ToString(), mytable.Rows[30][8].ToString()) + "')");
@@ -944,7 +944,7 @@ public partial class mynewdirect : System.Web.UI.Page
                 else
                 {
                     img31.Attributes.Add("onMouseover", " ");
-                    img31.Src = "~/images/Empty.png";
+                    img31.Src = "~/user/images/empty.png";
                     Label12.Text = "";
                 }
             }
@@ -960,17 +960,17 @@ public partial class mynewdirect : System.Web.UI.Page
     public void GetStatuspay(String lblInvestmentdata, String lbljuicyclub, String MemberID, ref HtmlImage img)
     {
 
-        //Int64 lblinvestment = lblInvestmentdata == "" ? 0 : long.Parse(lblInvestmentdata.Replace(".0000", ""));
-        //if (lblinvestment == 0 && MemberID != "")
-        //{
-        //    img.Src = "~/user/images/red.gif";
-        //}
-
+        Int64 lblinvestment = lblInvestmentdata == "" ? 0 : long.Parse(lblInvestmentdata.Replace(".0000", ""));
        
-      //  else
-            // img.Src = "~/user/images/silverf.png";
-            img.Src = "~/user/images/green.png"; //11a
-
+        if (lblinvestment > 0 && MemberID != "")
+        {
+            img.Src = "~/user/images/3.png"; 
+        }
+        else
+        {
+            img.Src = "~/user/images/11.png";
+        }
+         
         // img.Src = "~/user/images/green.png";
 
 
