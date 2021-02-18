@@ -73,7 +73,7 @@ overflow:auto;
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <script src="css/Extension.min.js" type="text/javascript"></script>
+   <%-- <script src="css/Extension.min.js" type="text/javascript"></script>--%>
    
     <table>
         <tr>

@@ -1234,6 +1234,7 @@
     <Compile Include="Old_App_Code\BAL\BALNews.cs" />
     <Compile Include="Old_App_Code\BAL\BALPin.cs" />
     <Compile Include="Old_App_Code\BAL\BALTreeMaster.cs" />
+    <Compile Include="Old_App_Code\LogControl.cs" />
     <Compile Include="user\AddStoreInvoiceOLD.aspx.cs">
       <DependentUpon>AddStoreInvoiceOLD.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

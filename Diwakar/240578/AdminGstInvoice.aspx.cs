@@ -15,7 +15,7 @@ namespace Sabaic._19111973
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
         SqlCommand cmd;
-        Double Qty = 0, CGST = 0, SGST = 0, IGST = 0, TotalCGST = 0, TotalSGST = 0, TotalTaxAmount = 0, TotalDP = 0, Total = 0, UnitPrice = 0, TotalPrice = 0, Bv = 0, TotalAddtax = 0, Tottax = 0, Qty2 = 0, tax2 = 0, tax3 = 0, Totalweight = 0, CashBack = 0, TCB = 0, TotalRP=0;
+        Double Qty = 0, CGST = 0, SGST = 0, IGST = 0, TotalCGST = 0, TotalSGST = 0, TotalTaxAmount = 0, TotalDP = 0, Total = 0, UnitPrice = 0, TotalPrice = 0, Bv = 0, Tottax = 0, Qty2 = 0;
 
 
         Double GrossAmt = 0;
@@ -26,7 +26,9 @@ namespace Sabaic._19111973
             string FrenchiseId = "";
             string msg = Request.QueryString["ID"].ToString();
             string franchise = "Company";
-            cmd = new SqlCommand("select * from tblMemberMaster where UserCode=(select MemberID from OrderMaster where FrenchiseId='" + franchise + "' and  OrderID=" + Request.QueryString["ID"].ToString() + ")", con);
+            cmd = new SqlCommand("select * from tblMemberMaster where UserCode=(select MemberID from OrderMaster where FrenchiseId=@FrenchiseId and OrderID=@OrderID)", con);
+            cmd.Parameters.AddWithValue("@FrenchiseId", franchise);
+            cmd.Parameters.AddWithValue("@OrderID", Request.QueryString["ID"].ToString());
             con.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -37,24 +39,28 @@ namespace Sabaic._19111973
                 Label3.Text = dr["address"].ToString();
                 Label4.Text = dr["city"].ToString();
                 lblsate.Text = dr["State"].ToString();
-                lblsponsorName.Text= dr["SponsorId"].ToString();
+                lblsponsorId.Text = dr["SponsorId"].ToString();
 
             }
             dr.Close();
             dr.Dispose();
-
+            con.Close();
             //cmd.CommandText = "Select  [dbo].[MySponsor](@UserCode)";
             //cmd.Parameters.AddWithValue("@UserCode", Label1.Text);
             //lblsponsorId.Text = cmd.ExecuteScalar().ToString();
-          
+
 
             cmd.CommandText = "Select  [dbo].[MySponsorName](@SpName)";
             cmd.Parameters.AddWithValue("@SpName", Label1.Text);
+            con.Open();
             lblsponsorName.Text = cmd.ExecuteScalar().ToString();
-        
+            con.Close();
 
 
-            cmd.CommandText = "Select FrenchiseId,Convert(varchar(10),Date,103) as date2,ISNULL(CourierCharges,0)CourierCharges,OrderNo from OrderMaster where FrenchiseId='" + franchise + "' and OrderID=" + Request.QueryString["ID"].ToString();
+            cmd.CommandText = "Select FrenchiseId,Convert(varchar(10),Date,103) as date2,ISNULL(CourierCharges,0)CourierCharges,OrderNo from OrderMaster where FrenchiseId=@FrenchiseId3 and OrderID=@OrderID3";
+            cmd.Parameters.AddWithValue("@FrenchiseId3", franchise);
+            cmd.Parameters.AddWithValue("@OrderID3", Request.QueryString["ID"].ToString());
+            con.Open();
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -66,29 +72,20 @@ namespace Sabaic._19111973
 
             dr.Close();
             dr.Dispose();
-
-
-            cmd.CommandText = "Select Address from tblFrenchiseMaster where FrenchiseId='" + FrenchiseId + "'";
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                // lblcustaddr.Text = dr["Address"].ToString();
-
-            }
-
-            dr.Close();
-            dr.Dispose();
-
+            con.Close();
             try
             {
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
-                SqlCommand cmd11 = new SqlCommand("select username from tblmembermaster where usercode='" + FrenchiseId + "'", con);
-                con.Open();
-                string a = cmd11.ExecuteScalar().ToString();
-                con.Close();
+
+                //SqlCommand cmd11 = new SqlCommand("select username from tblmembermaster where usercode=@FrenchiseId11", con);
+                //cmd11.Parameters.AddWithValue("@FrenchiseId11", FrenchiseId);
+                //con.Open();
+                //string a = cmd11.ExecuteScalar().ToString();
+                //con.Close();
 
 
-                SqlCommand cmd21 = new SqlCommand("select paymentmode from [dbo].[OrderMaster] where FrenchiseId='" + FrenchiseId + "' and  OrderID='" + Request.QueryString["ID"].ToString() + "'", con);
+                SqlCommand cmd21 = new SqlCommand("select paymentmode from [dbo].[OrderMaster] where FrenchiseId=@FrenchiseId1 and  OrderID=@OrderID1", con);
+                cmd21.Parameters.AddWithValue("@FrenchiseId1", franchise);
+                cmd21.Parameters.AddWithValue("@OrderID1", Request.QueryString["ID"].ToString());
                 con.Open();
                 string paymentmode = cmd21.ExecuteScalar().ToString();
                 con.Close();
@@ -119,14 +116,16 @@ namespace Sabaic._19111973
             //string State = cmd12.ExecuteScalar().ToString();
             //con.Close();
 
-            
-                SqlCommand cmd2 = new SqlCommand("SELECT ProductRepurchase.ProductCode Code,OrderDetails.CGST as CGS,OrderDetails.SGST as SGS,OrderDetails.TotalDiscount as TotalDiscount,ProductRepurchase.productid,ProductRepurchase.ProductName, OrderDetails.MRP, OrderDetails.DP 'Unit Price', OrderDetails.Qty,OrderDetails.BV,OrderDetails.TotalBV, OrderDetails.TotalMRP Value, (OrderDetails.IGST*OrderDetails.Qty)TotalIGST,(OrderDetails.SGST*OrderDetails.Qty)TotalSGST ,(OrderDetails.CGST*OrderDetails.Qty)TotalCGST, (OrderDetails.BV*OrderDetails.Qty)TotalMRP, (OrderDetails.TotalBV) 'Total Price' FROM OrderDetails INNER JOIN ProductRepurchase ON OrderDetails.ProductID = ProductRepurchase.ProductID INNER JOIN OrderMaster ON OrderMaster.OrderID = OrderDetails.OrderID where OrderMaster.OrderId='" + msg + "' and FrenchiseID = '" + FrenchiseId + "'", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd2);
-                DataSet dt = new DataSet();
-                da.Fill(dt);
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
-            
+
+            SqlCommand cmd2 = new SqlCommand("SELECT ProductRepurchase.ProductCode Code,OrderDetails.CGST as CGS,OrderDetails.SGST as SGS,OrderDetails.TotalDiscount as TotalDiscount,ProductRepurchase.productid,ProductRepurchase.ProductName, OrderDetails.MRP, OrderDetails.DP 'Unit Price', OrderDetails.Qty,OrderDetails.BV,OrderDetails.TotalBV, OrderDetails.TotalMRP Value, (OrderDetails.IGST*OrderDetails.Qty)TotalIGST,(OrderDetails.SGST*OrderDetails.Qty)TotalSGST ,(OrderDetails.CGST*OrderDetails.Qty)TotalCGST, (OrderDetails.BV*OrderDetails.Qty)TotalMRP, (OrderDetails.TotalBV) 'Total Price' FROM OrderDetails INNER JOIN ProductRepurchase ON OrderDetails.ProductID = ProductRepurchase.ProductID INNER JOIN OrderMaster ON OrderMaster.OrderID = OrderDetails.OrderID where OrderMaster.OrderId=@OrderID2 and FrenchiseID =@FrenchiseId2", con);
+            cmd2.Parameters.AddWithValue("@FrenchiseId2", franchise);
+            cmd2.Parameters.AddWithValue("@OrderID2", Request.QueryString["ID"].ToString());
+            SqlDataAdapter da = new SqlDataAdapter(cmd2);
+            DataSet dt = new DataSet();
+            da.Fill(dt);
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
+
 
         }
 

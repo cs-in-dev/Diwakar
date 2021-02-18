@@ -27,7 +27,8 @@ namespace Sabaic.user
             // GridView1.Columns[12].Visible = false;
             string FrenchiseId = "";
             string msg = Request.QueryString["ID"].ToString();
-            cmd = new SqlCommand("select * from tblMemberMaster where UserCode=(select MemberID from OrderMaster where   OrderID=" + Request.QueryString["ID"].ToString() + ")", con);
+            cmd = new SqlCommand("select * from tblMemberMaster where UserCode=(select MemberID from OrderMaster where OrderID=@OrderID)", con);
+            cmd.Parameters.AddWithValue("@OrderID", Request.QueryString["ID"].ToString());
             con.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -42,10 +43,12 @@ namespace Sabaic.user
             }
             dr.Close();
             dr.Dispose();
+            con.Close();
 
 
-
-            cmd.CommandText = "Select FrenchiseId,Convert(varchar(10),Date,103) as date2,ISNULL(CourierCharges,0)CourierCharges,OrderNo from OrderMaster where OrderID=" + Request.QueryString["ID"].ToString();
+            cmd.CommandText = "Select FrenchiseId,Convert(varchar(10),Date,103) as date2,ISNULL(CourierCharges,0)CourierCharges,OrderNo from OrderMaster where OrderID=@OrderID3";
+            cmd.Parameters.AddWithValue("@OrderID3", Request.QueryString["ID"].ToString());
+            con.Open();
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -59,24 +62,15 @@ namespace Sabaic.user
 
             dr.Close();
             dr.Dispose();
-
-
-            cmd.CommandText = "Select Address from tblFrenchiseMaster where FrenchiseId='" + FrenchiseId + "'";
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                // lblcustaddr.Text = dr["Address"].ToString();
-
-            }
-
-            dr.Close();
-            dr.Dispose();
+            con.Close();
 
 
             try
             {
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
-                SqlCommand cmd21 = new SqlCommand("select paymentmode from [dbo].[OrderMaster] where FrenchiseId='" + FrenchiseId + "' and  OrderID='" + Request.QueryString["ID"].ToString() + "'", con);
+                SqlCommand cmd21 = new SqlCommand("select paymentmode from [dbo].[OrderMaster] where FrenchiseId=@FrenchiseId1 and  OrderID=@OrderID1", con);
+                cmd21.Parameters.AddWithValue("@FrenchiseId1", FrenchiseId);
+                cmd21.Parameters.AddWithValue("@OrderID1", Request.QueryString["ID"].ToString());
                 con.Open();
                 string paymentmode = cmd21.ExecuteScalar().ToString();
                 con.Close();
@@ -113,14 +107,16 @@ namespace Sabaic.user
             //string State = cmd12.ExecuteScalar().ToString();
             //con.Close();
 
-           
-                SqlCommand cmd2 = new SqlCommand("SELECT ProductRepurchase.ProductCode Code,OrderDetails.CGST as CGS,OrderDetails.SGST as SGS,OrderDetails.TotalDiscount as TotalDiscount,ProductRepurchase.productid,ProductRepurchase.ProductName, OrderDetails.MRP, OrderDetails.DP 'Unit Price', OrderDetails.Qty,OrderDetails.BV,OrderDetails.TotalBV, OrderDetails.TotalMRP Value, (OrderDetails.IGST*OrderDetails.Qty)TotalIGST,(OrderDetails.SGST*OrderDetails.Qty)TotalSGST ,(OrderDetails.CGST*OrderDetails.Qty)TotalCGST, (OrderDetails.BV*OrderDetails.Qty)TotalMRP, (OrderDetails.TotalBV) 'Total Price' FROM OrderDetails INNER JOIN ProductRepurchase ON OrderDetails.ProductID = ProductRepurchase.ProductID INNER JOIN OrderMaster ON OrderMaster.OrderID = OrderDetails.OrderID where OrderMaster.OrderId='" + msg + "' and FrenchiseID = '" + FrenchiseId + "'", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd2);
-                DataSet dt = new DataSet();
-                da.Fill(dt);
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
-           
+
+            SqlCommand cmd2 = new SqlCommand("SELECT ProductRepurchase.ProductCode Code,OrderDetails.CGST as CGS,OrderDetails.SGST as SGS,OrderDetails.TotalDiscount as TotalDiscount,ProductRepurchase.productid,ProductRepurchase.ProductName, OrderDetails.MRP, OrderDetails.DP 'Unit Price', OrderDetails.Qty,OrderDetails.BV,OrderDetails.TotalBV, OrderDetails.TotalMRP Value, (OrderDetails.IGST*OrderDetails.Qty)TotalIGST,(OrderDetails.SGST*OrderDetails.Qty)TotalSGST ,(OrderDetails.CGST*OrderDetails.Qty)TotalCGST, (OrderDetails.BV*OrderDetails.Qty)TotalMRP, (OrderDetails.TotalBV) 'Total Price' FROM OrderDetails INNER JOIN ProductRepurchase ON OrderDetails.ProductID = ProductRepurchase.ProductID INNER JOIN OrderMaster ON OrderMaster.OrderID = OrderDetails.OrderID where OrderMaster.OrderId=@OrderID2 and FrenchiseID =@FrenchiseId2", con);
+            cmd2.Parameters.AddWithValue("@FrenchiseId2", FrenchiseId);
+            cmd2.Parameters.AddWithValue("@OrderID2", msg);
+            SqlDataAdapter da = new SqlDataAdapter(cmd2);
+            DataSet dt = new DataSet();
+            da.Fill(dt);
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
+
             //  GridView1.Columns[12].Visible = false;
             //  GridView1.Columns[13].Visible = false;
             //GridView1.Columns[14].Visible = false;
@@ -150,9 +146,9 @@ namespace Sabaic.user
                     Qty2 = Qty2 + Double.Parse(e.Row.Cells[6].Text);
                     UnitPrice = UnitPrice + Double.Parse(e.Row.Cells[3].Text);
                     TotalPrice = TotalPrice + Double.Parse(e.Row.Cells[7].Text);
-                 
+
                     Bv = Bv + Double.Parse(e.Row.Cells[9].Text);
-                 
+
                     TotalSGST = TotalSGST + Double.Parse(e.Row.Cells[9].Text);
                     TotalCGST = TotalCGST + Double.Parse(e.Row.Cells[10].Text);
 
@@ -165,9 +161,9 @@ namespace Sabaic.user
                     lblTotalSGST.Text = string.Format("{0:f2}", TotalSGST);
                     lblTotalCGST.Text = string.Format("{0:f2}", TotalCGST);
 
-                    decimal totalsgst =Convert.ToDecimal(lblTotalSGST.Text);
+                    decimal totalsgst = Convert.ToDecimal(lblTotalSGST.Text);
                     decimal totalcgst = Convert.ToDecimal(lblTotalCGST.Text);
-                    decimal totaltax = (Convert.ToDecimal(lblamount.Text)+totalsgst + totalcgst);
+                    decimal totaltax = (Convert.ToDecimal(lblamount.Text) + totalsgst + totalcgst);
                     lblGrandTotal.Text = string.Format("{0:f2}", (totaltax));
                 }
 

@@ -31,8 +31,8 @@ public partial class User_UserMasterPage : System.Web.UI.MasterPage
                 cmd.ExecuteNonQuery();
             }
         
-            cmd.CommandText = "Select  [dbo].[MyEwallet]('" + Session["UserCode"].ToString() + "')";
-               lblMyWellet.Text = cmd.ExecuteScalar().ToString().Replace("00","00");
+            //cmd.CommandText = "Select  [dbo].[MyEwallet]('" + Session["UserCode"].ToString() + "')";
+            //   lblMyWellet.Text = cmd.ExecuteScalar().ToString().Replace("00","00");
 
             //cmd.CommandText = "Select [dbo].[MyRedemptionBalance]('" + Session["UserCode"].ToString() + "')";
             //lblMyRPWellet.Text = cmd.ExecuteScalar().ToString().Replace("00", "00");

@@ -8,10 +8,10 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 using System.Collections;
+using Diwakar.Old_App_Code;
 
-namespace Amazewellness._240578
+namespace Sabaic._19111973
 {
- 
 
     public partial class CreateOrderAdmin : System.Web.UI.Page
     {
@@ -34,7 +34,7 @@ namespace Amazewellness._240578
             con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
             //panelcheque.Visible = false;
             //  panel2.Visible = false;
-            Button2.Visible = false;
+           // Button2.Visible = false;
 
             //Panel3.Visible = false;
             //  panel5.Visible = false;
@@ -344,16 +344,15 @@ namespace Amazewellness._240578
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (DropDownList1.SelectedValue == "Select Payment Mode")
-
             {
-                //MsgBox("Please Select Any One Payment Mode!");
-                //return;
+                MsgBox("Please Select Any One Payment Mode!");
+                return;
 
             }
-            if (DropDownList1.SelectedValue == "Cash")
-            {
-                Button2.Visible = true;
-            }
+            //if (DropDownList1.SelectedValue == "Cash")
+            //{
+            //    Button2.Visible = true;
+            //}
 
 
         }
@@ -365,12 +364,18 @@ namespace Amazewellness._240578
 
             try
             {
+                if (TotalAmount.Text == "")
+                {
+                    MsgBox("Please add to cart for create order");
+                    return;
+                }
+
                 SqlCommand cmdProc = new SqlCommand("CreateOrder", con);
                 cmdProc.CommandType = CommandType.StoredProcedure;
                 cmdProc.Parameters.AddWithValue("@Usercode", TextBox1.Text);
                 cmdProc.Parameters.AddWithValue("@Usercode1", TextBox1.Text);
                 cmdProc.Parameters.AddWithValue("@FrenchiseID", ConfigurationManager.AppSettings["FrenchiseID"].ToString());
-                cmdProc.Parameters.AddWithValue("@UserPaymentDate", DateTime.Now.ToString());
+                cmdProc.Parameters.AddWithValue("@UserPaymentDate", DateTime.Now);
                 cmdProc.Parameters.AddWithValue("@PaymentMode", DropDownList1.SelectedValue);
                 cmdProc.Parameters.AddWithValue("@Amount", TotalAmount.Text);
                 cmdProc.Parameters.AddWithValue("@TotalBv", TotalBV.Text);
@@ -393,80 +398,89 @@ namespace Amazewellness._240578
                 cmdProc.Parameters.AddWithValue("@Details", (DataTable)ViewState["DT"]);
                 SqlParameter result = new SqlParameter("@Result", SqlDbType.VarChar, 200);
                 result.Direction = ParameterDirection.Output;
+                LogControl.WriteALine("result Direction Output: " + result.Direction); LogControl.WriteALine("");
                 cmdProc.Parameters.Add(result);
                 SqlParameter orderid = new SqlParameter("@orderID", SqlDbType.VarChar, 200);
                 orderid.Direction = ParameterDirection.Output;
+                LogControl.WriteALine("orderid Direction Output: " + orderid.Direction); LogControl.WriteALine("");
                 cmdProc.Parameters.Add(orderid);
                 con.Open();
                 cmdProc.ExecuteNonQuery();
                 res = result.Value.ToString();
+                LogControl.WriteALine("Order result: " + res); LogControl.WriteALine("");
                 sOrderId = orderid.Value.ToString();
+                LogControl.WriteALine("Order id: " + sOrderId); LogControl.WriteALine("");
+                if (res != "Product Saved Successfully")
+                {
+                    MsgBox("Error");
+                    return;
+                }
                 con.Close();
+
+               
+                if (res == "Product Saved Successfully")
+                {
+                    Label7.Text = "Product Saved Successfully";
+                    string email = ""; string name = "";
+                    SqlConnection con1 = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ToString());
+                    SqlCommand cmd3 = new SqlCommand("select * from tblmembermaster where usercode='" + TextBox1.Text + "'", con1);
+
+                    con1.Open();
+                    SqlDataReader dr = cmd3.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        name = dr["UserName"].ToString();
+                        HiddenField5.Value = dr["Email"].ToString();
+
+                    }
+                    dr.Close();
+                    con1.Close();
+
+
+                    string date1 = "";
+                    string amount = "";
+                    string paymentmode = "";
+                    SqlConnection con2 = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ToString());
+                    SqlCommand cmd4 = new SqlCommand("select * from ordermaster where orderid='" + sOrderId + "'", con2);
+
+                    con2.Open();
+                    SqlDataReader dr1 = cmd4.ExecuteReader();
+                    while (dr1.Read())
+                    {
+                        date1 = DateTime.Parse(dr1["Date"].ToString()).Date.ToString("dd MMM yyyy");
+                        amount = dr1["Amount"].ToString();
+                        paymentmode = dr1["PaymentMode"].ToString();
+                    }
+                    dr1.Close();
+                    con2.Close();
+                    string Msg = "";
+
+                    Msg = "Order details are as follow :<br /><br />OrderID :" + sOrderId + "<br />Date :" + date1 + "<br />Payment Mode :" + paymentmode + "<br />Amount :" + amount + "<br /><br />You can login to view the invoice.<br /><br />Thanks,<br />With regards!<br /><br /> Diwakar Retails Limited";
+
+                    string msgadmin = "";
+                    msgadmin = "Order details are as follow :<br /><br />MemberID : " + TextBox1.Text + "<br/>Name : " + name + "<br />OrderID :" + sOrderId + "<br />Date :" + date1 + "<br />Payment Mode :" + paymentmode + "<br />Amount :" + amount;
+                    // syedraiyan@gmail.com
+                    //   syedfaizanghani@gmail.com
+                    //Gen obj1 = new Gen();
+                    //obj1.SendEmail("syedraiyan@gmail.com", msgadmin, TextBox1.Text + "/" + name + " Ordered Products with Order Id " + sOrderId, ConfigurationManager.AppSettings["Email"]);
+                    //obj1.SendEmail(" syedfaizanghani@gmail.com", msgadmin, TextBox1.Text + "/" + name + " Ordered Products with Order Id " + sOrderId, ConfigurationManager.AppSettings["Email"]);
+                    //if (email != "")
+                    //{
+                    //    obj1.SendEmail(email, Msg, TextBox1.Text + "/" + name + " Ordered Products with Order Id " + sOrderId, ConfigurationManager.AppSettings["Email"]);
+
+                    //}
+                    Response.Redirect("AdminGstInvoice.aspx?ID=" + sOrderId + "&BVpointsTotal=" + Bvtotal, false);
+                    LogControl.WriteALine("Response Redirect Order id: " + sOrderId); LogControl.WriteALine("");
+                }
+                //Response.Redirect("GSTInvoice.aspx?ID=" + sOrderId + "&BVpointsTotal=" + Bvtotal);
+               
             }
             catch (Exception ex)
             {
-
+                LogControl.WriteALine("");
+                LogControl.WriteALine("create order stack Trace : " + ex.StackTrace); LogControl.WriteALine("");
+                LogControl.WriteALine("create order catch : " + ex.Message); LogControl.WriteALine("");
             }
-            finally
-            {
-                con.Close();
-            }
-
-            if (res == "Product Saved Successfully")
-            {
-                Label7.Text = "Product Saved Successfully";
-                string email = ""; string name = "";
-                SqlConnection con1 = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ToString());
-                SqlCommand cmd3 = new SqlCommand("select * from tblmembermaster where usercode='" + TextBox1.Text + "'", con1);
-
-                con1.Open();
-                SqlDataReader dr = cmd3.ExecuteReader();
-                while (dr.Read())
-                {
-                    name = dr["UserName"].ToString();
-                    HiddenField5.Value = dr["Email"].ToString();
-
-                }
-                dr.Close();
-                con1.Close();
-
-
-                string date1 = "";
-                string amount = "";
-                string paymentmode = "";
-                SqlConnection con2 = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ToString());
-                SqlCommand cmd4 = new SqlCommand("select * from ordermaster where orderid='" + sOrderId + "'", con2);
-
-                con2.Open();
-                SqlDataReader dr1 = cmd4.ExecuteReader();
-                while (dr1.Read())
-                {
-                    date1 = DateTime.Parse(dr1["Date"].ToString()).Date.ToString("dd MMM yyyy");
-                    amount = dr1["Amount"].ToString();
-                    paymentmode = dr1["PaymentMode"].ToString();
-                }
-                dr1.Close();
-                con2.Close();
-                string Msg = "";
-
-                Msg = "Order details are as follow :<br /><br />OrderID :" + sOrderId + "<br />Date :" + date1 + "<br />Payment Mode :" + paymentmode + "<br />Amount :" + amount + "<br /><br />You can login to view the invoice.<br /><br />Thanks,<br />With regards!<br /><br /> Diwakar Retails Limited";
-
-                string msgadmin = "";
-                msgadmin = "Order details are as follow :<br /><br />MemberID : " + TextBox1.Text + "<br/>Name : " + name + "<br />OrderID :" + sOrderId + "<br />Date :" + date1 + "<br />Payment Mode :" + paymentmode + "<br />Amount :" + amount;
-                // syedraiyan@gmail.com
-                //   syedfaizanghani@gmail.com
-                //Gen obj1 = new Gen();
-                //obj1.SendEmail("syedraiyan@gmail.com", msgadmin, TextBox1.Text + "/" + name + " Ordered Products with Order Id " + sOrderId, ConfigurationManager.AppSettings["Email"]);
-                //obj1.SendEmail(" syedfaizanghani@gmail.com", msgadmin, TextBox1.Text + "/" + name + " Ordered Products with Order Id " + sOrderId, ConfigurationManager.AppSettings["Email"]);
-                //if (email != "")
-                //{
-                //    obj1.SendEmail(email, Msg, TextBox1.Text + "/" + name + " Ordered Products with Order Id " + sOrderId, ConfigurationManager.AppSettings["Email"]);
-
-                //}
-
-            }
-            //Response.Redirect("GSTInvoice.aspx?ID=" + sOrderId + "&BVpointsTotal=" + Bvtotal);
-            Response.Redirect("AdminGstInvoice.aspx?ID=" + sOrderId + "&BVpointsTotal=" + Bvtotal);
         }
 
 
@@ -525,31 +539,51 @@ namespace Amazewellness._240578
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("", con);
-            cmd.CommandText = "select * from tblmembermaster where usercode='" + TextBox1.Text + "'";
-            con.Open();
 
-            SqlDataReader rd = cmd.ExecuteReader();
-            if (rd.Read())
+            SqlCommand cmd = new SqlCommand("", con);
+            cmd.CommandText = "select count(usercode) from tblmembermaster where usercode=@usercode1";
+            cmd.Parameters.AddWithValue("@usercode1", TextBox1.Text);
+            con.Open();
+            int count = int.Parse(cmd.ExecuteScalar().ToString());
+            con.Close();
+            if (count > 0)
             {
-                TextBox2.Text = rd["username"].ToString();
-                TextBox4.Text = rd["mobileno"].ToString();
-                HiddenField5.Value = rd["EMail"].ToString();
-                HiddenField7.Value = rd["VoterCard"].ToString();
+
+                cmd.CommandText = "select * from tblmembermaster where usercode=@usercode";
+                cmd.Parameters.AddWithValue("@usercode", TextBox1.Text);
+                con.Open();
+
+                SqlDataReader rd = cmd.ExecuteReader();
+                if (rd.Read())
+                {
+                    TextBox2.Text = rd["username"].ToString();
+                    TextBox4.Text = rd["mobileno"].ToString();
+                    HiddenField5.Value = rd["EMail"].ToString();
+                    HiddenField7.Value = rd["VoterCard"].ToString();
+
+                }
+                rd.Close();
+                con.Close();
+            }
+
+            else
+            {
+                MsgBox("Invalid User ID");
+
+                TextBox2.Text = "";
+                TextBox4.Text = "";
+                return;
 
             }
-            else
-            { }
 
-            rd.Close();
-            con.Close();
+
             cmd.CommandText = "Select [dbo].[MyEwallet]('" + TextBox1.Text + "')";
             con.Open();
             double amount = Double.Parse(cmd.ExecuteScalar().ToString().Replace("00", "00"));
             TextBox5.Text = amount.ToString();
 
             DropDownList1.Items.Clear();
-            DropDownList1.Items.Insert(0, new ListItem("Select", "Select"));
+            DropDownList1.Items.Insert(0, new ListItem("Select", "Select Payment Mode"));
             DropDownList1.Items.Insert(1, new ListItem("Cash", "Cash"));
             //DropDownList1.Items.Insert(2, new ListItem("IMPS", "IMPS"));
             //DropDownList1.Items.Insert(3, new ListItem("NEFT", "NEFT"));

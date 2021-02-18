@@ -1,8 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/240578/AdminMasterPage.master" AutoEventWireup="true" CodeBehind="CreateOrderAdmin.aspx.cs" Inherits="Amazewellness._240578.CreateOrderAdmin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/240578/AdminMasterPage.master" AutoEventWireup="true" CodeBehind="CreateOrderAdmin.aspx.cs" Inherits="Sabaic._19111973.CreateOrderAdmin" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 
         <style type="text/css">
@@ -68,7 +66,7 @@ overflow:auto;
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div>
-        <script src="css/Extension.min.js" type="text/javascript"></script>
+       <%-- <script src="css/Extension.min.js" type="text/javascript"></script>--%>
 
         <table style="height: auto">
             <tr>
@@ -444,7 +442,7 @@ overflow:auto;
                         <td>Payment Mode:</td>
                         <td>
 
-                            <asp:DropDownList ID="DropDownList1" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" runat="server">
+                            <asp:DropDownList ID="DropDownList1" AutoPostBack="true" Width="170px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" runat="server">
                                 <asp:ListItem Value="Select Payment Mode">Select Payment Mode</asp:ListItem>
                                 <asp:ListItem Value="Cash">Cash</asp:ListItem>
                             </asp:DropDownList>

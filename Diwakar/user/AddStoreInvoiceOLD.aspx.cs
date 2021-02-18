@@ -377,7 +377,7 @@ namespace totalfuturcare.User
                 cmdProc.Parameters.AddWithValue("@Usercode", TextBox1.Text);
                 cmdProc.Parameters.AddWithValue("@Usercode1", Session["usercode"]);
                 cmdProc.Parameters.AddWithValue("@FrenchiseID", ConfigurationManager.AppSettings["FrenchiseID"].ToString());
-                cmdProc.Parameters.AddWithValue("@UserPaymentDate", DateTime.Now.ToString());
+                cmdProc.Parameters.AddWithValue("@UserPaymentDate", DateTime.Now);
                 cmdProc.Parameters.AddWithValue("@PaymentMode", DropDownList1.SelectedValue);
                 cmdProc.Parameters.AddWithValue("@Amount", TotalAmount.Text);
                 cmdProc.Parameters.AddWithValue("@TotalBv", TotalBV.Text);

@@ -179,12 +179,12 @@ th{
                         | <asp:LinkButton ID="LinkButton2" runat="server" Text="LOG OUT" ValidationGroup="login"
                         OnClick="LinkButton1_Click"></asp:LinkButton>
                       <br />
-                           <span style="font-size:10pt;color:#E82828;">
+                           <%--<span style="font-size:10pt;color:#E82828;">
                             <asp:Label ID="Label2" runat="server" Text="Repurchase Wallet"></asp:Label></span>
                         <br />
                         <span style="font-size:9pt;color:#E82828;">
                             <asp:Label ID="lblMyWellet" runat="server" Text=""></asp:Label></span>
-                        <br />
+                        <br />--%>
                        
                         <!-- display box -->
                         <br /></div>
