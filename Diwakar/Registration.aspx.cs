@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using System.Web.Services;
 using System.Configuration;
 using System.Text.RegularExpressions;
+using System.Net.Mail;
 
 namespace GyanTechnologies._240578
 {
@@ -138,25 +139,52 @@ namespace GyanTechnologies._240578
 
                 con.Close();
 
+               
+                //Gen obj = new Gen();
 
-                Gen obj = new Gen();
+                //string Msg = "Dear " + fullname + ", Congratulation! Your MemberId is: " + result + " Password is: " + Register.LoginPassword + " Please logon to " + System.Configuration.ConfigurationManager.AppSettings["URL"].ToString() + "";
 
-                string Msg = "Dear " + fullname + ", Congratulation! Your MemberId is: " + result + " Password is: " + Register.LoginPassword + " Please logon to " + System.Configuration.ConfigurationManager.AppSettings["URL"].ToString() + "";
+                //if (!string.IsNullOrEmpty(Register.MobileNo) && Register.MobileNo.Trim().Length > 9)
+                //{
+                //    try
+                //    {
+                //        obj.SendNormalSMS(System.Configuration.ConfigurationManager.AppSettings["SMSSenderID"], Register.MobileNo.Trim(), Msg);
+                //    }
+                //    catch
+                //    { }
+                //}
 
-                if (!string.IsNullOrEmpty(Register.MobileNo) && Register.MobileNo.Trim().Length > 9)
+
+                if (result.Length > 2)
                 {
-                    try
+                    Register.MobileNo = "";
+                    Register.PANNo = "";
+                    Register.AadharCard = "";
+                    string Msg = "";
+                    string url = "https://retail.diwakarretail.com/";
+                    Msg = "Dear " + fullname + " <br><br> Congratulations! You are now an associate on " + System.Configuration.ConfigurationManager.AppSettings["CoName"].ToString() + " <br><br> Your User Id is: " + result + "<br> Password is: " + Register.LoginPassword + "<br><br> Please logon to " + url + "";
+
+                    Gen obj = new Gen();
+                    System.Net.Mail.MailMessage n = new System.Net.Mail.MailMessage();
+                    System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient();
+                    if (Register.EmailID != "")
                     {
-                        obj.SendNormalSMS(System.Configuration.ConfigurationManager.AppSettings["SMSSenderID"], Register.MobileNo.Trim(), Msg);
+                        n.To.Add(Register.EmailID);
+                        n.From = new MailAddress(System.Configuration.ConfigurationManager.AppSettings["Email"].ToString());
+                        n.Body = Msg;
+                        n.Subject = "Congratulations on Joining " + System.Configuration.ConfigurationManager.AppSettings["CoName"].ToString() + " ";
+                        n.IsBodyHtml = true;
+                        client.EnableSsl = false;
+                        try
+                        {
+                            client.Send(n);
+                        }
+                        catch { }
                     }
-                    catch
-                    { }
                 }
 
                 return result;
-
             }
-
 
             catch (Exception ex)
             {

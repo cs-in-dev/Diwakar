@@ -17,9 +17,9 @@ class Gen
         Message = Message.Replace("\\", "\\\\");
         //username = "Cyrashop";
         //password = "cyra123";
-        username = "Cyrashop";
-        password = "cyra123";
-        SenderID = "CYRASP";
+        username = "";
+        password = "";
+        SenderID = "";
 
         // http://tsms.emlm.in/websms/sendsms.aspx?userid
         url = "http://103.231.100.41/websms/sendsms.aspx?userid=" + HttpUtility.UrlEncode(username) + "&password=" + HttpUtility.UrlEncode(password) + "&sender=" + HttpUtility.UrlEncode(SenderID) + "&mobileno=" + HttpUtility.UrlEncode(Recepient) + "&msg=" + (Message);
@@ -41,9 +41,9 @@ class Gen
         host = "http://sms.esolutionscurry.com";
         //username = "srASDSADSAl";
         //password = "heSDASDAllo";
-        username = "Cyrashop";
-        password = "cyra123";
-        SenderID = "CYRASP";
+        username = "";
+        password = "";
+        SenderID = "";
         url = host + "/WebServiceSMS.aspx?User=" + HttpUtility.UrlEncode(username) + "&passwd=" + HttpUtility.UrlEncode(password) + "&mobilenumber=" + HttpUtility.UrlEncode(Recepient) + "&message=" + HttpUtility.UrlEncode(Message) + "&sid=" + HttpUtility.UrlEncode(SenderID) + "&mtype=F&DR=Y";
 
         request = (HttpWebRequest)WebRequest.Create(url);
@@ -63,19 +63,20 @@ class Gen
         m.IsBodyHtml = true;
         client.EnableSsl = false;
         client.Send(m);
-        //System.Net.Mail.MailMessage m = new System.Net.Mail.MailMessage("alerts@Hash99.com", Recepient);
+
+        //System.Net.Mail.MailMessage m = new System.Net.Mail.MailMessage("anoreply@diwakarretail.com", Recepient);
         //System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient();
         //m.To.Add(Recepient);
-        //m.From = new MailAddress("alerts@Hash99.com", "Hash99 Alerts");
+        //m.From = new MailAddress("noreply@diwakarretail.com", "Hash99 Alerts");
         //m.Body = Msg;
         //m.Subject = Subject;
         //m.IsBodyHtml = true;
         //client.EnableSsl = false;
-        //client.Host = "185.38.150.110";
+        //client.Host = "49.50.95.38";
         //client.Port = 25;
         //client.DeliveryMethod = SmtpDeliveryMethod.Network;
         //client.UseDefaultCredentials = false;
-        //client.Credentials = new NetworkCredential("alerts@Hash99.com", "Info@123");
+        //client.Credentials = new NetworkCredential("noreply@diwakarretail.com", "NREtZFsNiM3X");
         //try
         //{
         //    client.Send(m);
@@ -85,9 +86,5 @@ class Gen
         //{
 
         //}
-
-
-
     }
-
 }

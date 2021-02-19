@@ -657,7 +657,9 @@
                 </span></span>
             &nbsp;<%--<label>
                                     <input type="checkbox" value="" checked>Remember me</label>--%></div>
+         <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
 
+        
     </asp:Panel>
         </div>
 
@@ -668,7 +670,7 @@
         </div>
 
         <div class="form-group">
-            <label for="psw"><span class="glyphicon glyphicon-user"></span>&nbsp Your UserId is:</label>
+            <label for="psw"><span class="glyphicon glyphicon-user"></span>&nbsp Your User Id is:</label>
             <asp:Label ID="Label1" runat="server"></asp:Label>
         </div>
         <div class="form-group">

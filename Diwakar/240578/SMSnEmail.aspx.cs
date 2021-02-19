@@ -34,7 +34,7 @@ public partial class SMSEmail : System.Web.UI.Page
         n.From = new MailAddress(ConfigurationManager.AppSettings["Email"].ToString());
         n.Body = EmailBody.Content;
         n.Subject = EmailSubject.Text;
-        //client.EnableSsl = true;
+        client.EnableSsl = false;
         n.IsBodyHtml = true;
         foreach (ListItem item in CheckBoxList1.Items)
         {
@@ -97,8 +97,8 @@ public partial class SMSEmail : System.Web.UI.Page
         {
             try
             {
-                FileUpload1.SaveAs(Server.MapPath("~/Uploads/" + FileUpload1.FileName));
-                CheckBoxList1.Items.Add(new ListItem(FileUpload1.FileName.ToString(), Server.MapPath("~/Uploads/" + FileUpload1.FileName)));
+                FileUpload1.SaveAs(Server.MapPath("~/upload/" + FileUpload1.FileName));
+                CheckBoxList1.Items.Add(new ListItem(FileUpload1.FileName.ToString(), Server.MapPath("~/upload/" + FileUpload1.FileName)));
             }
             catch (Exception ex)
             {
