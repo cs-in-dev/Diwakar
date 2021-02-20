@@ -48,7 +48,7 @@
                             <div class="input-group">
                                 <span class="input-group-addon "><i class="fa fa-user" style="width:20px;"></i></span>
                                 <%--<input type="text" id="LoginID" class="form-control" placeholder="Memberid">--%>
-                                   <asp:TextBox ID="TextBox1" runat="server" class="form-control" PlaceHolder="UserCode"></asp:TextBox>
+                                   <asp:TextBox ID="TextBox1" runat="server" class="form-control" PlaceHolder="User Id"></asp:TextBox>
                             </div>
                         </div>
                        <%-- <div class="form-group">

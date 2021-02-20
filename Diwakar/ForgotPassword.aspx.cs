@@ -21,6 +21,8 @@ namespace CyraShop
         string Email = null;
         string Password = null;
         string Mobile = null;
+        string UserName = null;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -30,7 +32,7 @@ namespace CyraShop
         {
             if (string.IsNullOrEmpty(TextBox1.Text))
             {
-                Page.Controls.Add(new LiteralControl("<script> alert('Please enter your username');</script>"));
+                Page.Controls.Add(new LiteralControl("<script> alert('Please enter your User Id');</script>"));
             }
 
             //SqlCommand cmd = new SqlCommand("select Username , loginpassword, email,MobileNo from tblmembermaster where loginname=@username", con);
@@ -91,43 +93,34 @@ namespace CyraShop
             while (dr.Read())
             {
                 UserCode = dr["LoginName"].ToString();
+                UserName= dr["UserName"].ToString();
                 Email = dr["Email"].ToString();
                 Password = dr["LoginPassword"].ToString();
                 Mobile = dr["MobileNo"].ToString();
-                //if (Email == "")
-                //{
+                if (Email!= "")
+                {
+                    Gen obj1 = new Gen();
+                 
+                    Msg = "Dear " + UserName + "<br><br> Your Login Credentials are : <br> User ID : " + UserCode + "<br> Password : " + Password + "<br><br>Thanks<br>with regards <br>Diwakar Retails Ltd.";
+                    // Msg1 = "You Login Credentials are:Login ID :" + UserCode + " , Password : " + Password + "Thanks,with regards!cyrashop.";
+                    //obj1.SendEmail(Email, Msg, "Your Login Deatils");
+                    //obj1.SendEmail(Email, Msg, "Your Login Details", "admin@diwakarretails.com");
+                    obj1.SendEmail(Email, Msg, "Your login Password", "noreply@diwakarretail.com", "Diwakar Retails");
+                    // obj1.SendNormalSMS(ConfigurationManager.AppSettings["SMSsenderID"].ToString(), Mobile, Msg1);
+                    msgbox("Login informations has been sent to your email address.");
 
+                }
+                else
+                {
                     Msg1 = "You Login Credentials are:Login ID :" + UserCode + " , Password : " + Password + ",Thanks,with regards!Diwakar Retail Ltd.";
-                   
+
                     Gen obj = new Gen();
                     obj.SendNormalSMS(ConfigurationManager.AppSettings["SMSsenderID"].ToString(), Mobile, Msg1);
                     msgbox("SMS Sent");
-            //}
-            //    else
-            //    {
-            //    Gen obj1 = new Gen();
-            //    Msg = "You Login Credentials are:Login ID :" + UserCode + " , Password : " + Password + "Thanks,with regards!cyrashop.";
-            //    // Msg1 = "You Login Credentials are:Login ID :" + UserCode + " , Password : " + Password + "Thanks,with regards!cyrashop.";
-            //    //obj1.SendEmail(Email, Msg, "Your Login Deatils");
-            //    //obj1.SendEmail(Email, Msg, "Your Login Details", "admin@diwakarretails.com");
-            //    obj1.SendEmail(Email, Msg, "Your login Password", "admin@diwakarretails.com");
-            //        obj1.SendNormalSMS(ConfigurationManager.AppSettings["SMSsenderID"].ToString(), Mobile, Msg1);
-            //        msgbox("Login informations has been sent to your email address.");
-            //}
 
+                }
 
-
-
-
-
-
-
-
-
-            return;
-
-
-
+                return;
             }
             con.Close();
         }

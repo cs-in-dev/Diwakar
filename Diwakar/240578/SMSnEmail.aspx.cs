@@ -31,7 +31,7 @@ public partial class SMSEmail : System.Web.UI.Page
         MailMessage n = new MailMessage();
         SmtpClient client = new SmtpClient();
         n.To.Add(EmailTO.Text);
-        n.From = new MailAddress(ConfigurationManager.AppSettings["Email"].ToString());
+        n.From = new MailAddress(ConfigurationManager.AppSettings["Email"].ToString(),"Diwakar Retails");
         n.Body = EmailBody.Content;
         n.Subject = EmailSubject.Text;
         client.EnableSsl = false;

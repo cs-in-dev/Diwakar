@@ -33,9 +33,6 @@ namespace CyraShop
             sqlParam[0] = new SqlParameter("@UserCode", SqlDbType.VarChar, 50);
             sqlParam[0].Value = TextBox1.Text;
 
-            //sqlParam[1] = new SqlParameter("@UserName", SqlDbType.VarChar, 50);
-            //sqlParam[1].Value = TextBox1.Text;
-
             sqlParam[1] = new SqlParameter("@LoginPassword", SqlDbType.VarChar, 50);
             sqlParam[1].Value = TextBox2.Text;
 

@@ -76,7 +76,8 @@ namespace Sabaic.user
                 con.Close();
 
                 lblpaymentmode.Text = paymentmode;
-                SqlCommand cmd11 = new SqlCommand("select username from tblmembermaster where usercode='" + FrenchiseId + "'", con);
+                SqlCommand cmd11 = new SqlCommand("select username from tblmembermaster where usercode=@usercode11", con);
+                cmd11.Parameters.AddWithValue("@usercode11", FrenchiseId);
                 con.Open();
                 string a = cmd11.ExecuteScalar().ToString();
                 con.Close();

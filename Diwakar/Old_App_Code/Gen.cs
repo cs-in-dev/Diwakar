@@ -51,13 +51,12 @@ class Gen
         return (response.StatusDescription);
 
     }
-    public void SendEmail(String Recepient, String Msg, String Subject, String From)
+    public void SendEmail(String Recepient, String Msg, String Subject, String From, string displayName)
     {
-
         System.Net.Mail.MailMessage m = new System.Net.Mail.MailMessage(Recepient, From);
         System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient();
         m.To.Add(Recepient);
-        m.From = new MailAddress(From);
+        m.From = new MailAddress(From, displayName);
         m.Body = Msg;
         m.Subject = Subject;
         m.IsBodyHtml = true;
@@ -67,7 +66,7 @@ class Gen
         //System.Net.Mail.MailMessage m = new System.Net.Mail.MailMessage("anoreply@diwakarretail.com", Recepient);
         //System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient();
         //m.To.Add(Recepient);
-        //m.From = new MailAddress("noreply@diwakarretail.com", "Hash99 Alerts");
+        //m.From = new MailAddress("noreply@diwakarretail.com", "diwakarretail Alerts");
         //m.Body = Msg;
         //m.Subject = Subject;
         //m.IsBodyHtml = true;

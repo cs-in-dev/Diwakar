@@ -170,7 +170,7 @@ namespace GyanTechnologies._240578
                     if (Register.EmailID != "")
                     {
                         n.To.Add(Register.EmailID);
-                        n.From = new MailAddress(System.Configuration.ConfigurationManager.AppSettings["Email"].ToString());
+                        n.From = new MailAddress(System.Configuration.ConfigurationManager.AppSettings["Email"].ToString(), "Diwakar Retails");
                         n.Body = Msg;
                         n.Subject = "Congratulations on Joining " + System.Configuration.ConfigurationManager.AppSettings["CoName"].ToString() + " ";
                         n.IsBodyHtml = true;
@@ -334,6 +334,7 @@ namespace GyanTechnologies._240578
             con.Close();
             if (a == 1)
             {
+                cmd1.Parameters.Clear();
                 SqlCommand cmd = new SqlCommand("select username from tblmembermaster where usercode=@usercode1", con);
                 cmd.Parameters.AddWithValue("@usercode1", sponserid);
                 con.Open();
@@ -345,7 +346,7 @@ namespace GyanTechnologies._240578
             {
                 result = "Invaild Sponsorid";
             }
-
+           
             SqlCommand cmdd = new SqlCommand("select isnull(count(*),0) from tblmembermaster where sponsorId=@sp_id", con);
             cmdd.Parameters.AddWithValue("@sp_id", sponserid);
             con.Open();
@@ -378,6 +379,7 @@ namespace GyanTechnologies._240578
             con.Close();
             if (a == 1)
             {
+                cmd1.Parameters.Clear();
                 SqlCommand cmd = new SqlCommand("select username from tblmembermaster where usercode=@usercode1", con);
                 cmd.Parameters.AddWithValue("@usercode1", ParentID);
                 con.Open();

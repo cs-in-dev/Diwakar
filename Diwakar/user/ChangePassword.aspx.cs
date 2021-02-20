@@ -25,21 +25,25 @@ namespace WGRL.Admin
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
-            SqlCommand cmd = new SqlCommand("select LoginPassword from tblMemberMaster where UserCode = '" + Session["UserCode"] + "'", con);
+            SqlCommand cmd = new SqlCommand("select LoginPassword from tblMemberMaster where UserCode =@UserCode", con);
+            cmd.Parameters.AddWithValue("@UserCode", Session["UserCode"].ToString());
             con.Open();
             String pass = cmd.ExecuteScalar().ToString();
             con.Close();
             if (pass == txtExistingPassword.Text)
             {
-                cmd.CommandText = "Update tblMemberMaster set LoginPassword = '" + txtConfirmPassword.Text + "' where UserCode = '" + Session["UserCode"] + "'";
+                cmd.Parameters.Clear();
+                cmd.CommandText = "Update tblMemberMaster set LoginPassword =@LoginPassword where UserCode =@UserCode1";
+                cmd.Parameters.AddWithValue("@LoginPassword", txtConfirmPassword.Text);
+                cmd.Parameters.AddWithValue("@UserCode1", Session["UserCode"].ToString());
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Label1.Text = "Login Password Changed Successfully";
+                Label1.Text = "Login password changed successfully";
             }
             else
             {
-                Label1.Text = "Invalid Existing Login Password";
+                Label1.Text = "Invalid existing login Password";
             }
         }
     }

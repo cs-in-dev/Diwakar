@@ -70,7 +70,8 @@ namespace Sabaic._19111973
         {
             String result = "";
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
-            SqlCommand cmd = new SqlCommand("Select MobileNo from tblmembermaster where Usercode = '" + UserCode + "'", con);
+            SqlCommand cmd = new SqlCommand("Select MobileNo from tblmembermaster where Usercode =@Usercode", con);
+            cmd.Parameters.AddWithValue("@Usercode", UserCode);
             con.Open();
             result = cmd.ExecuteScalar().ToString();
             con.Close();
@@ -421,9 +422,11 @@ namespace Sabaic._19111973
                 if (res == "Product Saved Successfully")
                 {
                     Label7.Text = "Product Saved Successfully";
+                   
                     string email = ""; string name = "";
                     SqlConnection con1 = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ToString());
-                    SqlCommand cmd3 = new SqlCommand("select * from tblmembermaster where usercode='" + TextBox1.Text + "'", con1);
+                    SqlCommand cmd3 = new SqlCommand("select * from tblmembermaster where usercode=@user_code1", con1);
+                    cmd3.Parameters.AddWithValue("@user_code1", TextBox1.Text);
 
                     con1.Open();
                     SqlDataReader dr = cmd3.ExecuteReader();
@@ -441,8 +444,8 @@ namespace Sabaic._19111973
                     string amount = "";
                     string paymentmode = "";
                     SqlConnection con2 = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ToString());
-                    SqlCommand cmd4 = new SqlCommand("select * from ordermaster where orderid='" + sOrderId + "'", con2);
-
+                    SqlCommand cmd4 = new SqlCommand("select * from ordermaster where orderid=@order_id", con2);
+                    cmd4.Parameters.AddWithValue("@order_id", sOrderId);
                     con2.Open();
                     SqlDataReader dr1 = cmd4.ExecuteReader();
                     while (dr1.Read())
@@ -487,7 +490,8 @@ namespace Sabaic._19111973
         protected void Button4_Click(object sender, EventArgs e)
         {
             SqlCommand cmdss = new SqlCommand("", con);
-            cmdss.CommandText = "select MobileNo from  [dbo].[tblmembermaster] where usercode='" + TextBox1.Text + "' ";
+            cmdss.CommandText = "select MobileNo from  [dbo].[tblmembermaster] where usercode=@user_code2";
+            cmdss.Parameters.AddWithValue("@user_code2", TextBox1.Text);
             con.Open();
             string mobile = cmdss.ExecuteScalar().ToString();
             con.Close();
@@ -548,7 +552,7 @@ namespace Sabaic._19111973
             con.Close();
             if (count > 0)
             {
-
+                cmd.Parameters.Clear();
                 cmd.CommandText = "select * from tblmembermaster where usercode=@usercode";
                 cmd.Parameters.AddWithValue("@usercode", TextBox1.Text);
                 con.Open();

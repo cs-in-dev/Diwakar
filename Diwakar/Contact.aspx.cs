@@ -37,7 +37,7 @@ namespace CyraShop
 
                 string Msg = "Name : " + Query.name + ", Email id : " + Query.email + ", Message : " + Query.discription + "";
                 Gen obj = new Gen();
-                obj.SendEmail("Info@diwakarretail.com", Msg, "Contact us Query", "diwakarretail2017@gmail.com");
+               // obj.SendEmail("Info@diwakarretail.com", Msg, "Contact us Query", "diwakarretail2017@gmail.com");
               
             }
             catch (Exception ex)
