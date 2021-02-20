@@ -121,33 +121,6 @@ public partial class admin_UpdateMember
     protected global::AjaxControlToolkit.MaskedEditValidator MaskedEditValidator2;
 
     /// <summary>
-    /// lblEmailID0 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblEmailID0;
-
-    /// <summary>
-    /// txtEmailID control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtEmailID;
-
-    /// <summary>
-    /// RegularExpressionValidator5 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator5;
-
-    /// <summary>
     /// lblMobileNo control.
     /// </summary>
     /// <remarks>
@@ -175,22 +148,31 @@ public partial class admin_UpdateMember
     protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
 
     /// <summary>
-    /// lblTelephoneNo control.
+    /// lblEmailID0 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblTelephoneNo;
+    protected global::System.Web.UI.WebControls.Label lblEmailID0;
 
     /// <summary>
-    /// txtTelephoneNo control.
+    /// txtEmailID control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtTelephoneNo;
+    protected global::System.Web.UI.WebControls.TextBox txtEmailID;
+
+    /// <summary>
+    /// RegularExpressionValidator5 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator5;
 
     /// <summary>
     /// lblAddress control.
@@ -211,22 +193,22 @@ public partial class admin_UpdateMember
     protected global::System.Web.UI.WebControls.TextBox txtAddress;
 
     /// <summary>
-    /// Label5 control.
+    /// lblPinCode control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label Label5;
+    protected global::System.Web.UI.WebControls.Label lblPinCode;
 
     /// <summary>
-    /// txtLandmark control.
+    /// txtPinCode control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtLandmark;
+    protected global::System.Web.UI.WebControls.TextBox txtPinCode;
 
     /// <summary>
     /// Label6 control.
@@ -299,24 +281,6 @@ public partial class admin_UpdateMember
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TextBox txtCountry;
-
-    /// <summary>
-    /// lblPinCode control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblPinCode;
-
-    /// <summary>
-    /// txtPinCode control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox txtPinCode;
 
     /// <summary>
     /// lblBankDetail control.
@@ -470,69 +434,6 @@ public partial class admin_UpdateMember
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.HiddenField Hiddenpassword;
-
-    /// <summary>
-    /// KYCUpload control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label KYCUpload;
-
-    /// <summary>
-    /// FileUploadPANCard control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.FileUpload FileUploadPANCard;
-
-    /// <summary>
-    /// ImagePANCard control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Image ImagePANCard;
-
-    /// <summary>
-    /// PanCard control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlAnchor PanCard;
-
-    /// <summary>
-    /// FileUploadAddressProof control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.FileUpload FileUploadAddressProof;
-
-    /// <summary>
-    /// ImageAddressProof control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Image ImageAddressProof;
-
-    /// <summary>
-    /// AddressP control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlAnchor AddressP;
 
     /// <summary>
     /// lblMessage control.

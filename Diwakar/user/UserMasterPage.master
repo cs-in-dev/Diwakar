@@ -217,8 +217,8 @@ th{
                                             EDIT PROFILE</a></li>
                                         <li><span></span><a href="ChangePassword.aspx">
                                             CHANGE LOGIN PASSWORD</a></li>
-                                          <li><span></span><a href="GrowIcard.aspx">
-                                            I CARD</a></li>
+                                         <%-- <li><span></span><a href="GrowIcard.aspx">
+                                            I CARD</a></li>--%>
                                          <li><span></span><a href="Kyc.aspx">
                                             KYC</a></li>
 
@@ -265,7 +265,7 @@ th{
                                             <li><span></span><a href="ViewOrders1.aspx">VIEW ORDER</a></li>
                                               <%-- <li><span></span><a href="RepurchaseLeft.aspx">REPURCHASE LEFT</a></li>
                                               <li><span></span><a href="RepurchaseRight.aspx">REPURCHASE RIGHT</a></li>--%>
-                                             <li><span></span><a href="Repurhase_Right.aspx">REPURCHASE SUMMARY</a></li>
+                                            <%-- <li><span></span><a href="Repurhase_Right.aspx">REPURCHASE SUMMARY</a></li>--%>
                                               <%-- <li><span></span><a href="RePurchaseBonanza.aspx">CAPING REPORT</a></li>--%>
 
                                         </ul>

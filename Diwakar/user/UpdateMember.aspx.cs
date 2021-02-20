@@ -47,8 +47,6 @@ public partial class admin_UpdateMember : System.Web.UI.Page
         {
             txtDateOfBirth.Text = objMemberMaster.DOB.ToString(new CultureInfo("en-GB"));
         }
-
-      
         if (txtPanNo.Text.Trim() != "")
             txtPanNo.Enabled = false;
         txtName.Text = objMemberMaster.UserName;
@@ -59,22 +57,22 @@ public partial class admin_UpdateMember : System.Web.UI.Page
         txtCountry.Text = objMemberMaster.Country;
         txtPinCode.Text = objMemberMaster.PostalCode;
         txtMobileNo.Text = objMemberMaster.MobileNo;
-        txtTelephoneNo.Text = objMemberMaster.TelephoneNo;
+        //txtTelephoneNo.Text = objMemberMaster.TelephoneNo;
         txtEmailID.Text = objMemberMaster.EMailID;
         txtPanNo.Text = objMemberMaster.PanNo;
         txtAccountNo.Text = objMemberMaster.AccountNo;
         txtIFSCCode.Text = objMemberMaster.IFSCCode;
         txtBankName.Text = objMemberMaster.BankName;
         txtBranchName.Text = objMemberMaster.BranchName;
-        txtLandmark.Text = objMemberMaster.Landmark;
+        //txtLandmark.Text = objMemberMaster.Landmark;
         txtDistrict.Text = objMemberMaster.District;
         usertype.Value = objMemberMaster.UserType;
        
         Hiddenpassword.Value = objMemberMaster.LoginPassword;
         status.Value = objMemberMaster.Status;
         Fname.Text = objMemberMaster.FatherName;
-        PanCard.HRef = objMemberMaster.Pancard;
-        AddressP.HRef = objMemberMaster.AddressProof;
+        //PanCard.HRef = objMemberMaster.Pancard;
+        //AddressP.HRef = objMemberMaster.AddressProof;
         txtAadharnumber.Text = objMemberMaster.AadharCard;
         //txtOwnerName.Text =objMemberMaster.OwnerName;
         InformationPanel.Visible = true;
@@ -93,18 +91,18 @@ public partial class admin_UpdateMember : System.Web.UI.Page
         objMemberMaster = objBALMemberMaster.getMemberProfileByMemberCode(objMemberMaster);
         string AddressProof = "", Pancard = "";
         Guid g = Guid.NewGuid();
-        if (FileUploadAddressProof.HasFile)
-        {
-            string fileName = Path.GetFileName(FileUploadAddressProof.PostedFile.FileName);
-            FileUploadAddressProof.PostedFile.SaveAs(Server.MapPath("~/upload/") + g + "_AddProof_" + fileName);
-            AddressProof = "~/upload/" + g + "_AddProof_" + fileName;
-        }
-        if (FileUploadPANCard.HasFile)
-        {
-            string fileName = Path.GetFileName(FileUploadPANCard.PostedFile.FileName);
-            FileUploadPANCard.PostedFile.SaveAs(Server.MapPath("~/upload/") + g + "_PAN_" + fileName);
-            Pancard = "~/upload/" + g + "_PAN_" + fileName;
-        }
+        //if (FileUploadAddressProof.HasFile)
+        //{
+        //    string fileName = Path.GetFileName(FileUploadAddressProof.PostedFile.FileName);
+        //    FileUploadAddressProof.PostedFile.SaveAs(Server.MapPath("~/upload/") + g + "_AddProof_" + fileName);
+        //    AddressProof = "~/upload/" + g + "_AddProof_" + fileName;
+        //}
+        //if (FileUploadPANCard.HasFile)
+        //{
+        //    string fileName = Path.GetFileName(FileUploadPANCard.PostedFile.FileName);
+        //    FileUploadPANCard.PostedFile.SaveAs(Server.MapPath("~/upload/") + g + "_PAN_" + fileName);
+        //    Pancard = "~/upload/" + g + "_PAN_" + fileName;
+        //}
         if (AddressProof == "")
         {
             AddressProof = objMemberMaster.AddressProof;
@@ -113,8 +111,6 @@ public partial class admin_UpdateMember : System.Web.UI.Page
         {
             Pancard = objMemberMaster.Pancard;
         }
-
-
 
         objMemberMaster.UserCode = Session["Usercode"].ToString();
         objMemberMaster = objBALMemberMaster.getMemberProfileByMemberCode(objMemberMaster);
@@ -125,7 +121,7 @@ public partial class admin_UpdateMember : System.Web.UI.Page
         objMemberMaster.Country = txtCountry.Text;
         objMemberMaster.EMailID = txtEmailID.Text;
         objMemberMaster.PostalCode = txtPinCode.Text;
-        objMemberMaster.TelephoneNo = txtTelephoneNo.Text;
+        objMemberMaster.TelephoneNo = "";
         objMemberMaster.BankName = txtBankName.Text;
         objMemberMaster.BranchName = txtBranchName.Text;
         objMemberMaster.AccountNo = txtAccountNo.Text;
@@ -135,7 +131,7 @@ public partial class admin_UpdateMember : System.Web.UI.Page
         objMemberMaster.FatherName = Fname.Text;
         //objMemberMaster.OwnerName = "";
         objMemberMaster.UserType = usertype.Value;
-        objMemberMaster.Landmark = txtLandmark.Text;
+        objMemberMaster.Landmark = "";
         objMemberMaster.District = txtDistrict.Text;
         objMemberMaster.PanNo = txtPanNo.Text;
         objMemberMaster.MobileNo = txtMobileNo.Text;
@@ -155,17 +151,14 @@ public partial class admin_UpdateMember : System.Web.UI.Page
             txtCountry.Text = "";
             txtPinCode.Text = "";
             txtMobileNo.Text = "";
-            txtTelephoneNo.Text = "";
             txtEmailID.Text = "";
             txtPanNo.Text = "";
             txtAccountNo.Text = "";
             txtIFSCCode.Text = "";
             txtBankName.Text = "";
             txtBranchName.Text = "";
-            txtLandmark.Text = "";
             txtDistrict.Text = "";
             usertype.Value = "";
-           
             Hiddenpassword.Value = "";
             status.Value = "";
             Fname.Text = "";

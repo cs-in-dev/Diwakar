@@ -100,11 +100,13 @@
                                     ControlToValidate="txtname" ErrorMessage="*" ValidationGroup="vg3"></asp:RequiredFieldValidator>
                             </td>
                             <td align="right">
-                                Transaction Password</td>
+                              User Name</td>
                             <td class="style27">
-                                <asp:TextBox ID="txtTransactionPassword" runat="server" ValidationGroup="vg3" 
-                                    MaxLength="10"></asp:TextBox>
+                               <asp:TextBox ID="txtname" runat="server" ValidationGroup="vg3"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtname"
+                                    ErrorMessage="*" ValidationGroup="vg3"></asp:RequiredFieldValidator>
                             </td>
+                          
                         </tr>
                         <tr>
                             <td align="left" colspan="4">
@@ -114,13 +116,14 @@
                         </tr>
                         <tr>
                             <td align="right">
-                                <asp:Label ID="lblname" runat="server" CssClass="text" Text="Name"></asp:Label>
+                                <asp:Label ID="Label8" runat="server" CssClass="text" Text="Father Name:"></asp:Label>
+
                             </td>
-                            <td class="style27">
-                                <asp:TextBox ID="txtname" runat="server" ValidationGroup="vg3"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtname"
-                                    ErrorMessage="*" ValidationGroup="vg3"></asp:RequiredFieldValidator>
-                            </td>
+                             <td class="style26">
+                                 <asp:TextBox ID="Fname" runat="server" MaxLength="30" CssClass="UpperCase"></asp:TextBox>
+                             </td>
+
+                            
                             <td align="right">
                                 <asp:Label ID="lblcountry" runat="server" CssClass="text" Text="Country:"></asp:Label>
                             </td>
@@ -187,12 +190,20 @@
                             <td class="style27">
                                 <asp:TextBox ID="txtcity" runat="server" ValidationGroup="vg3"></asp:TextBox>
                             </td>
+
                             <td align="right">
+                                <asp:Label ID="lblEmailID0" runat="server" CssClass="text" Text="Email ID:"></asp:Label>
+                            </td>
+                            <td class="style27">
+                                <asp:TextBox ID="txtEmailID" runat="server"></asp:TextBox>
+                            </td>
+
+                            <%--<td align="right">
                                 <asp:Label ID="lblTelephoneNo" runat="server" CssClass="text" Text="Telephone No:"></asp:Label>
                             </td>
                             <td class="style27">
                                 <asp:TextBox ID="txtTelephoneNo" runat="server" MaxLength="10"></asp:TextBox>
-                            </td>
+                            </td>--%>
                         </tr>
                         <tr>
                             <td align="right">
@@ -201,42 +212,17 @@
                             <td class="style27">
                                 <asp:TextBox ID="txtstate" runat="server" ValidationGroup="vg3"></asp:TextBox>
                             </td>
+                            
                             <td align="right">
-                                <asp:Label ID="lblEmailID0" runat="server" CssClass="text" Text="Email ID:"></asp:Label>
+                                <asp:Label ID="Label6" runat="server" CssClass="text" Text="District:"></asp:Label>
                             </td>
                             <td class="style27">
-                                <asp:TextBox ID="txtEmailID" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtDistrict" runat="server" MaxLength="30" CssClass="UpperCase"></asp:TextBox>
                             </td>
+
                         </tr>
-                         <tr>
-
-                            <td>
-                                <asp:Label ID="Label6" runat="server" CssClass="text" Text="District:" Style="margin-left: 39px;"></asp:Label>
-
-                            </td>
-                            <td class="style26">
-                               <asp:TextBox ID="txtDistrict" runat="server" MaxLength="30" CssClass="UpperCase"></asp:TextBox>
-                            </td>
-                               <td>
-                                <asp:Label ID="Label7" runat="server" CssClass="text" Text="Land Mark:" Style="margin-left: 39px;"></asp:Label>
-
-                            </td>
-                               <td class="style26">
-                                 <asp:TextBox ID="txtLandmark" runat="server" MaxLength="30" CssClass="UpperCase"  TextMode="MultiLine"
-                                    ></asp:TextBox>
-                            </td>
-
-                         </tr>
-                         <tr>
-
-                            <td>
-                                <asp:Label ID="Label8" runat="server" CssClass="text" Text="Father Name:" Style="margin-left: 39px;"></asp:Label>
-
-                            </td>
-                             <td class="style26">
-                                 <asp:TextBox ID="Fname" runat="server" MaxLength="30" CssClass="UpperCase"></asp:TextBox>
-                             </td>
-                        </tr>
+                        
+                         
                         <tr>
                             <td align="left" colspan="4">
                                 <asp:Label ID="lblBankDetail" runat="server" Style="font-weight: 700; color: #006600"
@@ -259,7 +245,7 @@
                         </tr>
                         <tr>
                             <td align="right"><asp:Label ID="Label3" runat="server" CssClass="text" 
-                                    Text="Branch Name"></asp:Label></td>
+                                    Text="Branch Name:"></asp:Label></td>
                             <td class="style27"><asp:TextBox ID="txtbranch" runat="server"></asp:TextBox></td>
                             <td align="right"><asp:Label ID="Label5" runat="server" CssClass="text" 
                                     Text="IFSCCode"></asp:Label></td>
@@ -268,10 +254,10 @@
 
                          <tr>
                             <td align="right"><asp:Label ID="Label4" runat="server" CssClass="text" 
-                                    Text="PanNo"></asp:Label></td>
+                                    Text="PanNo:"></asp:Label></td>
                             <td class="style27"><asp:TextBox ID="txtpanno" runat="server"></asp:TextBox></td>
                             <td align="right"><asp:Label ID="Label16" runat="server" CssClass="text" 
-                                    Text="Aadhar No"></asp:Label></td>
+                                    Text="Aadhar No:"></asp:Label></td>
                             <td class="style26"><asp:TextBox ID="txtAadharnumber" runat="server"></asp:TextBox></td>
                         </tr>
                          
@@ -284,13 +270,13 @@
                                 <asp:hiddenfield id="hiddenpassword" runat="server" />
                             </td>
                         </tr>
-                       <tr>
+                      <%-- <tr>
                             <td align="left" colspan="4">
                                 <asp:Label ID="KYCUpload" runat="server" Style="font-weight: 700; color: #006600"
                                     Text="KYC"></asp:Label>
                             </td>
-                        </tr>
-                        <tr>
+                        </tr>--%>
+                        <%--<tr>
                             <td align="center" colspan="4">
                                 &nbsp;</td>
                         </tr>
@@ -312,7 +298,7 @@
                             <td class="style26"><asp:Image ID="ImageAddressProof" runat="server" Width="100px" /></td>
                              
                             <td class="style27"><a id="AddressP"  runat="server" target="_blank">Click to View</a></td>
-                        </tr>
+                        </tr>--%>
                         <tr>
                             <td align="center" colspan="4">
                                 <asp:Label ID="lblMessage" runat="server" Style="color: #FF0000"></asp:Label>
