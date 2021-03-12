@@ -8,3 +8,197 @@
 
 18-02-2021 10:55:04 AM UTC  : Response Redirect Order id: 42126
 
+23-02-2021 10:12:48 AM UTC  : result Direction Output: Output
+
+23-02-2021 10:12:51 AM UTC  : orderid Direction Output: Output
+
+23-02-2021 10:37:11 AM UTC  : result Direction Output: Output
+
+23-02-2021 10:37:17 AM UTC  : orderid Direction Output: Output
+
+
+23-02-2021 10:49:56 AM UTC  : create order stack Trace :    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Sabaic._19111973.CreateOrderAdmin.Button2_Click(Object sender, EventArgs e) in D:\Satish\Project\Diwakar\Diwakar\Diwakar\240578\CreateOrderAdmin.aspx.cs:line 415
+
+23-02-2021 10:49:57 AM UTC  : create order catch : Trying to pass a table-valued parameter with 14 column(s) where the corresponding user-defined table type requires 13 column(s).
+
+23-02-2021 10:54:03 AM UTC  : Details: Table1
+
+23-02-2021 10:54:07 AM UTC  : result Direction Output: Output
+
+23-02-2021 10:54:09 AM UTC  : orderid Direction Output: Output
+
+
+23-02-2021 10:54:32 AM UTC  : create order stack Trace :    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Sabaic._19111973.CreateOrderAdmin.Button2_Click(Object sender, EventArgs e) in D:\Satish\Project\Diwakar\Diwakar\Diwakar\240578\CreateOrderAdmin.aspx.cs:line 416
+
+23-02-2021 10:54:33 AM UTC  : create order catch : Trying to pass a table-valued parameter with 14 column(s) where the corresponding user-defined table type requires 13 column(s).
+
+23-02-2021 10:55:57 AM UTC  : Details: Table1
+
+23-02-2021 10:55:58 AM UTC  : result Direction Output: Output
+
+23-02-2021 10:55:59 AM UTC  : orderid Direction Output: Output
+
+
+23-02-2021 10:56:02 AM UTC  : create order stack Trace :    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Sabaic._19111973.CreateOrderAdmin.Button2_Click(Object sender, EventArgs e) in D:\Satish\Project\Diwakar\Diwakar\Diwakar\240578\CreateOrderAdmin.aspx.cs:line 416
+23-02-2021 10:56:02 AM UTC  : create order catch : Trying to pass a table-valued parameter with 14 column(s) where the corresponding user-defined table type requires 13 column(s).
+
+23-02-2021 11:12:07 AM UTC  : Details: Table1
+
+23-02-2021 11:12:16 AM UTC  : result Direction Output: Output
+
+23-02-2021 11:12:17 AM UTC  : orderid Direction Output: Output
+
+
+23-02-2021 11:20:42 AM UTC  : create order stack Trace :    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Sabaic._19111973.CreateOrderAdmin.Button2_Click(Object sender, EventArgs e) in D:\Satish\Project\Diwakar\Diwakar\Diwakar\240578\CreateOrderAdmin.aspx.cs:line 417
+
+23-02-2021 11:20:44 AM UTC  : create order catch : Trying to pass a table-valued parameter with 14 column(s) where the corresponding user-defined table type requires 13 column(s).
+
+23-02-2021 11:26:12 AM UTC  : Details: Table1
+
+23-02-2021 11:26:12 AM UTC  : result Direction Output: Output
+
+23-02-2021 11:26:12 AM UTC  : orderid Direction Output: Output
+
+
+23-02-2021 11:26:12 AM UTC  : create order stack Trace :    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Sabaic._19111973.CreateOrderAdmin.Button2_Click(Object sender, EventArgs e) in D:\Satish\Project\Diwakar\Diwakar\Diwakar\240578\CreateOrderAdmin.aspx.cs:line 417
+
+23-02-2021 11:26:12 AM UTC  : create order catch : Trying to pass a table-valued parameter with 14 column(s) where the corresponding user-defined table type requires 13 column(s).
+
+23-02-2021 11:44:13 AM UTC  : Details: Table1
+
+23-02-2021 11:44:14 AM UTC  : result Direction Output: Output
+
+23-02-2021 11:44:15 AM UTC  : orderid Direction Output: Output
+
+23-02-2021 11:45:56 AM UTC  : Details: Table1
+
+23-02-2021 11:45:57 AM UTC  : result Direction Output: Output
+
+23-02-2021 11:45:58 AM UTC  : orderid Direction Output: Output
+
+
+23-02-2021 11:46:15 AM UTC  : create order stack Trace :    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Sabaic._19111973.CreateOrderAdmin.Button2_Click(Object sender, EventArgs e) in D:\Satish\Project\Diwakar\Diwakar\Diwakar\240578\CreateOrderAdmin.aspx.cs:line 417
+
+23-02-2021 11:46:31 AM UTC  : Details: Table1
+
+23-02-2021 11:46:31 AM UTC  : result Direction Output: Output
+
+23-02-2021 11:46:31 AM UTC  : orderid Direction Output: Output
+
+
+23-02-2021 11:46:31 AM UTC  : create order stack Trace :    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Sabaic._19111973.CreateOrderAdmin.Button2_Click(Object sender, EventArgs e) in D:\Satish\Project\Diwakar\Diwakar\Diwakar\240578\CreateOrderAdmin.aspx.cs:line 417
+
+23-02-2021 11:46:31 AM UTC  : create order catch : Trying to pass a table-valued parameter with 14 column(s) where the corresponding user-defined table type requires 13 column(s).
+
+23-02-2021 11:47:11 AM UTC  : Details: Table1
+
+23-02-2021 11:47:12 AM UTC  : result Direction Output: Output
+
+23-02-2021 11:47:13 AM UTC  : orderid Direction Output: Output
+
+
+23-02-2021 11:48:02 AM UTC  : create order stack Trace :    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Sabaic._19111973.CreateOrderAdmin.Button2_Click(Object sender, EventArgs e) in D:\Satish\Project\Diwakar\Diwakar\Diwakar\240578\CreateOrderAdmin.aspx.cs:line 417
+23-02-2021 11:48:02 AM UTC  : create order catch : Trying to pass a table-valued parameter with 14 column(s) where the corresponding user-defined table type requires 13 column(s).
+
+23-02-2021 11:48:21 AM UTC  : Details: Table1
+
+23-02-2021 11:48:29 AM UTC  : result Direction Output: Output
+
+23-02-2021 11:48:37 AM UTC  : orderid Direction Output: Output
+
+23-02-2021 12:05:57 PM UTC  : Details: Table1
+
+23-02-2021 12:05:59 PM UTC  : result Direction Output: Output
+
+23-02-2021 12:06:01 PM UTC  : orderid Direction Output: Output
+
+23-02-2021 12:06:08 PM UTC  : Order result: Product Saved Successfully
+
+23-02-2021 12:06:09 PM UTC  : Order id: 42135
+
+23-02-2021 12:06:35 PM UTC  : Response Redirect Order id: 42135
+
+23-02-2021 12:24:39 PM UTC  : Details: Table1
+
+23-02-2021 12:24:39 PM UTC  : result Direction Output: Output
+
+23-02-2021 12:24:39 PM UTC  : orderid Direction Output: Output
+
+23-02-2021 12:24:39 PM UTC  : Order result: Product Saved Successfully
+
+23-02-2021 12:24:39 PM UTC  : Order id: 42136
+
+23-02-2021 12:24:39 PM UTC  : Response Redirect Order id: 42136
+

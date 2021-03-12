@@ -15,7 +15,7 @@ namespace Sabaic._19111973
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ToString());
         SqlCommand cmd;
-        Double Qty = 0, CGST = 0, SGST = 0, IGST = 0, TotalCGST = 0, TotalSGST = 0, TotalTaxAmount = 0, TotalDP = 0, Total = 0, UnitPrice = 0, TotalPrice = 0, Bv = 0, Tottax = 0, Qty2 = 0;
+        Double Qty = 0, CGST = 0, SGST = 0, IGST = 0, TotalCGST = 0, TotalSGST = 0, TotalCess=0, TotalTaxAmount = 0, TotalDP = 0, Total = 0, UnitPrice = 0, TotalPrice = 0, Bv = 0, Tottax = 0, Qty2 = 0;
 
 
         Double GrossAmt = 0;
@@ -117,7 +117,7 @@ namespace Sabaic._19111973
             //con.Close();
 
 
-            SqlCommand cmd2 = new SqlCommand("SELECT ProductRepurchase.ProductCode Code,OrderDetails.CGST as CGS,OrderDetails.SGST as SGS,OrderDetails.TotalDiscount as TotalDiscount,ProductRepurchase.productid,ProductRepurchase.ProductName, OrderDetails.MRP, OrderDetails.DP 'Unit Price', OrderDetails.Qty,OrderDetails.BV,OrderDetails.TotalBV, OrderDetails.TotalMRP Value, (OrderDetails.IGST*OrderDetails.Qty)TotalIGST,(OrderDetails.SGST*OrderDetails.Qty)TotalSGST ,(OrderDetails.CGST*OrderDetails.Qty)TotalCGST, (OrderDetails.BV*OrderDetails.Qty)TotalMRP, (OrderDetails.TotalBV) 'Total Price' FROM OrderDetails INNER JOIN ProductRepurchase ON OrderDetails.ProductID = ProductRepurchase.ProductID INNER JOIN OrderMaster ON OrderMaster.OrderID = OrderDetails.OrderID where OrderMaster.OrderId=@OrderID2 and FrenchiseID =@FrenchiseId2", con);
+            SqlCommand cmd2 = new SqlCommand("SELECT ProductRepurchase.ProductCode Code,OrderDetails.CGST as CGS,OrderDetails.SGST as SGS,OrderDetails.TotalDiscount as TotalDiscount,ProductRepurchase.productid,ProductRepurchase.ProductName, OrderDetails.MRP, OrderDetails.DP 'Unit Price', OrderDetails.Qty,OrderDetails.BV,OrderDetails.TotalBV, OrderDetails.TotalMRP Value, (OrderDetails.IGST*OrderDetails.Qty)TotalIGST,(OrderDetails.SGST*OrderDetails.Qty)TotalSGST ,(OrderDetails.CGST*OrderDetails.Qty)TotalCGST,(OrderDetails.Cess*OrderDetails.Qty)TotalCess, (OrderDetails.BV*OrderDetails.Qty)TotalMRP, (OrderDetails.TotalBV) 'Total Price' FROM OrderDetails INNER JOIN ProductRepurchase ON OrderDetails.ProductID = ProductRepurchase.ProductID INNER JOIN OrderMaster ON OrderMaster.OrderID = OrderDetails.OrderID where OrderMaster.OrderId=@OrderID2 and FrenchiseID =@FrenchiseId2", con);
             cmd2.Parameters.AddWithValue("@FrenchiseId2", franchise);
             cmd2.Parameters.AddWithValue("@OrderID2", Request.QueryString["ID"].ToString());
             SqlDataAdapter da = new SqlDataAdapter(cmd2);
@@ -153,6 +153,7 @@ namespace Sabaic._19111973
 
                     TotalSGST = TotalSGST + Double.Parse(e.Row.Cells[9].Text);
                     TotalCGST = TotalCGST + Double.Parse(e.Row.Cells[10].Text);
+                    TotalCess = TotalCess + Double.Parse(e.Row.Cells[11].Text);
 
                 }
 
@@ -162,10 +163,12 @@ namespace Sabaic._19111973
                     lblamount.Text = string.Format("{0:f2}", TotalPrice);
                     lblTotalSGST.Text = string.Format("{0:f2}", TotalSGST);
                     lblTotalCGST.Text = string.Format("{0:f2}", TotalCGST);
+                    lblCess.Text = string.Format("{0:f2}", TotalCess);
 
                     decimal totalsgst = Convert.ToDecimal(lblTotalSGST.Text);
                     decimal totalcgst = Convert.ToDecimal(lblTotalCGST.Text);
-                    decimal totaltax = (Convert.ToDecimal(lblamount.Text) + totalsgst + totalcgst);
+                    decimal totalcess = Convert.ToDecimal(lblCess.Text);
+                    decimal totaltax = (Convert.ToDecimal(lblamount.Text) + totalsgst + totalcgst+ totalcess);
                     lblGrandTotal.Text = string.Format("{0:f2}", (totaltax));
                 }
             }

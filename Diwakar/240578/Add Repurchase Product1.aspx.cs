@@ -65,6 +65,11 @@ namespace GrowTogether._240578
             Double SubSGST = (SGST * SGST1) / 100;
             Double totalSGST = SubSGST;
 
+            Double Cesss = total2;
+            Double Cesss1 = Double.Parse(txtCess.Text);
+            Double SubCesss = (Cesss * Cesss1) / 100;
+            Double totalCesss = SubCesss;
+
             //Double IGST = total2;
             //Double IGST1 = Double.Parse(txtIGST.Text);
             //Double SubIGST = (IGST * IGST1) / 100;
@@ -96,6 +101,9 @@ namespace GrowTogether._240578
             cmd.Parameters.AddWithValue("@CGSTAmount", totalCGST);
             cmd.Parameters.AddWithValue("@SGSTAmount", totalSGST);
             //cmd.Parameters.AddWithValue("@IGSTAmount", totalIGST);
+            cmd.Parameters.AddWithValue("@Cess", txtCess.Text);
+            //cmd.Parameters.AddWithValue("@IGST", txtIGST.Text);
+            cmd.Parameters.AddWithValue("@CessAmount", totalCesss);
             con.Open();
             try
             {

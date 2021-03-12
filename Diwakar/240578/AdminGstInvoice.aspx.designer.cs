@@ -168,6 +168,15 @@ namespace Sabaic._19111973
         protected global::System.Web.UI.WebControls.Label lblTotalSGST;
 
         /// <summary>
+        /// lblCess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCess;
+
+        /// <summary>
         /// lblTotalIGST control.
         /// </summary>
         /// <remarks>

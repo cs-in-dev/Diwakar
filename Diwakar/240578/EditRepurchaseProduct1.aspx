@@ -98,7 +98,7 @@
             </td>
         </tr>
         <tr>
-            <td style="text-align: right">CGST</td>
+            <td style="text-align: right">CGST %</td>
             <td style="text-align: left">
                 <asp:TextBox ID="txtCGST" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server"
@@ -108,11 +108,21 @@
         </tr>
 
         <tr>
-            <td style="text-align: right">SGST</td>
+            <td style="text-align: right">SGST %</td>
             <td style="text-align: left">
                 <asp:TextBox ID="txtSGST" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server"
                     ControlToValidate="txtSGST" ErrorMessage="Add SGST"
+                    ValidationGroup="v2" ForeColor="Red"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="text-align: right">Cess %</td>
+            <td style="text-align: left">
+                <asp:TextBox ID="txtCess" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                    ControlToValidate="txtCess" ErrorMessage="Add Cess"
                     ValidationGroup="v2" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>

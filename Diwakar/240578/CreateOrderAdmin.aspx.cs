@@ -45,19 +45,21 @@ namespace Sabaic._19111973
                 // ProductName.Focus();
                 ProductName.Focus();
                 DataTable dt = new DataTable();
-                dt.Columns.Add("ID");
-                dt.Columns.Add("Name");
-                dt.Columns.Add("MRP");
-                dt.Columns.Add("DP");
-                dt.Columns.Add("BV");
-                dt.Columns.Add("CGST");
-                dt.Columns.Add("SGST");
-                dt.Columns.Add("IGST");
-                dt.Columns.Add("Tax");
-                dt.Columns.Add("Qty");
-                dt.Columns.Add("Amount");
-                dt.Columns.Add("CashBack");
-                dt.Columns.Add("Discount");
+                dt.Columns.Add("ID"); /*0*/
+                dt.Columns.Add("Name"); /*1*/
+                dt.Columns.Add("MRP");/*2*/
+                dt.Columns.Add("DP");/*3*/
+                dt.Columns.Add("BV");/*4*/
+                dt.Columns.Add("CGST");/*5*/
+                dt.Columns.Add("SGST");/*6*/
+                dt.Columns.Add("IGST");/*7*/
+                dt.Columns.Add("Cess");/*8*/
+                dt.Columns.Add("Tax");/*9*/
+                dt.Columns.Add("Qty");/*10*/
+                dt.Columns.Add("Amount");/*11*/
+                dt.Columns.Add("CashBack");/*12*/
+                dt.Columns.Add("Discount");/*13*/
+
                 ViewState["DT"] = dt;
                 Button4.Visible = false;
                 CashBack.Visible = false;
@@ -162,13 +164,14 @@ namespace Sabaic._19111973
                 CGST.Text = string.Format("{0:f2}", decimal.Parse(dr["CGST"].ToString()));
                 SGST.Text = string.Format("{0:f2}", decimal.Parse(dr["SGST"].ToString()));
                 IGST.Text = string.Format("{0:f2}", decimal.Parse(dr["IGST"].ToString()));
+                Cess.Text = string.Format("{0:f2}", decimal.Parse(dr["Cess"].ToString()));
                 Qty.Text = "1";
                 // Amount.Text = string.Format("{0:f2}", (decimal.Parse(Qty.Text) * decimal.Parse(DP.Text)));
                 //Amount.Text = string.Format("{0:f2}", (decimal.Parse(DP.Text) - decimal.Parse(SPDiscount.Text)));
                 Amount.Text = string.Format("{0:f2}", (decimal.Parse(DP.Text) * (decimal.Parse(Qty.Text)) - decimal.Parse(SPDiscount.Text)));
 
                 //   txtAVLQTY.Text = dr["AQTY"].ToString();
-                imageload.HRef = dr["ImageUrl"].ToString();
+                //imageload.HRef = dr["ImageUrl"].ToString();
 
 
             }
@@ -204,18 +207,19 @@ namespace Sabaic._19111973
                 CGST.Text = string.Format("{0:f2}", decimal.Parse(dr["CGST"].ToString()));
                 SGST.Text = string.Format("{0:f2}", decimal.Parse(dr["SGST"].ToString()));
                 IGST.Text = string.Format("{0:f2}", decimal.Parse(dr["IGST"].ToString()));
+                Cess.Text = string.Format("{0:f2}", decimal.Parse(dr["Cess"].ToString()));
                 Qty.Text = "1";
                 // Amount.Text = string.Format("{0:f2}", (decimal.Parse(Qty.Text) * decimal.Parse(DP.Text)));
                 //Amount.Text = string.Format("{0:f2}", (decimal.Parse(DP.Text) - decimal.Parse(SPDiscount.Text)));
                 Amount.Text = string.Format("{0:f2}", (decimal.Parse(DP.Text) * (decimal.Parse(Qty.Text)) - decimal.Parse(SPDiscount.Text)));
                 //  txtAVLQTY.Text = dr["AQTY"].ToString();
-                imageload.HRef = dr["ImageUrl"].ToString();
+                //imageload.HRef = dr["ImageUrl"].ToString();
             }
             dr.Close();
             con.Close();
 
             Button1.Focus();
-            imageload.Focus();
+           // imageload.Focus();
         }
 
         protected void Qty_TextChanged(object sender, EventArgs e)
@@ -239,14 +243,14 @@ namespace Sabaic._19111973
                 if (item[0].ToString() == ProductCode.Text)
                 {
                     item[0] = ProductCode.Text;
-                    string abc = item[9].ToString();
+                    string abc = item[10].ToString();
                     string qty = Qty.Text;
 
                     string pqr = item[10].ToString();
                     string amount = Amount.Text;
-                    item[9] = (decimal.Parse(abc) + decimal.Parse(qty)).ToString();
+                    item[10] = (decimal.Parse(abc) + decimal.Parse(qty)).ToString();
                     item[4] = Decimal.Parse(BV.Text);
-                    item[10] = (decimal.Parse(pqr) + decimal.Parse(amount)).ToString();
+                    item[11] = (decimal.Parse(pqr) + decimal.Parse(amount)).ToString();
 
                     dt.Rows[0].EndEdit();
                     dt.AcceptChanges();
@@ -263,6 +267,7 @@ namespace Sabaic._19111973
                     Qty.Text = "";
                     Tax.Text = "";
                     Amount.Text = "";
+                    Cess.Text = "";
                     //ProductCode.Focus();
                     ProductName.Focus();
                     return;
@@ -278,12 +283,14 @@ namespace Sabaic._19111973
             row[5] = (Math.Round(decimal.Parse(CGST.Text), 2).ToString());
             row[6] = (Math.Round(decimal.Parse(SGST.Text), 2).ToString());
             row[7] = (Math.Round(decimal.Parse(IGST.Text), 2).ToString());
-            row[8] = (Math.Round(decimal.Parse(Tax.Text), 2).ToString());
+             row[8] = (Math.Round(decimal.Parse(Cess.Text), 2).ToString());
+            row[9] = (Math.Round(decimal.Parse(Tax.Text), 2).ToString());
 
-            row[9] = Qty.Text;
-            row[10] = (Math.Round(decimal.Parse(DP.Text) * decimal.Parse(Qty.Text), 2).ToString());
-            row[11] = (Math.Round(decimal.Parse(CashBack.Text), 2).ToString());
-            row[12] = (Math.Round(decimal.Parse(SPDiscount.Text), 2).ToString());
+            row[10] = Qty.Text;
+            row[11] = (Math.Round(decimal.Parse(DP.Text) * decimal.Parse(Qty.Text), 2).ToString());
+            row[12] = (Math.Round(decimal.Parse(CashBack.Text), 2).ToString());
+            row[13] = (Math.Round(decimal.Parse(SPDiscount.Text), 2).ToString());
+           
             dt.Rows.Add(row);
             ProductName.Text = "";
             ProductCode.Text = "";
@@ -296,6 +303,7 @@ namespace Sabaic._19111973
             PID.Value = "";
             CGST.Text = "";
             SGST.Text = "";
+            Cess.Text = "";
             GridView1.DataSource = dt;
             GridView1.DataBind();
             CalcTotals();
@@ -309,11 +317,11 @@ namespace Sabaic._19111973
             DataTable dt = (DataTable)ViewState["DT"];
             foreach (DataRow item in dt.Rows)
             {
-                TM += decimal.Parse(item[3].ToString()) * decimal.Parse(item[9].ToString());
-                TV += decimal.Parse(item[4].ToString()) * decimal.Parse(item[9].ToString());
-                TQ += decimal.Parse(item[9].ToString());
-                TA += decimal.Parse(item[10].ToString());
-                CB += decimal.Parse(item[11].ToString());
+                TM += decimal.Parse(item[3].ToString()) * decimal.Parse(item[10].ToString());
+                TV += decimal.Parse(item[4].ToString()) * decimal.Parse(item[10].ToString());
+                TQ += decimal.Parse(item[10].ToString());
+                TA += decimal.Parse(item[11].ToString());
+                CB += decimal.Parse(item[12].ToString());
             }
             TotalDP.Text = Math.Round(TM, 2).ToString();
             // TotalAmount.Text = Math.Round(TA + 100, 2).ToString();
@@ -370,6 +378,7 @@ namespace Sabaic._19111973
                     MsgBox("Please add to cart for create order");
                     return;
                 }
+                var details = (DataTable)ViewState["DT"];
 
                 SqlCommand cmdProc = new SqlCommand("CreateOrder", con);
                 cmdProc.CommandType = CommandType.StoredProcedure;
@@ -396,7 +405,8 @@ namespace Sabaic._19111973
                 cmdProc.Parameters.AddWithValue("@CashBack", CashBack.Text);
                 cmdProc.Parameters.AddWithValue("@SelfCashBack", txtselcashback.Text);
                 cmdProc.Parameters.AddWithValue("@RedemptionPoint", "0");
-                cmdProc.Parameters.AddWithValue("@Details", (DataTable)ViewState["DT"]);
+                cmdProc.Parameters.AddWithValue("@Details", details);
+                LogControl.WriteALine("Details: " + details); LogControl.WriteALine("");
                 SqlParameter result = new SqlParameter("@Result", SqlDbType.VarChar, 200);
                 result.Direction = ParameterDirection.Output;
                 LogControl.WriteALine("result Direction Output: " + result.Direction); LogControl.WriteALine("");

@@ -92,12 +92,17 @@ namespace GrowTogether._240578
             Double SubSGST = (SGST * SGST1) / 100;
             Double totalSGST = SubSGST;
 
+            Double Cess = total2;
+            Double Cess1 = Double.Parse(txtCess.Text);
+            Double SubCess = (Cess * Cess1) / 100;
+            Double totalCess = SubCess;
+
             //Double IGST = total2;
             //Double IGST1 = Double.Parse(txtIGST.Text);
             //Double SubIGST = (IGST * IGST1) / 100;
             //Double totalIGST = SubIGST;
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["conn"].ToString());
-            SqlCommand cmd = new SqlCommand("Update ProductRepurchase set ProductName=@Productnametxt,ProductCode=@ProductCode,salesamount=@salesamount, MRP=@pricetxt,ImageUrl=@imageedit,CategoryID=@catid,BV=@BV, Detail=@detail,CGST=@CGST, SGST=@SGST,CGSTAmount=@CGSTAmount,SGSTAmount=@SGSTAmount WHERE ProductID=@Pid", con);
+            SqlCommand cmd = new SqlCommand("Update ProductRepurchase set ProductName=@Productnametxt,ProductCode=@ProductCode,salesamount=@salesamount, MRP=@pricetxt,ImageUrl=@imageedit,CategoryID=@catid,BV=@BV, Detail=@detail,CGST=@CGST, SGST=@SGST,CGSTAmount=@CGSTAmount,SGSTAmount=@SGSTAmount,Cess=@Cess,CessAmount=@CessAmount WHERE ProductID=@Pid", con);
             cmd.Parameters.AddWithValue("@Productnametxt", productnametxt.Text);
             cmd.Parameters.AddWithValue("@pricetxt", pricetxt.Text);
             cmd.Parameters.AddWithValue("@imageedit", ImageUrl);
@@ -111,6 +116,8 @@ namespace GrowTogether._240578
             cmd.Parameters.AddWithValue("@SGST", txtSGST.Text);
             cmd.Parameters.AddWithValue("@CGSTAmount", totalCGST);
             cmd.Parameters.AddWithValue("@SGSTAmount", totalSGST);
+            cmd.Parameters.AddWithValue("@Cess", txtCess.Text);
+            cmd.Parameters.AddWithValue("@CessAmount", totalCess);
 
             con.Open();
             try
@@ -172,6 +179,7 @@ namespace GrowTogether._240578
                 txtDP.Text = dr["salesamount"].ToString();
                 txtSGST.Text = dr["SGST"].ToString();
                 txtCGST.Text = dr["CGST"].ToString();
+                txtCess.Text = dr["Cess"].ToString();
             }
             dr.Close();
             con.Close();
@@ -204,8 +212,9 @@ namespace GrowTogether._240578
                 txtDP.Text = dr["salesamount"].ToString();
                 txtSGST.Text = dr["SGST"].ToString();
                 txtCGST.Text = dr["CGST"].ToString();
-               
-            }
+                txtCess.Text = dr["Cess"].ToString();
+
+                }
             dr.Close();
             con.Close();
             }

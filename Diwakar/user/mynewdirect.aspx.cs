@@ -663,8 +663,6 @@ public partial class mynewdirect : System.Web.UI.Page
                     img19.Src = "~/user/images/empty.png";
                     name19.Text = "";
                 }
-
-
             }
 
 
@@ -960,8 +958,8 @@ public partial class mynewdirect : System.Web.UI.Page
     public void GetStatuspay(String lblInvestmentdata, String lbljuicyclub, String MemberID, ref HtmlImage img)
     {
 
-        Int64 lblinvestment = lblInvestmentdata == "" ? 0 : long.Parse(lblInvestmentdata.Replace(".0000", ""));
-       
+        // Int64 lblinvestment = lblInvestmentdata == "" ? 0 : long.Parse(lblInvestmentdata.Replace(".0000", ""));
+         decimal lblinvestment = lblInvestmentdata == "" ? 0 : decimal.Parse(lblInvestmentdata.Replace(".0000", ""));
         if (lblinvestment > 0 && MemberID != "")
         {
             img.Src = "~/user/images/3.png"; 

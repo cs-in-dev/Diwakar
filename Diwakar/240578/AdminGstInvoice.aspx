@@ -543,6 +543,7 @@ Murthal Road, Sonipat-131001
                                             <asp:BoundField DataField="TotalIGST" Visible="false" HeaderText="TotalIGST" SortExpression="TotalIGST" DataFormatString="{0:f2}" />
                                             <asp:BoundField DataField="TotalCGST" HeaderText="TotalCGST" SortExpression="TotalCGST" DataFormatString="{0:f2}" />
                                             <asp:BoundField DataField="TotalSGST" HeaderText="TotalSGST" SortExpression="TotalSGST" DataFormatString="{0:f2}" />
+                                              <asp:BoundField DataField="TotalCess" HeaderText="TotalCess" SortExpression="TotalCess" DataFormatString="{0:f2}" />
 
                                             <%-- <asp:BoundField DataField="Total RP" HeaderText="Total RP" Visible="false" SortExpression="Total RP" DataFormatString="{0:f2}" />--%>
                                             <%--<asp:BoundField DataField="CashBack" HeaderText="CashBack" SortExpression="CashBack" DataFormatString="{0:f2}" />--%>
@@ -587,6 +588,10 @@ Murthal Road, Sonipat-131001
                     <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total SGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Label ID="lblTotalSGST" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 </tr>
+                <tr>
+                    <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total Cess&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <asp:Label ID="lblCess" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                </tr>
                 <tr style="display: none">
                     <td colspan="2" style="text-align: right; border-bottom: none; padding-left: 5px!important; color: #000; border-bottom: 1px solid #666;">Total IGST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Label ID="lblTotalIGST" Visible="false" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -612,7 +617,7 @@ Murthal Road, Sonipat-131001
                         * Our responsibility ceases as soon as the goods        
   Leave our godown.<br />
                         * All taxes as applicable.<br />
-                        * Subject to Delhi Jurisdiction.
+                        * Subject to Sonipat Jurisdiction.
                     </span></td>
                     <td style="width: 55%; border-left: 1px solid #666;">
                         <h5 style="float: right; color: #000;">Diwakar Retail Ltd.</h5>

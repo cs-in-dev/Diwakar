@@ -3,41 +3,36 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 
-        <style type="text/css">
+    <style type="text/css">
         table#table1 th, td {
             /*padding: 6px;*/
         }
-         #ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(13), th:nth-child(13)
-         {
-            display:none;
-        }
-          #ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(9), th:nth-child(9)
-         {
-            display:none;
-        }
-          #ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(10), th:nth-child(10)
-         {
-            display:none;
-        }
-           #ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(14), th:nth-child(14)
-         {
-            display:none;
-        }
-             #ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(5), th:nth-child(5)
-         {
-            display:none;
-        }
-         /*#ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(4), th:nth-child(13)
-         {
-            display:none;
-        }*/
 
-                 #ContentPlaceHolder1_autoCompleteExtender1_completionListElem{
-font-size: 12px!important;
-min-width:200px;
-max-height: 300px;
-overflow:auto;
-}
+        #ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(5), th:nth-child(5) {
+            display: none;
+        }
+
+        #ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(9), th:nth-child(9) {
+            display: none;
+        }
+
+        #ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(11), th:nth-child(11) {
+            display: none;
+        }
+
+        #ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(14), th:nth-child(14) {
+            display: none;
+        }
+          #ContentPlaceHolder1_GridView1 > tbody > tr > td:nth-child(15), th:nth-child(15) {
+            display: none;
+        }
+
+        #ContentPlaceHolder1_autoCompleteExtender1_completionListElem {
+            font-size: 12px !important;
+            min-width: 200px;
+            max-height: 300px;
+            overflow: auto;
+        }
     </style>
 
     <%--  <script type="text/javascript">
@@ -66,7 +61,7 @@ overflow:auto;
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div>
-       <%-- <script src="css/Extension.min.js" type="text/javascript"></script>--%>
+        <%-- <script src="css/Extension.min.js" type="text/javascript"></script>--%>
 
         <table style="height: auto">
             <tr>
@@ -122,7 +117,7 @@ overflow:auto;
                         </Triggers>
                     </asp:UpdatePanel>
                 </td>
-                <td>
+                <%--<td>
                     <asp:UpdatePanel ID="UpdatePanel10" runat="server">
                         <ContentTemplate>
                             <a id="imageload" runat="server" target="_blank">
@@ -130,7 +125,7 @@ overflow:auto;
 
                         </ContentTemplate>
                     </asp:UpdatePanel>
-                </td>
+                </td>--%>
             </tr>
 
             <tr>
@@ -140,6 +135,7 @@ overflow:auto;
                 <td class="style20">BV</td>
                 <td class="style20">CGST %</td>
                 <td class="style20">SGST %</td>
+                <td class="style20">Cess %</td>
                 <%--  <td class="style20">IGST</td>--%>
             </tr>
 
@@ -216,6 +212,17 @@ overflow:auto;
                     <asp:UpdatePanel ID="UpdatePanel11" runat="server">
                         <ContentTemplate>
                             <asp:TextBox ID="SGST" runat="server" Width="60px" ReadOnly="True"></asp:TextBox>
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="ProductName" EventName="TextChanged" />
+                            <asp:AsyncPostBackTrigger ControlID="ProductCode" EventName="TextChanged" />
+                        </Triggers>
+                    </asp:UpdatePanel>
+                </td>
+                <td class="style17">
+                    <asp:UpdatePanel ID="UpdatePanel16" runat="server">
+                        <ContentTemplate>
+                            <asp:TextBox ID="Cess" runat="server" Width="60px" ReadOnly="True"></asp:TextBox>
                         </ContentTemplate>
                         <Triggers>
                             <asp:AsyncPostBackTrigger ControlID="ProductName" EventName="TextChanged" />
@@ -359,7 +366,7 @@ overflow:auto;
                     <td colspan="12">
                         <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" DataKeyNames="ID"
                             GridLines="None" OnRowDeleting="GridView1_RowDeleting" PageSize="100" Font-Size="Medium" Font-Bold="true"
-                            Width="40%">
+                           >
                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                             <Columns>
                                 <asp:CommandField ShowDeleteButton="True" />
@@ -434,51 +441,51 @@ overflow:auto;
                         <td colspan="4"></td>
                     </tr>
                 </table>
-                
+
             </asp:Panel>
-            <table style="margin-right:31%">
-                    <tr>
+            <table style="margin-right: 31%">
+                <tr>
 
-                        <td>Payment Mode:</td>
-                        <td>
+                    <td>Payment Mode:</td>
+                    <td>
 
-                            <asp:DropDownList ID="DropDownList1" AutoPostBack="true" Width="170px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" runat="server">
-                                <asp:ListItem Value="Select Payment Mode">Select Payment Mode</asp:ListItem>
-                                <asp:ListItem Value="Cash">Cash</asp:ListItem>
-                            </asp:DropDownList>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="DropDownList1" InitialValue="Select Payment Mode" runat="server" ErrorMessage="*" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator>
+                        <asp:DropDownList ID="DropDownList1" AutoPostBack="true" Width="170px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" runat="server">
+                            <asp:ListItem Value="Select Payment Mode">Select Payment Mode</asp:ListItem>
+                            <asp:ListItem Value="Cash">Cash</asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="DropDownList1" InitialValue="Select Payment Mode" runat="server" ErrorMessage="*" ForeColor="Red" Font-Size="16px" ValidationGroup="vg1"></asp:RequiredFieldValidator>
 
-                        </td>
-                        <td>
-                            <%--  
+                    </td>
+                    <td>
+                        <%--  
                             <asp:Button ID="btnSubmit" CssClass="btn btn-primary" runat="server" OnClick="btnSubmit_Click"
                             style="font-size: small; font-family: Verdana;" 
                             Text="Submit" ValidationGroup="vg1"/>
                             <asp:Label ID="Label7" runat="server" Text=""></asp:Label>--%>
-                            <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
-                            <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Request OTP" ValidationGroup="vg1" />
+                        <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
+                        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Request OTP" ValidationGroup="vg1" />
 
-                        </td>
-                    </tr>
+                    </td>
+                </tr>
 
-                    <tr>
-                        <td></td>
+                <tr>
+                    <td></td>
 
-                        <td>
-                            <asp:Button ID="Button2" CssClass="btn btn-primary" runat="server" OnClick="Button2_Click"
-                                Style="font-size: small; font-family: Verdana;"
-                                Text="Submit" ValidationGroup="vg1" />
-                            <asp:Label ID="Label7" runat="server" Text=""></asp:Label></td>
-                        <td></td>
-                    </tr>
-                   
-                </table>
+                    <td>
+                        <asp:Button ID="Button2" CssClass="btn btn-primary" runat="server" OnClick="Button2_Click"
+                            Style="font-size: small; font-family: Verdana;"
+                            Text="Submit" ValidationGroup="vg1" />
+                        <asp:Label ID="Label7" runat="server" Text=""></asp:Label></td>
+                    <td></td>
+                </tr>
+
+            </table>
             <%-- <tr>
                         <td><strong>Your Final Order Details are above and Products will be delivered subject to selection of Payment Mode and after payment is securely credited to  Diwakar Retail Ltd Account.
                         </strong></td>
                     </tr>--%>
         </table>
-        
+
 
         <br />
         <br />
